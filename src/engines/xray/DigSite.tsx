@@ -35,8 +35,8 @@ export default function DigSite({ hiddenNodes, foundIds, onUnearth, locale }: Pr
       : { title: 'Excavation Site', sub: 'Something unsaid is buried beneath the argument — dig layer by layer', dig: 'Dig', unearthed: 'Uncovered' }
 
   return (
-    <div className="mt-6 rounded-2xl border border-amber-400/30 bg-panel p-5">
-      <p className="text-xs font-semibold uppercase tracking-[0.25em] text-amber-300/90">
+    <div className="mt-6 rounded-2xl border border-amber-500/40 bg-panel p-5">
+      <p className="text-xs font-semibold uppercase tracking-[0.25em] text-amber-700">
         ⛏ {t.title}
       </p>
       <p className="mt-1 text-xs text-slate-500">{t.sub}</p>
@@ -50,7 +50,7 @@ export default function DigSite({ hiddenNodes, foundIds, onUnearth, locale }: Pr
             <div
               key={node.nodeId}
               className={`rounded-xl border p-4 ${
-                isFound ? 'border-violet-400/50 bg-violet-400/10' : 'border-line bg-panel-2'
+                isFound ? 'border-violet-300 bg-violet-100' : 'border-line bg-panel-2'
               }`}
             >
               {isFound ? (
@@ -59,13 +59,13 @@ export default function DigSite({ hiddenNodes, foundIds, onUnearth, locale }: Pr
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ type: 'spring', stiffness: 320, damping: 18 }}
                 >
-                  <p className="text-xs font-bold text-violet-300">
+                  <p className="text-xs font-bold text-violet-700">
                     {v.emoji} {NODE_TYPE_LABELS[node.type][locale]}
                   </p>
-                  <p className="mt-1.5 text-sm font-medium leading-relaxed text-violet-100">
+                  <p className="mt-1.5 text-sm font-medium leading-relaxed text-violet-800">
                     {node.anchorText}
                   </p>
-                  <p className="mt-1 text-[11px] text-violet-300/70">
+                  <p className="mt-1 text-[11px] text-violet-500">
                     {locale === 'zh' ? `✔ ${t.unearthed}` : `✔ ${t.unearthed}`}
                   </p>
                 </motion.div>
@@ -77,7 +77,7 @@ export default function DigSite({ hiddenNodes, foundIds, onUnearth, locale }: Pr
                 >
                   <p className="text-xs text-slate-500">
                     {locale === 'zh' ? '???' : '???'}
-                    <span className="ml-2 rounded bg-black/30 px-1.5 py-0.5 text-[10px] uppercase tracking-wide">
+                    <span className="ml-2 rounded bg-white/70 px-1.5 py-0.5 text-[10px] uppercase tracking-wide">
                       {NODE_TYPE_LABELS[node.type][locale]}
                     </span>
                   </p>
@@ -99,7 +99,7 @@ export default function DigSite({ hiddenNodes, foundIds, onUnearth, locale }: Pr
                         />
                       )
                     })}
-                    <span className="ml-2 text-lg text-amber-300 transition group-hover:scale-125">
+                    <span className="ml-2 text-lg text-amber-600 transition group-hover:scale-125">
                       ⛏
                     </span>
                   </div>

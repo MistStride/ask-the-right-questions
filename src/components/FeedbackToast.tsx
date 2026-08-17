@@ -8,25 +8,25 @@ const TONES: Record<
   { border: string; bg: string; icon: string; text: string; shadow: string }
 > = {
   success: {
-    border: 'border-cyan-400/60',
-    bg: 'bg-[#0d2136]/95',
+    border: 'border-cyan-600/40',
+    bg: 'bg-white/95',
     icon: '✓',
-    text: 'text-cyan-300',
-    shadow: 'shadow-[0_0_28px_rgba(34,211,238,0.25)]',
+    text: 'text-cyan-700',
+    shadow: 'shadow-[0_10px_30px_rgba(30,90,110,0.18)]',
   },
   error: {
-    border: 'border-rose-500/60',
-    bg: 'bg-[#2b1220]/95',
+    border: 'border-rose-500/40',
+    bg: 'bg-white/95',
     icon: '✗',
-    text: 'text-rose-300',
-    shadow: 'shadow-[0_0_28px_rgba(244,63,94,0.22)]',
+    text: 'text-rose-600',
+    shadow: 'shadow-[0_10px_30px_rgba(160,50,70,0.16)]',
   },
   info: {
-    border: 'border-amber-400/60',
-    bg: 'bg-[#2a200e]/95',
+    border: 'border-amber-500/40',
+    bg: 'bg-white/95',
     icon: '⛏',
-    text: 'text-amber-300',
-    shadow: 'shadow-[0_0_28px_rgba(245,185,66,0.2)]',
+    text: 'text-amber-700',
+    shadow: 'shadow-[0_10px_30px_rgba(120,95,45,0.16)]',
   },
 }
 
@@ -54,7 +54,7 @@ export default function FeedbackToast() {
             className={`flex items-center gap-2.5 rounded-xl border px-4 py-2.5 text-sm font-medium backdrop-blur-md ${t.border} ${t.bg} ${t.shadow}`}
           >
             <span className={`text-base font-bold ${t.text}`}>{t.icon}</span>
-            <span className="text-slate-100">{message}</span>
+            <span className="text-slate-800">{message}</span>
           </motion.div>
         )}
       </AnimatePresence>

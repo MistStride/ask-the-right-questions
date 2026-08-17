@@ -1,14 +1,16 @@
 @import 'tailwindcss';
 
-/* ---------- 淘金主题色板（深色游戏风） ---------- */
+/* ---------- 明亮纸感主题（浅色） ----------
+   token 名沿用深色版（abyss/panel/gold…），只改色值，避免大范围改组件类名。
+   页面：暖米白纸底 + 白卡片 + 暖金主色 + 深青引擎色 */
 @theme {
-  --color-abyss: #0a0f1c; /* 页面底色 */
-  --color-panel: #101a2e; /* 卡片底色 */
-  --color-panel-2: #16233c; /* 卡片内嵌底色 */
-  --color-line: #22314f; /* 描边 */
-  --color-gold: #f5b942; /* 淘金主色 */
-  --color-gold-deep: #c98a1b;
-  --color-xray: #22d3ee; /* 引擎A 透视镜青色 */
+  --color-abyss: #f7f4ee; /* 纸面底色 */
+  --color-panel: #ffffff; /* 卡片 */
+  --color-panel-2: #f4efe5; /* 卡片内嵌 */
+  --color-line: #e6dfd0; /* 边框 */
+  --color-gold: #d99a1e; /* 淘金主色（浅底加深保证可读） */
+  --color-gold-deep: #b0760f;
+  --color-xray: #0e7490; /* 引擎A 深青 */
 
   --font-sans:
     'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', system-ui, sans-serif;
@@ -19,21 +21,21 @@ html,
 body {
   margin: 0;
   background: var(--color-abyss);
-  color: #cbd5e1;
+  color: #3d3831;
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
-/* 暗色网格背景 */
+/* 浅色网格背景 */
 .bg-grid {
   background-image:
-    linear-gradient(rgba(40, 60, 100, 0.28) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(40, 60, 100, 0.28) 1px, transparent 1px);
+    linear-gradient(rgba(190, 172, 132, 0.16) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(190, 172, 132, 0.16) 1px, transparent 1px);
   background-size: 30px 30px;
 }
 
-/* X 光扫描线 */
+/* X 光扫描线（浅青，浅底可见） */
 .scanline {
   position: absolute;
   inset-inline: 0;
@@ -42,9 +44,9 @@ body {
   background: linear-gradient(
     180deg,
     transparent,
-    rgba(34, 211, 238, 0.14) 45%,
-    rgba(34, 211, 238, 0.34) 50%,
-    rgba(34, 211, 238, 0.14) 55%,
+    rgba(14, 116, 144, 0.07) 45%,
+    rgba(14, 116, 144, 0.22) 50%,
+    rgba(14, 116, 144, 0.07) 55%,
     transparent
   );
   animation: scan-move 3.2s linear infinite;
@@ -84,7 +86,7 @@ body {
   height: 8px;
 }
 .scroll-thin::-webkit-scrollbar-thumb {
-  background: #22314f;
+  background: #e6dfd0;
   border-radius: 8px;
 }
 .scroll-thin::-webkit-scrollbar-track {

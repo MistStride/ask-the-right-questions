@@ -214,21 +214,21 @@ export default function XrayEngine({
         <button
           type="button"
           onClick={onExit}
-          className="rounded-lg border border-line px-3 py-1.5 text-sm text-slate-400 transition hover:bg-panel-2 hover:text-slate-200"
+          className="rounded-lg border border-line px-3 py-1.5 text-sm text-slate-600 transition hover:bg-panel-2 hover:text-slate-900"
         >
           ← {locale === 'zh' ? '返回章节' : 'Back'}
         </button>
-        <span className="rounded-lg border border-xray/50 bg-xray/10 px-3 py-1.5 font-mono text-xs font-semibold tracking-widest text-cyan-300">
+        <span className="rounded-lg border border-cyan-600/40 bg-cyan-50 px-3 py-1.5 font-mono text-xs font-semibold tracking-widest text-cyan-800">
           {MODE_LABEL[locale][mode]}
         </span>
-        <span className="text-sm text-slate-400">{chapterTitle}</span>
+        <span className="text-sm text-slate-600">{chapterTitle}</span>
         <div className="ml-auto flex items-center gap-2">
-          <span className="font-mono text-sm text-cyan-300">
+          <span className="font-mono text-sm text-cyan-700">
             {foundCount}/{total}
           </span>
           <div className="h-1.5 w-28 overflow-hidden rounded-full bg-panel-2">
             <motion.div
-              className="h-full rounded-full bg-gradient-to-r from-cyan-400 to-emerald-400"
+              className="h-full rounded-full bg-gradient-to-r from-cyan-500 to-emerald-500"
               animate={{ width: `${progress}%` }}
               transition={{ type: 'spring', stiffness: 200, damping: 26 }}
             />
@@ -252,7 +252,7 @@ export default function XrayEngine({
           {locale === 'zh' ? '待扫描的文本' : 'TEXT TO SCAN'}
         </p>
 
-        <p className="relative text-[17px] leading-[2.05] text-slate-300">{renderBody()}</p>
+        <p className="relative text-[17px] leading-[2.05] text-slate-700">{renderBody()}</p>
 
         {/* 理由 → 结论 连线层 */}
         {level.correctChain && level.correctChain.length > 0 && (
@@ -290,7 +290,7 @@ export default function XrayEngine({
         <button
           type="button"
           onClick={handleReplay}
-          className="rounded-lg border border-line px-4 py-2 text-sm text-slate-400 transition hover:bg-panel-2 hover:text-slate-200"
+          className="rounded-lg border border-line px-4 py-2 text-sm text-slate-600 transition hover:bg-panel-2 hover:text-slate-900"
         >
           ↻ {locale === 'zh' ? '重新透视' : 'Rescan'}
         </button>

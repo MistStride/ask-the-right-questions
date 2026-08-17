@@ -5,38 +5,38 @@ import type { Locale, NodeType } from '../../schema/levelTypes'
 export const NODE_VISUALS: Record<NodeType, { emoji: string; hover: string; found: string; label: string }> = {
   conclusion: {
     emoji: '🚩',
-    hover: 'hover:bg-cyan-400/15 hover:text-cyan-200 hover:shadow-[0_0_18px_rgba(34,211,238,0.25)]',
-    found: 'bg-cyan-400/20 text-cyan-100 border-cyan-400/60 shadow-[0_0_20px_rgba(34,211,238,0.35)]',
+    hover: 'hover:bg-cyan-50 hover:text-cyan-700 hover:shadow-[0_0_0_1px_rgba(14,116,144,0.25)]',
+    found: 'bg-cyan-100 text-cyan-800 border-cyan-300 shadow-[0_0_0_1px_rgba(14,116,144,0.18)]',
     label: 'conclusion',
   },
   reason: {
     emoji: '⛓️',
-    hover: 'hover:bg-sky-400/15 hover:text-sky-200 hover:shadow-[0_0_18px_rgba(56,189,248,0.25)]',
-    found: 'bg-sky-400/20 text-sky-100 border-sky-400/60 shadow-[0_0_20px_rgba(56,189,248,0.35)]',
+    hover: 'hover:bg-sky-50 hover:text-sky-700 hover:shadow-[0_0_0_1px_rgba(2,132,199,0.25)]',
+    found: 'bg-sky-100 text-sky-800 border-sky-300 shadow-[0_0_0_1px_rgba(2,132,199,0.18)]',
     label: 'reason',
   },
   assumption: {
     emoji: '⛏️',
-    hover: 'hover:bg-violet-400/15 hover:text-violet-200 hover:shadow-[0_0_18px_rgba(167,139,250,0.25)]',
-    found: 'bg-violet-400/20 text-violet-100 border-violet-400/60 shadow-[0_0_20px_rgba(167,139,250,0.35)]',
+    hover: 'hover:bg-violet-50 hover:text-violet-700 hover:shadow-[0_0_0_1px_rgba(109,40,217,0.25)]',
+    found: 'bg-violet-100 text-violet-800 border-violet-300 shadow-[0_0_0_1px_rgba(109,40,217,0.18)]',
     label: 'assumption',
   },
   fallacy: {
     emoji: '⚡',
-    hover: 'hover:bg-rose-400/15 hover:text-rose-200 hover:shadow-[0_0_18px_rgba(251,113,133,0.25)]',
-    found: 'bg-rose-400/20 text-rose-100 border-rose-400/60 shadow-[0_0_20px_rgba(251,113,133,0.35)]',
+    hover: 'hover:bg-rose-50 hover:text-rose-700 hover:shadow-[0_0_0_1px_rgba(225,29,72,0.25)]',
+    found: 'bg-rose-100 text-rose-800 border-rose-300 shadow-[0_0_0_1px_rgba(225,29,72,0.18)]',
     label: 'fallacy',
   },
   omission: {
     emoji: '🕳️',
-    hover: 'hover:bg-amber-400/15 hover:text-amber-200 hover:shadow-[0_0_18px_rgba(251,191,36,0.25)]',
-    found: 'bg-amber-400/20 text-amber-100 border-amber-400/60 shadow-[0_0_20px_rgba(251,191,36,0.35)]',
+    hover: 'hover:bg-amber-50 hover:text-amber-700 hover:shadow-[0_0_0_1px_rgba(180,118,15,0.25)]',
+    found: 'bg-amber-100 text-amber-800 border-amber-300 shadow-[0_0_0_1px_rgba(180,118,15,0.18)]',
     label: 'omission',
   },
   ambiguous_term: {
     emoji: '💠',
-    hover: 'hover:bg-fuchsia-400/15 hover:text-fuchsia-200 hover:shadow-[0_0_18px_rgba(232,121,249,0.25)]',
-    found: 'bg-fuchsia-400/20 text-fuchsia-100 border-fuchsia-400/60 shadow-[0_0_20px_rgba(232,121,249,0.35)]',
+    hover: 'hover:bg-fuchsia-50 hover:text-fuchsia-700 hover:shadow-[0_0_0_1px_rgba(192,38,211,0.25)]',
+    found: 'bg-fuchsia-100 text-fuchsia-800 border-fuchsia-300 shadow-[0_0_0_1px_rgba(192,38,211,0.18)]',
     label: 'ambiguous',
   },
 }
@@ -75,7 +75,7 @@ export default function XrayNode({ nodeId, text, type, isCorrect, found, wrongFl
       >
         <span className="mr-0.5">{v.emoji}</span>
         {text}
-        <span className="ml-1 rounded bg-black/30 px-1 text-[10px] uppercase tracking-wide">
+        <span className="ml-1 rounded bg-white/70 px-1 text-[10px] uppercase tracking-wide opacity-80">
           {NODE_TYPE_LABELS[type][locale]}
         </span>
       </motion.span>
@@ -87,8 +87,8 @@ export default function XrayNode({ nodeId, text, type, isCorrect, found, wrongFl
       key={wrongFlash ? `flash-${text}` : `idle-${text}`}
       animate={
         wrongFlash
-          ? { x: [0, -5, 5, -4, 4, 0], backgroundColor: 'rgba(244,63,94,0.22)' }
-          : { x: 0, backgroundColor: 'rgba(34,211,238,0)' }
+          ? { x: [0, -5, 5, -4, 4, 0], backgroundColor: 'rgba(225,29,72,0.16)' }
+          : { x: 0, backgroundColor: 'rgba(14,116,144,0)' }
       }
       transition={wrongFlash ? { duration: 0.45 } : { duration: 0.25 }}
       onClick={onClick}
@@ -100,8 +100,8 @@ export default function XrayNode({ nodeId, text, type, isCorrect, found, wrongFl
           onClick()
         }
       }}
-      className={`anchor-hover inline border-b border-dashed text-slate-300 ${v.hover} ${
-        isCorrect ? 'border-cyan-400/60' : 'border-slate-500/40'
+      className={`anchor-hover inline border-b border-dashed text-slate-600 ${v.hover} ${
+        isCorrect ? 'border-cyan-600/50' : 'border-slate-400/50'
       }`}
     >
       {text}

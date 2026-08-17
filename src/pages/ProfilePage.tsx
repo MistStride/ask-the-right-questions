@@ -32,7 +32,7 @@ export default function ProfilePage() {
         >
           ← {locale === 'zh' ? '返回地图' : 'Back'}
         </button>
-        <span className="text-sm font-bold tracking-wide text-gold">
+        <span className="text-sm font-bold tracking-wide text-amber-700">
           {locale === 'zh' ? '我的思维雷达' : 'My Thinking Radar'}
         </span>
         <span className="w-20" />
@@ -42,7 +42,7 @@ export default function ProfilePage() {
         <div className="grid gap-4 sm:grid-cols-2">
           {/* 维度进度 */}
           <section className="rounded-2xl border border-line bg-panel p-5">
-            <h2 className="text-sm font-semibold text-slate-200">
+            <h2 className="text-sm font-semibold text-slate-800">
               {locale === 'zh' ? '六维思维成长' : 'Six-dimension growth'}
             </h2>
             <div className="mt-4 space-y-3">
@@ -56,7 +56,7 @@ export default function ProfilePage() {
                   </div>
                   <div className="h-1.5 overflow-hidden rounded-full bg-panel-2">
                     <div
-                      className="h-full rounded-full bg-gradient-to-r from-gold to-amber-500"
+                      className="h-full rounded-full bg-gradient-to-r from-amber-500 to-amber-600"
                       style={{ width: `${radar[d.key]}%` }}
                     />
                   </div>
@@ -70,7 +70,7 @@ export default function ProfilePage() {
 
           {/* 已完成关卡 */}
           <section className="rounded-2xl border border-line bg-panel p-5">
-            <h2 className="text-sm font-semibold text-slate-200">
+            <h2 className="text-sm font-semibold text-slate-800">
               {locale === 'zh' ? '已完成关卡' : 'Completed levels'}{' '}
               <span className="font-mono text-gold">({doneCount}/{LEVELS.length})</span>
             </h2>
@@ -83,17 +83,17 @@ export default function ProfilePage() {
                     key={l.meta.levelId}
                     type="button"
                     onClick={() => navigate(`/level/${l.meta.levelId}`)}
-                    className="flex w-full items-center gap-3 rounded-xl border border-line bg-panel-2 px-3.5 py-2.5 text-left transition hover:border-gold/40"
+                    className="flex w-full items-center gap-3 rounded-xl border border-line bg-panel-2 px-3.5 py-2.5 text-left transition hover:border-amber-600/40"
                   >
-                    <span className={rec ? 'text-gold' : 'text-slate-600'}>
+                    <span className={rec ? 'text-amber-600' : 'text-slate-400'}>
                       {rec ? '★' : '☆'}
                     </span>
-                    <span className="flex-1 truncate text-sm text-slate-300">
+                    <span className="flex-1 truncate text-sm text-slate-700">
                       {locale === 'zh' ? `第${l.meta.chapter}章` : `Ch.${l.meta.chapter}`}{' '}
                       {chapter?.title[locale]}
                     </span>
                     {rec && (
-                      <span className="font-mono text-xs text-cyan-300">{rec.score}</span>
+                      <span className="font-mono text-xs text-cyan-700">{rec.score}</span>
                     )}
                   </button>
                 )

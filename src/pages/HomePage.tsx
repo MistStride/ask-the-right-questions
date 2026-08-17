@@ -61,7 +61,7 @@ export default function HomePage() {
       {/* 顶部导航 */}
       <nav className="sticky top-0 z-30 border-b border-line/60 bg-abyss/80 backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-          <div className="flex items-center gap-2 text-gold">
+          <div className="flex items-center gap-2 text-amber-700">
             <span className="text-xl">⛏</span>
             <span className="text-sm font-bold tracking-wide">
               {locale === 'zh' ? '学会提问' : 'Asking the Right Questions'}
@@ -71,14 +71,14 @@ export default function HomePage() {
             <button
               type="button"
               onClick={() => navigate('/profile')}
-              className="rounded-lg border border-line px-3 py-1.5 text-xs font-medium text-slate-300 transition hover:border-gold/50 hover:text-gold"
+              className="rounded-lg border border-line px-3 py-1.5 text-xs font-medium text-slate-600 transition hover:border-amber-600/50 hover:text-amber-700"
             >
               🧭 {locale === 'zh' ? '我的思维雷达' : 'My Radar'}
             </button>
             <button
               type="button"
               onClick={() => setLocale(locale === 'zh' ? 'en' : 'zh')}
-              className="rounded-lg border border-line px-3 py-1.5 text-xs font-semibold text-slate-300 transition hover:border-gold/50 hover:text-gold"
+              className="rounded-lg border border-line px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-amber-600/50 hover:text-amber-700"
             >
               {locale === 'zh' ? 'EN' : '中文'}
             </button>
@@ -91,16 +91,16 @@ export default function HomePage() {
         <div className="bg-grid pointer-events-none absolute inset-0 opacity-50" />
         <div className="pointer-events-none absolute -top-32 left-1/2 h-72 w-[42rem] -translate-x-1/2 rounded-full bg-gold/10 blur-3xl" />
         <div className="relative mx-auto max-w-4xl px-4 pb-14 pt-16 text-center">
-          <span className="inline-block rounded-full border border-gold/40 bg-gold/10 px-3.5 py-1 text-xs font-medium tracking-wide text-amber-300">
+          <span className="inline-block rounded-full border border-amber-500/40 bg-amber-100 px-3.5 py-1 text-xs font-medium tracking-wide text-amber-700">
             {t.tag}
           </span>
-          <h1 className="mt-5 text-4xl font-black leading-tight text-slate-100 sm:text-5xl">
+          <h1 className="mt-5 text-4xl font-black leading-tight text-slate-800 sm:text-5xl">
             {t.hero1}
-            <span className="block bg-gradient-to-r from-gold via-amber-300 to-gold bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 bg-clip-text text-transparent">
               {t.hero2}
             </span>
           </h1>
-          <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-slate-400 sm:text-base">
+          <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-slate-600 sm:text-base">
             {t.desc}
           </p>
           <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
@@ -109,7 +109,7 @@ export default function HomePage() {
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
               onClick={() => navigate('/chapter/2')}
-              className="rounded-xl bg-gold px-7 py-3 text-sm font-bold text-abyss shadow-[0_0_32px_rgba(245,185,66,0.35)] transition hover:brightness-110"
+              className="rounded-xl bg-gold px-7 py-3 text-sm font-bold text-white shadow-[0_8px_24px_rgba(217,154,30,0.3)] transition hover:brightness-110"
             >
               {t.cta} →
             </motion.button>
@@ -118,15 +118,15 @@ export default function HomePage() {
 
           {/* 海绵 vs 淘金 */}
           <div className="mx-auto mt-10 grid max-w-2xl gap-3 text-left sm:grid-cols-2">
-            <div className="rounded-2xl border border-slate-500/30 bg-panel/60 p-4 opacity-80">
+            <div className="rounded-2xl border border-slate-300/80 bg-white/80 p-4 opacity-90">
               <p className="text-xs font-bold uppercase tracking-widest text-slate-500">
                 🧽 {t.sponge}
               </p>
               <p className="mt-1.5 text-xs leading-relaxed text-slate-500">{t.spongeDesc}</p>
             </div>
-            <div className="rounded-2xl border border-gold/40 bg-gold/5 p-4 shadow-[0_0_24px_rgba(245,185,66,0.08)]">
-              <p className="text-xs font-bold uppercase tracking-widest text-gold">⛏ {t.golden}</p>
-              <p className="mt-1.5 text-xs leading-relaxed text-slate-300">{t.goldenDesc}</p>
+            <div className="rounded-2xl border border-amber-500/50 bg-amber-50 p-4 shadow-[0_6px_20px_rgba(120,95,45,0.12)]">
+              <p className="text-xs font-bold uppercase tracking-widest text-amber-700">⛏ {t.golden}</p>
+              <p className="mt-1.5 text-xs leading-relaxed text-slate-700">{t.goldenDesc}</p>
             </div>
           </div>
         </div>
@@ -134,7 +134,7 @@ export default function HomePage() {
 
       {/* 淘金路线图 */}
       <section className="mx-auto max-w-6xl px-4 pb-10">
-        <h2 className="text-center text-lg font-bold text-slate-200">🗺️ {t.roadmap}</h2>
+        <h2 className="text-center text-lg font-bold text-slate-800">🗺️ {t.roadmap}</h2>
         <p className="mt-1 text-center text-xs text-slate-500">{t.roadmapSub}</p>
 
         <div className="scroll-thin mt-6 flex gap-3 overflow-x-auto pb-3">
@@ -157,19 +157,19 @@ export default function HomePage() {
                       ? isDone
                         ? 'border-gold/60 bg-gold/10'
                         : 'border-gold/35 bg-panel hover:border-gold/70'
-                      : 'border-line bg-panel/40 opacity-50'
+                      : 'border-line bg-white/60 opacity-60'
                   }`}
                 >
                   <div className="flex items-center justify-between">
-                    <span className="font-mono text-2xl font-black text-gold/80">
+                    <span className="font-mono text-2xl font-black text-amber-600">
                       {String(c.id).padStart(2, '0')}
                     </span>
                     {isPlayable ? (
                       <span
                         className={`rounded-full px-2 py-0.5 text-[10px] font-bold ${
                           isDone
-                            ? 'bg-gold text-abyss'
-                            : 'border border-cyan-400/50 text-cyan-300'
+                            ? 'bg-gold text-white'
+                            : 'border border-cyan-600/40 bg-cyan-50 text-cyan-700'
                         }`}
                       >
                         {isDone ? '★' : t.playable}
@@ -178,7 +178,7 @@ export default function HomePage() {
                       <span className="text-slate-600">🔒</span>
                     )}
                   </div>
-                  <p className="mt-2.5 line-clamp-2 text-xs font-semibold leading-snug text-slate-200">
+                  <p className="mt-2.5 line-clamp-2 text-xs font-semibold leading-snug text-slate-800">
                     {c.title[locale]}
                   </p>
                   <p className="mt-1 line-clamp-1 text-[10px] text-slate-500">{c.focus[locale]}</p>
@@ -201,7 +201,7 @@ export default function HomePage() {
 
       {/* 五引擎 */}
       <section className="mx-auto max-w-6xl px-4 pb-16">
-        <h2 className="text-center text-lg font-bold text-slate-200">🧩 {t.engineTitle}</h2>
+        <h2 className="text-center text-lg font-bold text-slate-800">🧩 {t.engineTitle}</h2>
         <p className="mt-1 text-center text-xs text-slate-500">{t.engineDesc}</p>
         <div className="mt-6 grid gap-3 sm:grid-cols-3 lg:grid-cols-5">
           {(
@@ -237,7 +237,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <footer className="border-t border-line/60 py-6 text-center text-xs text-slate-600">
+      <footer className="border-t border-line/60 py-6 text-center text-xs text-slate-500">
         ⛏ Asking the Right Questions · based on Neil Browne &amp; Stuart Keeley's book ·{' '}
         {locale === 'zh' ? '内容驱动 · 欢迎贡献关卡' : 'data-driven · level contributions welcome'}
       </footer>

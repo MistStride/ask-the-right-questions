@@ -87,7 +87,7 @@ export default function XrayChainArrows({ containerRef, chain, foundIds }: Props
           y1={l.y1}
           x2={l.x2}
           y2={l.y2}
-          stroke="#22d3ee"
+          stroke="#0e7490"
           strokeWidth="2"
           strokeDasharray="6 3"
           markerEnd="url(#xray-arrow)"

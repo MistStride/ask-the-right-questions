@@ -30,14 +30,14 @@ export default function ChapterPage() {
         <button
           type="button"
           onClick={() => navigate('/')}
-          className="rounded-lg border border-line px-3 py-1.5 text-sm text-slate-400 transition hover:bg-panel-2 hover:text-slate-200"
+          className="rounded-lg border border-line px-3 py-1.5 text-sm text-slate-600 transition hover:bg-panel-2 hover:text-slate-900"
         >
           ← {locale === 'zh' ? '返回地图' : 'Back'}
         </button>
         <button
           type="button"
           onClick={() => navigate('/profile')}
-          className="rounded-lg border border-line px-3 py-1.5 text-sm text-slate-400 transition hover:bg-panel-2 hover:text-slate-200"
+          className="rounded-lg border border-line px-3 py-1.5 text-sm text-slate-600 transition hover:bg-panel-2 hover:text-slate-900"
         >
           {locale === 'zh' ? '我的思维雷达' : 'My Radar'}
         </button>
@@ -46,18 +46,18 @@ export default function ChapterPage() {
       <main className="mx-auto max-w-3xl px-4 pb-16 pt-8">
         <div className="rounded-2xl border border-line bg-panel p-6">
           <div className="flex items-center gap-3">
-            <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-gold/40 bg-gold/10 font-mono text-lg font-bold text-gold">
+            <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-amber-500/40 bg-amber-100 font-mono text-lg font-bold text-amber-700">
               {chapter.id}
             </span>
             <div>
-              <h1 className="text-lg font-bold text-slate-100">{chapter.title[locale]}</h1>
+              <h1 className="text-lg font-bold text-slate-800">{chapter.title[locale]}</h1>
               <p className="text-xs text-slate-500">
                 {locale === 'zh' ? '核心训练' : 'Focus'} · {chapter.focus[locale]}
               </p>
             </div>
           </div>
           {badge && (
-            <span className="mt-4 inline-flex items-center gap-1.5 rounded-full border border-cyan-400/40 bg-cyan-400/10 px-3 py-1 text-xs font-medium text-cyan-300">
+            <span className="mt-4 inline-flex items-center gap-1.5 rounded-full border border-cyan-600/40 bg-cyan-50 px-3 py-1 text-xs font-medium text-cyan-700">
               {badge.icon} {badge[locale]}
             </span>
           )}
@@ -80,19 +80,19 @@ export default function ChapterPage() {
                     key={l.meta.levelId}
                     type="button"
                     onClick={() => navigate(`/level/${l.meta.levelId}`)}
-                    className="group flex w-full items-center gap-4 rounded-2xl border border-line bg-panel p-4 text-left transition hover:border-gold/50 hover:shadow-[0_0_24px_rgba(245,185,66,0.08)]"
+                    className="group flex w-full items-center gap-4 rounded-2xl border border-line bg-panel p-4 text-left transition hover:border-amber-600/50 hover:shadow-[0_8px_24px_rgba(120,95,45,0.12)]"
                   >
                     <span
                       className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl font-mono text-sm font-bold ${
                         rec
-                          ? 'bg-gold text-abyss'
-                          : 'border border-line bg-panel-2 text-slate-400 group-hover:text-gold'
+                          ? 'bg-gold text-white'
+                          : 'border border-line bg-panel-2 text-slate-500 group-hover:text-amber-600'
                       }`}
                     >
                       {rec ? '★' : i + 1}
                     </span>
                     <span className="flex-1">
-                      <span className="block text-sm font-semibold text-slate-200">
+                      <span className="block text-sm font-semibold text-slate-800">
                         {l.meta.levelId}
                         {l.meta.difficulty > 1 && (
                           <span className="ml-2 text-xs text-amber-400">
@@ -110,7 +110,7 @@ export default function ChapterPage() {
                             : 'Not started'}
                       </span>
                     </span>
-                    <span className="text-slate-600 transition group-hover:translate-x-1 group-hover:text-gold">
+                    <span className="text-slate-600 transition group-hover:translate-x-1 group-hover:text-amber-600">
                       →
                     </span>
                   </button>

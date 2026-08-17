@@ -27,8 +27,8 @@ export default function HintPanel({ hints, locale }: Props) {
           onClick={() => setShown((s) => Math.min(hints.length, s + 1))}
           className={`rounded-lg border px-3.5 py-1.5 text-sm font-medium transition ${
             exhausted
-              ? 'cursor-not-allowed border-line text-slate-600'
-              : 'border-amber-400/50 bg-amber-400/10 text-amber-300 hover:bg-amber-400/20'
+              ? 'cursor-not-allowed border-line text-slate-400'
+              : 'border-amber-500/50 bg-amber-100 text-amber-700 hover:bg-amber-200/70'
           }`}
         >
           💡 {label.hint}
@@ -50,8 +50,8 @@ export default function HintPanel({ hints, locale }: Props) {
             transition={{ duration: 0.22 }}
             className="overflow-hidden"
           >
-            <p className="mt-2 rounded-lg border border-line bg-panel-2 px-3.5 py-2.5 text-sm text-slate-300">
-              <span className="mr-2 text-amber-400/80">#{i + 1}</span>
+            <p className="mt-2 rounded-lg border border-line bg-panel-2 px-3.5 py-2.5 text-sm text-slate-700">
+              <span className="mr-2 text-amber-600">#{i + 1}</span>
               {h}
             </p>
           </motion.div>

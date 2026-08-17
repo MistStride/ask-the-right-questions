@@ -34,7 +34,7 @@ export default function GapNode({
       <motion.span
         initial={{ scale: 0.9, opacity: 0.6 }}
         animate={{ scale: 1, opacity: 1 }}
-        className="mx-0.5 inline-flex items-center gap-1 rounded-md border border-amber-400/60 bg-amber-400/15 px-1.5 py-0.5 align-middle text-xs font-semibold text-amber-200 shadow-[0_0_14px_rgba(251,191,36,0.3)]"
+        className="mx-0.5 inline-flex items-center gap-1 rounded-md border border-amber-500/60 bg-amber-100 px-1.5 py-0.5 align-middle text-xs font-semibold text-amber-800"
       >
         🩹 {labels.patched}
       </motion.span>
@@ -48,11 +48,11 @@ export default function GapNode({
         onClick={() => setOpen((o) => !o)}
         animate={
           wrongFlash
-            ? { x: [0, -4, 4, -3, 3, 0], backgroundColor: 'rgba(244,63,94,0.3)' }
-            : { x: 0, backgroundColor: 'rgba(148,163,184,0.08)' }
+            ? { x: [0, -4, 4, -3, 3, 0], backgroundColor: 'rgba(225,29,72,0.16)' }
+            : { x: 0, backgroundColor: 'rgba(14,116,144,0)' }
         }
         transition={wrongFlash ? { duration: 0.45 } : { duration: 0.2 }}
-        className="inline-flex items-center gap-1 rounded-md border border-dashed border-amber-400/70 px-2 py-0.5 text-sm font-bold text-amber-300 hover:bg-amber-400/10"
+        className="inline-flex items-center gap-1 rounded-md border border-dashed border-amber-500/60 px-2 py-0.5 text-sm font-bold text-amber-700 hover:bg-amber-100"
       >
         🕳️ ?
       </motion.button>
@@ -60,9 +60,9 @@ export default function GapNode({
         <motion.div
           initial={{ opacity: 0, y: -4, scale: 0.98 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
-          className="absolute left-0 top-full z-20 mt-1.5 w-72 rounded-xl border border-line bg-[#0d1826] p-2 shadow-xl"
+          className="absolute left-0 top-full z-20 mt-1.5 w-72 rounded-xl border border-line bg-white p-2 shadow-[0_8px_28px_rgba(90,72,40,0.18)]"
         >
-          <p className="px-1.5 pb-1 text-[11px] font-medium text-amber-300/90">{labels.hint}</p>
+          <p className="px-1.5 pb-1 text-[11px] font-medium text-amber-700">{labels.hint}</p>
           {candidates.map((c) => (
             <button
               key={c}
@@ -71,9 +71,9 @@ export default function GapNode({
                 setOpen(false)
                 onPick(gapId, c)
               }}
-              className="block w-full rounded-lg px-2.5 py-2 text-left text-xs leading-relaxed text-slate-300 transition hover:bg-panel-2 hover:text-slate-100"
+              className="block w-full rounded-lg px-2.5 py-2 text-left text-xs leading-relaxed text-slate-600 transition hover:bg-panel-2 hover:text-slate-900"
             >
-              {c === correctText && <span className="mr-1 text-amber-400">★</span>}
+              {c === correctText && <span className="mr-1 text-amber-600">★</span>}
               {c}
             </button>
           ))}

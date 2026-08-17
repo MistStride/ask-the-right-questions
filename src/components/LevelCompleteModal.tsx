@@ -67,37 +67,37 @@ export default function LevelCompleteModal({
   const t = LABELS[locale]
 
   return (
-    <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm">
+    <div className="fixed inset-0 z-40 flex items-center justify-center bg-slate-900/30 p-4 backdrop-blur-sm">
       <motion.div
         initial={{ opacity: 0, scale: 0.85, y: 24 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ type: 'spring', stiffness: 300, damping: 24 }}
-        className="relative w-full max-w-lg overflow-hidden rounded-2xl border border-gold/40 bg-panel shadow-[0_0_60px_rgba(245,185,66,0.15)]"
+        className="relative w-full max-w-lg overflow-hidden rounded-2xl border border-gold/50 bg-white shadow-[0_18px_50px_rgba(120,95,45,0.22)]"
       >
         {/* 顶部金色光芒 */}
-        <div className="pointer-events-none absolute inset-x-0 -top-24 h-48 bg-gold/10 blur-3xl" />
+        <div className="pointer-events-none absolute inset-x-0 -top-24 h-48 bg-amber-200/50 blur-3xl" />
 
         <div className="relative p-6 sm:p-7">
-          <div className="flex items-center gap-2 text-gold">
+          <div className="flex items-center gap-2 text-amber-700">
             <span className="text-2xl">✨</span>
             <h2 className="text-xl font-bold tracking-wide">{t.complete}</h2>
           </div>
-          <p className="mt-1 text-sm text-slate-400">{t.sub}</p>
+          <p className="mt-1 text-sm text-slate-500">{t.sub}</p>
           <p className="mt-2 text-xs font-semibold uppercase tracking-widest text-slate-500">
             {levelTitle}
           </p>
 
           {/* 分数 + 雷达维度 */}
           <div className="mt-4 flex flex-wrap items-center gap-3">
-            <div className="flex items-center gap-2 rounded-xl border border-cyan-400/40 bg-cyan-400/10 px-4 py-2">
-              <span className="text-xs text-cyan-300">{t.scoreLabel}</span>
-              <span className="font-mono text-2xl font-bold text-cyan-300">{score}</span>
-              <span className="text-xs text-cyan-500">/100</span>
+            <div className="flex items-center gap-2 rounded-xl border border-cyan-600/40 bg-cyan-50 px-4 py-2">
+              <span className="text-xs text-cyan-700">{t.scoreLabel}</span>
+              <span className="font-mono text-2xl font-bold text-cyan-700">{score}</span>
+              <span className="text-xs text-cyan-600">/100</span>
             </div>
             {rewardTags.map((tag) => (
               <span
                 key={tag}
-                className="rounded-full border border-gold/40 bg-gold/10 px-3 py-1 text-xs font-medium text-amber-300"
+                className="rounded-full border border-amber-500/40 bg-amber-50 px-3 py-1 text-xs font-medium text-amber-700"
               >
                 {t.badge} {TAG_LABELS[tag][locale]}
               </span>
@@ -109,7 +109,7 @@ export default function LevelCompleteModal({
             <h3 className="text-xs font-semibold uppercase tracking-widest text-slate-400">
               {t.explain}
             </h3>
-            <p className="mt-2 text-sm leading-relaxed text-slate-300">{explanation}</p>
+            <p className="mt-2 text-sm leading-relaxed text-slate-700">{explanation}</p>
           </div>
 
           {contributor && (
@@ -124,7 +124,7 @@ export default function LevelCompleteModal({
               <button
                 type="button"
                 onClick={onNext}
-                className="rounded-xl bg-gold px-4 py-2.5 text-sm font-semibold text-abyss transition hover:brightness-110"
+                className="rounded-xl bg-gold px-4 py-2.5 text-sm font-semibold text-white transition hover:brightness-105"
               >
                 {locale === 'zh' ? '下一关 →' : 'Next Level →'}
               </button>
@@ -132,7 +132,7 @@ export default function LevelCompleteModal({
               <button
                 type="button"
                 onClick={onHome}
-                className="rounded-xl bg-gold px-4 py-2.5 text-sm font-semibold text-abyss shadow-[0_0_20px_rgba(245,185,66,0.4)] transition hover:brightness-110"
+                className="rounded-xl bg-gold px-4 py-2.5 text-sm font-semibold text-white shadow-[0_6px_20px_rgba(217,154,30,0.35)] transition hover:brightness-110"
               >
                 🎉 {locale === 'zh' ? '全部通关' : 'All Cleared'}
               </button>
@@ -140,7 +140,7 @@ export default function LevelCompleteModal({
             <button
               type="button"
               onClick={onReplay}
-              className="rounded-xl border border-line px-4 py-2.5 text-sm font-medium text-slate-300 hover:bg-panel-2"
+              className="rounded-xl border border-line px-4 py-2.5 text-sm font-medium text-slate-600 hover:bg-panel-2"
             >
               {t.replay}
             </button>
@@ -148,7 +148,7 @@ export default function LevelCompleteModal({
               <button
                 type="button"
                 onClick={onHome}
-                className="rounded-xl border border-line px-4 py-2.5 text-sm font-medium text-slate-300 hover:bg-panel-2"
+                className="rounded-xl border border-line px-4 py-2.5 text-sm font-medium text-slate-600 hover:bg-panel-2"
               >
                 {t.home}
               </button>

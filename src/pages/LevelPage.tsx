@@ -69,7 +69,7 @@ export default function LevelPage() {
     <div className="min-h-screen bg-abyss pt-8">
       {/* 顶栏：语言切换 */}
       <header className="mx-auto mb-6 flex max-w-3xl items-center justify-between px-4">
-        <div className="flex items-center gap-2 text-gold">
+        <div className="flex items-center gap-2 text-amber-700">
           <span className="text-xl">⛏</span>
           <span className="text-sm font-bold tracking-wide">
             {locale === 'zh' ? '学会提问' : 'Asking the Right Questions'}
@@ -101,7 +101,7 @@ function LangSwitch() {
     <button
       type="button"
       onClick={() => setLocale(locale === 'zh' ? 'en' : 'zh')}
-      className="rounded-lg border border-line px-3 py-1.5 text-xs font-semibold text-slate-300 transition hover:border-gold/50 hover:text-gold"
+      className="rounded-lg border border-line px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-amber-600/50 hover:text-amber-700"
     >
       {locale === 'zh' ? 'EN' : '中文'}
     </button>
