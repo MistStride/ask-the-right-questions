@@ -1,19 +1,10 @@
-// 我的思维雷达（阶段 7 将升级为六维雷达图 + 分享卡；当前展示已完成关卡与维度进度条）
+// 我的思维雷达 —— 六维雷达图（阶段 3）+ 已完成关卡列表（阶段 7 将再加分享卡）
 import { useNavigate } from 'react-router-dom'
 import { useSettingsStore } from '../store/settingsStore'
 import { useProgressStore } from '../store/progressStore'
 import { LEVELS } from '../content/levelIndex'
 import { CHAPTERS } from '../content/chapters'
-import type { RadarDimension } from '../schema/levelTypes'
-
-const DIMENSIONS: { key: RadarDimension; zh: string; en: string; icon: string }[] = [
-  { key: 'structure', zh: '结构识别力', en: 'Structure', icon: '🧱' },
-  { key: 'evidence', zh: '证据鉴别力', en: 'Evidence', icon: '🔎' },
-  { key: 'assumption', zh: '假设挖掘力', en: 'Assumption', icon: '⛏️' },
-  { key: 'fallacy', zh: '谬误免疫力', en: 'Fallacy', icon: '🛡️' },
-  { key: 'data', zh: '数据免疫力', en: 'Data', icon: '🧮' },
-  { key: 'emotion', zh: '情绪自控力', en: 'Emotion', icon: '🐘' },
-]
+import RadarChart from '../components/RadarChart'
 
 export default function ProfilePage() {
   const navigate = useNavigate()
@@ -28,7 +19,7 @@ export default function ProfilePage() {
         <button
           type="button"
           onClick={() => navigate('/')}
-          className="rounded-lg border border-line px-3 py-1.5 text-sm text-slate-400 transition hover:bg-panel-2 hover:text-slate-200"
+          className="rounded-lg border border-line px-3 py-1.5 text-sm text-slate-400 transition hover:bg-panel-2 hover:text-slate-700"
         >
           ← {locale === 'zh' ? '返回地图' : 'Back'}
         </button>
@@ -39,68 +30,53 @@ export default function ProfilePage() {
       </header>
 
       <main className="mx-auto max-w-3xl px-4 pb-16 pt-8">
-        <div className="grid gap-4 sm:grid-cols-2">
-          {/* 维度进度 */}
-          <section className="rounded-2xl border border-line bg-panel p-5">
+        {/* 六维雷达图 */}
+        <section className="rounded-2xl border border-line bg-panel p-5 shadow-[0_1px_8px_rgba(190,172,132,0.14)]">
+          <div className="flex items-baseline justify-between">
             <h2 className="text-sm font-semibold text-slate-800">
-              {locale === 'zh' ? '六维思维成长' : 'Six-dimension growth'}
+              🧭 {locale === 'zh' ? '六维思维雷达' : 'Six-dimension Radar'}
             </h2>
-            <div className="mt-4 space-y-3">
-              {DIMENSIONS.map((d) => (
-                <div key={d.key}>
-                  <div className="mb-1 flex justify-between text-xs">
-                    <span className="text-slate-400">
-                      {d.icon} {d[locale]}
-                    </span>
-                    <span className="font-mono text-slate-300">{Math.round(radar[d.key])}</span>
-                  </div>
-                  <div className="h-1.5 overflow-hidden rounded-full bg-panel-2">
-                    <div
-                      className="h-full rounded-full bg-gradient-to-r from-amber-500 to-amber-600"
-                      style={{ width: `${radar[d.key]}%` }}
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-            <p className="mt-4 text-xs text-slate-500">
-              {locale === 'zh' ? '通关关卡点亮对应维度 · 雷达图即将到来' : 'Clear levels to light up dimensions · radar chart coming soon'}
-            </p>
-          </section>
+            <span className="font-mono text-xs text-gold">
+              {doneCount}/{LEVELS.length} {locale === 'zh' ? '关' : 'levels'}
+            </span>
+          </div>
+          <div className="mt-3">
+            <RadarChart values={radar} locale={locale} />
+          </div>
+        </section>
 
-          {/* 已完成关卡 */}
-          <section className="rounded-2xl border border-line bg-panel p-5">
-            <h2 className="text-sm font-semibold text-slate-800">
-              {locale === 'zh' ? '已完成关卡' : 'Completed levels'}{' '}
-              <span className="font-mono text-gold">({doneCount}/{LEVELS.length})</span>
-            </h2>
-            <div className="mt-4 space-y-2">
-              {LEVELS.map((l) => {
-                const rec = completed[l.meta.levelId]
-                const chapter = CHAPTERS.find((c) => c.id === l.meta.chapter)
-                return (
-                  <button
-                    key={l.meta.levelId}
-                    type="button"
-                    onClick={() => navigate(`/level/${l.meta.levelId}`)}
-                    className="flex w-full items-center gap-3 rounded-xl border border-line bg-panel-2 px-3.5 py-2.5 text-left transition hover:border-amber-600/40"
-                  >
-                    <span className={rec ? 'text-amber-600' : 'text-slate-400'}>
-                      {rec ? '★' : '☆'}
-                    </span>
-                    <span className="flex-1 truncate text-sm text-slate-700">
-                      {locale === 'zh' ? `第${l.meta.chapter}章` : `Ch.${l.meta.chapter}`}{' '}
-                      {chapter?.title[locale]}
-                    </span>
-                    {rec && (
-                      <span className="font-mono text-xs text-cyan-700">{rec.score}</span>
-                    )}
-                  </button>
-                )
-              })}
-            </div>
-          </section>
-        </div>
+        {/* 已完成关卡 */}
+        <section className="mt-4 rounded-2xl border border-line bg-panel p-5">
+          <h2 className="text-sm font-semibold text-slate-800">
+            {locale === 'zh' ? '已完成关卡' : 'Completed levels'}{' '}
+            <span className="font-mono text-gold">({doneCount}/{LEVELS.length})</span>
+          </h2>
+          <div className="mt-4 space-y-2">
+            {LEVELS.map((l) => {
+              const rec = completed[l.meta.levelId]
+              const chapter = CHAPTERS.find((c) => c.id === l.meta.chapter)
+              return (
+                <button
+                  key={l.meta.levelId}
+                  type="button"
+                  onClick={() => navigate(`/level/${l.meta.levelId}`)}
+                  className="flex w-full items-center gap-3 rounded-xl border border-line bg-panel-2 px-3.5 py-2.5 text-left transition hover:border-amber-600/40"
+                >
+                  <span className={rec ? 'text-amber-600' : 'text-slate-400'}>
+                    {rec ? '★' : '☆'}
+                  </span>
+                  <span className="flex-1 truncate text-sm text-slate-700">
+                    {locale === 'zh' ? `第${l.meta.chapter}章` : `Ch.${l.meta.chapter}`}{' '}
+                    {chapter?.title[locale]}
+                  </span>
+                  {rec && (
+                    <span className="font-mono text-xs text-cyan-700">{rec.score}</span>
+                  )}
+                </button>
+              )
+            })}
+          </div>
+        </section>
       </main>
     </div>
   )
