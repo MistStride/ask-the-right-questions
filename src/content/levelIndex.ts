@@ -1,7 +1,19 @@
 // 关卡索引：自动扫描 content/levels/ 下的所有关卡 JSON。
 // 新增关卡只需放入对应 chapter 目录，这里会自动发现并做 Zod 校验。
-import { xrayLevelSchema, levelTextsSchema } from '../schema/levelSchema'
-import type { LevelDefinition, XrayLevelData, XrayTexts } from '../schema/levelTypes'
+// 支持两种引擎：xray（论证透视镜）与 courtroom（逻辑法庭）。
+import {
+  xrayLevelSchema,
+  levelTextsSchema,
+  courtroomLevelSchema,
+  courtroomLevelTextsSchema,
+} from '../schema/levelSchema'
+import type {
+  CourtroomLevelData,
+  CourtroomTexts,
+  LevelDefinition,
+  XrayLevelData,
+  XrayTexts,
+} from '../schema/levelTypes'
 
 // 逻辑文件：level-01.json / level-02.json ...（在下方过滤掉 *.i18n.json）
 const allLevelFiles = import.meta.glob('./levels/**/level-*.json', {
@@ -82,9 +94,93 @@ function validateSteps(path: string, levelId: string, data: XrayLevelData) {
   }
 }
 
+/** 引擎B 法庭关卡校验：破绽句可匹配 + 问题可命中 + 血条能扣完 */
+function validateCourtroom(
+  path: string,
+  levelId: string,
+  data: CourtroomLevelData,
+  texts: Record<'zh' | 'en', CourtroomTexts>,
+) {
+  for (const locale of ['zh', 'en'] as const) {
+    const t = texts[locale]
+    for (const spot of data.weakSpots) {
+      const anchor = t.textRefs[spot.anchorTextRef]
+      if (!anchor) {
+        fail(path, `关卡 ${levelId} 破绽 ${spot.spotId} 引用了不存在的 textRef「${spot.anchorTextRef}」（${locale} 缺失）`)
+      }
+      if (!t.testimony.includes(anchor)) {
+        fail(path, `关卡 ${levelId} 破绽句「${anchor}」(${locale}) 无法在 testimony 中匹配到`)
+      }
+      if (!t.textRefs[spot.debunkRef]) {
+        fail(path, `关卡 ${levelId} 破绽 ${spot.spotId} 引用了不存在的 debunkRef「${spot.debunkRef}」（${locale}）`)
+      }
+    }
+    for (const q of data.questionBank) {
+      if (!t.textRefs[q.textRef]) {
+        fail(path, `关卡 ${levelId} 问题 ${q.questionId} 引用了不存在的 textRef「${q.textRef}」（${locale}）`)
+      }
+    }
+  }
+
+  // 跨语言规则（与文案无关）
+  const issueTypes = new Set(data.weakSpots.map((s) => s.issueType))
+  for (const q of data.questionBank) {
+    if (!issueTypes.has(q.targetIssue)) {
+      fail(path, `关卡 ${levelId} 问题 ${q.questionId} 的 targetIssue「${q.targetIssue}」没有对应的破绽（废问题）`)
+    }
+  }
+  const coveredIssues = new Set(data.questionBank.filter((q) => q.isRelevant).map((q) => q.targetIssue))
+  for (const spot of data.weakSpots) {
+    if (!coveredIssues.has(spot.issueType)) {
+      fail(path, `关卡 ${levelId} 破绽 ${spot.spotId} 的 issueType「${spot.issueType}」没有任何相关问题可命中`)
+    }
+  }
+  const sum = data.weakSpots.reduce((a, s) => a + s.sharpness, 0)
+  if (sum < data.credibility) {
+    fail(path, `关卡 ${levelId} 破绽 sharpness 合计 ${sum} < credibility ${data.credibility}（血条永远扣不完）`)
+  }
+}
+
 function buildLevels(): LevelDefinition[] {
   const defs: LevelDefinition[] = []
   for (const [path, raw] of Object.entries(levelFiles)) {
+    const engine = (raw as { engine?: string }).engine
+
+    if (engine === 'courtroom') {
+      const parsed = courtroomLevelSchema.safeParse(raw as unknown)
+      if (!parsed.success) {
+        fail(path, `逻辑文件不合法: ${parsed.error.issues.map((i) => `${i.path.join('.')} ${i.message}`).join('; ')}`)
+      }
+      const data = parsed.data as CourtroomLevelData
+
+      const i18nPath = path.replace(/\.json$/, '.i18n.json')
+      const rawTexts = textFiles[i18nPath]
+      if (!rawTexts) fail(path, `缺少翻译文件 ${i18nPath}`)
+
+      const textsParsed = courtroomLevelTextsSchema.safeParse(rawTexts as unknown)
+      if (!textsParsed.success) {
+        fail(path, `翻译文件不合法: ${textsParsed.error.issues.map((i) => `${i.path.join('.')} ${i.message}`).join('; ')}`)
+      }
+      const texts = textsParsed.data as Record<'zh' | 'en', CourtroomTexts>
+
+      validateCourtroom(path, data.levelId, data, texts)
+
+      defs.push({
+        meta: {
+          levelId: data.levelId,
+          chapter: data.chapter,
+          engine: data.engine,
+          difficulty: data.difficulty,
+          contributor: data.contributor,
+          rewardTags: data.rewardTags,
+        },
+        data,
+        texts,
+      })
+      continue
+    }
+
+    // 默认走引擎A xray
     const parsed = xrayLevelSchema.safeParse(raw as unknown)
     if (!parsed.success) {
       fail(path, `逻辑文件不合法: ${parsed.error.issues.map((i) => `${i.path.join('.')} ${i.message}`).join('; ')}`)
@@ -99,7 +195,7 @@ function buildLevels(): LevelDefinition[] {
     if (!textsParsed.success) {
       fail(path, `翻译文件不合法: ${textsParsed.error.issues.map((i) => `${i.path.join('.')} ${i.message}`).join('; ')}`)
     }
-    const texts = textsParsed.data as LevelDefinition['texts']
+    const texts = textsParsed.data as Record<'zh' | 'en', XrayTexts>
 
     validateAnchors(path, data.levelId, data, texts)
     validateSteps(path, data.levelId, data)

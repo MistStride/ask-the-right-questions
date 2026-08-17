@@ -1,0 +1,50 @@
+{
+  "zh": {
+    "caseTitle": "病历：一位烦躁的来访者",
+    "witnessName": "小李的自述",
+    "testimony": "大夫，我最近特别烦。我们领导在会上批评了我的方案，说他觉得太激进了。哼，他自己连大学都没上过，凭什么评价我的专业方案？要我说，他就是嫉妒我学历比他高。你们要是听了他的话，肯定也会觉得我不好，那我干脆辞职算了——反正这公司迟早要完，我听说隔壁组已经走了三个人了。",
+    "textRefs": {
+      "spot_ad_hominem": "他自己连大学都没上过，凭什么评价我的专业方案",
+      "spot_slippery": "你们要是听了他的话，肯定也会觉得我不好，那我干脆辞职算了",
+      "spot_hasty": "我听说隔壁组已经走了三个人了",
+      "debunk_ad_hominem": "诉诸人身：攻击对方的身份、学历，而不是针对论证本身。领导有没有大学文凭，和他对方案的评价是否合理是两回事。",
+      "debunk_slippery": "滑坡谬误：从「领导批评方案」一路滑到「公司迟早要完」，中间每一步都缺乏必然性，链条越滑越远。",
+      "debunk_hasty": "以偏概全：三个人离职是一个小样本，不能推出「公司迟早要完」这种全局结论。",
+      "q_ad_hominem": "领导有没有大学文凭，与他评价的对错有关系吗？",
+      "q_slippery": "从批评方案到公司倒闭，中间每一环都必然成立吗？",
+      "q_hasty": "三个人的离职能代表整个公司的状况吗？",
+      "q_d1": "领导平时几点下班？",
+      "q_d2": "您今天午饭吃的什么？"
+    },
+    "hints": [
+      "注意：他是在评价领导的「人」，还是在评价领导的「观点」？",
+      "从批评方案到公司要完，中间是不是跳了好几级？",
+      "几个人的例子，能代表整个公司吗？"
+    ],
+    "explanation": "这段自述藏着三种常见谬误：①诉诸人身——用「没上过大学」否定对方的观点，而不是讨论观点本身；②滑坡谬误——把一次批评推演成公司倒闭，缺少每一环的证据；③以偏概全——三个人的离职被夸大成公司的整体命运。识别谬误，是抵御被带节奏的第一道防线。"
+  },
+  "en": {
+    "caseTitle": "Record: A Frustrated Visitor",
+    "witnessName": "Patient Li",
+    "testimony": "Doctor, I have been really upset lately. Our manager criticized my proposal at the meeting, saying it was too aggressive. Well, he never even went to college, so what right does he have to judge my professional proposal? If you listen to him, you will surely think badly of me too, and then I might as well quit — this company is going to collapse anyway. I heard three people already left the team next door.",
+    "textRefs": {
+      "spot_ad_hominem": "he never even went to college",
+      "spot_slippery": "you will surely think badly of me too",
+      "spot_hasty": "three people already left the team next door",
+      "debunk_ad_hominem": "Ad hominem: attacking the person's background instead of the argument. Whether the manager went to college has nothing to do with whether his critique is valid.",
+      "debunk_slippery": "Slippery slope: from \"he criticized my proposal\" all the way to \"the company will collapse\" — each step lacks necessity, and the chain slides further and further.",
+      "debunk_hasty": "Hasty generalization: three resignations are a tiny sample and cannot support the sweeping conclusion that the whole company is doomed.",
+      "q_ad_hominem": "Does whether the manager went to college change whether his critique is right?",
+      "q_slippery": "Is every step from a criticism to a collapsed company truly inevitable?",
+      "q_hasty": "Can three resignations represent the whole company?",
+      "q_d1": "What time does the manager usually leave work?",
+      "q_d2": "What did you eat for lunch today?"
+    },
+    "hints": [
+      "Is he attacking the manager's person, or the manager's argument?",
+      "From criticism to collapse — did the reasoning skip several steps?",
+      "Can a few examples represent the entire company?"
+    ],
+    "explanation": "This monologue hides three common fallacies: ① ad hominem — dismissing the argument because of the manager's education, instead of addressing the argument itself; ② slippery slope — stretching one criticism into a company collapse without evidence at each step; ③ hasty generalization — blowing three resignations up into the company's whole fate. Spotting fallacies is the first line of defense against being led astray."
+  }
+}

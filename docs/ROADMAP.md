@@ -15,7 +15,8 @@
 - ✅ 阶段 2：引擎 A 铺量（第 3/5/11 章 + correctChain 连线 / dig 挖掘 / gap 空洞 + Schema 扩展）
 - ✅ 引导优化：目标栏 ObjectiveBar + 串行单目标（用户反馈后追加，不在原路线图内）
 - ✅ 阶段 3 完成：3.2 手写 SVG 六维雷达图（RadarChart 生长动画 + 图例 chips）已上线；3.1 正式 i18n 评估完成（现有轻量字典已满足"右上角切语言全站同步切换"验收，react-i18next 迁移视为"不可见重构"暂缓）
-- ✅ 推送完成：远程 main = 3fbb9d3，仓库 `github.com/MistStride/ask-the-right-questions`（50 文件全到位）
+- ✅ 阶段 4 完成：引擎 B 逻辑法庭（4.1 类型+Zod 4.2 交互 4.3 第 7 章核心关 4.4 第 6/9 章变体）—详见 `docs/ENGINE-B-DESIGN.md`
+- ✅ 推送完成：远程 main = 2782a6a，仓库 `github.com/MistStride/ask-the-right-questions`
 
 ---
 

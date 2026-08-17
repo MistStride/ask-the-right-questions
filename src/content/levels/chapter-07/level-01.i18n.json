@@ -1,0 +1,50 @@
+{
+  "zh": {
+    "caseTitle": "案件：神奇「纤体燃脂茶」",
+    "witnessName": "史密斯博士",
+    "testimony": "我是「健康生活研究所」的营养学专家史密斯博士。我们研究所最新研发的「纤体燃脂茶」，经我本人亲身验证效果显著：我连续饮用三天，体重就下降了五斤！如果您也想拥有这样的效果，只需购买我们的产品，每天三杯，一个月就能瘦二十斤。许多知名媒体都报道过我们研究所，这足以证明我们的专业水准。",
+    "textRefs": {
+      "spot_expert_qual": "营养学专家史密斯博士",
+      "spot_personal": "我连续饮用三天，体重就下降了五斤",
+      "spot_conflict": "只需购买我们的产品",
+      "debunk_expert": "自称「专家」不等于有资质——证词里没有任何学历、认证或权威机构的佐证，头衔可以自封。",
+      "debunk_personal": "三天瘦五斤只是个人体验，不是证据。可能是巧合、测量误差或安慰剂效应，个体案例不能推广到所有人。",
+      "debunk_conflict": "专家是产品的研发者与销售者，存在直接利益冲突——他越卖力推销获利越多，证言的可信度大打折扣。",
+      "q_qualification": "您是否有权威机构认证的营养学资质？",
+      "q_personal": "您三天瘦五斤的个人体验，能代表产品对所有人有效吗？",
+      "q_conflict": "您是否从这款产品的销售中直接获利？",
+      "q_d1": "这个茶的口味是否醇厚？",
+      "q_d2": "您平时几点睡觉？"
+    },
+    "hints": [
+      "自称「专家」不等于真有资质——看看他能否给出硬凭证",
+      "一个人的个人体验，能代表所有人吗？",
+      "如果专家同时是卖家，他的话还客观吗？"
+    ],
+    "explanation": "这段证言有三处破绽：①「专家」头衔无据可查，自称不等于有资质；②用个人见证（三天瘦五斤）代替普遍证据，个体案例不能推广；③专家同时是产品卖家，利益冲突让证言失去客观性。学会质疑信源——尤其是利益相关的「专家」——是批判性思维的关键一步。"
+  },
+  "en": {
+    "caseTitle": "Case: The Miraculous Slim-Burn Tea",
+    "witnessName": "Dr. Smith",
+    "testimony": "I am Dr. Smith, a nutrition expert from the Healthy Life Research Institute. Our institute's newly developed Slim-Burn Tea has been personally verified by me with remarkable results: after drinking it for three days, I lost five pounds! If you want the same results, simply purchase our product and drink three cups a day — you will lose twenty pounds in a month. Many well-known media outlets have covered our institute, which fully proves our professionalism.",
+    "textRefs": {
+      "spot_expert_qual": "a nutrition expert from the Healthy Life Research Institute",
+      "spot_personal": "after drinking it for three days, I lost five pounds",
+      "spot_conflict": "simply purchase our product",
+      "debunk_expert": "Calling yourself an \"expert\" is not the same as being qualified — the testimony gives no degree, certification, or authority, and titles can be self-appointed.",
+      "debunk_personal": "Losing five pounds in three days is a personal anecdote, not evidence. It could be coincidence, measurement error, or a placebo effect — one case cannot be generalized to everyone.",
+      "debunk_conflict": "The expert is the product's developer and seller — a direct conflict of interest. The more he sells, the more he earns, so his testimony loses credibility.",
+      "q_qualification": "Do you hold any nutrition qualification certified by an authoritative body?",
+      "q_personal": "Does your personal three-day weight loss prove the product works for everyone?",
+      "q_conflict": "Do you profit directly from the sales of this product?",
+      "q_d1": "Is the tea's flavor rich and smooth?",
+      "q_d2": "What time do you usually go to bed?"
+    },
+    "hints": [
+      "Calling yourself an \"expert\" is not the same as being one — ask for hard credentials",
+      "Can one person's experience represent everyone?",
+      "If the expert is also the seller, can his words still be objective?"
+    ],
+    "explanation": "This testimony has three flaws: ① the \"expert\" title has no verifiable credentials; ② personal anecdote (three days, five pounds) is used as general evidence; ③ the expert is also the seller, so the conflict of interest destroys objectivity. Learning to question sources — especially interested \"experts\" — is a key step in critical thinking."
+  }
+}

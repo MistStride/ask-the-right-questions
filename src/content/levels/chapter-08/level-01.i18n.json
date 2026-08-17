@@ -1,0 +1,50 @@
+{
+  "zh": {
+    "caseTitle": "案件：一份「权威」研究报告",
+    "witnessName": "举证研究员",
+    "testimony": "各位陪审员，我要向你们展示一项权威研究。我们调查了一百名受访者，发现其中百分之八十都表示睡眠时间越短，工作效率越高。据此我们完全可以得出结论：减少睡眠可以提升工作效率。这项研究还发现，那些工作效率最高的人都不喝咖啡，所以咖啡因对工作效率是有害的。",
+    "textRefs": {
+      "spot_small_sample": "我们调查了一百名受访者",
+      "spot_causation": "睡眠时间越短，工作效率越高",
+      "spot_no_control": "那些工作效率最高的人都不喝咖啡",
+      "debunk_small_sample": "样本太小：一百名受访者不足以代表全体人群，且没有说明如何抽样——样本代表性存疑。",
+      "debunk_causation": "相关≠因果：睡得少和效率高同时出现，可能是工作压力大的人睡得更少，也可能是方向反了——「谁因谁果」没有证据支撑。",
+      "debunk_no_control": "缺乏对照组：不喝咖啡的人效率高，可能是他们本来睡眠习惯就好，无法排除其他变量，不能归因于咖啡因。",
+      "q_sample": "一百名受访者是如何选取的？能代表全体人群吗？",
+      "q_causation": "睡得少和效率高，谁是因谁是果？会不会是别的因素在起作用？",
+      "q_control": "不喝咖啡的人效率高，是否对照过其他生活习惯？",
+      "q_d1": "这项调查是在哪个城市进行的？",
+      "q_d2": "受访者喜欢什么颜色的办公桌？"
+    },
+    "hints": [
+      "一百人，能代表所有人吗？怎么选的样本？",
+      "两件事一起出现，就一定是「因为所以」吗？",
+      "不喝咖啡的人效率高——有没有可能是别的原因？"
+    ],
+    "explanation": "这份「权威研究」有三个硬伤：①样本只有一百人且抽样方式不明，代表性不足；②「睡得少」与「效率高」只是相关，被偷换成因果；③「不喝咖啡」组没有对照组，无法排除其他变量。看到研究结论，先问三件事：样本够不够、相关还是因果、有没有对照组。"
+  },
+  "en": {
+    "caseTitle": "Case: An \"Authoritative\" Study",
+    "witnessName": "Lead Researcher",
+    "testimony": "Ladies and gentlemen of the jury, I present to you an authoritative study. We surveyed one hundred participants and found that eighty percent of them reported that the less sleep they got, the more productive they were. We can therefore conclude that reducing sleep improves work efficiency. The study also found that the most productive workers never drink coffee, so caffeine is harmful to productivity.",
+    "textRefs": {
+      "spot_small_sample": "We surveyed one hundred participants",
+      "spot_causation": "the less sleep they got, the more productive they were",
+      "spot_no_control": "the most productive workers never drink coffee",
+      "debunk_small_sample": "Too small a sample: one hundred participants cannot represent everyone, and no sampling method is given — representativeness is doubtful.",
+      "debunk_causation": "Correlation is not causation: less sleep and higher productivity may both stem from work pressure, or the direction may even be reversed — no evidence supports the causal claim.",
+      "debunk_no_control": "No control group: productive non-coffee-drinkers may simply have better sleep habits; other variables cannot be excluded, so the effect cannot be attributed to caffeine.",
+      "q_sample": "How were the one hundred participants selected? Do they represent everyone?",
+      "q_causation": "Between less sleep and higher productivity, which is the cause? Could another factor be at work?",
+      "q_control": "For the productive non-coffee-drinkers, were other lifestyle habits controlled?",
+      "q_d1": "In which city was this survey conducted?",
+      "q_d2": "What color are the participants' desks?"
+    },
+    "hints": [
+      "Can one hundred people represent everyone? How was the sample chosen?",
+      "Do two things happening together always mean one causes the other?",
+      "Non-coffee-drinkers are productive — could there be another reason?"
+    ],
+    "explanation": "This \"authoritative\" study has three hard flaws: ① a sample of only one hundred with unclear sampling, lacking representativeness; ② \"less sleep\" and \"productivity\" are merely correlated but treated as causal; ③ the non-coffee group has no control, so other variables cannot be excluded. When you see a study's conclusion, ask three things: is the sample big enough, correlation or causation, and is there a control group?"
+  }
+}

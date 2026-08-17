@@ -94,12 +94,103 @@ export interface LevelTexts {
   en: XrayTexts
 }
 
+/* ---------------- 引擎B 逻辑法庭（第 6/7/8/9 章）---------------- */
+
+export type CourtroomMode = 'trial' | 'clinic' | 'lineup'
+// trial  庭审质询：证词一段，像报纸文章/气泡（第 7/8 章）
+// clinic 逻辑诊所：换皮成"病历 + 处方笺"，破绽=病灶，问题=诊断（第 6 章）
+// lineup 嫌疑人对质墙：证词自动按弱点切成多张陈述卡，问题=证据卡（第 9 章）
+
+/** 证词薄弱环节（破绽）：anchorTextRef 指向 i18n textRefs 中该薄弱句的原文 */
+export interface CourtroomWeakSpotRef {
+  spotId: string
+  anchorTextRef: string
+  /** 弱点类型，如 expert_qualification / small_sample / rival_cause */
+  issueType: string
+  /** 命中后展示的"戳穿解析"（i18n textRefs 键） */
+  debunkRef: string
+  /** 命中扣血量 1-100；全关合计应 ≥ credibility */
+  sharpness: number
+}
+
+export interface CourtroomQuestionRef {
+  questionId: string
+  textRef: string
+  /** 展示用锐度；实际扣血以 weakSpot.sharpness 为准 */
+  sharpness: number
+  /** 针对的 issueType（命中判据） */
+  targetIssue: string
+  /** true=真问题可命中；false=干扰问题（法官警告，不扣血） */
+  isRelevant: boolean
+}
+
+export interface CourtroomLevelData {
+  levelId: string
+  chapter: number
+  engine: 'courtroom'
+  difficulty: Difficulty
+  contributor?: string
+  rewardTags: RadarDimension[]
+  mode?: CourtroomMode
+  /** 完整证词（i18n 注入；lineup 模式渲染层自动按弱点切卡） */
+  testimony: string
+  /** 起始证词信誉 0-100 */
+  credibility: number
+  weakSpots: CourtroomWeakSpotRef[]
+  questionBank: CourtroomQuestionRef[]
+}
+
+export interface CourtroomTexts {
+  caseTitle: string
+  witnessName: string
+  testimony: string
+  /** 弱点句原文 / 问题文案 / debunk 解析的文案池 */
+  textRefs: Record<string, string>
+  hints: string[]
+  explanation: string
+}
+
+/** 引擎B 运行时关卡：逻辑 + 当前语言文案合并后，引擎只消费此结构 */
+export interface CourtroomRuntimeLevel {
+  meta: LevelDefinition['meta']
+  mode: CourtroomMode
+  caseTitle: string
+  witnessName: string
+  testimony: string
+  credibility: number
+  weakSpots: {
+    spotId: string
+    anchorText: string
+    issueType: string
+    debunkText: string
+    sharpness: number
+  }[]
+  questions: {
+    questionId: string
+    text: string
+    sharpness: number
+    targetIssue: string
+    isRelevant: boolean
+  }[]
+  hints: string[]
+  explanation: string
+}
+
 /* ---------------- 运行时组装后的关卡定义 ---------------- */
 
+export interface LevelMeta {
+  levelId: string
+  chapter: number
+  engine: EngineType
+  difficulty: Difficulty
+  contributor?: string
+  rewardTags: RadarDimension[]
+}
+
 export interface LevelDefinition {
-  meta: Pick<XrayLevelData, 'levelId' | 'chapter' | 'engine' | 'difficulty' | 'contributor' | 'rewardTags'>
-  data: XrayLevelData
-  texts: LevelTexts
+  meta: LevelMeta
+  data: XrayLevelData | CourtroomLevelData
+  texts: { zh: XrayTexts; en: XrayTexts } | { zh: CourtroomTexts; en: CourtroomTexts }
 }
 
 /** 引擎A 运行时锚点：逻辑 + 当前语言文案合并后的结果 */

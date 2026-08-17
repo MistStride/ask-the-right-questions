@@ -11,6 +11,8 @@
   --color-gold: #d99a1e; /* 淘金主色（浅底加深保证可读） */
   --color-gold-deep: #b0760f;
   --color-xray: #0e7490; /* 引擎A 深青 */
+  --color-court: #b91c1c; /* 引擎B 深红（逻辑法庭） */
+  --color-court-deep: #7f1d1d;
 
   --font-sans:
     'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', system-ui, sans-serif;
@@ -91,4 +93,27 @@ body {
 }
 .scroll-thin::-webkit-scrollbar-track {
   background: transparent;
+}
+
+/* 引擎B 试错抖动（法官警告时问题卡/破绽段闪红） */
+.court-shake {
+  animation: court-shake 0.45s ease;
+}
+@keyframes court-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-5px);
+  }
+  40% {
+    transform: translateX(5px);
+  }
+  60% {
+    transform: translateX(-4px);
+  }
+  80% {
+    transform: translateX(4px);
+  }
 }

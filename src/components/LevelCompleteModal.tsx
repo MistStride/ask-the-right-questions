@@ -23,6 +23,9 @@ interface Props {
   onHome: () => void
   onReplay: () => void
   locale: Locale
+  /** 引擎自定义通关标题/副标题（缺省用透视镜文案） */
+  completionTitle?: string
+  completionSub?: string
 }
 
 const LABELS = {
@@ -62,6 +65,8 @@ export default function LevelCompleteModal({
   onHome,
   onReplay,
   locale,
+  completionTitle,
+  completionSub,
 }: Props) {
   if (!open) return null
   const t = LABELS[locale]
@@ -80,9 +85,9 @@ export default function LevelCompleteModal({
         <div className="relative p-6 sm:p-7">
           <div className="flex items-center gap-2 text-amber-700">
             <span className="text-2xl">✨</span>
-            <h2 className="text-xl font-bold tracking-wide">{t.complete}</h2>
+            <h2 className="text-xl font-bold tracking-wide">{completionTitle ?? t.complete}</h2>
           </div>
-          <p className="mt-1 text-sm text-slate-500">{t.sub}</p>
+          <p className="mt-1 text-sm text-slate-500">{completionSub ?? t.sub}</p>
           <p className="mt-2 text-xs font-semibold uppercase tracking-widest text-slate-500">
             {levelTitle}
           </p>

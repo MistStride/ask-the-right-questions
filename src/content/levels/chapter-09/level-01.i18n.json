@@ -1,0 +1,46 @@
+{
+  "zh": {
+    "caseTitle": "案件：海滩边的异常数据",
+    "witnessName": "四名嫌疑人",
+    "testimony": "嫌疑人一：我们调查发现，冰淇淋销量和溺水人数几乎同时上升，所以我们断定是冰淇淋店导致了溺水事故的发生。嫌疑人二：我们还注意到，溺水者大多是不会游泳的儿童，所以溺水的根本原因就是儿童不会游泳。嫌疑人三：数据显示，天气越热，买冰淇淋的人越多，去游泳的人也越多，可见天气炎热才是这两件事同时上升的共同原因。",
+    "textRefs": {
+      "spot_post_hoc": "是冰淇淋店导致了溺水事故的发生",
+      "spot_hasty": "不会游泳的儿童",
+      "debunk_post_hoc": "时间先后≠因果：两件事同时上升，可能只是巧合，也可能有共同原因——「先发生」不等于「导致」。",
+      "debunk_hasty": "以偏概全：溺水者「大多是」不会游泳的儿童，但「大多」不等于「全部」，也没有完整样本，推不出「根本原因」这个结论。",
+      "q_post_hoc": "两件事几乎同时上升，就一定是谁导致了谁吗？",
+      "q_hasty": "「大多是」能推出「根本原因」吗？样本足够完整吗？",
+      "q_d1": "冰淇淋店最近是不是在做促销？",
+      "q_d2": "儿童平均几岁开始学游泳？",
+      "q_d3": "这些数据是谁统计的？"
+    },
+    "hints": [
+      "时间先后不等于因果——两件事同时上升可能有共同原因",
+      "「大多是」不等于「全部」，样本完整吗？",
+      "嫌疑人三的解释听起来更合理——它不是破绽，别打它"
+    ],
+    "explanation": "这是一个「寻找替代原因」的经典案例：①嫌疑人一把「同时上升」当成因果关系，犯了「时间先后≠因果」的错误；②嫌疑人二用「大多是」做以偏概全的推断；③嫌疑人三提出的「共同原因——天气」才是合理的替代解释。当有人给出一个原因时，先问：还有没有别的可能解释？"
+  },
+  "en": {
+    "caseTitle": "Case: Strange Data at the Beach",
+    "witnessName": "Four Suspects",
+    "testimony": "Suspect one: Our investigation found that ice cream sales and drowning incidents rose almost simultaneously, so we conclude that ice cream shops caused the drownings. Suspect two: We also noticed that most drowning victims were children who could not swim, so the root cause of drowning is simply that children cannot swim. Suspect three: The data shows that the hotter the weather, the more ice cream people buy and the more people go swimming, so hot weather is the common cause behind both rising at the same time.",
+    "textRefs": {
+      "spot_post_hoc": "ice cream shops caused the drownings",
+      "spot_hasty": "children who could not swim",
+      "debunk_post_hoc": "After this, therefore because of this: two things rising together may be coincidence or share a common cause — happening first does not mean causing.",
+      "debunk_hasty": "Hasty generalization: victims were \"mostly\" non-swimming children, but \"mostly\" is not \"all\", and the sample is incomplete — it cannot support a \"root cause\" conclusion.",
+      "q_post_hoc": "Do two things rising at the same time always mean one caused the other?",
+      "q_hasty": "Can \"most\" prove a \"root cause\"? Is the sample complete enough?",
+      "q_d1": "Is the ice cream shop running a promotion lately?",
+      "q_d2": "At what age do children usually learn to swim?",
+      "q_d3": "Who collected these statistics?"
+    },
+    "hints": [
+      "Happening first is not the same as causing — the two may share a common cause",
+      "\"Most\" is not \"all\" — is the sample complete?",
+      "Suspect three's explanation sounds more reasonable — it is not a flaw, don't attack it"
+    ],
+    "explanation": "This is a classic \"hunt for rival causes\" case: ① Suspect one treats \"rising together\" as causation, committing the post-hoc fallacy; ② Suspect two overgeneralizes from \"mostly\"; ③ Suspect three's \"common cause — weather\" is the reasonable rival explanation. When someone offers a cause, first ask: are there other possible explanations?"
+  }
+}
