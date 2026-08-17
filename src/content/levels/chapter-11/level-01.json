@@ -1,0 +1,18 @@
+{
+  "levelId": "ch11-level01",
+  "chapter": 11,
+  "engine": "xray",
+  "difficulty": 2,
+  "contributor": "atrq-team",
+  "rewardTags": ["evidence"],
+  "mode": "gap",
+  "nodes": [
+    { "nodeId": "conclusion_1", "type": "conclusion", "textRef": "conclusion_1" },
+    { "nodeId": "reason_1", "type": "reason", "textRef": "reason_1" }
+  ],
+  "distractors": [
+    { "nodeId": "distractor_1", "type": "reason", "textRef": "distractor_1" }
+  ],
+  "correctChain": [{ "from": "reason_1", "to": "conclusion_1" }],
+  "gaps": [{ "gapId": "gap1", "correctTextRef": "gap1_correct" }]
+}

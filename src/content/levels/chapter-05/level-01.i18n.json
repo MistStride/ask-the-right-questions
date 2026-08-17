@@ -1,0 +1,32 @@
+{
+  "zh": {
+    "sourceText": "市政府宣布将大幅提高香烟税率。支持者认为，吸烟危害健康，提高税率能显著减少吸烟人数，从而改善全民健康。商家担心此举影响销量，但这并不改变支持者的立场。",
+    "textRefs": {
+      "conclusion_1": "市政府宣布将大幅提高香烟税率",
+      "reason_1": "提高税率能显著减少吸烟人数",
+      "assumption_1": "公共健康比个人吸烟自由更重要",
+      "distractor_1": "商家担心此举影响销量"
+    },
+    "hints": [
+      "先扫出结论和理由——它们在明处",
+      "论证成立还缺一个默认的前提，去下面的挖掘区挖一挖",
+      "支持者默认：健康的价值比吸烟者的自由更重要——这就是价值观假设"
+    ],
+    "explanation": "结论是提高香烟税率，理由是减少吸烟人数。但要让论证真正成立，支持者还默认了一个没说出来、却决定立场方向的前提：公共健康比个人吸烟自由更值得优先。这种藏在论证背后的价值观选择，就是「价值观假设」——把它挖出来，你才看清论证的立场从何而来。"
+  },
+  "en": {
+    "sourceText": "The city government announces a large tax increase on cigarettes. Supporters argue that smoking harms health, and higher taxes will significantly reduce the number of smokers, improving public health. Businesses worry this will hurt sales, but that does not change the supporters' position.",
+    "textRefs": {
+      "conclusion_1": "announces a large tax increase on cigarettes",
+      "reason_1": "higher taxes will significantly reduce the number of smokers",
+      "assumption_1": "Public health matters more than individual freedom to smoke",
+      "distractor_1": "Businesses worry this will hurt sales"
+    },
+    "hints": [
+      "Scan for the conclusion and the reason — they are in plain sight",
+      "The argument needs an unstated premise — dig for it below",
+      "Supporters assume health outweighs smokers' freedom — that's the value assumption"
+    ],
+    "explanation": "The conclusion is the tax increase; the reason is fewer smokers. But for the argument to work, supporters assume something unsaid that steers the whole stance: public health deserves priority over individual freedom to smoke. That hidden value choice is the value assumption — dig it out and you see where the argument's position really comes from."
+  }
+}

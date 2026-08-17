@@ -25,16 +25,32 @@ function fail(path: string, message: string): never {
 
 /** 校验 textRef 都能在对应语言的 sourceText 中真实匹配到（锚点可用性检查） */
 function validateAnchors(path: string, levelId: string, data: XrayLevelData, texts: Record<'zh' | 'en', XrayTexts>) {
-  const refs = [...data.nodes, ...data.distractors].map((n) => n.textRef)
   for (const locale of ['zh', 'en'] as const) {
     const t = texts[locale]
-    for (const ref of refs) {
-      const anchor = t.textRefs[ref]
+    for (const node of [...data.nodes, ...data.distractors]) {
+      const anchor = t.textRefs[node.textRef]
       if (!anchor) {
-        fail(path, `关卡 ${levelId} 引用了不存在的 textRef「${ref}」（${locale} 缺失）`)
+        fail(path, `关卡 ${levelId} 引用了不存在的 textRef「${node.textRef}」（${locale} 缺失）`)
       }
-      if (!t.sourceText.includes(anchor)) {
+      // hidden 节点不参与正文匹配（埋在土里/被藏起来）
+      if (!node.hidden && !t.sourceText.includes(anchor)) {
         fail(path, `关卡 ${levelId} 的 anchorText「${anchor}」(${locale}) 无法在 sourceText 中匹配到`)
+      }
+    }
+    // gap 模式：校验每个空洞都有候选，且正确项文案出现在候选中
+    if (data.mode === 'gap' && data.gaps) {
+      for (const gap of data.gaps) {
+        const candidates = t.gapRefs?.[gap.gapId]
+        const correct = t.textRefs[gap.correctTextRef]
+        if (!candidates || candidates.length < 2) {
+          fail(path, `关卡 ${levelId} 的空洞 ${gap.gapId} 缺少候选（${locale} 需至少 2 个选项）`)
+        }
+        if (!correct) {
+          fail(path, `关卡 ${levelId} 的空洞 ${gap.gapId} 引用了不存在的 correctTextRef（${locale}）`)
+        }
+        if (candidates && !candidates.includes(correct)) {
+          fail(path, `关卡 ${levelId} 的空洞 ${gap.gapId} 正确项不在候选中（${locale}）`)
+        }
       }
     }
   }

@@ -24,6 +24,12 @@ export const xrayNodeRefSchema = z.object({
   nodeId: z.string().min(1, 'nodeId 不能为空'),
   type: nodeTypeSchema,
   textRef: z.string().min(1, 'textRef 不能为空'),
+  hidden: z.boolean().optional(),
+})
+
+export const xrayGapRefSchema = z.object({
+  gapId: z.string().min(1, 'gapId 不能为空'),
+  correctTextRef: z.string().min(1, 'correctTextRef 不能为空'),
 })
 
 export const xrayLevelSchema = z.object({
@@ -33,16 +39,19 @@ export const xrayLevelSchema = z.object({
   difficulty: z.union([z.literal(1), z.literal(2), z.literal(3)]),
   contributor: z.string().optional(),
   rewardTags: z.array(radarDimensionSchema),
+  mode: z.enum(['scan', 'dig', 'gap']).optional(),
   nodes: z.array(xrayNodeRefSchema).min(1, '至少需要一个正确节点'),
   distractors: z.array(xrayNodeRefSchema).default([]),
   correctChain: z
     .array(z.object({ from: z.string().min(1), to: z.string().min(1) }))
     .optional(),
+  gaps: z.array(xrayGapRefSchema).optional(),
 })
 
 export const xrayTextsSchema = z.object({
   sourceText: z.string().min(1, 'sourceText 不能为空'),
   textRefs: z.record(z.string(), z.string().min(1, 'textRef 对应的文案不能为空')),
+  gapRefs: z.record(z.string(), z.array(z.string().min(1))).optional(),
   hints: z.array(z.string()),
   explanation: z.string().min(1, 'explanation 不能为空'),
 })

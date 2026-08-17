@@ -1,10 +1,16 @@
 // 引擎A｜论证透视镜 X-Ray Argument Scanner
-// 把正文中的「结论/理由/假设」从噪音里透视出来：点对=点亮骨骼，点错=红闪提示。
-import { useEffect, useMemo, useRef, useState } from 'react'
+// 三种玩法变体：
+//  scan — 从噪音里透视出结论/理由，点对点亮骨骼
+//  dig  — 明处扫结构，暗处挖隐藏假设（考古挖掘区）
+//  gap  — 扫结构 + 补全被撕掉的关键信息空洞
+import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { motion } from 'framer-motion'
 import { segmentByAnchors } from '../../utils/matchAnchors'
 import { useXrayLogic } from './useXrayLogic'
 import XrayNode, { NODE_TYPE_LABELS } from './XrayNode'
+import XrayChainArrows from './XrayChainArrows'
+import DigSite from './DigSite'
+import GapNode from './GapNode'
 import HintPanel from '../../components/HintPanel'
 import LevelCompleteModal from '../../components/LevelCompleteModal'
 import { useUiStore } from '../../store/uiStore'
@@ -14,14 +20,11 @@ import type { XrayAnchor, XrayRuntimeLevel } from '../../schema/levelTypes'
 
 interface Props {
   level: XrayRuntimeLevel
-  /** 顶部「← 返回章节」 */
   onExit: () => void
-  /** 结算弹窗「返回地图」→ 回首页 */
   onHome: () => void
-  /** 下一关 id（不存在则返回 undefined，结算弹窗隐藏下一关按钮） */
+  onReplay: () => void
   nextLevelId?: string
   onNext: () => void
-  onReplay: () => void
   chapterTitle: string
 }
 
@@ -35,50 +38,117 @@ const FOUND_MSG = {
   en: (type: XrayAnchor['type']) => `Found the ${NODE_TYPE_LABELS[type].en}!`,
 }
 
+const MODE_LABEL = {
+  zh: { scan: 'X-RAY · 论证透视镜', dig: 'DIG · 考古挖掘', gap: 'GAP · 空洞寻踪' },
+  en: { scan: 'X-RAY · ARGUMENT SCANNER', dig: 'DIG SITE · EXCAVATION', gap: 'GAP HUNT · MISSING INFO' },
+}
+
+const MODE_TIP = {
+  zh: {
+    scan: '悬停可扫描 → 点击点亮论证元素',
+    dig: '先点亮明处的论证元素，再到挖掘区挖出隐藏假设',
+    gap: '点出论证骨架，再补上被撕掉的信息空洞',
+  },
+  en: {
+    scan: 'Hover to scan → click to light up',
+    dig: 'Light up the visible argument, then dig for the hidden premise',
+    gap: 'Map the argument, then patch the torn information gap',
+  },
+}
+
+/** 把正文中的 【gap:xxx】 标记拆成文本段与空洞段 */
+function splitGapMarks(text: string): Array<{ kind: 'text'; text: string } | { kind: 'gap'; gapId: string }> {
+  const parts: Array<{ kind: 'text'; text: string } | { kind: 'gap'; gapId: string }> = []
+  const re = /【gap:([\w-]+)】/g
+  let last = 0
+  let m: RegExpExecArray | null
+  while ((m = re.exec(text)) !== null) {
+    if (m.index > last) parts.push({ kind: 'text', text: text.slice(last, m.index) })
+    parts.push({ kind: 'gap', gapId: m[1] })
+    last = m.index + m[0].length
+  }
+  if (last < text.length) parts.push({ kind: 'text', text: text.slice(last) })
+  return parts
+}
+
 export default function XrayEngine({
   level,
   onExit,
   onHome,
+  onReplay,
   nextLevelId,
   onNext,
-  onReplay,
   chapterTitle,
 }: Props) {
   const locale = useSettingsStore((s) => s.locale)
   const showToast = useUiStore((s) => s.showToast)
   const markLevelComplete = useProgressStore((s) => s.markLevelComplete)
+  const containerRef = useRef<HTMLDivElement | null>(null)
+
+  // —— 组装判定目标：正文可见锚点（正确）+ 隐藏节点 + 空洞 ——
+  const targets = useMemo(() => {
+    const visibleCorrect = level.anchors.filter((a) => a.isCorrect)
+    const gapTargets: XrayAnchor[] = level.gaps.map((g) => ({
+      nodeId: `gap:${g.gapId}`,
+      type: 'omission',
+      anchorText: g.correctText,
+      isCorrect: true,
+    }))
+    return [...visibleCorrect, ...level.hiddenNodes, ...gapTargets]
+  }, [level])
+
+  const { foundIds, foundCount, total, wrongFlashId, mistakes, isComplete, handleClick, markFound, registerMistake, reset } =
+    useXrayLogic(targets)
+
+  const gapById = useMemo(() => new Map(level.gaps.map((g) => [g.gapId, g])), [level.gaps])
 
   const segments = useMemo(
     () => segmentByAnchors(level.sourceText, level.anchors),
     [level.sourceText, level.anchors],
   )
-  const { foundIds, foundCount, total, wrongFlashId, mistakes, isComplete, handleClick, reset } =
-    useXrayLogic(level.anchors)
 
   const [modalOpen, setModalOpen] = useState(false)
   const [score, setScore] = useState(100)
   const settledRef = useRef(false)
 
-  // 通关结算（只结算一次）
   useEffect(() => {
     if (isComplete && !settledRef.current) {
       settledRef.current = true
       const finalScore = Math.max(50, 100 - mistakes * 12)
       setScore(finalScore)
       markLevelComplete(level.meta.levelId, finalScore, level.meta.rewardTags)
-      const timer = window.setTimeout(() => setModalOpen(true), 650)
+      const timer = window.setTimeout(() => setModalOpen(true), 700)
       return () => window.clearTimeout(timer)
     }
     return undefined
   }, [isComplete, mistakes, level, markLevelComplete])
 
   const handleNodeClick = (anchor: XrayAnchor) => {
-    const hit = handleClick(anchor)
-    if (hit) {
+    if (handleClick(anchor)) {
       showToast(FOUND_MSG[locale](anchor.type), 'success')
     } else {
       showToast(WRONG_MSG[locale](anchor.type), 'error')
     }
+  }
+
+  const handleGapPick = (gapId: string, picked: string) => {
+    const gap = gapById.get(gapId)
+    if (!gap) return
+    if (picked === gap.correctText) {
+      markFound(`gap:${gapId}`)
+      showToast(locale === 'zh' ? '🩹 关键遗漏已补全！' : 'Key omission patched!', 'success')
+    } else {
+      registerMistake(`gap:${gapId}`)
+      showToast(locale === 'zh' ? '✗ 这不是关键遗漏' : '✗ Not the missing key info', 'error')
+    }
+  }
+
+  const handleUnearth = (node: XrayAnchor) => {
+    markFound(node.nodeId)
+    showToast(
+      locale === 'zh' ? `⛏ 挖出${NODE_TYPE_LABELS[node.type].zh}！` : `Uncovered a hidden ${NODE_TYPE_LABELS[node.type].en}!`,
+      'success',
+    )
   }
 
   const handleReplay = () => {
@@ -89,6 +159,53 @@ export default function XrayEngine({
   }
 
   const progress = total > 0 ? Math.round((foundCount / total) * 100) : 0
+  const mode = level.mode
+  const isFinishedView = isComplete
+
+  /** 渲染正文（含 gap 标记二次拆分） */
+  const renderBody = (): ReactNode[] => {
+    const out: ReactNode[] = []
+    segments.forEach((seg, i) => {
+      if (seg.anchor) {
+        out.push(
+          <XrayNode
+            key={`${seg.anchor.nodeId}-${i}`}
+            nodeId={seg.anchor.nodeId}
+            text={seg.text}
+            type={seg.anchor.type}
+            isCorrect={seg.anchor.isCorrect}
+            found={foundIds.has(seg.anchor.nodeId)}
+            wrongFlash={wrongFlashId === seg.anchor.nodeId}
+            onClick={() => handleNodeClick(seg.anchor!)}
+            locale={locale}
+          />,
+        )
+        return
+      }
+      const parts = splitGapMarks(seg.text)
+      parts.forEach((p, j) => {
+        if (p.kind === 'text') {
+          out.push(<span key={`${i}-t${j}`}>{p.text}</span>)
+        } else {
+          const gap = gapById.get(p.gapId)
+          if (!gap) return
+          out.push(
+            <GapNode
+              key={`${i}-g${j}`}
+              gapId={p.gapId}
+              candidates={gap.candidates}
+              correctText={gap.correctText}
+              found={foundIds.has(`gap:${p.gapId}`)}
+              wrongFlash={wrongFlashId === `gap:${p.gapId}`}
+              onPick={handleGapPick}
+              locale={locale}
+            />,
+          )
+        }
+      })
+    })
+    return out
+  }
 
   return (
     <div className="mx-auto w-full max-w-3xl px-4 pb-16">
@@ -102,7 +219,7 @@ export default function XrayEngine({
           ← {locale === 'zh' ? '返回章节' : 'Back'}
         </button>
         <span className="rounded-lg border border-xray/50 bg-xray/10 px-3 py-1.5 font-mono text-xs font-semibold tracking-widest text-cyan-300">
-          X-RAY · {locale === 'zh' ? '论证透视镜' : 'ARGUMENT SCANNER'}
+          {MODE_LABEL[locale][mode]}
         </span>
         <span className="text-sm text-slate-400">{chapterTitle}</span>
         <div className="ml-auto flex items-center gap-2">
@@ -122,54 +239,44 @@ export default function XrayEngine({
       {/* 正文扫描区 */}
       <motion.div
         layout
-        className={`relative overflow-hidden rounded-2xl border bg-panel p-6 sm:p-8 ${
-          isComplete ? 'border-gold/50' : 'border-line'
+        ref={containerRef}
+        className={`relative overflow-visible rounded-2xl border bg-panel p-6 sm:p-8 ${
+          isFinishedView ? 'border-gold/50' : 'border-line'
         }`}
       >
         <div className="bg-grid pointer-events-none absolute inset-0 opacity-60" />
-        {!isComplete && <div className="scanline" />}
-        {isComplete && (
-          <div className="pointer-events-none absolute inset-0 bg-gold/5" />
-        )}
+        {!isFinishedView && <div className="scanline" />}
+        {isFinishedView && <div className="pointer-events-none absolute inset-0 bg-gold/5" />}
 
         <p className="relative mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">
           {locale === 'zh' ? '待扫描的文本' : 'TEXT TO SCAN'}
         </p>
 
-        <p className="relative text-[17px] leading-[2.05] text-slate-300">
-          {segments.map((seg, i) =>
-            seg.anchor ? (
-              <XrayNode
-                key={`${seg.anchor.nodeId}-${i}`}
-                text={seg.text}
-                type={seg.anchor.type}
-                isCorrect={seg.anchor.isCorrect}
-                found={foundIds.has(seg.anchor.nodeId)}
-                wrongFlash={wrongFlashId === seg.anchor.nodeId}
-                onClick={() => handleNodeClick(seg.anchor!)}
-                locale={locale}
-              />
-            ) : (
-              <span key={i}>{seg.text}</span>
-            ),
-          )}
-        </p>
+        <p className="relative text-[17px] leading-[2.05] text-slate-300">{renderBody()}</p>
+
+        {/* 理由 → 结论 连线层 */}
+        {level.correctChain && level.correctChain.length > 0 && (
+          <XrayChainArrows containerRef={containerRef} chain={level.correctChain} foundIds={foundIds} />
+        )}
 
         <div className="relative mt-5 flex items-center gap-2 text-xs text-slate-500">
           <span className="inline-block h-2 w-2 animate-pulse rounded-full bg-xray" />
-          {isComplete
+          {isFinishedView
             ? locale === 'zh'
-              ? '骨骼已全部点亮 ✓'
-              : 'Skeleton fully restored ✓'
-            : locale === 'zh'
-              ? '悬停可扫描 → 点击点亮论证元素'
-              : 'Hover to scan → click to light up'}
+              ? '论证结构已全部还原 ✓'
+              : 'Argument fully restored ✓'
+            : MODE_TIP[locale][mode]}
         </div>
       </motion.div>
 
+      {/* 考古挖掘区（dig 模式） */}
+      {mode === 'dig' && level.hiddenNodes.length > 0 && (
+        <DigSite hiddenNodes={level.hiddenNodes} foundIds={foundIds} onUnearth={handleUnearth} locale={locale} />
+      )}
+
       {/* 图例 */}
       <div className="mt-4 flex flex-wrap gap-2 text-[11px] text-slate-500">
-        {['conclusion', 'reason', 'ambiguous_term'].map((t) => (
+        {['conclusion', 'reason', 'assumption', 'omission'].map((t) => (
           <span key={t} className="rounded-full border border-line bg-panel px-2.5 py-1">
             {NODE_TYPE_LABELS[t as XrayAnchor['type']][locale]}
           </span>

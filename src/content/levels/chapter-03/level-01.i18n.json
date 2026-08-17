@@ -1,0 +1,32 @@
+{
+  "zh": {
+    "sourceText": "某公司宣布将全面取消远程办公。管理层解释，远程办公降低了团队协作效率，因为面对面沟通能减少误解；同时，线下办公更有利于新员工的快速成长。有员工担心这会增加通勤成本，但这种担心并不影响公司的决定。",
+    "textRefs": {
+      "conclusion_1": "公司宣布将全面取消远程办公",
+      "reason_1": "远程办公降低了团队协作效率",
+      "reason_2": "线下办公更有利于新员工的快速成长",
+      "distractor_1": "这种担心并不影响公司的决定"
+    },
+    "hints": [
+      "找一找公司想让你接受的立场——它宣布了什么？",
+      "理由由「因为」「同时」引出，它们回答『为什么这么做』",
+      "最后一句是在回应反对者，不是在为决定提供理由"
+    ],
+    "explanation": "「全面取消远程办公」是结论——公司希望你接受的立场。支撑它的理由有两个：「协作效率」与「新员工成长」，它们回答『为什么』。而最后那句回应员工担心的话，只是在反驳反对意见，并没有为决定提供任何新理由。理由 ≠ 反驳：区分「支撑结论的理由」和「回应质疑的辩驳」，是本章的核心能力。"
+  },
+  "en": {
+    "sourceText": "A company announces it will end remote work entirely. Management explains that remote work reduces team collaboration, because face-to-face communication prevents misunderstandings; meanwhile, working in the office helps new employees grow faster. Some employees worry this increases commuting costs, but such worries do not affect the company's decision.",
+    "textRefs": {
+      "conclusion_1": "it will end remote work entirely",
+      "reason_1": "remote work reduces team collaboration",
+      "reason_2": "working in the office helps new employees grow faster",
+      "distractor_1": "such worries do not affect the company's decision"
+    },
+    "hints": [
+      "Find the position the company wants you to accept — what did it announce?",
+      "Reasons are introduced by 'because' and 'meanwhile' — they answer 'why'",
+      "The last sentence replies to opponents; it adds no support for the decision"
+    ],
+    "explanation": "\u201cEnding remote work entirely\u201d is the conclusion — the position the company wants you to accept. Two reasons support it: collaboration efficiency and new-employee growth; they answer \u201cwhy\u201d. The final sentence only rebuts employees' worries; it offers no new support for the decision. Reasons \u2260 rebuttals: telling them apart is the core skill of this chapter."
+  }
+}

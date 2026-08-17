@@ -17,24 +17,34 @@ export default function LevelPage() {
   const runtime: XrayRuntimeLevel | null = useMemo(() => {
     if (!def) return null
     const texts = def.texts[locale]
+    const visible = [...def.data.nodes, ...def.data.distractors].filter((n) => !n.hidden)
+    const hidden = [...def.data.nodes].filter((n) => n.hidden)
     const anchors: XrayAnchor[] = [
-      ...def.data.nodes.map((n) => ({
+      ...visible.map((n) => ({
         nodeId: n.nodeId,
         type: n.type,
         anchorText: texts.textRefs[n.textRef],
-        isCorrect: true,
-      })),
-      ...def.data.distractors.map((n) => ({
-        nodeId: n.nodeId,
-        type: n.type,
-        anchorText: texts.textRefs[n.textRef],
-        isCorrect: false,
+        isCorrect: def.data.nodes.some((c) => c.nodeId === n.nodeId),
       })),
     ]
+    const hiddenNodes: XrayAnchor[] = hidden.map((n) => ({
+      nodeId: n.nodeId,
+      type: n.type,
+      anchorText: texts.textRefs[n.textRef],
+      isCorrect: true,
+    }))
+    const gaps = (def.data.gaps ?? []).map((g) => ({
+      gapId: g.gapId,
+      correctText: texts.textRefs[g.correctTextRef],
+      candidates: texts.gapRefs?.[g.gapId] ?? [],
+    }))
     return {
       meta: def.meta,
+      mode: def.data.mode ?? 'scan',
       sourceText: texts.sourceText,
       anchors,
+      hiddenNodes,
+      gaps,
       hints: texts.hints,
       explanation: texts.explanation,
       correctChain: def.data.correctChain,

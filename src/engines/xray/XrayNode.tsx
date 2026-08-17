@@ -51,6 +51,7 @@ export const NODE_TYPE_LABELS: Record<NodeType, { zh: string; en: string }> = {
 }
 
 interface Props {
+  nodeId: string
   text: string
   type: NodeType
   isCorrect: boolean
@@ -60,12 +61,13 @@ interface Props {
   locale: Locale
 }
 
-export default function XrayNode({ text, type, isCorrect, found, wrongFlash, onClick, locale }: Props) {
+export default function XrayNode({ nodeId, text, type, isCorrect, found, wrongFlash, onClick, locale }: Props) {
   const v = NODE_VISUALS[type]
 
   if (found) {
     return (
       <motion.span
+        data-node-id={nodeId}
         initial={{ scale: 0.92, opacity: 0.6 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ type: 'spring', stiffness: 380, damping: 20 }}
