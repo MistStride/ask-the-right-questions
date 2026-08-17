@@ -1,0 +1,92 @@
+@import 'tailwindcss';
+
+/* ---------- 淘金主题色板（深色游戏风） ---------- */
+@theme {
+  --color-abyss: #0a0f1c; /* 页面底色 */
+  --color-panel: #101a2e; /* 卡片底色 */
+  --color-panel-2: #16233c; /* 卡片内嵌底色 */
+  --color-line: #22314f; /* 描边 */
+  --color-gold: #f5b942; /* 淘金主色 */
+  --color-gold-deep: #c98a1b;
+  --color-xray: #22d3ee; /* 引擎A 透视镜青色 */
+
+  --font-sans:
+    'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', system-ui, sans-serif;
+  --font-mono: ui-monospace, 'JetBrains Mono', Consolas, monospace;
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--color-abyss);
+  color: #cbd5e1;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* 暗色网格背景 */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(40, 60, 100, 0.28) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(40, 60, 100, 0.28) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+/* X 光扫描线 */
+.scanline {
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 64px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(34, 211, 238, 0.14) 45%,
+    rgba(34, 211, 238, 0.34) 50%,
+    rgba(34, 211, 238, 0.14) 55%,
+    transparent
+  );
+  animation: scan-move 3.2s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes scan-move {
+  0% {
+    transform: translateY(-70px);
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  88% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(calc(100% + 80px));
+    opacity: 0;
+  }
+}
+
+/* 关卡正文可点击锚点的悬停效果 */
+.anchor-hover {
+  cursor: pointer;
+  border-radius: 6px;
+  padding: 0 2px;
+  transition:
+    background-color 0.18s ease,
+    color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+/* 迷你滚动条（横向章节地图） */
+.scroll-thin::-webkit-scrollbar {
+  height: 8px;
+}
+.scroll-thin::-webkit-scrollbar-thumb {
+  background: #22314f;
+  border-radius: 8px;
+}
+.scroll-thin::-webkit-scrollbar-track {
+  background: transparent;
+}

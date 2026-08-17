@@ -1,0 +1,32 @@
+{
+  "zh": {
+    "sourceText": "某市教育部门提议，中小学生每天在校运动时间不应少于 1 小时。支持者认为，运动能提升学生的注意力和学习效率，因此学校应当强制执行这一标准。还有家长担心这会占用学习时间，但这种担心缺乏证据支持。",
+    "textRefs": {
+      "conclusion_1": "学校应当强制执行这一标准",
+      "reason_1": "运动能提升学生的注意力和学习效率",
+      "distractor_issue": "中小学生每天在校运动时间不应少于 1 小时",
+      "distractor_rebuttal": "这种担心缺乏证据支持"
+    },
+    "hints": [
+      "找一找作者最想让你相信的那句话",
+      "结论常跟在「因此」「所以」之后",
+      "「不应少于 1 小时」是别人提出的政策议题，是讨论对象，不是支持者的结论"
+    ],
+    "explanation": "「学校应当强制执行这一标准」是论证的结论——它是支持者希望你采纳的立场；「运动能提升注意力和学习效率」是支撑这个结论的理由。而「在校运动不少于 1 小时」是正在被讨论的政策议题（论题），本身不是结论；「这种担心缺乏证据支持」是反驳别人的话，也不是本论证的结论。先分清「论题 / 结论 / 理由」，是淘金式思维的第一步。"
+  },
+  "en": {
+    "sourceText": "A city education department proposes that primary and middle school students should exercise at least one hour a day at school. Supporters argue that exercise improves students' attention and learning efficiency, so schools should enforce this standard. Some parents worry it will take time away from learning, but such worries lack supporting evidence.",
+    "textRefs": {
+      "conclusion_1": "schools should enforce this standard",
+      "reason_1": "exercise improves students' attention and learning efficiency",
+      "distractor_issue": "students should exercise at least one hour a day at school",
+      "distractor_rebuttal": "such worries lack supporting evidence"
+    },
+    "hints": [
+      "Find the claim the author most wants you to accept",
+      "The conclusion often follows 'so' or 'therefore'",
+      "The one-hour proposal is the issue under debate, not the supporters' conclusion"
+    ],
+    "explanation": "\u201cSchools should enforce this standard\u201d is the conclusion — the position supporters want you to adopt. \u201cExercise improves attention and learning efficiency\u201d is the reason supporting it. The one-hour requirement is the issue being debated, and the line about worries is a rebuttal to opponents, not this argument's conclusion. Distinguishing issue / conclusion / reason is the first step of panning for gold."
+  }
+}
