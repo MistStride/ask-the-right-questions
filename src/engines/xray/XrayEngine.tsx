@@ -11,6 +11,7 @@ import XrayNode, { NODE_TYPE_LABELS } from './XrayNode'
 import XrayChainArrows from './XrayChainArrows'
 import DigSite from './DigSite'
 import GapNode from './GapNode'
+import ObjectiveBar from './ObjectiveBar'
 import HintPanel from '../../components/HintPanel'
 import LevelCompleteModal from '../../components/LevelCompleteModal'
 import { useUiStore } from '../../store/uiStore'
@@ -45,14 +46,14 @@ const MODE_LABEL = {
 
 const MODE_TIP = {
   zh: {
-    scan: '悬停可扫描 → 点击点亮论证元素',
-    dig: '先点亮明处的论证元素，再到挖掘区挖出隐藏假设',
-    gap: '点出论证骨架，再补上被撕掉的信息空洞',
+    scan: '点击正文中带虚线的片段，找出目标栏里的论证元素；不在目标里的都是干扰项',
+    dig: '明处的论证元素直接点击；隐藏假设要去下方「挖掘区」挖出来',
+    gap: '先点击论证元素，再把 🕳️ 破洞补上——那里藏着被省略的关键信息',
   },
   en: {
-    scan: 'Hover to scan → click to light up',
-    dig: 'Light up the visible argument, then dig for the hidden premise',
-    gap: 'Map the argument, then patch the torn information gap',
+    scan: 'Click the dashed fragments to find the objective items; anything else is a distractor',
+    dig: 'Click the visible elements; dig out the hidden premise in the excavation site below',
+    gap: 'Click the argument elements, then patch the 🕳️ gap — it holds the omitted key info',
   },
 }
 
@@ -235,6 +236,9 @@ export default function XrayEngine({
           </div>
         </div>
       </div>
+
+      {/* 目标栏：进关即明确「本关要找什么」 */}
+      <ObjectiveBar mode={mode} correctTargets={targets} foundIds={foundIds} locale={locale} />
 
       {/* 正文扫描区 */}
       <motion.div
