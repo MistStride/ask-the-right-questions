@@ -56,6 +56,32 @@ function validateAnchors(path: string, levelId: string, data: XrayLevelData, tex
   }
 }
 
+/** 校验 steps：targets 都是正确的 nodeId（含 gap:xxx），且恰好覆盖全部正确目标 */
+function validateSteps(path: string, levelId: string, data: XrayLevelData) {
+  if (!data.steps) return
+  const correctIds = new Set<string>()
+  for (const n of data.nodes) if (!n.hidden) correctIds.add(n.nodeId)
+  for (const n of data.nodes) if (n.hidden) correctIds.add(n.nodeId)
+  for (const g of data.gaps ?? []) correctIds.add(`gap:${g.gapId}`)
+
+  const covered = new Set<string>()
+  for (const step of data.steps) {
+    for (const id of step.targets) {
+      if (!correctIds.has(id)) {
+        fail(path, `关卡 ${levelId} 步骤 ${step.stepId} 引用了不存在的正确目标「${id}」`)
+      }
+      if (covered.has(id)) {
+        fail(path, `关卡 ${levelId} 步骤重复包含目标「${id}」`)
+      }
+      covered.add(id)
+    }
+  }
+  const missing = [...correctIds].filter((id) => !covered.has(id))
+  if (missing.length > 0) {
+    fail(path, `关卡 ${levelId} 的 steps 未覆盖正确目标: ${missing.join(', ')}`)
+  }
+}
+
 function buildLevels(): LevelDefinition[] {
   const defs: LevelDefinition[] = []
   for (const [path, raw] of Object.entries(levelFiles)) {
@@ -76,6 +102,7 @@ function buildLevels(): LevelDefinition[] {
     const texts = textsParsed.data as LevelDefinition['texts']
 
     validateAnchors(path, data.levelId, data, texts)
+    validateSteps(path, data.levelId, data)
 
     defs.push({
       meta: {

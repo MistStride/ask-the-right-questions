@@ -10,17 +10,24 @@ const LAYER_COLORS = ['#7c5a3a', '#9a7448', '#b8915c'] // 从深处到地表
 interface Props {
   hiddenNodes: XrayAnchor[]
   foundIds: Set<string>
+  /** 当前步骤允许挖掘的节点（未到步骤时点铲子提示顺序错误） */
+  activeNodeIds: Set<string>
   onUnearth: (node: XrayAnchor) => void
+  onBlocked: () => void
   locale: Locale
 }
 
-export default function DigSite({ hiddenNodes, foundIds, onUnearth, locale }: Props) {
+export default function DigSite({ hiddenNodes, foundIds, activeNodeIds, onUnearth, onBlocked, locale }: Props) {
   const [dug, setDug] = useState<Record<string, number>>({})
 
   if (hiddenNodes.length === 0) return null
 
   const handleDig = (node: XrayAnchor) => {
     if (foundIds.has(node.nodeId)) return
+    if (!activeNodeIds.has(node.nodeId)) {
+      onBlocked()
+      return
+    }
     const current = dug[node.nodeId] ?? 0
     const next = current + 1
     setDug((d) => ({ ...d, [node.nodeId]: next }))
@@ -44,6 +51,7 @@ export default function DigSite({ hiddenNodes, foundIds, onUnearth, locale }: Pr
       <div className="mt-4 grid gap-3 sm:grid-cols-2">
         {hiddenNodes.map((node) => {
           const isFound = foundIds.has(node.nodeId)
+          const isActive = activeNodeIds.has(node.nodeId)
           const layersLeft = isFound ? 0 : LAYERS - (dug[node.nodeId] ?? 0)
           const v = NODE_VISUALS[node.type]
           return (
@@ -73,10 +81,10 @@ export default function DigSite({ hiddenNodes, foundIds, onUnearth, locale }: Pr
                 <button
                   type="button"
                   onClick={() => handleDig(node)}
-                  className="group block w-full text-left"
+                  className={`group block w-full text-left ${isActive ? '' : 'opacity-60'}`}
                 >
                   <p className="text-xs text-slate-500">
-                    {locale === 'zh' ? '???' : '???'}
+                    {isActive ? '???' : '🔒 ???'}
                     <span className="ml-2 rounded bg-white/70 px-1.5 py-0.5 text-[10px] uppercase tracking-wide">
                       {NODE_TYPE_LABELS[node.type][locale]}
                     </span>
@@ -104,9 +112,13 @@ export default function DigSite({ hiddenNodes, foundIds, onUnearth, locale }: Pr
                     </span>
                   </div>
                   <p className="mt-2 text-[11px] text-slate-500">
-                    {locale === 'zh'
-                      ? `还剩 ${layersLeft} 层 · 点击继续挖`
-                      : `${layersLeft} layer(s) left · click to dig`}
+                    {!isActive
+                      ? locale === 'zh'
+                        ? '🔒 先完成当前步骤再挖'
+                        : '🔒 Finish the current step first'
+                      : locale === 'zh'
+                        ? `还剩 ${layersLeft} 层 · 点击继续挖`
+                        : `${layersLeft} layer(s) left · click to dig`}
                   </p>
                 </button>
               )}

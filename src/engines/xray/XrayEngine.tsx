@@ -39,6 +39,16 @@ const FOUND_MSG = {
   en: (type: XrayAnchor['type']) => `Found the ${NODE_TYPE_LABELS[type].en}!`,
 }
 
+const STEP_DONE_MSG = {
+  zh: (next: string) => `✓ 目标达成！下一步：找出【${next}】`,
+  en: (next: string) => `✓ Objective complete! Next: find ${next}`,
+}
+
+const ORDER_MSG = {
+  zh: (label: string) => `✗ 顺序提醒：现在要找的是【${label}】，先别点其他的`,
+  en: (label: string) => `✗ Hold on — find ${label} first`,
+}
+
 const MODE_LABEL = {
   zh: { scan: 'X-RAY · 论证透视镜', dig: 'DIG · 考古挖掘', gap: 'GAP · 空洞寻踪' },
   en: { scan: 'X-RAY · ARGUMENT SCANNER', dig: 'DIG SITE · EXCAVATION', gap: 'GAP HUNT · MISSING INFO' },
@@ -103,6 +113,48 @@ export default function XrayEngine({
 
   const gapById = useMemo(() => new Map(level.gaps.map((g) => [g.gapId, g])), [level.gaps])
 
+  // —— 串行步骤：一次只找一个目标 ——
+  const steps = level.steps
+  const [stepIdx, setStepIdx] = useState(0)
+  const currentStep = steps[Math.min(stepIdx, steps.length - 1)]
+  const activeIds = useMemo(() => new Set(currentStep.targets), [currentStep])
+
+  const typeById = useMemo(() => {
+    const m = new Map<string, XrayAnchor['type']>()
+    for (const t of targets) m.set(t.nodeId, t.type)
+    return m
+  }, [targets])
+
+  const stepLabelOf = (step: (typeof steps)[number]) => {
+    const types = new Set<string>()
+    for (const id of step.targets) {
+      const tp = typeById.get(id)
+      if (tp) types.add(NODE_TYPE_LABELS[tp][locale])
+    }
+    return [...types].join(' + ')
+  }
+  const currentLabel = stepLabelOf(currentStep)
+
+  // 当前步骤全部找到 → 自动推进到下一步
+  const stepDone = currentStep.targets.every((id) => foundIds.has(id))
+  useEffect(() => {
+    if (stepDone && stepIdx < steps.length - 1) {
+      const timer = window.setTimeout(() => {
+        const nextIdx = stepIdx + 1
+        setStepIdx(nextIdx)
+        const nextStep = steps[nextIdx]
+        const types = new Set<string>()
+        for (const id of nextStep.targets) {
+          const tp = typeById.get(id)
+          if (tp) types.add(NODE_TYPE_LABELS[tp][locale])
+        }
+        showToast(STEP_DONE_MSG[locale]([...types].join(' + ')), 'info')
+      }, 550)
+      return () => window.clearTimeout(timer)
+    }
+    return undefined
+  }, [stepDone, stepIdx, steps, locale, showToast, typeById])
+
   const segments = useMemo(
     () => segmentByAnchors(level.sourceText, level.anchors),
     [level.sourceText, level.anchors],
@@ -125,16 +177,28 @@ export default function XrayEngine({
   }, [isComplete, mistakes, level, markLevelComplete])
 
   const handleNodeClick = (anchor: XrayAnchor) => {
-    if (handleClick(anchor)) {
+    if (!anchor.isCorrect) {
+      registerMistake(anchor.nodeId)
+      showToast(WRONG_MSG[locale](anchor.type), 'error')
+      return
+    }
+    if (activeIds.has(anchor.nodeId)) {
+      handleClick(anchor)
       showToast(FOUND_MSG[locale](anchor.type), 'success')
     } else {
-      showToast(WRONG_MSG[locale](anchor.type), 'error')
+      registerMistake(anchor.nodeId)
+      showToast(ORDER_MSG[locale](currentLabel), 'error')
     }
   }
 
   const handleGapPick = (gapId: string, picked: string) => {
     const gap = gapById.get(gapId)
     if (!gap) return
+    if (!activeIds.has(`gap:${gapId}`)) {
+      registerMistake(`gap:${gapId}`)
+      showToast(ORDER_MSG[locale](currentLabel), 'error')
+      return
+    }
     if (picked === gap.correctText) {
       markFound(`gap:${gapId}`)
       showToast(locale === 'zh' ? '🩹 关键遗漏已补全！' : 'Key omission patched!', 'success')
@@ -145,6 +209,11 @@ export default function XrayEngine({
   }
 
   const handleUnearth = (node: XrayAnchor) => {
+    if (!activeIds.has(node.nodeId)) {
+      registerMistake(node.nodeId)
+      showToast(ORDER_MSG[locale](currentLabel), 'error')
+      return
+    }
     markFound(node.nodeId)
     showToast(
       locale === 'zh' ? `⛏ 挖出${NODE_TYPE_LABELS[node.type].zh}！` : `Uncovered a hidden ${NODE_TYPE_LABELS[node.type].en}!`,
@@ -152,9 +221,14 @@ export default function XrayEngine({
     )
   }
 
+  const handleBlocked = () => {
+    showToast(ORDER_MSG[locale](currentLabel), 'error')
+  }
+
   const handleReplay = () => {
     setModalOpen(false)
     settledRef.current = false
+    setStepIdx(0)
     reset()
     onReplay()
   }
@@ -198,7 +272,9 @@ export default function XrayEngine({
               correctText={gap.correctText}
               found={foundIds.has(`gap:${p.gapId}`)}
               wrongFlash={wrongFlashId === `gap:${p.gapId}`}
+              active={activeIds.has(`gap:${p.gapId}`)}
               onPick={handleGapPick}
+              onBlocked={handleBlocked}
               locale={locale}
             />,
           )
@@ -237,8 +313,15 @@ export default function XrayEngine({
         </div>
       </div>
 
-      {/* 目标栏：进关即明确「本关要找什么」 */}
-      <ObjectiveBar mode={mode} correctTargets={targets} foundIds={foundIds} locale={locale} />
+      {/* 目标栏：串行单目标——一次只让你找一样 */}
+      <ObjectiveBar
+        mode={mode}
+        steps={steps}
+        currentStepIdx={stepIdx}
+        correctTargets={targets}
+        foundIds={foundIds}
+        locale={locale}
+      />
 
       {/* 正文扫描区 */}
       <motion.div
@@ -275,7 +358,14 @@ export default function XrayEngine({
 
       {/* 考古挖掘区（dig 模式） */}
       {mode === 'dig' && level.hiddenNodes.length > 0 && (
-        <DigSite hiddenNodes={level.hiddenNodes} foundIds={foundIds} onUnearth={handleUnearth} locale={locale} />
+        <DigSite
+          hiddenNodes={level.hiddenNodes}
+          foundIds={foundIds}
+          activeNodeIds={activeIds}
+          onUnearth={handleUnearth}
+          onBlocked={handleBlocked}
+          locale={locale}
+        />
       )}
 
       {/* 图例 */}

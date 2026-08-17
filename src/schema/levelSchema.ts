@@ -32,6 +32,11 @@ export const xrayGapRefSchema = z.object({
   correctTextRef: z.string().min(1, 'correctTextRef 不能为空'),
 })
 
+export const xrayStepRefSchema = z.object({
+  stepId: z.string().min(1, 'stepId 不能为空'),
+  targets: z.array(z.string().min(1)).min(1, '每步至少一个目标'),
+})
+
 export const xrayLevelSchema = z.object({
   levelId: z.string().min(1, 'levelId 不能为空'),
   chapter: z.number().int().min(1).max(13, 'chapter 需在 1-13 之间'),
@@ -46,6 +51,7 @@ export const xrayLevelSchema = z.object({
     .array(z.object({ from: z.string().min(1), to: z.string().min(1) }))
     .optional(),
   gaps: z.array(xrayGapRefSchema).optional(),
+  steps: z.array(xrayStepRefSchema).optional(),
 })
 
 export const xrayTextsSchema = z.object({

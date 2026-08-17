@@ -13,5 +13,9 @@
     { "nodeId": "distractor_issue", "type": "ambiguous_term", "textRef": "distractor_issue" },
     { "nodeId": "distractor_rebuttal", "type": "reason", "textRef": "distractor_rebuttal" }
   ],
-  "correctChain": [{ "from": "reason_1", "to": "conclusion_1" }]
+  "correctChain": [{ "from": "reason_1", "to": "conclusion_1" }],
+  "steps": [
+    { "stepId": "s1", "targets": ["conclusion_1"] },
+    { "stepId": "s2", "targets": ["reason_1"] }
+  ]
 }

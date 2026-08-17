@@ -17,5 +17,9 @@
   "correctChain": [
     { "from": "reason_1", "to": "conclusion_1" },
     { "from": "reason_2", "to": "conclusion_1" }
+  ],
+  "steps": [
+    { "stepId": "s1", "targets": ["conclusion_1"] },
+    { "stepId": "s2", "targets": ["reason_1", "reason_2"] }
   ]
 }

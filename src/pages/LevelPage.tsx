@@ -38,6 +38,15 @@ export default function LevelPage() {
       correctText: texts.textRefs[g.correctTextRef],
       candidates: texts.gapRefs?.[g.gapId] ?? [],
     }))
+    // 步骤序列：缺省时所有正确目标合并为单步
+    const allCorrectIds = [
+      ...def.data.nodes.map((n) => n.nodeId),
+      ...(def.data.gaps ?? []).map((g) => `gap:${g.gapId}`),
+    ]
+    const steps =
+      def.data.steps && def.data.steps.length > 0
+        ? def.data.steps
+        : [{ stepId: 's1', targets: allCorrectIds }]
     return {
       meta: def.meta,
       mode: def.data.mode ?? 'scan',
@@ -45,6 +54,7 @@ export default function LevelPage() {
       anchors,
       hiddenNodes,
       gaps,
+      steps,
       hints: texts.hints,
       explanation: texts.explanation,
       correctChain: def.data.correctChain,

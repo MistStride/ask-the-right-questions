@@ -43,13 +43,14 @@ export default function FeedbackToast() {
 
   return (
     <div className="pointer-events-none fixed inset-x-0 top-6 z-50 flex justify-center px-4">
-      <AnimatePresence mode="wait">
+      {/* 去掉 mode="wait"：连续反馈（如拦截后立即点对）时新 toast 立即进场，不被旧 toast 卡住 */}
+      <AnimatePresence>
         {message && (
           <motion.div
             key={id}
             initial={{ y: -28, opacity: 0, scale: 0.94 }}
             animate={{ y: 0, opacity: 1, scale: 1 }}
-            exit={{ y: -18, opacity: 0, scale: 0.96 }}
+            exit={{ y: -18, opacity: 0, scale: 0.96, position: 'absolute' }}
             transition={{ type: 'spring', stiffness: 420, damping: 28 }}
             className={`flex items-center gap-2.5 rounded-xl border px-4 py-2.5 text-sm font-medium backdrop-blur-md ${t.border} ${t.bg} ${t.shadow}`}
           >

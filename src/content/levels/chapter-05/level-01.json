@@ -14,5 +14,10 @@
   "distractors": [
     { "nodeId": "distractor_1", "type": "reason", "textRef": "distractor_1" }
   ],
-  "correctChain": [{ "from": "reason_1", "to": "conclusion_1" }]
+  "correctChain": [{ "from": "reason_1", "to": "conclusion_1" }],
+  "steps": [
+    { "stepId": "s1", "targets": ["conclusion_1"] },
+    { "stepId": "s2", "targets": ["reason_1"] },
+    { "stepId": "s3", "targets": ["assumption_1"] }
+  ]
 }

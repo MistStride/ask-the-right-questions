@@ -14,5 +14,10 @@
     { "nodeId": "distractor_1", "type": "reason", "textRef": "distractor_1" }
   ],
   "correctChain": [{ "from": "reason_1", "to": "conclusion_1" }],
-  "gaps": [{ "gapId": "gap1", "correctTextRef": "gap1_correct" }]
+  "gaps": [{ "gapId": "gap1", "correctTextRef": "gap1_correct" }],
+  "steps": [
+    { "stepId": "s1", "targets": ["conclusion_1"] },
+    { "stepId": "s2", "targets": ["reason_1"] },
+    { "stepId": "s3", "targets": ["gap:gap1"] }
+  ]
 }

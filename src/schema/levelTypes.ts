@@ -48,6 +48,13 @@ export interface XrayGapRef {
   correctTextRef: string
 }
 
+/** 串行步骤：一关拆成多步，每步只找一个目标（找错类型算错）。
+ *  targets 引用正确节点 nodeId；gap 空洞用 "gap:<gapId>" 引用 */
+export interface XrayStepRef {
+  stepId: string
+  targets: string[]
+}
+
 export interface XrayLevelData {
   levelId: string
   chapter: number
@@ -66,6 +73,8 @@ export interface XrayLevelData {
   correctChain?: XrayChainRef[]
   /** gap 模式：正文用 【gap:xxx】 标记的空洞 */
   gaps?: XrayGapRef[]
+  /** 串行步骤（可选）：缺省时所有正确节点为单步。每步只找一个目标 */
+  steps?: XrayStepRef[]
 }
 
 /* ---------------- 关卡「i18n 文件」：某一种语言的完整文案包 ---------------- */
@@ -111,6 +120,8 @@ export interface XrayRuntimeLevel {
   hiddenNodes: XrayAnchor[]
   /** gap 模式：空洞及其候选（candidates 来自 i18n gapRefs，correct 来自 textRefs） */
   gaps: { gapId: string; correctText: string; candidates: string[] }[]
+  /** 串行步骤（运行时已归一：缺省时生成为单步） */
+  steps: XrayStepRef[]
   hints: string[]
   explanation: string
   correctChain?: XrayChainRef[]

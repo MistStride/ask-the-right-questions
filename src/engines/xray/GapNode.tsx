@@ -9,7 +9,10 @@ interface Props {
   correctText: string
   found: boolean
   wrongFlash: boolean
+  /** 当前步骤是否包含此空洞（未到步骤时点击提示顺序错误） */
+  active: boolean
   onPick: (gapId: string, picked: string) => void
+  onBlocked: () => void
   locale: Locale
 }
 
@@ -19,7 +22,9 @@ export default function GapNode({
   correctText,
   found,
   wrongFlash,
+  active,
   onPick,
+  onBlocked,
   locale,
 }: Props) {
   const [open, setOpen] = useState(false)
@@ -41,20 +46,32 @@ export default function GapNode({
     )
   }
 
+  const handleOpen = () => {
+    if (!active) {
+      onBlocked()
+      return
+    }
+    setOpen((o) => !o)
+  }
+
   return (
     <span className="relative mx-0.5 inline-block align-middle">
       <motion.button
         type="button"
-        onClick={() => setOpen((o) => !o)}
+        onClick={handleOpen}
         animate={
           wrongFlash
             ? { x: [0, -4, 4, -3, 3, 0], backgroundColor: 'rgba(225,29,72,0.16)' }
             : { x: 0, backgroundColor: 'rgba(14,116,144,0)' }
         }
         transition={wrongFlash ? { duration: 0.45 } : { duration: 0.2 }}
-        className="inline-flex items-center gap-1 rounded-md border border-dashed border-amber-500/60 px-2 py-0.5 text-sm font-bold text-amber-700 hover:bg-amber-100"
+        className={`inline-flex items-center gap-1 rounded-md border border-dashed px-2 py-0.5 text-sm font-bold transition ${
+          active
+            ? 'border-amber-500/60 text-amber-700 hover:bg-amber-100'
+            : 'cursor-not-allowed border-slate-400/60 text-slate-400'
+        }`}
       >
-        🕳️ ?
+        {active ? '🕳️ ?' : '🔒 🕳️'}
       </motion.button>
       {open && (
         <motion.div
