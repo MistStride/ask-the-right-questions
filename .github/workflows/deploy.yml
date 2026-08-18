@@ -1,5 +1,10 @@
 # 自动构建并部署到 GitHub Pages（部署产物 dist/，而非源码）
-# 用法：Settings → Pages → Build and deployment → Source 选择 "GitHub Actions"
+# 双保险：
+#  方案A（推荐）：build 后把构建产物强制同步到 gh-pages 分支
+#     → Settings → Pages → Source 选 "Deploy from a branch: gh-pages / (root)" 即生效
+#  方案B：官方 deploy-pages action
+#     → Settings → Pages → Source 选 "GitHub Actions" 即生效
+# 任选其一即可；每次 push 到 main 自动执行。
 name: Deploy to GitHub Pages
 
 on:
@@ -8,7 +13,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -31,6 +36,21 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+
+      # —— 方案A：同步构建产物到 gh-pages 分支 ——
+      - name: Deploy dist to gh-pages branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan gh-pages
+          git rm -rf . > /dev/null 2>&1 || true
+          cp -r dist/index.html dist/assets dist/favicon.svg .
+          touch .nojekyll
+          git add index.html assets favicon.svg .nojekyll
+          git commit -m "build: deploy $(date +%Y-%m-%dT%H:%M:%SZ)" --allow-empty
+          git push origin gh-pages --force
+
+      # —— 方案B：官方 artifact 部署 ——
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
