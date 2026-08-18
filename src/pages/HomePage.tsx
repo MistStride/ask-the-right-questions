@@ -47,7 +47,6 @@ export default function HomePage() {
       desc: '把《学会提问》全书 13 章，变成一场淘金之旅。扫描论证、质询证据、校准灰度、拆除数据陷阱——用游戏的手感，练出淘金式思维。',
       cta: '开始淘金',
       nextTitle: '🎯 下一关',
-      nextReady: allDone ? '🎉 全部通关' : '⛏ 下一关',
       nextHint: allDone
         ? '看看你的思维雷达，给淘金之旅画个句号'
         : '继续你的淘金之旅',
@@ -73,7 +72,6 @@ export default function HomePage() {
       desc: 'The 13 chapters of Asking the Right Questions, turned into a gold-panning journey. Scan arguments, cross-examine evidence, calibrate gray areas, defuse data traps — train critical thinking through gameplay.',
       cta: 'Start Panning',
       nextTitle: '🎯 Next level',
-      nextReady: allDone ? '🎉 All cleared' : '⛏ Next level',
       nextHint: allDone
         ? 'See your thinking radar and close this journey'
         : 'Continue your gold-panning journey',
@@ -166,18 +164,21 @@ export default function HomePage() {
               className="group flex flex-col rounded-2xl border border-amber-500/50 bg-amber-50 p-4 text-left transition hover:border-amber-500 hover:shadow-[0_8px_24px_rgba(217,154,30,0.15)]"
             >
               <p className="text-xs font-bold uppercase tracking-widest text-amber-700">{t.nextTitle}</p>
-              <p className="mt-2 text-sm font-bold text-slate-800">{t.nextReady}</p>
-              {nextLevel && (() => {
-                const ch = CHAPTERS.find((c) => c.id === nextLevel.meta.chapter)
-                const badge = ch?.engine ? ENGINE_BADGES[ch.engine] : null
-                return (
-                  <p className="mt-1 text-xs text-slate-600">
-                    {locale === 'zh'
-                      ? `第 ${ch?.id} 章 · ${badge?.icon ?? ''} ${badge?.zh ?? ''}`
-                      : `Ch.${ch?.id} · ${badge?.icon ?? ''} ${badge?.en ?? ''}`}
-                  </p>
-                )
-              })()}
+              {allDone ? (
+                <p className="mt-2 text-sm font-bold text-slate-800">🎉 全部通关</p>
+              ) : nextLevel ? (
+                (() => {
+                  const ch = CHAPTERS.find((c) => c.id === nextLevel.meta.chapter)
+                  const badge = ch?.engine ? ENGINE_BADGES[ch.engine] : null
+                  return (
+                    <p className="mt-2 text-sm font-bold text-slate-800">
+                      {locale === 'zh'
+                        ? `第 ${ch?.id} 章 · ${badge?.icon ?? ''} ${badge?.zh ?? ''}`
+                        : `Ch.${ch?.id} · ${badge?.icon ?? ''} ${badge?.en ?? ''}`}
+                    </p>
+                  )
+                })()
+              ) : null}
               <p className="mt-1.5 text-[11px] text-slate-500">{t.nextHint}</p>
               <p className="mt-2 text-xs font-semibold text-amber-700 transition group-hover:translate-x-1">
                 {t.nextCta} →
@@ -305,7 +306,7 @@ export default function HomePage() {
                 className="rounded-2xl border border-line bg-panel p-4 text-center"
               >
                 <span className="text-2xl">{icon}</span>
-                <p className="mt-2 text-sm font-semibold text-slate-200">{b[locale]}</p>
+                <p className="mt-2 text-sm font-bold text-slate-800">{b[locale]}</p>
                 <p className="mt-1 text-[11px] text-slate-500">
                   {locale === 'zh'
                     ? `${actives.length} 个关卡已上线`
