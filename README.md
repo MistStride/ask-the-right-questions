@@ -63,52 +63,11 @@ This project commits its **build output into `docs/`** (see `vite.config.ts` →
 > After changing code, rebuild and commit the new output: `npm run build && git add docs && git commit && git push`.
 > (Folder `/ (root)` publishes the raw source and will show a blank page — always use `/docs`.)
 
-### Option B — GitHub Actions (recommended for production)
+### CI — build check (optional)
 
-```yaml
-# .github/workflows/deploy.yml
-name: Deploy to GitHub Pages
-
-on:
-  push:
-    branches: [main]
-  workflow_dispatch:
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: true
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - run: npm ci
-      - run: npm run build
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
-```
-
-Then in **Settings → Pages → Source**, choose **GitHub Actions**. Every push builds and deploys automatically.
+The repo ships `.github/workflows/deploy.yml` as a **build check**: every push to `main`
+runs `npm ci && npm run build`, which also validates all level data (Zod + anchor checks).
+You don't need to use GitHub Actions for deployment — Option A above is the live mechanism.
 
 ### Troubleshooting — blank page
 

@@ -1,11 +1,8 @@
-# 自动构建并部署到 GitHub Pages（部署产物 dist/，而非源码）
-# 双保险：
-#  方案A（推荐）：build 后把构建产物强制同步到 gh-pages 分支
-#     → Settings → Pages → Source 选 "Deploy from a branch: gh-pages / (root)" 即生效
-#  方案B：官方 deploy-pages action
-#     → Settings → Pages → Source 选 "GitHub Actions" 即生效
-# 任选其一即可；每次 push 到 main 自动执行。
-name: Deploy to GitHub Pages
+# 构建检查（CI）：每次 push 到 main 自动执行。
+# 注意：GitHub Pages 部署不依赖本 workflow —— 采用
+#   Settings → Pages → Deploy from a branch: main / folder: /docs
+# 构建产物已提交进 docs/ 目录（vite build outDir='docs'），push 后 Pages 自动更新。
+name: CI Build Check
 
 on:
   push:
@@ -13,13 +10,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: true
+  contents: read
 
 jobs:
   build:
@@ -34,34 +25,6 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci
-      - name: Build
+      # build 时会执行全部关卡的 Zod 校验 + 锚点校验，数据不合法会直接失败
+      - name: Build (validates all level data)
         run: npm run build
-
-      # —— 方案A：同步构建产物到 gh-pages 分支 ——
-      - name: Deploy dist to gh-pages branch
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git checkout --orphan gh-pages
-          git rm -rf . > /dev/null 2>&1 || true
-          cp -r docs/index.html docs/assets docs/favicon.svg .
-          touch .nojekyll
-          git add index.html assets favicon.svg .nojekyll
-          git commit -m "build: deploy $(date +%Y-%m-%dT%H:%M:%SZ)" --allow-empty
-          git push origin gh-pages --force
-
-      # —— 方案B：官方 artifact 部署 ——
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: docs
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4

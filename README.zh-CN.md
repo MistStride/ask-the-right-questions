@@ -46,34 +46,31 @@ npm run preview    # 本地预览生产构建
 
 仓库已配置 `base: '/<仓库名>/'`，以下两种方式任选。
 
-### 方式 A — GitHub Actions（推荐，本项目已内置）
-
-1. 项目根目录已包含 `.github/workflows/deploy.yml`（自动 `npm ci && npm run build`，部署构建产物到 Pages）
-2. 仓库 → **Settings → Pages → Build and deployment → Source**，选择 **GitHub Actions**
-3. 之后每次 push 到 `main` 都会自动构建部署，约 1-2 分钟生效
-4. 访问：`https://<用户名>.github.io/<仓库名>/`，例如 `https://miststride.github.io/ask-the-right-questions/`
-
-> 可在仓库 **Actions** 页签查看构建进度与日志。
-
-### 方式 B — Deploy from a branch（简单直接，本项目已把构建产物提交进 `docs/`）
+### 方式 A — Deploy from a branch（推荐，本项目已把构建产物提交进 `docs/`）
 
 本项目把构建产物输出到 **`docs/`**（见 `vite.config.ts` 的 `build.outDir`），所以分支部署开箱即用：
 
 1. 仓库 → **Settings → Pages → Build and deployment → Source**，选择 **Deploy from a branch**
 2. 分支选 **`main`**，文件夹选 **`/docs`**，点 **Save**
-3. 等 1-2 分钟，访问 `https://<用户名>.github.io/<仓库名>/`
+3. 之后每次 push 到 `main` 自动更新，等 1-2 分钟访问：`https://<用户名>.github.io/<仓库名>/`
+   （例如 `https://miststride.github.io/ask-the-right-questions/`）
 
 > 改代码后记得重建并提交产物：`npm run build && git add docs && git commit && git push`。
 > 文件夹选 `/(root)` 会发布源码 → 白屏；**必须选 `/docs`**。
+
+### CI — 构建检查（可选）
+
+仓库内置 `.github/workflows/deploy.yml` 作为**构建检查**：每次 push 到 `main` 自动执行
+`npm ci && npm run build`（同时校验全部关卡数据的 Zod 与锚点）。部署不依赖它，方式 A 才是线上生效机制。
 
 ### 白屏排查
 
 空白页几乎都是**资源路径**问题：
 
-1. **Source 必须是 "GitHub Actions"**（或服务的是构建产物），用 branch 模式发源码必白屏
+1. **Source 必须服务构建产物**（Deploy from a branch: main / **folder 选 /docs**），用 branch 模式发源码（/root）必白屏
 2. `vite.config.ts` 的 `base` 必须等于仓库名（如 `'/ask-the-right-questions/'`）；改过仓库名必须同步改
 3. 必须用 **hash 路由**（本项目已启用），BrowserRouter 在静态托管上子路由会 404
-4. 改完配置重新 push，等 Actions 跑完（1-2 分钟），**Ctrl+Shift+R 硬刷新**排除浏览器缓存
+4. 改完重新 push，等 Pages 自动更新（1-2 分钟），**Ctrl+Shift+R 硬刷新**排除浏览器缓存
 
 ## 📁 项目结构
 
