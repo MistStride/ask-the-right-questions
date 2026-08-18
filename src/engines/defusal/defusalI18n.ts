@@ -1,0 +1,41 @@
+// 引擎D 数据拆弹 UI 文案（引擎自身文案，不走关卡 i18n）。
+export const DEFUSE_UI = {
+  zh: {
+    objective: (n: number) => `🎯 拆弹：图表里藏着 ${n} 个统计陷阱，逐个拆除`,
+    manualTitle: '📖 拆弹手册',
+    manualTip: '先看手册再排查——它给你方向，不给你位置',
+    suspect: '⚡ 可疑',
+    defused: '✓ 已拆',
+    defuseToast: '🧨 拆掉陷阱：',
+    wrongToast: '💥 剪错线了！这不是陷阱',
+    wrongHint: '💥 这不是陷阱，别碰它',
+    alreadyToast: '这处已经处理过了',
+    completeTitle: '🧨 拆弹成功！',
+    completeSub: '你识破了图表里所有的统计陷阱',
+    reset: '重新拆弹',
+    back: '返回章节',
+    progress: '已拆',
+    clean: '干净利落，一拆一个准',
+    messy: '虽然有点毛躁，但陷阱都拆干净了',
+  },
+  en: {
+    objective: (n: number) => `🎯 Defuse: the chart hides ${n} statistical trap(s) — dismantle them all`,
+    manualTitle: '📖 Defusal Manual',
+    manualTip: 'Read the manual first — it gives direction, not locations',
+    suspect: '⚡ Suspicious',
+    defused: '✓ Defused',
+    defuseToast: '🧨 Trap defused: ',
+    wrongToast: '💥 Wrong wire! That is not a trap',
+    wrongHint: '💥 Not a trap — leave it alone',
+    alreadyToast: 'This spot is already handled',
+    completeTitle: '🧨 BOMB DEFUSED!',
+    completeSub: 'You saw through every statistical trap in the chart',
+    reset: 'Restart',
+    back: 'Back',
+    progress: 'Defused',
+    clean: 'Clean work — every cut landed perfectly',
+    messy: 'A bit messy, but every trap is defused',
+  },
+} as const
+
+export type DefuseUIDict = (typeof DEFUSE_UI)['zh']

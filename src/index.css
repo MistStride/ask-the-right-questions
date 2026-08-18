@@ -13,6 +13,10 @@
   --color-xray: #0e7490; /* 引擎A 深青 */
   --color-court: #b91c1c; /* 引擎B 深红（逻辑法庭） */
   --color-court-deep: #7f1d1d;
+  --color-scale: #7c3aed; /* 引擎C 紫（天平校准） */
+  --color-scale-deep: #5b21b6;
+  --color-defuse: #ea580c; /* 引擎D 橙（数据拆弹） */
+  --color-defuse-deep: #c2410c;
 
   --font-sans:
     'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', system-ui, sans-serif;
@@ -116,4 +120,44 @@ body {
   80% {
     transform: translateX(4px);
   }
+}
+
+/* 引擎C 校准滑块（原生 range 定制） */
+.scale-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 12px;
+  border-radius: 9999px;
+  background:
+    linear-gradient(90deg, rgba(124, 58, 237, 0.22), rgba(124, 58, 237, 0.55), rgba(124, 58, 237, 0.22));
+  border: 1px solid rgba(124, 58, 237, 0.25);
+  outline: none;
+}
+.scale-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 9999px;
+  background: #ffffff;
+  border: 3px solid var(--heat-color, #7c3aed);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--heat-color, #7c3aed) 22%, transparent);
+  cursor: grab;
+  transition: border-color 0.15s ease;
+}
+.scale-slider::-webkit-slider-thumb:active {
+  cursor: grabbing;
+}
+.scale-slider::-moz-range-thumb {
+  width: 26px;
+  height: 26px;
+  border-radius: 9999px;
+  background: #ffffff;
+  border: 3px solid var(--heat-color, #7c3aed);
+  cursor: grab;
+}
+.scale-slider::-moz-range-track {
+  height: 12px;
+  border-radius: 9999px;
+  background: rgba(124, 58, 237, 0.25);
 }

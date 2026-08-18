@@ -1,0 +1,21 @@
+{
+  "levelId": "ch10-level01",
+  "chapter": 10,
+  "engine": "defusal",
+  "difficulty": 2,
+  "contributor": "atrq-team",
+  "rewardTags": ["data"],
+  "chartData": [
+    { "labelRef": "bar_a_before", "value": 0.5 },
+    { "labelRef": "bar_a_after", "value": 1.0 },
+    { "labelRef": "bar_b_before", "value": 0.5 },
+    { "labelRef": "bar_b_after", "value": 1.1 }
+  ],
+  "yAxis": { "min": 0, "max": 1.2, "start": 0.9 },
+  "suspectSpots": [
+    { "spotId": "spot_axis", "barIndex": 3, "isTrap": true, "debunkRef": "debunk_axis" },
+    { "spotId": "spot_cherry", "barIndex": 1, "isTrap": true, "debunkRef": "debunk_cherry" },
+    { "spotId": "spot_dummy", "barIndex": 0, "isTrap": false }
+  ],
+  "manualRefs": ["m_axis", "m_cherry"]
+}

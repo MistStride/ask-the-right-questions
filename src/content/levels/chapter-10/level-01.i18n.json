@@ -1,0 +1,36 @@
+{
+  "zh": {
+    "chartTitle": "两款减肥茶的「惊人效果」对比（单位：kg）",
+    "labels": ["A 产品 · 前", "A 产品 · 后", "B 产品 · 前", "B 产品 · 后"],
+    "textRefs": {
+      "debunk_axis": "Y 轴起点被抬到了 0.9——A 与 B 的差距被视觉放大了好几倍！真实起点应为 0，B 其实只比 A 多减了 0.1kg。",
+      "debunk_cherry": "「A 产品 · 后」这根柱只统计了效果最好的那两周——选择性展示数据！把全程平均算进去，差异就没这么夸张了。"
+    },
+    "manual": [
+      "检查 Y 轴起点是不是 0",
+      "数据是不是只挑了好日子"
+    ],
+    "hints": [
+      "看看 Y 轴从几开始——0 才是诚实的起点",
+      "图表展示的是全部数据，还是只挑了最好看的？"
+    ],
+    "explanation": "这张图动了两个手脚：①Y 轴从 0.9 起，把 0.1kg 的微小差异放大成「两倍差距」的错觉；②只挑选效果最好的时段展示。看任何图表先问三件事：坐标起点诚实吗？数据完整吗？样本有代表性吗？"
+  },
+  "en": {
+    "chartTitle": "Two Diet Teas: \"Amazing\" Results Compared (kg)",
+    "labels": ["Tea A · before", "Tea A · after", "Tea B · before", "Tea B · after"],
+    "textRefs": {
+      "debunk_axis": "The Y axis starts at 0.9 — the gap between A and B is visually exaggerated several times over! The honest baseline is 0; B only beat A by 0.1 kg.",
+      "debunk_cherry": "The \"Tea A · after\" bar only counts the best two weeks — cherry-picked data! Averaged over the whole period, the difference is far less dramatic."
+    },
+    "manual": [
+      "Check whether the Y axis starts at 0",
+      "Is the data cherry-picked from the best days?"
+    ],
+    "hints": [
+      "Look at where the Y axis starts — 0 is the honest baseline",
+      "Does the chart show all the data, or only the best-looking part?"
+    ],
+    "explanation": "This chart cheats twice: ① the Y axis starts at 0.9, turning a tiny 0.1 kg difference into the illusion of a \"two-fold gap\"; ② it only shows the best-performing period. When reading any chart, ask three things: is the axis baseline honest? Is the data complete? Is the sample representative?"
+  }
+}

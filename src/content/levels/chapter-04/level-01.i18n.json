@@ -1,0 +1,22 @@
+{
+  "zh": {
+    "prompt": "「每个人都应当享有言论自由」——这里的「自由」，合理范围应该在哪？",
+    "spectrumLabels": ["想说什么说什么", "完全服从审查"],
+    "hints": [
+      "「自由」不可能是绝对的——想想伤害他人的边界",
+      "两个极端都有问题，合理的位置在中间偏右",
+      "关键：自由需要以「不伤害他人」为边界"
+    ],
+    "explanation": "「自由」是个典型的歧义词：绝对自由（想说什么说什么）会侵犯他人权利，完全服从审查又失去了自由本身。理性范围在「法律与道德边界内的自由」——这正是批判性思维的灰度思维：好论证不会滑向两极，而是落在证据与常识支持的区间里。"
+  },
+  "en": {
+    "prompt": "\"Everyone should enjoy freedom of speech\" — where does the reasonable range of \"freedom\" sit?",
+    "spectrumLabels": ["Say anything", "Total censorship"],
+    "hints": [
+      "Freedom cannot be absolute — think about the boundary of not harming others",
+      "Both extremes are flawed; the reasonable spot leans right of center",
+      "Key: freedom is bounded by not harming others"
+    ],
+    "explanation": "\"Freedom\" is a classic ambiguous term: absolute freedom (saying anything) infringes on others' rights, while total censorship destroys freedom itself. The reasonable range is \"freedom within legal and moral boundaries\" — this is the gray thinking of critical thinking: good arguments do not slide to extremes but land within the range supported by evidence and common sense."
+  }
+}

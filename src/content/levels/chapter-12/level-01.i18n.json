@@ -1,0 +1,22 @@
+{
+  "zh": {
+    "prompt": "研究显示：每周运动 150 分钟的人，心血管疾病风险显著更低。据此，关于「运动与健康」能得出多强的结论？",
+    "spectrumLabels": ["运动包治百病", "运动毫无作用"],
+    "hints": [
+      "证据支持的是「适量运动有益」，不是「包治百病」",
+      "也别滑向另一极——数据确实支持运动有价值",
+      "结论的强度必须与证据的强度匹配"
+    ],
+    "explanation": "这份证据能得出「适量运动显著改善心血管健康」，但推不出「包治百病」，也推不出「运动无用」。结论的强度必须与证据匹配——太强是过度引申，太弱是忽视证据。会提问的人，知道该给结论配多大的力气。"
+  },
+  "en": {
+    "prompt": "Research shows that people who exercise 150 minutes a week have significantly lower cardiovascular risk. Based on this, how strong a conclusion about \"exercise and health\" is reasonable?",
+    "spectrumLabels": ["Exercise cures all", "Exercise does nothing"],
+    "hints": [
+      "The evidence supports \"moderate exercise helps\", not \"cures all\"",
+      "Do not slide to the other extreme either — the data does support exercise",
+      "The strength of a conclusion must match the strength of the evidence"
+    ],
+    "explanation": "This evidence supports \"moderate exercise significantly improves cardiovascular health\", but not \"cures all\" nor \"useless\". The strength of a conclusion must match the evidence — too strong is overreach, too weak ignores the data. A good questioner knows how much weight a conclusion can carry."
+  }
+}

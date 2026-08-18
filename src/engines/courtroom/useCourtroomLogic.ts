@@ -71,6 +71,11 @@ export function useCourtroomLogic(level: CourtroomRuntimeLevel) {
     setFlashQuestionId(null)
   }, [])
 
+  /** 关闭全屏爆裂（通关后由引擎定时调用，避免蒙版永远盖住结算弹窗） */
+  const dismissBurst = useCallback(() => {
+    setBurstOpen(false)
+  }, [])
+
   const reset = useCallback(() => {
     setHitSpots(new Set())
     setWrongTries(0)
@@ -93,6 +98,7 @@ export function useCourtroomLogic(level: CourtroomRuntimeLevel) {
     burstOpen,
     strike,
     clearFlash,
+    dismissBurst,
     reset,
   }
 }

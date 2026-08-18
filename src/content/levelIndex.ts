@@ -1,16 +1,24 @@
 // 关卡索引：自动扫描 content/levels/ 下的所有关卡 JSON。
 // 新增关卡只需放入对应 chapter 目录，这里会自动发现并做 Zod 校验。
-// 支持两种引擎：xray（论证透视镜）与 courtroom（逻辑法庭）。
+// 支持四种引擎：xray / courtroom / scale / defusal。
 import {
   xrayLevelSchema,
   levelTextsSchema,
   courtroomLevelSchema,
   courtroomLevelTextsSchema,
+  scaleLevelSchema,
+  scaleLevelTextsSchema,
+  defusalLevelSchema,
+  defusalLevelTextsSchema,
 } from '../schema/levelSchema'
 import type {
   CourtroomLevelData,
   CourtroomTexts,
+  DefusalLevelData,
+  DefusalTexts,
   LevelDefinition,
+  ScaleLevelData,
+  ScaleTexts,
   XrayLevelData,
   XrayTexts,
 } from '../schema/levelTypes'
@@ -141,6 +149,43 @@ function validateCourtroom(
   }
 }
 
+/** 引擎C 天平校准：Zod 已做 idealRange/idealPoint 校验，这里只兜底文案存在 */
+function validateScale(path: string, levelId: string, texts: Record<'zh' | 'en', ScaleTexts>) {
+  for (const locale of ['zh', 'en'] as const) {
+    const t = texts[locale]
+    if (!t.prompt) fail(path, `关卡 ${levelId} 缺少 prompt（${locale}）`)
+    if (t.spectrumLabels.length !== 2) fail(path, `关卡 ${levelId} spectrumLabels 需两个标签（${locale}）`)
+  }
+}
+
+/** 引擎D 数据拆弹：labels 对齐 / debunk 存在 / manual 逐条对应 */
+function validateDefusal(
+  path: string,
+  levelId: string,
+  data: DefusalLevelData,
+  texts: Record<'zh' | 'en', DefusalTexts>,
+) {
+  for (const locale of ['zh', 'en'] as const) {
+    const t = texts[locale]
+    if (t.labels.length !== data.chartData.length) {
+      fail(path, `关卡 ${levelId} 的 labels(${t.labels.length}) 与 chartData(${data.chartData.length}) 数量不一致（${locale}）`)
+    }
+    for (const spot of data.suspectSpots) {
+      if (spot.isTrap && spot.debunkRef && !t.textRefs[spot.debunkRef]) {
+        fail(path, `关卡 ${levelId} 陷阱 ${spot.spotId} 引用了不存在的 debunkRef「${spot.debunkRef}」（${locale}）`)
+      }
+    }
+    for (const ref of data.manualRefs) {
+      if (!t.manual[data.manualRefs.indexOf(ref)] && !t.textRefs[ref]) {
+        // manualRefs 键对应 i18n manual 数组下标（由 Zod 保证数量一致）；此处仅提示缺失
+        if (!t.manual[data.manualRefs.indexOf(ref)]) {
+          fail(path, `关卡 ${levelId} 手册条目缺失（${locale}，第 ${data.manualRefs.indexOf(ref)} 条）`)
+        }
+      }
+    }
+  }
+}
+
 function buildLevels(): LevelDefinition[] {
   const defs: LevelDefinition[] = []
   for (const [path, raw] of Object.entries(levelFiles)) {
@@ -164,6 +209,76 @@ function buildLevels(): LevelDefinition[] {
       const texts = textsParsed.data as Record<'zh' | 'en', CourtroomTexts>
 
       validateCourtroom(path, data.levelId, data, texts)
+
+      defs.push({
+        meta: {
+          levelId: data.levelId,
+          chapter: data.chapter,
+          engine: data.engine,
+          difficulty: data.difficulty,
+          contributor: data.contributor,
+          rewardTags: data.rewardTags,
+        },
+        data,
+        texts,
+      })
+      continue
+    }
+
+    // —— 引擎C 天平校准站 ——
+    if (engine === 'scale') {
+      const parsed = scaleLevelSchema.safeParse(raw as unknown)
+      if (!parsed.success) {
+        fail(path, `逻辑文件不合法: ${parsed.error.issues.map((i) => `${i.path.join('.')} ${i.message}`).join('; ')}`)
+      }
+      const data = parsed.data as ScaleLevelData
+
+      const i18nPath = path.replace(/\.json$/, '.i18n.json')
+      const rawTexts = textFiles[i18nPath]
+      if (!rawTexts) fail(path, `缺少翻译文件 ${i18nPath}`)
+
+      const textsParsed = scaleLevelTextsSchema.safeParse(rawTexts as unknown)
+      if (!textsParsed.success) {
+        fail(path, `翻译文件不合法: ${textsParsed.error.issues.map((i) => `${i.path.join('.')} ${i.message}`).join('; ')}`)
+      }
+      const texts = textsParsed.data as Record<'zh' | 'en', ScaleTexts>
+
+      validateScale(path, data.levelId, texts)
+
+      defs.push({
+        meta: {
+          levelId: data.levelId,
+          chapter: data.chapter,
+          engine: data.engine,
+          difficulty: data.difficulty,
+          contributor: data.contributor,
+          rewardTags: data.rewardTags,
+        },
+        data,
+        texts,
+      })
+      continue
+    }
+
+    // —— 引擎D 数据拆弹 ——
+    if (engine === 'defusal') {
+      const parsed = defusalLevelSchema.safeParse(raw as unknown)
+      if (!parsed.success) {
+        fail(path, `逻辑文件不合法: ${parsed.error.issues.map((i) => `${i.path.join('.')} ${i.message}`).join('; ')}`)
+      }
+      const data = parsed.data as DefusalLevelData
+
+      const i18nPath = path.replace(/\.json$/, '.i18n.json')
+      const rawTexts = textFiles[i18nPath]
+      if (!rawTexts) fail(path, `缺少翻译文件 ${i18nPath}`)
+
+      const textsParsed = defusalLevelTextsSchema.safeParse(rawTexts as unknown)
+      if (!textsParsed.success) {
+        fail(path, `翻译文件不合法: ${textsParsed.error.issues.map((i) => `${i.path.join('.')} ${i.message}`).join('; ')}`)
+      }
+      const texts = textsParsed.data as Record<'zh' | 'en', DefusalTexts>
+
+      validateDefusal(path, data.levelId, data, texts)
 
       defs.push({
         meta: {

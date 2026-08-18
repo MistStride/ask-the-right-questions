@@ -18,7 +18,7 @@ export default function CourtroomBurst({ open, locale }: Props) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-court/10 backdrop-blur-[2px]"
+      className="pointer-events-none fixed inset-0 z-50 flex items-center justify-center bg-court/10 backdrop-blur-[2px]"
       aria-hidden
     >
       <svg className="absolute inset-0 h-full w-full" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">

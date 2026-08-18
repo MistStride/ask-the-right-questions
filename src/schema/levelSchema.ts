@@ -121,3 +121,106 @@ export const courtroomLevelTextsSchema = z.object({
 
 export type CourtroomLevelDataParsed = z.infer<typeof courtroomLevelSchema>
 export type CourtroomTextsParsed = z.infer<typeof courtroomLevelTextsSchema>
+
+/* ---------------- 引擎C 天平校准站 ---------------- */
+
+export const scaleModeSchema = z.enum(['spectrum', 'conclusion'])
+
+export const scaleLevelSchema = z.object({
+  levelId: z.string().min(1, 'levelId 不能为空'),
+  chapter: z.number().int().min(1).max(13, 'chapter 需在 1-13 之间'),
+  engine: z.literal('scale'),
+  difficulty: z.union([z.literal(1), z.literal(2), z.literal(3)]),
+  contributor: z.string().optional(),
+  rewardTags: z.array(radarDimensionSchema),
+  mode: scaleModeSchema.optional(),
+  idealRange: z.tuple([z.number().min(0).max(100), z.number().min(0).max(100)]).refine(
+    ([min, max]) => min < max,
+    { message: 'idealRange 需满足 min < max' },
+  ),
+  idealPoint: z.number().min(0).max(100),
+}).superRefine((data, ctx) => {
+  const [min, max] = data.idealRange
+  if (data.idealPoint < min || data.idealPoint > max) {
+    ctx.addIssue({
+      code: 'custom',
+      path: ['idealPoint'],
+      message: `idealPoint ${data.idealPoint} 必须落在 idealRange [${min}, ${max}] 内`,
+    })
+  }
+})
+
+export const scaleTextsSchema = z.object({
+  prompt: z.string().min(1, 'prompt 不能为空'),
+  spectrumLabels: z.tuple([z.string().min(1), z.string().min(1)]),
+  hints: z.array(z.string()),
+  explanation: z.string().min(1, 'explanation 不能为空'),
+})
+
+export const scaleLevelTextsSchema = z.object({
+  zh: scaleTextsSchema,
+  en: scaleTextsSchema,
+})
+
+export type ScaleLevelDataParsed = z.infer<typeof scaleLevelSchema>
+export type ScaleTextsParsed = z.infer<typeof scaleLevelTextsSchema>
+
+/* ---------------- 引擎D 数据拆弹 ---------------- */
+
+export const defusalSpotSchema = z.object({
+  spotId: z.string().min(1, 'spotId 不能为空'),
+  barIndex: z.number().int().min(0),
+  isTrap: z.boolean(),
+  debunkRef: z.string().optional(),
+})
+
+export const defusalLevelSchema = z.object({
+  levelId: z.string().min(1, 'levelId 不能为空'),
+  chapter: z.number().int().min(1).max(13, 'chapter 需在 1-13 之间'),
+  engine: z.literal('defusal'),
+  difficulty: z.union([z.literal(1), z.literal(2), z.literal(3)]),
+  contributor: z.string().optional(),
+  rewardTags: z.array(radarDimensionSchema),
+  chartData: z.array(z.object({ labelRef: z.string().min(1), value: z.number().finite() })).min(1, '至少需要一根柱'),
+  yAxis: z.object({
+    min: z.number().finite(),
+    max: z.number().finite(),
+    start: z.number().finite(),
+  }).refine((y) => y.min < y.start && y.start < y.max, {
+    message: 'yAxis 需满足 min < start < max（start 是动手脚的显示起点）',
+  }),
+  suspectSpots: z.array(defusalSpotSchema).min(1, '至少需要一个可疑点'),
+  manualRefs: z.array(z.string().min(1)).min(1, '至少需要一条拆弹手册'),
+}).superRefine((data, ctx) => {
+  for (const s of data.suspectSpots) {
+    if (s.barIndex >= data.chartData.length) {
+      ctx.addIssue({ code: 'custom', path: ['suspectSpots'], message: `可疑点 ${s.spotId} 的 barIndex ${s.barIndex} 超出柱数` })
+    }
+    if (s.isTrap && !s.debunkRef) {
+      ctx.addIssue({ code: 'custom', path: ['suspectSpots'], message: `陷阱 ${s.spotId} 必须提供 debunkRef` })
+    }
+  }
+  if (!data.suspectSpots.some((s) => s.isTrap)) {
+    ctx.addIssue({ code: 'custom', path: ['suspectSpots'], message: '至少需要一个真陷阱（isTrap: true）' })
+  }
+  if (data.manualRefs.length !== data.suspectSpots.filter((s) => s.isTrap).length) {
+    ctx.addIssue({ code: 'custom', path: ['manualRefs'], message: '拆弹手册条目数必须等于陷阱数（逐条对应）' })
+  }
+})
+
+export const defusalTextsSchema = z.object({
+  chartTitle: z.string().min(1, 'chartTitle 不能为空'),
+  labels: z.array(z.string().min(1)).min(1),
+  textRefs: z.record(z.string(), z.string().min(1, 'textRef 对应的文案不能为空')),
+  manual: z.array(z.string().min(1)).min(1),
+  hints: z.array(z.string()),
+  explanation: z.string().min(1, 'explanation 不能为空'),
+})
+
+export const defusalLevelTextsSchema = z.object({
+  zh: defusalTextsSchema,
+  en: defusalTextsSchema,
+})
+
+export type DefusalLevelDataParsed = z.infer<typeof defusalLevelSchema>
+export type DefusalTextsParsed = z.infer<typeof defusalLevelTextsSchema>

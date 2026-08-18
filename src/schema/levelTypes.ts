@@ -189,8 +189,12 @@ export interface LevelMeta {
 
 export interface LevelDefinition {
   meta: LevelMeta
-  data: XrayLevelData | CourtroomLevelData
-  texts: { zh: XrayTexts; en: XrayTexts } | { zh: CourtroomTexts; en: CourtroomTexts }
+  data: XrayLevelData | CourtroomLevelData | ScaleLevelData | DefusalLevelData
+  texts:
+    | { zh: XrayTexts; en: XrayTexts }
+    | { zh: CourtroomTexts; en: CourtroomTexts }
+    | { zh: ScaleTexts; en: ScaleTexts }
+    | { zh: DefusalTexts; en: DefusalTexts }
 }
 
 /** 引擎A 运行时锚点：逻辑 + 当前语言文案合并后的结果 */
@@ -216,4 +220,95 @@ export interface XrayRuntimeLevel {
   hints: string[]
   explanation: string
   correctChain?: XrayChainRef[]
+}
+
+/* ---------------- 引擎C 天平校准站（第 4/12 章）---------------- */
+
+export type ScaleMode = 'spectrum' | 'conclusion'
+// spectrum   词义光谱（第 4 章）：校准歧义词的合理含义范围
+// conclusion 结论区间（第 12 章）：证据能支撑多强的结论
+
+export interface ScaleLevelData {
+  levelId: string
+  chapter: number
+  engine: 'scale'
+  difficulty: Difficulty
+  contributor?: string
+  rewardTags: RadarDimension[]
+  mode?: ScaleMode
+  /** 0-100 合理区间 [min, max] */
+  idealRange: [number, number]
+  /** 区间内"最佳点"，0-100 */
+  idealPoint: number
+}
+
+export interface ScaleTexts {
+  /** 待校准的陈述/词语 */
+  prompt: string
+  /** 光谱两端标签：左端 / 右端 */
+  spectrumLabels: [string, string]
+  hints: string[]
+  explanation: string
+}
+
+export interface ScaleRuntimeLevel {
+  meta: LevelDefinition['meta']
+  mode: ScaleMode
+  prompt: string
+  spectrumLabels: [string, string]
+  idealRange: [number, number]
+  idealPoint: number
+  hints: string[]
+  explanation: string
+}
+
+/* ---------------- 引擎D 数据拆弹（第 10 章）---------------- */
+
+export interface DefusalLevelData {
+  levelId: string
+  chapter: number
+  engine: 'defusal'
+  difficulty: Difficulty
+  contributor?: string
+  rewardTags: RadarDimension[]
+  /** 柱状图数据（labelRef → i18n labels 文案） */
+  chartData: { labelRef: string; value: number }[]
+  /** Y 轴：min=真实下限（通常 0），start=被动手脚的显示起点（陷阱），max=上限 */
+  yAxis: { min: number; max: number; start: number }
+  /** 图上的可疑点（真陷阱 + 干扰项） */
+  suspectSpots: DefusalSpotRef[]
+  /** 拆弹手册条目（i18n 键），与陷阱一一对应 */
+  manualRefs: string[]
+}
+
+export interface DefusalSpotRef {
+  spotId: string
+  /** 挂在哪根柱上（chartData 索引） */
+  barIndex: number
+  isTrap: boolean
+  /** 拆弹成功解析（i18n 键，仅陷阱需要） */
+  debunkRef?: string
+}
+
+export interface DefusalTexts {
+  chartTitle: string
+  /** 各柱的 label 文案（与 chartData 顺序对应） */
+  labels: string[]
+  /** debunk 文案池 */
+  textRefs: Record<string, string>
+  /** 拆弹手册条目文案（与 manualRefs 对应） */
+  manual: string[]
+  hints: string[]
+  explanation: string
+}
+
+export interface DefusalRuntimeLevel {
+  meta: LevelDefinition['meta']
+  chartTitle: string
+  chartData: { label: string; value: number }[]
+  yAxis: { min: number; max: number; start: number }
+  spots: { spotId: string; barIndex: number; isTrap: boolean; debunkText?: string }[]
+  manual: string[]
+  hints: string[]
+  explanation: string
 }

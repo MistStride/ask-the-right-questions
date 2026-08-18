@@ -66,6 +66,7 @@ export default function CourtroomEngine({
     burstOpen,
     strike,
     clearFlash,
+    dismissBurst,
     reset,
   } = logic
 
@@ -83,6 +84,13 @@ export default function CourtroomEngine({
     const timer = window.setTimeout(clearFlash, 900)
     return () => window.clearTimeout(timer)
   }, [flashSpotId, flashQuestionId, clearFlash])
+
+  // 爆裂蒙版：1.3s 后自动关闭（结算弹窗 1.4s 弹出，蒙版不能盖住它）
+  useEffect(() => {
+    if (!burstOpen) return undefined
+    const timer = window.setTimeout(dismissBurst, 1300)
+    return () => window.clearTimeout(timer)
+  }, [burstOpen, dismissBurst])
 
   // 通关：爆裂特效由最后一个命中触发，看完再弹结算
   useEffect(() => {

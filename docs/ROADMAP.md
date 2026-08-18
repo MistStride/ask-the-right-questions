@@ -16,7 +16,9 @@
 - ✅ 引导优化：目标栏 ObjectiveBar + 串行单目标（用户反馈后追加，不在原路线图内）
 - ✅ 阶段 3 完成：3.2 手写 SVG 六维雷达图（RadarChart 生长动画 + 图例 chips）已上线；3.1 正式 i18n 评估完成（现有轻量字典已满足"右上角切语言全站同步切换"验收，react-i18next 迁移视为"不可见重构"暂缓）
 - ✅ 阶段 4 完成：引擎 B 逻辑法庭（4.1 类型+Zod 4.2 交互 4.3 第 7 章核心关 4.4 第 6/9 章变体）—详见 `docs/ENGINE-B-DESIGN.md`
-- ✅ 推送完成：远程 main = 2782a6a，仓库 `github.com/MistStride/ask-the-right-questions`
+- ✅ 阶段 5 完成：引擎 C 天平校准（第 4/12 章，热度渐晕滑块+靶心动画）+ 引擎 D 数据拆弹（第 10 章，手写 SVG 柱状图+拆弹手册+剥落/爆炸特效）—详见 `docs/ENGINE-C-D-DESIGN.md`
+- ✅ 修复：法庭引擎通关后爆裂蒙版不消失盖住结算弹窗（用户反馈）——爆裂 1.3s 自动关闭 + 蒙版 pointer-events-none
+- ✅ 推送完成：远程 main = bfe7988（阶段 5 待推送）
 
 ---
 

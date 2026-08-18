@@ -9,14 +9,22 @@ import type {
   CourtroomLevelData,
   CourtroomRuntimeLevel,
   CourtroomTexts,
+  DefusalLevelData,
+  DefusalRuntimeLevel,
+  DefusalTexts,
+  ScaleLevelData,
+  ScaleRuntimeLevel,
+  ScaleTexts,
   XrayAnchor,
   XrayLevelData,
   XrayRuntimeLevel,
   XrayTexts,
 } from '../schema/levelTypes'
 
-// 引擎B 懒加载：避免首屏引入法庭引擎代码
+// 引擎B/C/D 懒加载：避免首屏引入全部引擎代码
 const CourtroomEngine = lazy(() => import('../engines/courtroom/CourtroomEngine'))
+const ScaleEngine = lazy(() => import('../engines/scale/ScaleEngine'))
+const DefusalEngine = lazy(() => import('../engines/defusal/DefusalEngine'))
 
 export default function LevelPage() {
   const { levelId } = useParams<{ levelId: string }>()
@@ -25,7 +33,9 @@ export default function LevelPage() {
 
   const def = levelId ? getLevelById(levelId) : undefined
 
-  const runtime = useMemo<XrayRuntimeLevel | CourtroomRuntimeLevel | null>(() => {
+  const runtime = useMemo<
+    XrayRuntimeLevel | CourtroomRuntimeLevel | ScaleRuntimeLevel | DefusalRuntimeLevel | null
+  >(() => {
     if (!def) return null
 
     // —— 引擎B 逻辑法庭 ——
@@ -55,6 +65,50 @@ export default function LevelPage() {
         credibility: data.credibility,
         weakSpots,
         questions,
+        hints: texts.hints,
+        explanation: texts.explanation,
+      }
+      return result
+    }
+
+    // —— 引擎C 天平校准站 ——
+    if (def.meta.engine === 'scale') {
+      const data = def.data as ScaleLevelData
+      const texts = (def.texts as { zh: ScaleTexts; en: ScaleTexts })[locale]
+      const result: ScaleRuntimeLevel = {
+        meta: def.meta,
+        mode: data.mode ?? 'spectrum',
+        prompt: texts.prompt,
+        spectrumLabels: texts.spectrumLabels,
+        idealRange: data.idealRange,
+        idealPoint: data.idealPoint,
+        hints: texts.hints,
+        explanation: texts.explanation,
+      }
+      return result
+    }
+
+    // —— 引擎D 数据拆弹 ——
+    if (def.meta.engine === 'defusal') {
+      const data = def.data as DefusalLevelData
+      const texts = (def.texts as { zh: DefusalTexts; en: DefusalTexts })[locale]
+      const chartData = data.chartData.map((d, i) => ({
+        label: texts.labels[i] ?? d.labelRef,
+        value: d.value,
+      }))
+      const spots = data.suspectSpots.map((s) => ({
+        spotId: s.spotId,
+        barIndex: s.barIndex,
+        isTrap: s.isTrap,
+        debunkText: s.debunkRef ? texts.textRefs[s.debunkRef] : undefined,
+      }))
+      const result: DefusalRuntimeLevel = {
+        meta: def.meta,
+        chartTitle: texts.chartTitle,
+        chartData,
+        yAxis: data.yAxis,
+        spots,
+        manual: texts.manual,
         hints: texts.hints,
         explanation: texts.explanation,
       }
@@ -124,7 +178,6 @@ export default function LevelPage() {
   const next = chapterLevels[currentIdx + 1]
 
   const sharedProps = {
-    key: `${def.meta.levelId}-${locale}`,
     chapterTitle,
     onExit: () => navigate(`/chapter/${def.meta.chapter}`),
     onHome: () => navigate('/'),
@@ -134,6 +187,15 @@ export default function LevelPage() {
       /* 引擎内部已重置状态，无需额外操作 */
     },
   }
+
+  const engineKey = `${def.meta.levelId}-${locale}`
+
+  const fallbackText: Record<string, string> = {
+    courtroom: locale === 'zh' ? '法庭准备中…' : 'Preparing the courtroom…',
+    scale: locale === 'zh' ? '校准台就绪…' : 'Calibrating…',
+    defusal: locale === 'zh' ? '拆弹装备检查中…' : 'Checking the wire kit…',
+  }
+  const fallback = fallbackText[def.meta.engine] ?? 'Loading…'
 
   return (
     <div className="min-h-screen bg-abyss pt-8">
@@ -149,19 +211,27 @@ export default function LevelPage() {
       </header>
 
       {def.meta.engine === 'courtroom' ? (
-        <Suspense
-          fallback={
-            <div className="flex min-h-[40vh] items-center justify-center text-sm text-slate-400">
-              {locale === 'zh' ? '法庭准备中…' : 'Preparing the courtroom…'}
-            </div>
-          }
-        >
-          <CourtroomEngine level={runtime as CourtroomRuntimeLevel} {...sharedProps} />
+        <Suspense fallback={<LoadingFallback text={fallback} />}>
+          <CourtroomEngine key={engineKey} level={runtime as CourtroomRuntimeLevel} {...sharedProps} />
+        </Suspense>
+      ) : def.meta.engine === 'scale' ? (
+        <Suspense fallback={<LoadingFallback text={fallback} />}>
+          <ScaleEngine key={engineKey} level={runtime as ScaleRuntimeLevel} {...sharedProps} />
+        </Suspense>
+      ) : def.meta.engine === 'defusal' ? (
+        <Suspense fallback={<LoadingFallback text={fallback} />}>
+          <DefusalEngine key={engineKey} level={runtime as DefusalRuntimeLevel} {...sharedProps} />
         </Suspense>
       ) : (
-        <XrayEngine level={runtime as XrayRuntimeLevel} {...sharedProps} />
+        <XrayEngine key={engineKey} level={runtime as XrayRuntimeLevel} {...sharedProps} />
       )}
     </div>
+  )
+}
+
+function LoadingFallback({ text }: { text: string }) {
+  return (
+    <div className="flex min-h-[40vh] items-center justify-center text-sm text-slate-400">{text}</div>
   )
 }
 
