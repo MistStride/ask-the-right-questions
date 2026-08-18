@@ -2,6 +2,8 @@
 
 **Don't just believe — ask the right questions.**
 
+> **🌏 Language:** [English](README.md) · [中文](README.zh-CN.md)
+
 An interactive critical-thinking training game based on the book *Asking the Right Questions* (12th edition). The 13 chapters are distilled into **5 reusable thinking engines** that train your "panning-for-gold" mindset through gameplay — scanning arguments, cross-examining evidence, calibrating gray areas, defusing data traps, and taming thinking impulses.
 
 - **Data-driven**: every level is a plain JSON file + a bilingual text pack. Anyone can contribute a new level **without touching any code**.
