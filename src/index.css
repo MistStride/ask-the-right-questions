@@ -17,6 +17,8 @@
   --color-scale-deep: #5b21b6;
   --color-defuse: #ea580c; /* 引擎D 橙（数据拆弹） */
   --color-defuse-deep: #c2410c;
+  --color-tamer: #b45309; /* 引擎E 琥珀金（心智驯兽场） */
+  --color-tamer-deep: #92400e;
 
   --font-sans:
     'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', system-ui, sans-serif;
@@ -119,6 +121,26 @@ body {
   }
   80% {
     transform: translateX(4px);
+  }
+}
+
+/* 引擎E 选错回应卡抖动 */
+.tamer-shake {
+  animation: tamer-shake 0.4s ease;
+}
+@keyframes tamer-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-6px);
+  }
+  50% {
+    transform: translateX(6px);
+  }
+  75% {
+    transform: translateX(-4px);
   }
 }
 

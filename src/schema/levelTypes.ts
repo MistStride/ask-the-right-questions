@@ -189,12 +189,13 @@ export interface LevelMeta {
 
 export interface LevelDefinition {
   meta: LevelMeta
-  data: XrayLevelData | CourtroomLevelData | ScaleLevelData | DefusalLevelData
+  data: XrayLevelData | CourtroomLevelData | ScaleLevelData | DefusalLevelData | TamerLevelData
   texts:
     | { zh: XrayTexts; en: XrayTexts }
     | { zh: CourtroomTexts; en: CourtroomTexts }
     | { zh: ScaleTexts; en: ScaleTexts }
     | { zh: DefusalTexts; en: DefusalTexts }
+    | { zh: TamerTexts; en: TamerTexts }
 }
 
 /** 引擎A 运行时锚点：逻辑 + 当前语言文案合并后的结果 */
@@ -309,6 +310,75 @@ export interface DefusalRuntimeLevel {
   yAxis: { min: number; max: number; start: number }
   spots: { spotId: string; barIndex: number; isTrap: boolean; debunkText?: string }[]
   manual: string[]
+  hints: string[]
+  explanation: string
+}
+
+/* ---------------- 引擎E 心智驯兽场（第 1/13 章）---------------- */
+
+export type TamerMode = 'tutorial' | 'boss'
+// tutorial 第 1 章教程：海绵vs淘金开场 + 3 个冲动
+// boss     第 13 章终章：5 个冲动，情绪条压力更大
+
+export type TamerBias =
+  | 'jumping_to_conclusion' // 跳到结论
+  | 'egocentrism' // 自我中心
+  | 'black_and_white' // 非黑即白
+  | 'conformity' // 从众
+
+export interface TamerImpulseRef {
+  eventId: string
+  biasType: TamerBias
+  /** 候选回应卡（i18n 键数组，含 1 正确 + 若干干扰） */
+  optionRefs: string[]
+  /** 正确回应的 i18n 键（必须 ∈ optionRefs） */
+  correctOptionRef: string
+}
+
+export interface TamerLevelData {
+  levelId: string
+  chapter: number
+  engine: 'tamer'
+  difficulty: Difficulty
+  contributor?: string
+  rewardTags: RadarDimension[]
+  mode?: TamerMode
+  /** 场景描述（i18n 键） */
+  scenarioRef: string
+  impulseEvents: TamerImpulseRef[]
+  /** 情绪条初始值（0-100） */
+  initialRage?: number
+  /** 点错一次情绪上涨 */
+  ragePerMiss?: number
+}
+
+export interface TamerTexts {
+  scenario: string
+  /** 冲动时刻的"内心冲动"文案：eventId → 文案 */
+  impulsePrompts: Record<string, string>
+  /** 候选回应文案池：optionKey → 文案 */
+  options: Record<string, string>
+  /** 安抚解析 + 偏见标签：eventId → { calm, biasLabel } */
+  eventMeta: Record<string, { calm: string; biasLabel: string }>
+  hints: string[]
+  explanation: string
+}
+
+export interface TamerRuntimeLevel {
+  meta: LevelDefinition['meta']
+  mode: TamerMode
+  scenario: string
+  events: {
+    eventId: string
+    biasType: TamerBias
+    biasLabel: string
+    impulsePrompt: string
+    options: { key: string; text: string }[]
+    correctKey: string
+    calm: string
+  }[]
+  initialRage: number
+  ragePerMiss: number
   hints: string[]
   explanation: string
 }

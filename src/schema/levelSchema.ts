@@ -224,3 +224,69 @@ export const defusalLevelTextsSchema = z.object({
 
 export type DefusalLevelDataParsed = z.infer<typeof defusalLevelSchema>
 export type DefusalTextsParsed = z.infer<typeof defusalLevelTextsSchema>
+
+/* ---------------- 引擎E 心智驯兽场 ---------------- */
+
+export const tamerModeSchema = z.enum(['tutorial', 'boss'])
+
+export const tamerBiasSchema = z.enum([
+  'jumping_to_conclusion',
+  'egocentrism',
+  'black_and_white',
+  'conformity',
+])
+
+export const tamerImpulseSchema = z.object({
+  eventId: z.string().min(1, 'eventId 不能为空'),
+  biasType: tamerBiasSchema,
+  optionRefs: z.array(z.string().min(1)).min(3, '至少需要 3 个候选回应'),
+  correctOptionRef: z.string().min(1, 'correctOptionRef 不能为空'),
+})
+
+export const tamerLevelSchema = z
+  .object({
+    levelId: z.string().min(1, 'levelId 不能为空'),
+    chapter: z.number().int().min(1).max(13, 'chapter 需在 1-13 之间'),
+    engine: z.literal('tamer'),
+    difficulty: z.union([z.literal(1), z.literal(2), z.literal(3)]),
+    contributor: z.string().optional(),
+    rewardTags: z.array(radarDimensionSchema),
+    mode: tamerModeSchema.optional(),
+    scenarioRef: z.string().min(1, 'scenarioRef 不能为空'),
+    impulseEvents: z.array(tamerImpulseSchema).min(1, '至少需要一个冲动事件'),
+    initialRage: z.number().int().min(0).max(100).default(20),
+    ragePerMiss: z.number().int().min(1).max(100).default(20),
+  })
+  .superRefine((data, ctx) => {
+    for (const ev of data.impulseEvents) {
+      if (!ev.optionRefs.includes(ev.correctOptionRef)) {
+        ctx.addIssue({
+          code: 'custom',
+          path: ['impulseEvents'],
+          message: `事件 ${ev.eventId} 的 correctOptionRef「${ev.correctOptionRef}」不在 optionRefs 中`,
+        })
+      }
+    }
+  })
+
+export const tamerEventMetaSchema = z.object({
+  calm: z.string().min(1, 'calm 不能为空'),
+  biasLabel: z.string().min(1, 'biasLabel 不能为空'),
+})
+
+export const tamerTextsSchema = z.object({
+  scenario: z.string().min(1, 'scenario 不能为空'),
+  impulsePrompts: z.record(z.string(), z.string().min(1)),
+  options: z.record(z.string(), z.string().min(1)),
+  eventMeta: z.record(z.string(), tamerEventMetaSchema),
+  hints: z.array(z.string()),
+  explanation: z.string().min(1, 'explanation 不能为空'),
+})
+
+export const tamerLevelTextsSchema = z.object({
+  zh: tamerTextsSchema,
+  en: tamerTextsSchema,
+})
+
+export type TamerLevelDataParsed = z.infer<typeof tamerLevelSchema>
+export type TamerTextsParsed = z.infer<typeof tamerLevelTextsSchema>

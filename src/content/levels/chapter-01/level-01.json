@@ -1,0 +1,32 @@
+{
+  "levelId": "ch01-level01",
+  "chapter": 1,
+  "engine": "tamer",
+  "difficulty": 1,
+  "contributor": "atrq-team",
+  "rewardTags": ["emotion"],
+  "mode": "tutorial",
+  "scenarioRef": "scenario",
+  "initialRage": 20,
+  "ragePerMiss": 25,
+  "impulseEvents": [
+    {
+      "eventId": "ev_conclusion",
+      "biasType": "jumping_to_conclusion",
+      "optionRefs": ["opt_agree", "opt_ask1", "opt_forward"],
+      "correctOptionRef": "opt_ask1"
+    },
+    {
+      "eventId": "ev_ego",
+      "biasType": "egocentrism",
+      "optionRefs": ["opt_ask2", "opt_trust", "opt_hate"],
+      "correctOptionRef": "opt_ask2"
+    },
+    {
+      "eventId": "ev_bw",
+      "biasType": "black_and_white",
+      "optionRefs": ["opt_ask3", "opt_choose", "opt_abandon"],
+      "correctOptionRef": "opt_ask3"
+    }
+  ]
+}

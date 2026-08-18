@@ -1,6 +1,6 @@
 // 关卡索引：自动扫描 content/levels/ 下的所有关卡 JSON。
 // 新增关卡只需放入对应 chapter 目录，这里会自动发现并做 Zod 校验。
-// 支持四种引擎：xray / courtroom / scale / defusal。
+// 支持五种引擎：xray / courtroom / scale / defusal / tamer。
 import {
   xrayLevelSchema,
   levelTextsSchema,
@@ -10,6 +10,8 @@ import {
   scaleLevelTextsSchema,
   defusalLevelSchema,
   defusalLevelTextsSchema,
+  tamerLevelSchema,
+  tamerLevelTextsSchema,
 } from '../schema/levelSchema'
 import type {
   CourtroomLevelData,
@@ -19,6 +21,8 @@ import type {
   LevelDefinition,
   ScaleLevelData,
   ScaleTexts,
+  TamerLevelData,
+  TamerTexts,
   XrayLevelData,
   XrayTexts,
 } from '../schema/levelTypes'
@@ -186,6 +190,31 @@ function validateDefusal(
   }
 }
 
+/** 引擎E 心智驯兽场：i18n 键全部存在 + 正确项文案在候选池中 */
+function validateTamer(path: string, levelId: string, data: TamerLevelData, texts: Record<'zh' | 'en', TamerTexts>) {
+  for (const locale of ['zh', 'en'] as const) {
+    const t = texts[locale]
+    if (!t.scenario) fail(path, `关卡 ${levelId} 缺少 scenario（${locale}）`)
+    for (const ev of data.impulseEvents) {
+      if (!t.impulsePrompts[ev.eventId]) {
+        fail(path, `关卡 ${levelId} 事件 ${ev.eventId} 缺少 impulsePrompt（${locale}）`)
+      }
+      const meta = t.eventMeta[ev.eventId]
+      if (!meta?.calm || !meta?.biasLabel) {
+        fail(path, `关卡 ${levelId} 事件 ${ev.eventId} 缺少 eventMeta.calm/biasLabel（${locale}）`)
+      }
+      for (const ref of ev.optionRefs) {
+        if (!t.options[ref]) {
+          fail(path, `关卡 ${levelId} 事件 ${ev.eventId} 引用了不存在的选项「${ref}」（${locale}）`)
+        }
+      }
+      if (!t.options[ev.correctOptionRef]) {
+        fail(path, `关卡 ${levelId} 事件 ${ev.eventId} 的正确项「${ev.correctOptionRef}」文案缺失（${locale}）`)
+      }
+    }
+  }
+}
+
 function buildLevels(): LevelDefinition[] {
   const defs: LevelDefinition[] = []
   for (const [path, raw] of Object.entries(levelFiles)) {
@@ -279,6 +308,41 @@ function buildLevels(): LevelDefinition[] {
       const texts = textsParsed.data as Record<'zh' | 'en', DefusalTexts>
 
       validateDefusal(path, data.levelId, data, texts)
+
+      defs.push({
+        meta: {
+          levelId: data.levelId,
+          chapter: data.chapter,
+          engine: data.engine,
+          difficulty: data.difficulty,
+          contributor: data.contributor,
+          rewardTags: data.rewardTags,
+        },
+        data,
+        texts,
+      })
+      continue
+    }
+
+    // —— 引擎E 心智驯兽场 ——
+    if (engine === 'tamer') {
+      const parsed = tamerLevelSchema.safeParse(raw as unknown)
+      if (!parsed.success) {
+        fail(path, `逻辑文件不合法: ${parsed.error.issues.map((i) => `${i.path.join('.')} ${i.message}`).join('; ')}`)
+      }
+      const data = parsed.data as TamerLevelData
+
+      const i18nPath = path.replace(/\.json$/, '.i18n.json')
+      const rawTexts = textFiles[i18nPath]
+      if (!rawTexts) fail(path, `缺少翻译文件 ${i18nPath}`)
+
+      const textsParsed = tamerLevelTextsSchema.safeParse(rawTexts as unknown)
+      if (!textsParsed.success) {
+        fail(path, `翻译文件不合法: ${textsParsed.error.issues.map((i) => `${i.path.join('.')} ${i.message}`).join('; ')}`)
+      }
+      const texts = textsParsed.data as Record<'zh' | 'en', TamerTexts>
+
+      validateTamer(path, data.levelId, data, texts)
 
       defs.push({
         meta: {

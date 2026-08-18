@@ -1,0 +1,44 @@
+{
+  "levelId": "ch13-level01",
+  "chapter": 13,
+  "engine": "tamer",
+  "difficulty": 3,
+  "contributor": "atrq-team",
+  "rewardTags": ["emotion"],
+  "mode": "boss",
+  "scenarioRef": "scenario",
+  "initialRage": 20,
+  "ragePerMiss": 20,
+  "impulseEvents": [
+    {
+      "eventId": "ev_conformity",
+      "biasType": "conformity",
+      "optionRefs": ["opt_ask_c1", "opt_buy", "opt_like"],
+      "correctOptionRef": "opt_ask_c1"
+    },
+    {
+      "eventId": "ev_conclusion2",
+      "biasType": "jumping_to_conclusion",
+      "optionRefs": ["opt_ask_c2", "opt_panic", "opt_share"],
+      "correctOptionRef": "opt_ask_c2"
+    },
+    {
+      "eventId": "ev_bw2",
+      "biasType": "black_and_white",
+      "optionRefs": ["opt_ask_c3", "opt_insult", "opt_silence"],
+      "correctOptionRef": "opt_ask_c3"
+    },
+    {
+      "eventId": "ev_ego2",
+      "biasType": "egocentrism",
+      "optionRefs": ["opt_ask_c4", "opt_friends", "opt_more"],
+      "correctOptionRef": "opt_ask_c4"
+    },
+    {
+      "eventId": "ev_evidence",
+      "biasType": "jumping_to_conclusion",
+      "optionRefs": ["opt_ask_c5", "opt_believe", "opt_ask_name"],
+      "correctOptionRef": "opt_ask_c5"
+    }
+  ]
+}

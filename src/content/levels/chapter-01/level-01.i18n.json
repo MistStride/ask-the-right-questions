@@ -1,0 +1,80 @@
+{
+  "zh": {
+    "scenario": "你刷到一条朋友圈：「XX 牌保健品，我爸吃了一周高血压就好了！医生都是骗钱的，大家别去医院了！」",
+    "impulsePrompts": {
+      "ev_conclusion": "医生都是骗钱的！",
+      "ev_ego": "我爸说的就是对的，我信我爸！",
+      "ev_bw": "要么信我爸，要么信医生，没有第三种！"
+    },
+    "options": {
+      "opt_agree": "对啊，医生都是骗钱的！",
+      "opt_ask1": "我爸一个人的经历，能证明所有医生都骗钱吗？",
+      "opt_forward": "转发给家族群，让大家别再被医院骗",
+      "opt_ask2": "我爸的体验，能代表所有人的情况吗？",
+      "opt_trust": "我爸不会骗我，他说对就是对的",
+      "opt_hate": "不信我爸的人都是傻瓜",
+      "opt_ask3": "可不可以两种都参考，或者有第三种选择？",
+      "opt_choose": "选我爸，他是我爸",
+      "opt_abandon": "那我谁也不信了"
+    },
+    "eventMeta": {
+      "ev_conclusion": {
+        "calm": "一个案例（我爸）能证明「所有医生都骗钱」吗？要得出这种结论需要大量可靠数据——先问证据，别跳到结论。",
+        "biasLabel": "跳到结论"
+      },
+      "ev_ego": {
+        "calm": "自我中心：我的经历不等于普遍规律。我爸的个案，不能代表所有人的健康选择。",
+        "biasLabel": "自我中心"
+      },
+      "ev_bw": {
+        "calm": "非黑即白忽略了中间的灰度——保健品的个案和现代医学，完全可以同时被谨慎地对待。",
+        "biasLabel": "非黑即白"
+      }
+    },
+    "hints": [
+      "冲动冒头时，先问：这有证据吗？",
+      "「我/我爸/我朋友」的个人经历 ≠ 普遍证据",
+      "非黑即白之外，往往还有第三条路"
+    ],
+    "explanation": "这条朋友圈犯了三个典型冲动：把个人经历当普遍证据、自我中心、非黑即白。你作为骑象人，用「提问」拦住了大象——这正是淘金式思维：先问，再信。"
+  },
+  "en": {
+    "scenario": "You see a post: \"This supplement fixed my dad's blood pressure in a week! Doctors are all scammers — everyone stop going to the hospital!\"",
+    "impulsePrompts": {
+      "ev_conclusion": "Doctors are all scammers!",
+      "ev_ego": "My dad is right, I trust my dad!",
+      "ev_bw": "It's either my dad or the doctors — no third option!"
+    },
+    "options": {
+      "opt_agree": "Yeah, doctors are all scammers!",
+      "opt_ask1": "Can my dad's single experience prove that all doctors are scammers?",
+      "opt_forward": "Forward it to the family group so nobody gets cheated by hospitals",
+      "opt_ask2": "Can my dad's experience represent everyone's situation?",
+      "opt_trust": "My dad would never lie to me — if he says so, it's right",
+      "opt_hate": "Anyone who doesn't trust my dad is an idiot",
+      "opt_ask3": "Can we consider both, or is there a third option?",
+      "opt_choose": "I'll pick my dad — he's my dad",
+      "opt_abandon": "Then I'll trust nobody"
+    },
+    "eventMeta": {
+      "ev_conclusion": {
+        "calm": "Can one case (my dad) prove that \"all doctors are scammers\"? That conclusion needs a lot of solid data — ask for evidence first, don't jump to conclusions.",
+        "biasLabel": "Jumping to Conclusions"
+      },
+      "ev_ego": {
+        "calm": "Egocentrism: my experience is not a universal rule. My dad's case cannot represent everyone's health choices.",
+        "biasLabel": "Egocentrism"
+      },
+      "ev_bw": {
+        "calm": "Black-and-white thinking ignores the gray zone — the supplement anecdote and modern medicine can both be treated with caution at the same time.",
+        "biasLabel": "Black-and-White"
+      }
+    },
+    "hints": [
+      "When an impulse surges, first ask: is there evidence?",
+      "\"Me / my dad / my friend\" personal experience ≠ universal evidence",
+      "Beyond black-and-white, there is usually a third path"
+    ],
+    "explanation": "This post commits three classic impulses: treating a personal anecdote as universal evidence, egocentrism, and black-and-white thinking. As the rider, you stopped the elephant with questions — that is gold-miner thinking: question first, believe second."
+  }
+}

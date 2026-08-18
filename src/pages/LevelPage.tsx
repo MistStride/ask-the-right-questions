@@ -15,16 +15,20 @@ import type {
   ScaleLevelData,
   ScaleRuntimeLevel,
   ScaleTexts,
+  TamerLevelData,
+  TamerRuntimeLevel,
+  TamerTexts,
   XrayAnchor,
   XrayLevelData,
   XrayRuntimeLevel,
   XrayTexts,
 } from '../schema/levelTypes'
 
-// 引擎B/C/D 懒加载：避免首屏引入全部引擎代码
+// 引擎B/C/D/E 懒加载：避免首屏引入全部引擎代码
 const CourtroomEngine = lazy(() => import('../engines/courtroom/CourtroomEngine'))
 const ScaleEngine = lazy(() => import('../engines/scale/ScaleEngine'))
 const DefusalEngine = lazy(() => import('../engines/defusal/DefusalEngine'))
+const TamerEngine = lazy(() => import('../engines/tamer/TamerEngine'))
 
 export default function LevelPage() {
   const { levelId } = useParams<{ levelId: string }>()
@@ -34,10 +38,35 @@ export default function LevelPage() {
   const def = levelId ? getLevelById(levelId) : undefined
 
   const runtime = useMemo<
-    XrayRuntimeLevel | CourtroomRuntimeLevel | ScaleRuntimeLevel | DefusalRuntimeLevel | null
+    XrayRuntimeLevel | CourtroomRuntimeLevel | ScaleRuntimeLevel | DefusalRuntimeLevel | TamerRuntimeLevel | null
   >(() => {
     if (!def) return null
 
+    // —— 引擎E 心智驯兽场 ——
+    if (def.meta.engine === 'tamer') {
+      const data = def.data as TamerLevelData
+      const texts = (def.texts as { zh: TamerTexts; en: TamerTexts })[locale]
+      const events = data.impulseEvents.map((ev) => ({
+        eventId: ev.eventId,
+        biasType: ev.biasType,
+        biasLabel: texts.eventMeta[ev.eventId]?.biasLabel ?? ev.biasType,
+        impulsePrompt: texts.impulsePrompts[ev.eventId] ?? '',
+        options: ev.optionRefs.map((ref) => ({ key: ref, text: texts.options[ref] ?? ref })),
+        correctKey: ev.correctOptionRef,
+        calm: texts.eventMeta[ev.eventId]?.calm ?? '',
+      }))
+      const result: TamerRuntimeLevel = {
+        meta: def.meta,
+        mode: data.mode ?? 'tutorial',
+        scenario: texts.scenario,
+        events,
+        initialRage: data.initialRage ?? 20,
+        ragePerMiss: data.ragePerMiss ?? 20,
+        hints: texts.hints,
+        explanation: texts.explanation,
+      }
+      return result
+    }
     // —— 引擎B 逻辑法庭 ——
     if (def.meta.engine === 'courtroom') {
       const data = def.data as CourtroomLevelData
@@ -194,6 +223,7 @@ export default function LevelPage() {
     courtroom: locale === 'zh' ? '法庭准备中…' : 'Preparing the courtroom…',
     scale: locale === 'zh' ? '校准台就绪…' : 'Calibrating…',
     defusal: locale === 'zh' ? '拆弹装备检查中…' : 'Checking the wire kit…',
+    tamer: locale === 'zh' ? '大象在等你…' : 'The elephant awaits…',
   }
   const fallback = fallbackText[def.meta.engine] ?? 'Loading…'
 
@@ -221,6 +251,10 @@ export default function LevelPage() {
       ) : def.meta.engine === 'defusal' ? (
         <Suspense fallback={<LoadingFallback text={fallback} />}>
           <DefusalEngine key={engineKey} level={runtime as DefusalRuntimeLevel} {...sharedProps} />
+        </Suspense>
+      ) : def.meta.engine === 'tamer' ? (
+        <Suspense fallback={<LoadingFallback text={fallback} />}>
+          <TamerEngine key={engineKey} level={runtime as TamerRuntimeLevel} {...sharedProps} />
         </Suspense>
       ) : (
         <XrayEngine key={engineKey} level={runtime as XrayRuntimeLevel} {...sharedProps} />

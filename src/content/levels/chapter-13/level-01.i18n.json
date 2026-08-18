@@ -1,0 +1,112 @@
+{
+  "zh": {
+    "scenario": "直播间里，主播高举「第三季新品」大喊：全网都在抢！研究证明它有效！弹幕疯狂刷屏「不买就亏了」……",
+    "impulsePrompts": {
+      "ev_conformity": "全网都在买，肯定是好东西！",
+      "ev_conclusion2": "这么多人买，不买就亏了！",
+      "ev_bw2": "要么信主播，要么是黑粉！",
+      "ev_ego2": "我朋友都说好，肯定没错！",
+      "ev_evidence": "他说研究证明有效，那就是真的！"
+    },
+    "options": {
+      "opt_ask_c1": "销量高就等于质量好吗？",
+      "opt_buy": "赶紧下单，晚了就没货了",
+      "opt_like": "主播说得对，我也这么觉得",
+      "opt_ask_c2": "大家买 = 我该买？从众不能代替判断",
+      "opt_panic": "不买就亏了，快下单",
+      "opt_share": "转发给朋友一起买",
+      "opt_ask_c3": "主播的话有证据支撑吗？",
+      "opt_insult": "说不好的人都是黑粉",
+      "opt_silence": "算了，不评论了",
+      "opt_ask_c4": "几个朋友的评价，能代表全部用户吗？",
+      "opt_friends": "我朋友不会骗我",
+      "opt_more": "再找 5 个朋友确认",
+      "opt_ask_c5": "什么研究？样本多大？谁做的？",
+      "opt_believe": "有研究就肯定是真的",
+      "opt_ask_name": "这研究叫什么名字？"
+    },
+    "eventMeta": {
+      "ev_conformity": {
+        "calm": "从众：销量是营销的结果，不是质量的证据。买的人多 ≠ 东西好。",
+        "biasLabel": "从众"
+      },
+      "ev_conclusion2": {
+        "calm": "「不买就亏」是商家制造的稀缺恐慌——稀缺感不等于价值。",
+        "biasLabel": "跳到结论"
+      },
+      "ev_bw2": {
+        "calm": "「信主播 or 黑粉」是二元话术——质疑和黑粉根本不是一回事。",
+        "biasLabel": "非黑即白"
+      },
+      "ev_ego2": {
+        "calm": "几个朋友的好评是小样本，代表不了全部用户。",
+        "biasLabel": "自我中心"
+      },
+      "ev_evidence": {
+        "calm": "「研究证明」要追问三件套：样本多大？方法严谨吗？谁做的、有没有利益关系？",
+        "biasLabel": "跳到结论"
+      }
+    },
+    "hints": [
+      "从众压力越大，越要问：大家买 = 好吗？",
+      "「研究证明」四个字不够——样本、方法、来源都要追问",
+      "「信主播 or 黑粉」是操纵话术，质疑不是黑粉"
+    ],
+    "explanation": "终章把前 12 章的技能汇成一句话：看到任何说法，先问证据、样本、来源、替代解释。你没有被从众、稀缺话术和「研究证明」的空头支票带走——骑象人，你踏平了虚假论证的荒原。"
+  },
+  "en": {
+    "scenario": "In the livestream, the host holds up the \"Season 3 new product\" and shouts: everyone is buying it! Research proves it works! The barrage floods with \"buy it before it's gone\"...",
+    "impulsePrompts": {
+      "ev_conformity": "Everyone is buying it, so it must be good!",
+      "ev_conclusion2": "So many people are buying — I'll miss out if I don't!",
+      "ev_bw2": "Either trust the host, or you're a hater!",
+      "ev_ego2": "My friends all say it's great, so it must be fine!",
+      "ev_evidence": "He says research proves it works, so it must be true!"
+    },
+    "options": {
+      "opt_ask_c1": "Does high sales volume equal good quality?",
+      "opt_buy": "Order now before it sells out",
+      "opt_like": "The host is right, I feel the same way",
+      "opt_ask_c2": "Everyone buying = I should buy? Conformity is not judgment",
+      "opt_panic": "Missing out is a loss — order now",
+      "opt_share": "Share with friends and buy together",
+      "opt_ask_c3": "Is there any evidence behind what the host says?",
+      "opt_insult": "Anyone who says it's bad is a hater",
+      "opt_silence": "Forget it, I won't comment",
+      "opt_ask_c4": "Can a few friends' reviews represent all users?",
+      "opt_friends": "My friends would never lie to me",
+      "opt_more": "Let me ask 5 more friends to confirm",
+      "opt_ask_c5": "What research? How big was the sample? Who did it?",
+      "opt_believe": "If there's research, it must be true",
+      "opt_ask_name": "What's the study called?"
+    },
+    "eventMeta": {
+      "ev_conformity": {
+        "calm": "Conformity: sales are the result of marketing, not evidence of quality. Many buyers ≠ good product.",
+        "biasLabel": "Conformity"
+      },
+      "ev_conclusion2": {
+        "calm": "\"You'll miss out\" is manufactured scarcity — scarcity is not value.",
+        "biasLabel": "Jumping to Conclusions"
+      },
+      "ev_bw2": {
+        "calm": "\"Trust the host or you're a hater\" is binary manipulation — questioning is not hating.",
+        "biasLabel": "Black-and-White"
+      },
+      "ev_ego2": {
+        "calm": "A few friends' praise is a tiny sample; it cannot represent all users.",
+        "biasLabel": "Egocentrism"
+      },
+      "ev_evidence": {
+        "calm": "\"Research proves it\" demands a three-part follow-up: sample size? rigorous methods? who did it and do they have a conflict of interest?",
+        "biasLabel": "Jumping to Conclusions"
+      }
+    },
+    "hints": [
+      "The greater the herd pressure, the more you ask: everyone buying = good?",
+      "\"Research proves it\" is not enough — ask about sample, method, and source",
+      "\"Trust the host or you're a hater\" is a manipulation tactic; questioning is not hating"
+    ],
+    "explanation": "The final chapter condenses the previous 12 into one line: when you meet any claim, first ask about evidence, sample, source, and rival explanations. You were not carried away by conformity, scarcity talk, or the blank check of \"research proves it\" — rider, you have trampled the wasteland of fake arguments."
+  }
+}
