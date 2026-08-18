@@ -1,0 +1,50 @@
+{
+  "zh": {
+    "caseTitle": "案件：朋友圈流传的「偏方」",
+    "witnessName": "某「养生导师」的证言",
+    "testimony": "我是有二十多年经验的养生导师，我跟你们说，喝这个草药水，比打疫苗管用多了！我家隔壁老王，去年就是靠这个治好的，现在活蹦乱跳。你们要是打了疫苗，出了问题谁负责？孩子的未来，就掌握在你们这些家长的手里啊！",
+    "textRefs": {
+      "spot_selfclaim": "我是有二十多年经验的养生导师",
+      "spot_singlecase": "我家隔壁老王，去年就是靠这个治好的",
+      "spot_emotion": "孩子的未来，就掌握在你们这些家长的手里啊",
+      "debunk_selfclaim": "自称「养生导师」没有给出任何资质——二十多年经验无法核实，自称的头衔不等于专业资格。",
+      "debunk_singlecase": "个人见证：隔壁老王的单一案例不能证明草药水有效——可能是自愈、巧合或误诊，个案不能当证据。",
+      "debunk_emotion": "诉诸情感：用「孩子的未来」「家长的责任」制造愧疚和恐惧——情绪不能替代数据与临床证据。",
+      "q_selfclaim": "「养生导师」是正规职业吗？有什么可查证的资质或机构认证？",
+      "q_singlecase": "老王的「治好」有没有医院诊断记录？单一案例能代表所有人吗？",
+      "q_emotion": "用「孩子的未来」煽动情绪，能替代科学证据吗？",
+      "q_d1": "这碗草药水的味道怎么样？",
+      "q_d2": "老王今年多大年纪？"
+    },
+    "hints": [
+      "自称头衔不等于资质——问可查证的凭证",
+      "一个邻居的案例，能证明草药水有效吗？",
+      "用「孩子的未来」催泪——情绪不是证据"
+    ],
+    "explanation": "这段「养生导师」的证言三处破绽：①自称「二十多年经验」却没有任何可查证的资质；②用邻居老王的单一案例当证据（可能是自愈或巧合）；③用「孩子的未来」煽动家长情绪。健康决策面前，情绪和个案都不能代替临床证据——尤其是当发言者并非真专家时。"
+  },
+  "en": {
+    "caseTitle": "Case: A \"Home Remedy\" Circulating on Social Media",
+    "witnessName": "Testimony of a \"Wellness Guru\"",
+    "testimony": "I'm a wellness guru with over twenty years of experience. Let me tell you, drinking this herbal brew works far better than getting vaccinated! My neighbor Wang, last year, was cured by this very remedy — now he's bouncing around. And if you get vaccinated and something goes wrong, who takes responsibility? Your children's future is in your hands, parents!",
+    "textRefs": {
+      "spot_selfclaim": "I'm a wellness guru with over twenty years of experience",
+      "spot_singlecase": "My neighbor Wang, last year, was cured by this very remedy",
+      "spot_emotion": "Your children's future is in your hands",
+      "debunk_selfclaim": "Self-proclaimed \"wellness guru\" shows no credentials — twenty years of experience cannot be verified; a self-appointed title is not professional qualification.",
+      "debunk_singlecase": "Personal testimony: one neighbor's case cannot prove the brew works — it could be spontaneous recovery, coincidence, or misdiagnosis; a single case is not evidence.",
+      "debunk_emotion": "Emotional appeal: using \"your children's future\" and \"parents' responsibility\" to create guilt and fear — emotions cannot replace data and clinical evidence.",
+      "q_selfclaim": "Is \"wellness guru\" a real profession? Any verifiable credentials or institutional certification?",
+      "q_singlecase": "Does Wang's \"recovery\" have hospital records? Can one case represent everyone?",
+      "q_emotion": "Can stirring emotions with \"your children's future\" replace scientific evidence?",
+      "q_d1": "How does the herbal brew taste?",
+      "q_d2": "How old is Wang?"
+    },
+    "hints": [
+      "A self-proclaimed title is not qualification — ask for verifiable credentials",
+      "Can one neighbor's case prove the brew works?",
+      "Tugging heartstrings with \"your children's future\" — emotion is not evidence"
+    ],
+    "explanation": "This \"wellness guru\" testimony has three flaws: ① self-claims \"twenty years of experience\" with no verifiable credentials; ② uses one neighbor's single case as evidence (could be self-healing or coincidence); ③ plays on parents' emotions with \"your children's future\". In health decisions, emotion and anecdotes cannot replace clinical evidence — especially when the speaker is not a real expert."
+  }
+}

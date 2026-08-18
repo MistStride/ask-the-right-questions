@@ -1,0 +1,22 @@
+{
+  "levelId": "ch07-level02",
+  "chapter": 7,
+  "engine": "courtroom",
+  "difficulty": 2,
+  "contributor": "atrq-team",
+  "rewardTags": ["evidence"],
+  "mode": "trial",
+  "credibility": 100,
+  "weakSpots": [
+    { "spotId": "spot_celebrity", "anchorTextRef": "spot_celebrity", "issueType": "celebrity_testimonial", "debunkRef": "debunk_celebrity", "sharpness": 40 },
+    { "spotId": "spot_noqual", "anchorTextRef": "spot_noqual", "issueType": "expert_qualification", "debunkRef": "debunk_noqual", "sharpness": 35 },
+    { "spotId": "spot_sponsor", "anchorTextRef": "spot_sponsor", "issueType": "conflict_of_interest", "debunkRef": "debunk_sponsor", "sharpness": 25 }
+  ],
+  "questionBank": [
+    { "questionId": "q_celebrity", "textRef": "q_celebrity", "sharpness": 40, "targetIssue": "celebrity_testimonial", "isRelevant": true },
+    { "questionId": "q_noqual", "textRef": "q_noqual", "sharpness": 35, "targetIssue": "expert_qualification", "isRelevant": true },
+    { "questionId": "q_sponsor", "textRef": "q_sponsor", "sharpness": 25, "targetIssue": "conflict_of_interest", "isRelevant": true },
+    { "questionId": "q_d1", "textRef": "q_d1", "sharpness": 10, "targetIssue": "celebrity_testimonial", "isRelevant": false },
+    { "questionId": "q_d2", "textRef": "q_d2", "sharpness": 10, "targetIssue": "conflict_of_interest", "isRelevant": false }
+  ]
+}

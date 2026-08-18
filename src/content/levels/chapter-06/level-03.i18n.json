@@ -1,0 +1,50 @@
+{
+  "zh": {
+    "caseTitle": "病历：一场变了味的群聊争论",
+    "witnessName": "小张的自述",
+    "testimony": "群里讨论该不该让孩子用平板学习。有人说平板伤眼睛，我回了一句「你连孩子都没养过，有什么资格谈教育？」然后有人说平板会让孩子沉迷游戏，我告诉他：照你这么说，反对用平板的人就是想让孩子彻底回到原始社会、连电视都不许看。再说了，我们小时候不也看电视长大吗？电视都没事，平板能有什么事？",
+    "textRefs": {
+      "spot_hominem": "你连孩子都没养过，有什么资格谈教育",
+      "spot_strawman2": "反对用平板的人就是想让孩子彻底回到原始社会、连电视都不许看",
+      "spot_tradition": "我们小时候不也看电视长大吗？电视都没事，平板能有什么事",
+      "debunk_hominem": "诉诸人身：用「没养过孩子」否定对方发言资格，而不是讨论「平板伤不伤眼睛」本身。",
+      "debunk_strawman2": "稻草人：把「反对平板」曲解成「回到原始社会、不许看电视」的极端立场再攻击——反对者可能只是建议控制时长。",
+      "debunk_tradition": "诉诸传统：「一直这么做」不等于「这么做是对的」——过去看没事，不代表平板与电视的风险完全一样。",
+      "q_hominem": "有没有养过孩子，和他说的「平板伤眼睛」有没有道理是两回事吗？",
+      "q_strawman2": "反对者的真实主张是「禁止一切屏幕」，还是只是「控制使用时间」？",
+      "q_tradition": "电视和以前的我们没事，能证明平板对孩子也一定没事吗？",
+      "q_d1": "群里一共有多少人？",
+      "q_d2": "谁先发起的这个话题？"
+    },
+    "hints": [
+      "攻击人，不攻击观点——这是人身攻击",
+      "把对方观点推到极端再打——这是稻草人",
+      "「我们以前也这样」——这是诉诸传统"
+    ],
+    "explanation": "这场争论里小张犯了三个谬误：①用「没养过孩子」堵对方的嘴（诉诸人身）；②把「反对平板」歪曲成「回到原始社会」（稻草人）；③用「小时候看电视也没事」当理由（诉诸传统）。网络争论的三大经典套路，一次集齐。"
+  },
+  "en": {
+    "caseTitle": "Record: A Group-Chat Argument Gone Wrong",
+    "witnessName": "Xiao Zhang's account",
+    "testimony": "The group was discussing whether kids should use tablets for learning. Someone said tablets hurt eyes, and I replied \"you've never even raised a child, what right do you have to talk about education?\" Then someone said tablets make kids addicted to games, and I told him: by that logic, people who oppose tablets want kids to go back to the Stone Age and ban TV entirely. Anyway, didn't we all grow up watching TV? TV was fine, so how can tablets be a problem?",
+    "textRefs": {
+      "spot_hominem": "you've never even raised a child, what right do you have to talk about education",
+      "spot_strawman2": "people who oppose tablets want kids to go back to the Stone Age and ban TV entirely",
+      "spot_tradition": "didn't we all grow up watching TV? TV was fine, so how can tablets be a problem",
+      "debunk_hominem": "Ad hominem: denying someone's right to speak because they haven't raised a child, instead of discussing whether tablets actually hurt eyes.",
+      "debunk_strawman2": "Straw man: twisting \"opposing tablets\" into \"returning to the Stone Age and banning TV\" before attacking — opponents may just be suggesting limits on screen time.",
+      "debunk_tradition": "Appeal to tradition: \"we've always done this\" is not \"this is right\" — TV being fine in the past does not mean tablets carry identical risks.",
+      "q_hominem": "Does whether someone has raised a child change whether \"tablets hurt eyes\" makes sense?",
+      "q_strawman2": "Do opponents actually demand banning all screens, or just limiting usage time?",
+      "q_tradition": "Does TV being fine for us back then prove tablets are fine for kids now?",
+      "q_d1": "How many people are in the group?",
+      "q_d2": "Who started this topic?"
+    },
+    "hints": [
+      "Attacking the person instead of the point — that is ad hominem",
+      "Pushing an opponent's view to the extreme before attacking — that is a straw man",
+      "\"We always did it this way\" — that is an appeal to tradition"
+    ],
+    "explanation": "In this argument Xiao Zhang commits three fallacies: ① shutting people up with \"you've never raised a child\" (ad hominem); ② twisting \"opposing tablets\" into \"back to the Stone Age\" (straw man); ③ using \"we grew up watching TV\" as a reason (appeal to tradition). Three classic online-argument traps, all in one."
+  }
+}

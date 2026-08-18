@@ -1,0 +1,22 @@
+{
+  "levelId": "ch06-level03",
+  "chapter": 6,
+  "engine": "courtroom",
+  "difficulty": 2,
+  "contributor": "atrq-team",
+  "rewardTags": ["fallacy"],
+  "mode": "clinic",
+  "credibility": 100,
+  "weakSpots": [
+    { "spotId": "spot_hominem", "anchorTextRef": "spot_hominem", "issueType": "ad_hominem", "debunkRef": "debunk_hominem", "sharpness": 40 },
+    { "spotId": "spot_strawman2", "anchorTextRef": "spot_strawman2", "issueType": "straw_man", "debunkRef": "debunk_strawman2", "sharpness": 35 },
+    { "spotId": "spot_tradition", "anchorTextRef": "spot_tradition", "issueType": "appeal_to_tradition", "debunkRef": "debunk_tradition", "sharpness": 25 }
+  ],
+  "questionBank": [
+    { "questionId": "q_hominem", "textRef": "q_hominem", "sharpness": 40, "targetIssue": "ad_hominem", "isRelevant": true },
+    { "questionId": "q_strawman2", "textRef": "q_strawman2", "sharpness": 35, "targetIssue": "straw_man", "isRelevant": true },
+    { "questionId": "q_tradition", "textRef": "q_tradition", "sharpness": 25, "targetIssue": "appeal_to_tradition", "isRelevant": true },
+    { "questionId": "q_d1", "textRef": "q_d1", "sharpness": 10, "targetIssue": "ad_hominem", "isRelevant": false },
+    { "questionId": "q_d2", "textRef": "q_d2", "sharpness": 10, "targetIssue": "appeal_to_tradition", "isRelevant": false }
+  ]
+}

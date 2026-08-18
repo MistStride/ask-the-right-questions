@@ -1,0 +1,46 @@
+{
+  "zh": {
+    "caseTitle": "案件：全班成绩为什么下滑",
+    "witnessName": "家长群里的三种解释",
+    "testimony": "解释一：这学期开始，班主任要求全班每天用平板交作业，之后月考成绩明显下滑，所以是平板作业拖垮了成绩。解释二：我儿子同桌最近迷上了打游戏，天天考倒数，可见这一代孩子沉迷游戏才是成绩下滑的根本原因。解释三：这学期换了数学老师、教材也改版了，还赶上流感停课两周——成绩下滑更可能来自这些变化。",
+    "textRefs": {
+      "spot_blame": "这学期开始，班主任要求全班每天用平板交作业，之后月考成绩明显下滑，所以是平板作业拖垮了成绩",
+      "spot_exam": "我儿子同桌最近迷上了打游戏，天天考倒数，可见这一代孩子沉迷游戏才是成绩下滑的根本原因",
+      "debunk_blame": "时间先后≠因果：用平板交作业和成绩下滑同时发生，可能是巧合，也可能有共同原因（如换老师）——不能直接归咎平板。",
+      "debunk_exam": "以偏概全：一个同桌的例子推不出「这一代孩子」的整体结论——单一样本撑不起大结论。",
+      "q_blame": "成绩下滑一定是因为平板作业吗？有没有同时发生的其他变化？",
+      "q_exam": "一个同桌的情况，能代表这一代孩子吗？",
+      "q_d1": "平板是什么牌子的？",
+      "q_d2": "月考一共考了几科？",
+      "q_d3": "班主任平时几点下班？"
+    },
+    "hints": [
+      "「之后」不等于「因为」——找同时发生的其他变化",
+      "一个孩子的例子，代表不了「这一代孩子」",
+      "解释三提出了真正的替代原因——它不是破绽"
+    ],
+    "explanation": "成绩下滑的归因里，解释一犯了「时间先后≠因果」（忽略换老师等共同变化），解释二犯了「以偏概全」（同桌≠这一代），解释三给出了合理的替代原因组合。给任何现象找原因时，先问：还有没有别的解释？"
+  },
+  "en": {
+    "caseTitle": "Case: Why Did the Whole Class's Grades Drop?",
+    "witnessName": "Three explanations in the parents' group",
+    "testimony": "Explanation one: this semester the homeroom teacher required the whole class to hand in homework via tablet, and grades clearly dropped afterward, so tablet homework dragged down the grades. Explanation two: my son's deskmate recently got addicted to games and keeps scoring at the bottom — clearly this generation's gaming addiction is the root cause of falling grades. Explanation three: this semester the math teacher changed, the textbook was revised, and a flu outbreak canceled two weeks of class — the drop is more likely due to these changes.",
+    "textRefs": {
+      "spot_blame": "this semester the homeroom teacher required the whole class to hand in homework via tablet, and grades clearly dropped afterward, so tablet homework dragged down the grades",
+      "spot_exam": "clearly this generation's gaming addiction is the root cause",
+      "debunk_blame": "After this, therefore because of this: tablet homework and the grade drop coincided — it could be coincidence, or share a common cause (like the teacher change); tablets cannot be blamed directly.",
+      "debunk_exam": "Hasty generalization: one deskmate's case cannot support a conclusion about \"this generation\" — a single sample cannot carry a sweeping claim.",
+      "q_blame": "Must the grade drop come from tablet homework? Were there other simultaneous changes?",
+      "q_exam": "Can one deskmate's situation represent this generation?",
+      "q_d1": "What brand of tablet was used?",
+      "q_d2": "How many subjects did the monthly exam cover?",
+      "q_d3": "What time does the homeroom teacher leave work?"
+    },
+    "hints": [
+      "\"Afterward\" is not \"because of\" — look for other simultaneous changes",
+      "One child's example cannot represent \"this generation\"",
+      "Explanation three offers the real rival causes — it is not a flaw"
+    ],
+    "explanation": "In attributing the grade drop, explanation one commits post hoc (ignoring simultaneous changes like the new teacher), explanation two commits hasty generalization (deskmate ≠ generation), and explanation three offers a reasonable set of rival causes. When hunting for a cause, first ask: what other explanations exist?"
+  }
+}

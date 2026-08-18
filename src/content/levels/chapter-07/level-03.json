@@ -1,0 +1,22 @@
+{
+  "levelId": "ch07-level03",
+  "chapter": 7,
+  "engine": "courtroom",
+  "difficulty": 2,
+  "contributor": "atrq-team",
+  "rewardTags": ["evidence"],
+  "mode": "trial",
+  "credibility": 100,
+  "weakSpots": [
+    { "spotId": "spot_selfclaim", "anchorTextRef": "spot_selfclaim", "issueType": "expert_qualification", "debunkRef": "debunk_selfclaim", "sharpness": 40 },
+    { "spotId": "spot_singlecase", "anchorTextRef": "spot_singlecase", "issueType": "personal_testimonial", "debunkRef": "debunk_singlecase", "sharpness": 35 },
+    { "spotId": "spot_emotion", "anchorTextRef": "spot_emotion", "issueType": "emotional_appeal", "debunkRef": "debunk_emotion", "sharpness": 25 }
+  ],
+  "questionBank": [
+    { "questionId": "q_selfclaim", "textRef": "q_selfclaim", "sharpness": 40, "targetIssue": "expert_qualification", "isRelevant": true },
+    { "questionId": "q_singlecase", "textRef": "q_singlecase", "sharpness": 35, "targetIssue": "personal_testimonial", "isRelevant": true },
+    { "questionId": "q_emotion", "textRef": "q_emotion", "sharpness": 25, "targetIssue": "emotional_appeal", "isRelevant": true },
+    { "questionId": "q_d1", "textRef": "q_d1", "sharpness": 10, "targetIssue": "personal_testimonial", "isRelevant": false },
+    { "questionId": "q_d2", "textRef": "q_d2", "sharpness": 10, "targetIssue": "emotional_appeal", "isRelevant": false }
+  ]
+}

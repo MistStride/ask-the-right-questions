@@ -1,0 +1,50 @@
+{
+  "zh": {
+    "caseTitle": "案件：一份「咖啡延寿」的报道",
+    "witnessName": "媒体报道的引用",
+    "testimony": "各大媒体争相报道：一项针对科技公司年轻员工的研究发现，每天喝三杯以上咖啡的人，体检指标明显更健康。研究团队表示，咖啡中的抗氧化物能延缓衰老，所以多喝咖啡可以延年益寿。至于不喝咖啡的对照组，样本太少，被排除在分析之外。",
+    "textRefs": {
+      "spot_samplebias": "一项针对科技公司年轻员工的研究",
+      "spot_corr": "咖啡中的抗氧化物能延缓衰老，所以多喝咖啡可以延年益寿",
+      "spot_control": "不喝咖啡的对照组，样本太少，被排除在分析之外",
+      "debunk_samplebias": "样本偏差：只调查年轻健康的科技公司员工，结论却推广到全体人群——样本无法代表你要下的结论。",
+      "debunk_corr": "相关≠因果：喝咖啡的人更健康，可能是他们本来生活习惯就更好，也可能方向反了——「体检更好」与「喝咖啡」的关系需要实验验证。",
+      "debunk_control": "缺乏对照：把唯一的对照组排除掉，等于自己取消了「比较」——没有对照就没有因果判断。",
+      "q_samplebias": "只研究年轻白领，结论能代表老人、病人或体力劳动者吗？",
+      "q_corr": "喝咖啡和体检更健康，谁是因谁是果？有没有第三因素？",
+      "q_control": "为什么把对照组排除？不喝咖啡的人数据如何？",
+      "q_d1": "这个研究做了几年？",
+      "q_d2": "咖啡是什么牌子的？"
+    },
+    "hints": [
+      "样本是谁？能代表结论覆盖的全体吗？",
+      "「更健康」和「喝咖啡」谁先谁后？",
+      "没有对照组的比较，等于没有比较"
+    ],
+    "explanation": "这篇「咖啡延寿」报道有三处硬伤：①样本只来自年轻健康的科技公司员工，却推广到所有人；②相关关系被说成因果关系；③把对照组排除在分析外。看研究结论记住三问：样本代表谁？相关还是因果？对照组在哪？"
+  },
+  "en": {
+    "caseTitle": "Case: A Report Claiming \"Coffee Extends Life\"",
+    "witnessName": "Quoted in media coverage",
+    "testimony": "Major media are reporting: a study of young employees at tech companies found that people who drink more than three cups of coffee a day have noticeably healthier checkup results. The research team says the antioxidants in coffee slow aging, so drinking more coffee extends life. As for the non-coffee-drinking control group, the sample was too small and was excluded from the analysis.",
+    "textRefs": {
+      "spot_samplebias": "a study of young employees at tech companies",
+      "spot_corr": "the antioxidants in coffee slow aging, so drinking more coffee extends life",
+      "spot_control": "excluded from the analysis",
+      "debunk_samplebias": "Sample bias: only young, healthy tech employees were studied, yet the conclusion is generalized to everyone — the sample cannot represent the claim's population.",
+      "debunk_corr": "Correlation is not causation: coffee drinkers being healthier may mean they already had better habits, or the direction could be reversed — \"healthier checkups\" and \"coffee\" need an experiment to untangle.",
+      "debunk_control": "No control: excluding the only control group cancels the comparison itself — without a control there is no causal judgment.",
+      "q_samplebias": "Studying only young white-collar workers — can the conclusion represent the elderly, the sick, or manual laborers?",
+      "q_corr": "Between coffee and better checkups, which is the cause? Could a third factor drive both?",
+      "q_control": "Why was the control group excluded? What do the non-drinkers' numbers show?",
+      "q_d1": "How many years did this study run?",
+      "q_d2": "What brand of coffee was used?"
+    },
+    "hints": [
+      "Who is in the sample? Can it represent the population of the conclusion?",
+      "Which came first — \"healthier\" or \"coffee\"?",
+      "A comparison without a control group is no comparison at all"
+    ],
+    "explanation": "This \"coffee extends life\" report has three hard flaws: ① the sample only covers young, healthy tech employees yet is generalized to everyone; ② correlation is dressed up as causation; ③ the control group was excluded from the analysis. When reading any study, remember three questions: who does the sample represent? correlation or causation? where is the control group?"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "zh": {
+    "caseTitle": "案件：「玩手机导致近视」的调查",
+    "witnessName": "某近视调查项目组",
+    "testimony": "我们的调查覆盖了全市 30 所学校，结果发现：近视的学生平均每天看屏幕的时间明显更长。调查员通过问卷让学生自己填写每天的屏幕使用时长。据此我们认为，长时间玩手机直接导致近视，建议家长严格限制孩子使用电子产品。至于视力正常的学生，他们本来就更爱户外运动，这并不影响我们的结论。",
+    "textRefs": {
+      "spot_crosssection": "近视的学生平均每天看屏幕的时间明显更长",
+      "spot_selfreport": "调查员通过问卷让学生自己填写每天的屏幕使用时长",
+      "spot_nocontrol2": "视力正常的学生，他们本来就更爱户外运动，这并不影响我们的结论",
+      "debunk_crosssection": "横断面研究：同一时间点的相关性无法说明因果方向——也许是近视了才更依赖屏幕，而不是屏幕导致近视。",
+      "debunk_selfreport": "自报偏差：学生自己报的屏幕时长可能不准确——被家长监督的孩子会少报，问卷数据未必真实。",
+      "debunk_nocontrol2": "忽略替代解释：视力正常的学生更爱户外运动——运动量、遗传、家庭习惯都是可能的原因，「不影响结论」一句话带过太轻率。",
+      "q_crosssection": "这是同一时间点的调查吗？能区分「谁先谁后」吗？",
+      "q_selfreport": "学生自报的时长准确吗？有没有客观测量？",
+      "q_nocontrol2": "户外运动、遗传、用眼习惯这些因素，考虑了吗？",
+      "q_d1": "调查问卷是什么颜色的？",
+      "q_d2": "30 所学校分布在哪些区？"
+    },
+    "hints": [
+      "同一时间的调查，说不清谁因谁果",
+      "自己报的数据，可靠吗？",
+      "「不影响结论」——其他因素真的排除了吗？"
+    ],
+    "explanation": "这份近视调查有三个漏洞：①横断面数据只能说明相关，说不清因果方向；②屏幕时长靠学生自报，存在失真；③视力正常组更爱户外运动等替代解释被一句「不影响结论」跳过。调查报告也要像法庭质询一样追问：怎么测的？样本怎么选？还有没有别的解释？"
+  },
+  "en": {
+    "caseTitle": "Case: A Survey Linking \"Phone Use and Myopia\"",
+    "witnessName": "A myopia survey project team",
+    "testimony": "Our survey covered 30 schools across the city and found that myopic students spend noticeably more time on screens per day on average. Surveyors used questionnaires asking students to self-report their daily screen time. Based on this we conclude that prolonged phone use directly causes myopia, and recommend parents strictly limit children's use of electronics. As for students with normal vision, they simply enjoy outdoor activities more — this does not affect our conclusion.",
+    "textRefs": {
+      "spot_crosssection": "myopic students spend noticeably more time on screens per day",
+      "spot_selfreport": "Surveyors used questionnaires asking students to self-report their daily screen time",
+      "spot_nocontrol2": "they simply enjoy outdoor activities more — this does not affect our conclusion",
+      "debunk_crosssection": "Cross-sectional study: correlation at one point in time cannot show causal direction — maybe myopic kids rely on screens more, rather than screens causing myopia.",
+      "debunk_selfreport": "Self-report bias: students' self-reported screen time may be inaccurate — kids under parental supervision under-report; questionnaire data may not be truthful.",
+      "debunk_nocontrol2": "Ignoring rival explanations: normal-vision students are more active outdoors — exercise, genetics, and home habits are all possible causes; dismissing them with \"does not affect our conclusion\" is careless.",
+      "q_crosssection": "Is this a single-point-in-time survey? Can it tell which came first?",
+      "q_selfreport": "Are the self-reported hours accurate? Was there any objective measurement?",
+      "q_nocontrol2": "Were outdoor activity, genetics, and eye-use habits considered?",
+      "q_d1": "What color were the survey questionnaires?",
+      "q_d2": "Which districts do the 30 schools belong to?"
+    },
+    "hints": [
+      "A snapshot in time cannot say which caused which",
+      "Self-reported data — how reliable is it?",
+      "\"Does not affect our conclusion\" — were other factors really ruled out?"
+    ],
+    "explanation": "This myopia survey has three holes: ① cross-sectional data only shows correlation, not causal direction; ② screen time relies on self-reports that can be distorted; ③ rival explanations like outdoor activity are waved away with \"does not affect our conclusion\". Survey reports deserve the same cross-examination as a courtroom witness: how was it measured? how was the sample chosen? what other explanations exist?"
+  }
+}

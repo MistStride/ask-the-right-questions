@@ -1,0 +1,36 @@
+{
+  "zh": {
+    "chartTitle": "客户满意度高达 99%？单位：%",
+    "labels": ["VIP 客户", "普通客户", "试用客户", "已流失客户"],
+    "textRefs": {
+      "debunk_axis3": "Y 轴起点是 90%——柱子之间的差异被夸大了，让人以为满意度和「近乎完美」只有一步之遥；真实起点 0 时差距就没那么体面了。",
+      "debunk_avg": "这根柱是「已流失客户」的满意度（15%）——它被拉低，是因为流失的人根本不在抽样里！把他们的真实感受算进来，「99% 满意度」就站不住了。"
+    },
+    "manual": [
+      "检查 Y 轴起点是不是 0",
+      "平均值有没有掩盖极端值或没被算进去的人？"
+    ],
+    "hints": [
+      "Y 轴从 90% 起，「接近满分」是假象",
+      "流失客户的低分柱，暴露了抽样的漏洞"
+    ],
+    "explanation": "这张满意度图有两个陷阱：①Y 轴从 90% 起，把各组的微小差距放大成「都很满意」的假象；②「已流失客户」只有 15% 满意度，说明抽样根本没覆盖不活跃用户——把流失的人算进去，整体满意度会大打折扣。看满意度数据先问：问了谁？没问谁？"
+  },
+  "en": {
+    "chartTitle": "Customer Satisfaction as High as 99%? Unit: %",
+    "labels": ["VIP customers", "Regular customers", "Trial users", "Churned customers"],
+    "textRefs": {
+      "debunk_axis3": "The Y axis starts at 90% — the gaps between bars are exaggerated, making everything look one step from \"near perfect\"; from an honest baseline of 0 the differences are far less flattering.",
+      "debunk_avg": "This bar is churned customers' satisfaction (15%) — it is dragged down because churned users were never in the sample! Count their true feelings and the \"99% satisfaction\" collapses."
+    },
+    "manual": [
+      "Check whether the Y axis starts at 0",
+      "Does the average hide extremes or people who were never surveyed?"
+    ],
+    "hints": [
+      "With the Y axis starting at 90%, \"nearly perfect\" is an illusion",
+      "The churned customers' low bar exposes the sampling hole"
+    ],
+    "explanation": "This satisfaction chart hides two traps: ① the Y axis starts at 90%, inflating tiny gaps into the illusion that everyone is happy; ② \"churned customers\" score only 15%, showing the survey never covered inactive users — include the leavers and overall satisfaction collapses. When reading satisfaction data, ask: who was asked? who was not?"
+  }
+}

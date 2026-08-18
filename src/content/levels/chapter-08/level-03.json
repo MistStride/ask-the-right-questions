@@ -1,0 +1,22 @@
+{
+  "levelId": "ch08-level03",
+  "chapter": 8,
+  "engine": "courtroom",
+  "difficulty": 2,
+  "contributor": "atrq-team",
+  "rewardTags": ["evidence"],
+  "mode": "trial",
+  "credibility": 100,
+  "weakSpots": [
+    { "spotId": "spot_crosssection", "anchorTextRef": "spot_crosssection", "issueType": "cross_sectional", "debunkRef": "debunk_crosssection", "sharpness": 40 },
+    { "spotId": "spot_selfreport", "anchorTextRef": "spot_selfreport", "issueType": "self_report_bias", "debunkRef": "debunk_selfreport", "sharpness": 35 },
+    { "spotId": "spot_nocontrol2", "anchorTextRef": "spot_nocontrol2", "issueType": "no_control", "debunkRef": "debunk_nocontrol2", "sharpness": 25 }
+  ],
+  "questionBank": [
+    { "questionId": "q_crosssection", "textRef": "q_crosssection", "sharpness": 40, "targetIssue": "cross_sectional", "isRelevant": true },
+    { "questionId": "q_selfreport", "textRef": "q_selfreport", "sharpness": 35, "targetIssue": "self_report_bias", "isRelevant": true },
+    { "questionId": "q_nocontrol2", "textRef": "q_nocontrol2", "sharpness": 25, "targetIssue": "no_control", "isRelevant": true },
+    { "questionId": "q_d1", "textRef": "q_d1", "sharpness": 10, "targetIssue": "cross_sectional", "isRelevant": false },
+    { "questionId": "q_d2", "textRef": "q_d2", "sharpness": 10, "targetIssue": "self_report_bias", "isRelevant": false }
+  ]
+}

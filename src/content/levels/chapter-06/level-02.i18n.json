@@ -1,0 +1,50 @@
+{
+  "zh": {
+    "caseTitle": "病历：一位被销售洗脑的客户",
+    "witnessName": "王女士的自述",
+    "testimony": "我上星期去听了一场「财富讲座」。讲师说：「巴菲特都说过，普通人就该长期持有多元化资产组合。」他还说，那些反对我们的人，就是想把钱存在床底下、永远不理财的人。而且你想想，如果我们不趁现在开户，以后房价涨了、孩子上学都来不及，讨论这些细节还有什么意义？",
+    "textRefs": {
+      "spot_authority": "巴菲特都说过，普通人就该长期持有多元化资产组合",
+      "spot_strawman": "那些反对我们的人，就是想把钱存在床底下、永远不理财的人",
+      "spot_redherring": "如果我们不趁现在开户，以后房价涨了、孩子上学都来不及，讨论这些细节还有什么意义",
+      "debunk_authority": "诉诸权威：借巴菲特的名号压人，却没给出任何证据——「名人说过」不等于「他说得对」。",
+      "debunk_strawman": "稻草人：把反对者说成「把钱存床底、永不理财」的极端形象，曲解对方观点再攻击——对方明明可以只是「怀疑这家机构的资质」。",
+      "debunk_redherring": "转移话题：用「房价涨」「孩子上学」的焦虑把话题从「这家机构可不可信」岔开——焦虑不是论证。",
+      "q_authority": "巴菲特真的说过这句话吗？他说的「多元化」和这里的「开户」是一回事吗？",
+      "q_strawman": "反对者的真实观点是什么？有人反对过「理财」本身，还是只反对这家机构？",
+      "q_redherring": "房价和孩子上学，和「这家机构是否值得信任」有什么关系？",
+      "q_d1": "讲座场地租了多少钱？",
+      "q_d2": "讲师今天穿的什么颜色的西装？"
+    },
+    "hints": [
+      "借名人的话压人，是权威，不是证据",
+      "把反对者说成极端可笑的样子再攻击——这是稻草人",
+      "用焦虑和未来吓你，让你忘记讨论眼前的问题——这是转移话题"
+    ],
+    "explanation": "这段推销话术连犯三个谬误：①拿巴菲特的旗号压人（诉诸权威，无证据）；②把反对者曲解成「存床底的守财奴」（稻草人）；③用房价、孩子上学制造焦虑岔开话题（转移话题）。识别这三种套路，推销话术就失灵了。"
+  },
+  "en": {
+    "caseTitle": "Record: A Client Brainwashed by a Salesman",
+    "witnessName": "Ms. Wang's account",
+    "testimony": "Last week I attended a \"wealth lecture\". The lecturer said: \"Even Buffett said ordinary people should hold a diversified portfolio for the long term.\" He also said that those who oppose us are the kind of people who keep cash under the mattress and never invest. And think about it — if we don't open an account now, housing prices will rise and the kids' tuition won't wait. What's the point of arguing about details?",
+    "textRefs": {
+      "spot_authority": "Even Buffett said ordinary people should hold a diversified portfolio",
+      "spot_strawman": "those who oppose us are the kind of people who keep cash under the mattress",
+      "spot_redherring": "housing prices will rise and the kids' tuition won't wait",
+      "debunk_authority": "Appeal to authority: using Buffett's name to pressure you without any evidence — \"a famous person said it\" is not \"it is right\".",
+      "debunk_strawman": "Straw man: painting opponents as \"mattress-hoarding misers\" distorts their position before attacking it — they might simply doubt this firm's credentials.",
+      "debunk_redherring": "Red herring: dragging in housing prices and kids' tuition to distract from \"is this firm trustworthy\" — anxiety is not an argument.",
+      "q_authority": "Did Buffett actually say that? Is his \"diversification\" the same as \"opening an account here\"?",
+      "q_strawman": "What do the opponents actually believe? Did anyone oppose investing itself, or just this firm?",
+      "q_redherring": "What do housing prices and kids' tuition have to do with whether this firm is trustworthy?",
+      "q_d1": "How much did the venue cost?",
+      "q_d2": "What color suit is the lecturer wearing today?"
+    },
+    "hints": [
+      "Leaning on a celebrity's words is authority, not evidence",
+      "Painting opponents as ridiculous extremes before attacking — that is a straw man",
+      "Using anxiety about the future to make you forget the issue at hand — that is a red herring"
+    ],
+    "explanation": "This sales pitch commits three fallacies in a row: ① leveraging Buffett's name (appeal to authority, no evidence); ② caricaturing opponents as \"mattress hoarders\" (straw man); ③ distracting with housing and tuition anxiety (red herring). Spot these three tricks and sales pitches stop working."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "levelId": "ch06-level02",
+  "chapter": 6,
+  "engine": "courtroom",
+  "difficulty": 2,
+  "contributor": "atrq-team",
+  "rewardTags": ["fallacy"],
+  "mode": "clinic",
+  "credibility": 100,
+  "weakSpots": [
+    { "spotId": "spot_authority", "anchorTextRef": "spot_authority", "issueType": "appeal_to_authority", "debunkRef": "debunk_authority", "sharpness": 40 },
+    { "spotId": "spot_strawman", "anchorTextRef": "spot_strawman", "issueType": "straw_man", "debunkRef": "debunk_strawman", "sharpness": 35 },
+    { "spotId": "spot_redherring", "anchorTextRef": "spot_redherring", "issueType": "red_herring", "debunkRef": "debunk_redherring", "sharpness": 25 }
+  ],
+  "questionBank": [
+    { "questionId": "q_authority", "textRef": "q_authority", "sharpness": 40, "targetIssue": "appeal_to_authority", "isRelevant": true },
+    { "questionId": "q_strawman", "textRef": "q_strawman", "sharpness": 35, "targetIssue": "straw_man", "isRelevant": true },
+    { "questionId": "q_redherring", "textRef": "q_redherring", "sharpness": 25, "targetIssue": "red_herring", "isRelevant": true },
+    { "questionId": "q_d1", "textRef": "q_d1", "sharpness": 10, "targetIssue": "appeal_to_authority", "isRelevant": false },
+    { "questionId": "q_d2", "textRef": "q_d2", "sharpness": 10, "targetIssue": "straw_man", "isRelevant": false }
+  ]
+}

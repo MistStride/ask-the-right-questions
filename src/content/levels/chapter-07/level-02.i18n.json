@@ -1,0 +1,50 @@
+{
+  "zh": {
+    "caseTitle": "案件：明星代言的「增肌蛋白粉」",
+    "witnessName": "代言明星与公司发言人的证言",
+    "testimony": "知名健身博主李某某在镜头前说：这款蛋白粉我每天喝，我的肌肉就是这么练出来的，强烈推荐给大家！公司发言人补充道：我们请了最专业的营养师团队参与研发，配方无可挑剔。至于这款产品最近销量下滑，纯属竞品恶意抹黑，请大家放心购买。",
+    "textRefs": {
+      "spot_celebrity": "这款蛋白粉我每天喝，我的肌肉就是这么练出来的，强烈推荐给大家",
+      "spot_noqual": "我们请了最专业的营养师团队参与研发，配方无可挑剔",
+      "spot_sponsor": "销量下滑，纯属竞品恶意抹黑，请大家放心购买",
+      "debunk_celebrity": "名人见证：明星的肌肉来自长期训练和营养师团队，不一定与这款蛋白粉有关——名人的「亲身推荐」不是产品有效性的证据。",
+      "debunk_noqual": "资质存疑：「最专业的营养师团队」没有任何姓名、资质或可查证的信息——「我们请了专家」不等于「真有专家」。",
+      "debunk_sponsor": "利益冲突：销量下滑时喊「竞品抹黑」，是利益相关方在为自己开脱——越卖力辩护，越要警惕。",
+      "q_celebrity": "明星的肌肉，真的是这款蛋白粉的功劳吗？有没有其他因素？",
+      "q_noqual": "「最专业的营养师团队」具体是谁？能提供资质和履历吗？",
+      "q_sponsor": "销量下滑有没有更简单的解释，比如产品本身的问题？",
+      "q_d1": "这支广告拍了多久？",
+      "q_d2": "明星平时喜欢什么颜色？"
+    },
+    "hints": [
+      "名人代言 ≠ 产品有效——明星也是被雇来念稿的",
+      "「我们请了专家」——专家是谁？可查证吗？",
+      "利益相关方的「辟谣」，先打个问号"
+    ],
+    "explanation": "这则代言证词有三处破绽：①名人「亲身推荐」把个人体验当证据，而明星的肌肉可能和产品毫无关系；②「最专业的营养师团队」无具体信息，无从验证；③公司为销量下滑辩解时存在直接利益冲突。看广告先问：说话的人是谁？他凭什么这么说？他跟这个产品有什么关系？"
+  },
+  "en": {
+    "caseTitle": "Case: A Celebrity-Endorsed Protein Powder",
+    "witnessName": "Testimony of the Celebrity and the Company Spokesperson",
+    "testimony": "Famous fitness blogger Li says on camera: I drink this protein powder every day, this is how I built my muscles, I strongly recommend it! A company spokesperson adds: we had the most professional team of nutritionists involved in development, the formula is beyond reproach. As for the recent sales decline, it is purely malicious smearing by competitors — buy with confidence.",
+    "textRefs": {
+      "spot_celebrity": "I drink this protein powder every day, this is how I built my muscles",
+      "spot_noqual": "we had the most professional team of nutritionists involved in development",
+      "spot_sponsor": "purely malicious smearing by competitors",
+      "debunk_celebrity": "Celebrity testimony: the star's muscles come from years of training and a team of nutritionists — not necessarily this powder. A celebrity's \"personal recommendation\" is not evidence of effectiveness.",
+      "debunk_noqual": "Questionable qualification: \"the most professional team of nutritionists\" has no names, credentials, or verifiable information — \"we hired experts\" is not \"real experts exist\".",
+      "debunk_sponsor": "Conflict of interest: blaming competitors when sales drop is an interested party defending itself — the harder it defends, the more you should watch out.",
+      "q_celebrity": "Are the celebrity's muscles really thanks to this powder? Could other factors be at play?",
+      "q_noqual": "Who exactly is \"the most professional team of nutritionists\"? Can you show credentials and track records?",
+      "q_sponsor": "Is there a simpler explanation for the sales decline, like a problem with the product itself?",
+      "q_d1": "How long did the commercial shoot take?",
+      "q_d2": "What is the celebrity's favorite color?"
+    },
+    "hints": [
+      "Celebrity endorsement ≠ effective product — stars are hired to read a script",
+      "\"We hired experts\" — who are they? Can you verify?",
+      "Put a question mark on any \"rebuttal\" from an interested party"
+    ],
+    "explanation": "This endorsement testimony has three flaws: ① the celebrity's \"personal recommendation\" treats personal experience as evidence, while his muscles may have nothing to do with the product; ② \"the most professional nutritionist team\" offers no verifiable information; ③ the company's excuse for falling sales is a direct conflict of interest. When you see an ad, ask: who is speaking? Why should we believe them? What's their relationship to the product?"
+  }
+}

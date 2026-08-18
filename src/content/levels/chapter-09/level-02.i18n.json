@@ -1,0 +1,46 @@
+{
+  "zh": {
+    "caseTitle": "案件：台风过后的「抢购潮」",
+    "witnessName": "三位分析师的推断",
+    "testimony": "分析师一：台风登陆前一天，超市饮用水销量暴涨十倍，所以是超市提前收到了台风预警，才把饮用水搬到显眼位置促销。分析师二：我们随机采访了几位顾客，大家都说台风天要囤水，可见囤水是市民生活的长期习惯，与台风无关。分析师三：台风预警发布后，全城居民出于避险需求集中采购饮用水，这才是销量暴涨的直接原因。",
+    "textRefs": {
+      "spot_after": "台风登陆前一天，超市饮用水销量暴涨十倍，所以是超市提前收到了台风预警，才把饮用水搬到显眼位置促销",
+      "spot_generalize": "随机采访了几位顾客，大家都说台风天要囤水，可见囤水是市民生活的长期习惯，与台风无关",
+      "debunk_after": "时间先后≠因果：销量暴涨发生在台风前，不代表是超市促销导致的——也可能是居民闻讯抢购，超市只是补货上架。",
+      "debunk_generalize": "以偏概全：随机采访几位顾客，不代表全体市民的习惯——小样本撑不起「长期习惯」这种大结论。",
+      "q_after": "销量暴涨一定是因为超市促销吗？会不会是居民主动抢购、超市被动补货？",
+      "q_generalize": "采访几位顾客，能代表全体市民的长期习惯吗？",
+      "q_d1": "饮用水是什么牌子的？",
+      "q_d2": "超市货架摆了几排？",
+      "q_d3": "台风登陆当天天气怎么样？"
+    },
+    "hints": [
+      "台风前销量涨，不等于促销导致——可能是同一原因的两面",
+      "几位顾客的采访，撑不起「全体市民习惯」的结论",
+      "分析师三的解释更合理——它是替代原因，不是破绽"
+    ],
+    "explanation": "这是一个替代原因案例：分析师一把「台风前销量涨」当作「促销导致」的证据（时间先后≠因果）；分析师二用几位顾客的采访推出「市民长期习惯」（以偏概全）；而分析师三提出的「避险集中采购」才是直接原因。看到一个解释，先找找还有没有别的解释。"
+  },
+  "en": {
+    "caseTitle": "Case: The \"Buying Rush\" After a Typhoon",
+    "witnessName": "Inferences of three analysts",
+    "testimony": "Analyst one: the day before the typhoon made landfall, supermarket bottled-water sales surged tenfold, so the supermarket must have received an early warning and promoted the water at the front of the store. Analyst two: we randomly interviewed a few customers, and everyone said they stock up for typhoon season, which shows stocking water is a long-term habit of city residents, unrelated to the typhoon. Analyst three: after the typhoon warning was issued, residents across the city rushed to buy water for safety — that is the direct cause of the surge.",
+    "textRefs": {
+      "spot_after": "the day before the typhoon made landfall, supermarket bottled-water sales surged tenfold, so the supermarket must have received an early warning and promoted the water",
+      "spot_generalize": "we randomly interviewed a few customers, and everyone said they stock up for typhoon season, which shows stocking water is a long-term habit of city residents",
+      "debunk_after": "After this, therefore because of this: the surge happening before the typhoon does not prove the supermarket's promotion caused it — residents may have rushed to buy and the store simply restocked.",
+      "debunk_generalize": "Hasty generalization: a few randomly interviewed customers cannot represent all residents' long-term habits — a tiny sample cannot support a sweeping conclusion.",
+      "q_after": "Must the surge be caused by the supermarket's promotion? Could residents have rushed to buy while the store passively restocked?",
+      "q_generalize": "Can interviewing a few customers represent the long-term habits of all residents?",
+      "q_d1": "What brand of water was involved?",
+      "q_d2": "How many shelves did the supermarket use?",
+      "q_d3": "What was the weather like on the day of landfall?"
+    },
+    "hints": [
+      "Sales rising before a typhoon is not proof of a promotion — the two may share one cause",
+      "A few customer interviews cannot prove \"all residents' habits\"",
+      "Analyst three's explanation is more reasonable — it is a rival cause, not a flaw"
+    ],
+    "explanation": "This is a rival-causes case: analyst one treats \"sales rose before the typhoon\" as proof of promotion (post hoc); analyst two generalizes from a few customers to \"long-term habits\" (hasty generalization); analyst three's \"safety-driven bulk buying\" is the direct cause. When you meet one explanation, first hunt for others."
+  }
+}

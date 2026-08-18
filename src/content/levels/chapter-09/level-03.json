@@ -1,0 +1,21 @@
+{
+  "levelId": "ch09-level03",
+  "chapter": 9,
+  "engine": "courtroom",
+  "difficulty": 3,
+  "contributor": "atrq-team",
+  "rewardTags": ["fallacy"],
+  "mode": "lineup",
+  "credibility": 100,
+  "weakSpots": [
+    { "spotId": "spot_blame", "anchorTextRef": "spot_blame", "issueType": "post_hoc", "debunkRef": "debunk_blame", "sharpness": 60 },
+    { "spotId": "spot_exam", "anchorTextRef": "spot_exam", "issueType": "hasty_generalization", "debunkRef": "debunk_exam", "sharpness": 40 }
+  ],
+  "questionBank": [
+    { "questionId": "q_blame", "textRef": "q_blame", "sharpness": 60, "targetIssue": "post_hoc", "isRelevant": true },
+    { "questionId": "q_exam", "textRef": "q_exam", "sharpness": 40, "targetIssue": "hasty_generalization", "isRelevant": true },
+    { "questionId": "q_d1", "textRef": "q_d1", "sharpness": 10, "targetIssue": "post_hoc", "isRelevant": false },
+    { "questionId": "q_d2", "textRef": "q_d2", "sharpness": 10, "targetIssue": "hasty_generalization", "isRelevant": false },
+    { "questionId": "q_d3", "textRef": "q_d3", "sharpness": 10, "targetIssue": "post_hoc", "isRelevant": false }
+  ]
+}
