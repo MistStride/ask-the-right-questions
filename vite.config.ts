@@ -5,6 +5,7 @@ import tailwindcss from '@tailwindcss/vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  // 部署到 GitHub Pages 时需要换成仓库名，例如 base: '/ask-the-right-questions/'
-  base: '/',
+  // GitHub Pages 部署在仓库子路径（https://<user>.github.io/ask-the-right-questions/）
+  // base 必须等于仓库名，否则资源从根路径找 → 白屏
+  base: '/ask-the-right-questions/',
 })

@@ -1,80 +1,144 @@
-# ⛏ 学会提问 · Asking the Right Questions
+# ⛏ Asking the Right Questions
 
-**别急着相信，先学会提问。** 一本《学会提问》（原书第 12 版）的交互式批判性思维训练游戏集：把全书 13 章提炼成 **5 套可复用的思维引擎**，用游戏的手感练出「淘金式思维」——扫描论证、质询证据、校准灰度、拆除数据陷阱、驯服思维冲动。
+**Don't just believe — ask the right questions.**
 
-数据驱动（JSON 关卡）+ 中英双语（EN/ZH）+ 纯前端零后端。任何人都可以**只填 JSON 就贡献一个全新关卡**。
+An interactive critical-thinking training game based on the book *Asking the Right Questions* (12th edition). The 13 chapters are distilled into **5 reusable thinking engines** that train your "panning-for-gold" mindset through gameplay — scanning arguments, cross-examining evidence, calibrating gray areas, defusing data traps, and taming thinking impulses.
 
-![首页 · 淘金路线图](docs/screenshots/01-home.png)
+- **Data-driven**: every level is a plain JSON file + a bilingual text pack. Anyone can contribute a new level **without touching any code**.
+- **Bilingual**: full EN / ZH support via semantic-anchor matching (translations never break).
+- **Zero backend**: 100% client-side, deployable to any static host (GitHub Pages included).
 
-## ✨ 特性
+🌐 **Live Demo**: <https://miststride.github.io/ask-the-right-questions/>
 
-- **不是刷题，是执行思维动作**：5 套游戏引擎覆盖 13 章，每套引擎对应一组原书思维动作（透视 / 质询 / 校准 / 拆弹 / 驯服）
-- **内容与引擎完全分离**：关卡 = 一份 JSON（结构判定）+ 一份 i18n 文本包（EN/ZH），贡献者不碰任何代码
-- **双语原生支持**：语义锚点匹配（找"原文片段"而非字符偏移），翻译永不错位
-- **本地进度 + 六维思维雷达**：通关点亮「结构识别力 / 证据鉴别力 / 假设挖掘力 / 谬误免疫力 / 数据免疫力 / 情绪自控力」
-- **分级提示 + 深度解析**：每题附 3 级提示（方向 → 具体 → 位置）与通关后的原书逻辑拆解
+## ✨ Features
 
-![关卡 · 论证透视镜](docs/screenshots/02-level.png)
+- **Not quizzing — performing thinking moves**: 5 game engines cover all 13 chapters, each mapping to a set of thinking actions from the book (scan / cross-examine / calibrate / defuse / tame).
+- **Content fully decoupled from engines**: a level = one logic JSON (structure & rules) + one i18n text pack (EN/ZH). Contributors never touch engine code.
+- **Local progress + six-dimension radar**: clearing levels lights up your profile radar — Structure / Evidence / Assumption / Fallacy / Data / Emotion.
+- **Graded hints + deep-dive explanations**: every level offers progressive hints and a post-clear breakdown of the underlying reasoning.
 
-## 🧩 五套思维引擎
+## 🧩 The Five Thinking Engines
 
-| 引擎 | 思维动作 | 视觉/手感 | 覆盖章节 |
+| Engine | Thinking move | Feel | Chapters |
 |---|---|---|---|
-| 🔍 论证透视镜 X-Ray Scanner | 扫描文本找论题/结论/理由/假设 | 句子被 X 光"透视"出骨骼，点击点亮论证骨架 | 第 2 / 3 / 5 / 11 章 |
-| ⚖️ 逻辑法庭 Courtroom | 评估证据效力、质询信源 | 逆转裁判式"证词击碎"打脸爽感 | 第 6 / 7 / 8 / 9 章 |
-| ⚗️ 天平校准站 Calibration | 判断歧义与结论的合理区间 | 连续光谱拖动，命中"专家共识区间"靶心 | 第 4 / 12 章 |
-| 🧨 数据拆弹 Defusal | 识破统计陷阱 | 限时剪线，拆弹成功图表"剥落"露出真相 | 第 10 章 |
-| 🐘 心智驯兽场 Taming Arena | 克制快思考的情绪冲动 | 大象与骑象人，开场教程关 + 终章 BOSS 关 | 第 1 / 13 章 |
+| 🔍 **X-Ray Scanner** | Scan text for issue / conclusion / reasons / assumptions | Sentences get "X-rayed" into a skeleton you click to light up | 2 / 3 / 5 / 11 |
+| ⚖️ **Courtroom** | Evaluate evidence strength, cross-examine sources | Ace-Attorney-style interrogation: shatter flawed testimony | 6 / 7 / 8 / 9 |
+| ⚗️ **Calibration** | Judge the reasonable range of ambiguous words & conclusions | Drag a continuous spectrum toward the "expert consensus" bullseye | 4 / 12 |
+| 🧨 **Defusal** | Spot statistical traps in charts | Cut the wrong wire and the chart peels away to reveal the truth | 10 |
+| 🐘 **Taming Arena** | Restrain fast-thinking impulses | Elephant & rider metaphor; tutorial level + final boss level | 1 / 13 |
 
-![通关结算](docs/screenshots/03-complete.png)
+## 🛠 Tech Stack
 
-## 🚀 快速开始
+React 19 · TypeScript · Vite · Tailwind CSS 4 · Zustand · Framer Motion · React Router · Zod
+
+## 🚀 Getting Started (Local Dev)
 
 ```bash
 npm install
-npm run dev        # 本地开发，默认 http://localhost:5173
-npm run build      # 构建静态站点（可部署到 GitHub Pages）
-npm run preview    # 预览构建产物
+npm run dev        # http://localhost:5173
+npm run build      # production build → dist/
+npm run preview    # preview the production build locally
 ```
 
-## 📁 目录结构
+> Note: the project uses **hash routing** (`/#/level/...`) so it works on any static host without server-side fallback config.
+
+## 🌐 Deploy to GitHub Pages
+
+The repo is already configured to build with `base: '/<repo-name>/'`, so any of the following works.
+
+### Option A — Deploy from a branch (simplest, no Actions)
+
+1. Push the project to GitHub (it must be **public** for free Pages).
+2. Go to your repo → **Settings → Pages** (left sidebar).
+3. Under **Build and deployment** → **Source**, select **Deploy from a branch**.
+4. Choose branch **`main`** and folder **`/ (root)`**, click **Save**.
+5. Wait 1–2 minutes. Your site appears at:
+   `https://<your-username>.github.io/<repo-name>/`
+   e.g. `https://miststride.github.io/ask-the-right-questions/`
+
+> Every subsequent `git push` to `main` triggers an automatic rebuild — no extra setup.
+
+### Option B — GitHub Actions (recommended for production)
+
+```yaml
+# .github/workflows/deploy.yml
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - run: npm run build
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
+```
+
+Then in **Settings → Pages → Source**, choose **GitHub Actions**. Every push builds and deploys automatically.
+
+### Troubleshooting — blank page
+
+A blank page on GitHub Pages almost always means **asset paths are wrong** (the app loads but can't find its JS/CSS).
+
+- If your repo is NOT named `ask-the-right-questions`, change `base` in `vite.config.ts` to match your repo name (e.g. `base: '/my-repo-name/'`).
+- Use **hash routing** (already enabled) — never BrowserRouter on static hosts without a fallback.
+- After changing config, rebuild (`npm run build`) and re-push; Pages rebuilds automatically.
+
+## 📁 Project Structure
 
 ```
 src/
-├── engines/       # 5 大引擎（渲染 + 判定逻辑，与内容完全分离）
-│   └── xray/      # 引擎A 论证透视镜（MVP 已实现）
-├── content/
-│   ├── levels/    # 关卡数据（核心！社区贡献主要改这里）
-│   │   └── chapter-02/
-│   │       ├── level-01.json        # 结构与判定（不含任何语言）
-│   │       └── level-01.i18n.json   # EN/ZH 双语文案
-│   └── chapters.ts                  # 13 章元数据
-├── schema/        # Zod 运行时校验：JSON 写错开发期即报错
-├── store/         # Zustand：进度 / 设置 / 全局反馈
-├── components/    # 跨引擎通用组件（toast / 提示 / 结算）
-└── pages/         # 首页淘金地图 / 章节 / 关卡 / 思维雷达
+├── engines/        # The 5 game engines (each: components + logic hook + i18n)
+│   ├── xray/       # Engine A — argument scanner
+│   ├── courtroom/  # Engine B — cross-examination
+│   ├── scale/      # Engine C — spectrum calibration
+│   ├── defusal/    # Engine D — chart defusal
+│   └── tamer/      # Engine E — elephant taming
+├── content/levels/ # ALL level content (JSON + i18n) — contributors edit only this
+├── schema/         # Zod schemas that validate every level at build time
+├── store/          # Zustand: progress (localStorage) + settings + UI
+├── pages/          # Home / Chapter / Level / Profile
+└── components/     # Shared UI (feedback toast, hints, complete modal, radar chart)
 ```
 
-## 🎮 贡献一个关卡（Good First Issue）
+## 🤝 Contributing a Level
 
-你不需要懂 React，只需要：
+1. Copy an existing level folder under `src/content/levels/<chapter>/`.
+2. Edit `level-01.json` (structure & rules) and `level-01.i18n.json` (EN/ZH texts).
+3. Run `npm run dev` — the level index validates your JSON (Zod) and reports any error clearly.
+4. Open a Pull Request. That's it — no engine knowledge required.
 
-1. 复制 `src/content/levels/chapter-02/` 里的两个文件，改名为你的关卡（如 `chapter-03/level-01.json`）
-2. 在 `level-01.json` 里描述论证结构（哪个节点是结论、哪个是理由、干扰项）
-3. 在 `level-01.i18n.json` 里填中英文正文、提示与解析
-4. 提交 PR —— CI 会自动校验：字段完整性、双语是否齐、锚点能否在正文中匹配到
-
-> 翻译一个新语言同理：只需在 `.i18n.json` 里新增一个语言块，完全不会碰判定逻辑。
-
-## 🗺️ 路线图
-
-- [x] 阶段 0-1：脚手架 + 引擎A（论证透视镜）+ 第 2 章关卡
-- [ ] 阶段 2：第 3/5/11 章关卡 + 理由→结论连线判定
-- [ ] 阶段 3：完整 i18n 接入 + 进度页完善
-- [ ] 阶段 4-6：引擎 B/C/D/E（法庭 / 天平 / 拆弹 / 驯兽场）
-- [ ] 阶段 7：六维雷达图 + 战绩分享卡
-- [ ] 阶段 8：GitHub Pages 自动部署 + 关卡脚手架 CLI
+Design docs for each engine live in `docs/` (e.g. `docs/ENGINE-B-DESIGN.md`).
 
 ## 📄 License
 
-[MIT](LICENSE) © MistStride
+MIT
