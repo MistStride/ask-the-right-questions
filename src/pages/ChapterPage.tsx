@@ -119,6 +119,46 @@ export default function ChapterPage() {
             </div>
           )}
         </div>
+
+        {/* 全部通关时：去下一章引导（避免用户卡在已通关章节） */}
+        {doneCount === levels.length && levels.length > 0 && (() => {
+          const currentIdx = CHAPTERS.findIndex((c) => c.id === chapter.id)
+          const nextChapter = CHAPTERS[currentIdx + 1]
+          return (
+            <div className="mt-6 rounded-2xl border border-gold/40 bg-gold/10 p-5 text-center">
+              <p className="text-sm font-bold text-gold-deep">
+                {locale === 'zh' ? '🎉 本章通关！' : '🎉 Chapter cleared!'}
+              </p>
+              {nextChapter ? (
+                <>
+                  <p className="mt-1 text-xs text-slate-600">
+                    {locale === 'zh' ? '继续你的淘金之旅' : 'Keep panning'}
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => navigate(`/chapter/${nextChapter.id}`)}
+                    className="mt-3 inline-flex items-center gap-2 rounded-xl bg-gold px-5 py-2.5 text-sm font-bold text-white shadow-[0_6px_18px_rgba(217,154,30,0.3)] transition hover:brightness-110"
+                  >
+                    {locale === 'zh' ? `下一章：第 ${nextChapter.id} 章` : `Next: Ch.${nextChapter.id}`} →
+                  </button>
+                </>
+              ) : (
+                <>
+                  <p className="mt-1 text-xs text-slate-600">
+                    {locale === 'zh' ? '全书已通关，看看你的思维雷达' : 'All chapters cleared — check your radar'}
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => navigate('/profile')}
+                    className="mt-3 inline-flex items-center gap-2 rounded-xl bg-gold px-5 py-2.5 text-sm font-bold text-white shadow-[0_6px_18px_rgba(217,154,30,0.3)] transition hover:brightness-110"
+                  >
+                    {locale === 'zh' ? '查看思维雷达 →' : 'View My Radar →'}
+                  </button>
+                </>
+              )}
+            </div>
+          )
+        })()}
       </main>
     </div>
   )
