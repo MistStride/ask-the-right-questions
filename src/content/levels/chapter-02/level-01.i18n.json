@@ -1,32 +1,34 @@
 {
   "zh": {
-    "sourceText": "某市教育部门提议，中小学生每天在校运动时间不应少于 1 小时。支持者认为，运动能提升学生的注意力和学习效率，因此学校应当强制执行这一标准。还有家长担心这会占用学习时间，但这种担心缺乏证据支持。",
+    "sourceText": "某市教育部门提议：中小学生每天在校运动时间不应少于 1 小时。支持者认为，运动能显著提升孩子的注意力和学习效率，让他们在课堂上更专注。还有调查数据显示，每天运动超过 1 小时的学生，近视率明显更低。但也有家长担心，运动挤占了本就不多的课业时间。某运动饮料品牌借机宣传：『孩子运动后，喝一口，能量翻倍！』",
     "textRefs": {
-      "conclusion_1": "学校应当强制执行这一标准",
-      "reason_1": "运动能提升学生的注意力和学习效率",
-      "distractor_issue": "中小学生每天在校运动时间不应少于 1 小时",
-      "distractor_rebuttal": "这种担心缺乏证据支持"
+      "conclusion_1": "中小学生每天在校运动时间不应少于 1 小时",
+      "reason_1": "运动能显著提升孩子的注意力和学习效率",
+      "reason_2": "每天运动超过 1 小时的学生，近视率明显更低",
+      "distractor_1": "孩子运动后，喝一口，能量翻倍",
+      "distractor_2": "运动挤占了本就不多的课业时间"
     },
     "hints": [
-      "找一找作者最想让你相信的那句话",
-      "结论常跟在「因此」「所以」之后",
-      "「不应少于 1 小时」是别人提出的政策议题，是讨论对象，不是支持者的结论"
+      "先找结论：支持者希望你接受什么主张？",
+      "再找理由：文中有几条证据在支撑这个结论？",
+      "小心：广告语和家长的担忧都不是支持理由"
     ],
-    "explanation": "「学校应当强制执行这一标准」是论证的结论——它是支持者希望你采纳的立场；「运动能提升注意力和学习效率」是支撑这个结论的理由。而「在校运动不少于 1 小时」是正在被讨论的政策议题（论题），本身不是结论；「这种担心缺乏证据支持」是反驳别人的话，也不是本论证的结论。先分清「论题 / 结论 / 理由」，是淘金式思维的第一步。"
+    "explanation": "「每天在校运动不少于 1 小时」是论证的结论——它是支持者希望你采纳的立场；「提升注意力与学习效率」「降低近视率」是两个独立的支撑理由。广告语『能量翻倍』是推销话术，不是论证理由；「挤占课业时间」是反对者的担忧，恰恰是要被这个论证反驳的对象。先分清「论题 / 结论 / 理由」，是淘金式思维的第一步。"
   },
   "en": {
-    "sourceText": "A city education department proposes that primary and middle school students should exercise at least one hour a day at school. Supporters argue that exercise improves students' attention and learning efficiency, so schools should enforce this standard. Some parents worry it will take time away from learning, but such worries lack supporting evidence.",
+    "sourceText": "An education department proposed that primary and middle school students should get at least 1 hour of exercise at school every day. Supporters believe that exercise significantly improves children's attention and learning efficiency, helping them focus better in class. Survey data also shows that students who exercise more than 1 hour a day have noticeably lower myopia rates. Some parents, however, worry that exercise takes away time from already-packed academics. A sports drink brand is cashing in: 'Take a sip after exercise — double your energy!'",
     "textRefs": {
-      "conclusion_1": "schools should enforce this standard",
-      "reason_1": "exercise improves students' attention and learning efficiency",
-      "distractor_issue": "students should exercise at least one hour a day at school",
-      "distractor_rebuttal": "such worries lack supporting evidence"
+      "conclusion_1": "students should get at least 1 hour of exercise at school every day",
+      "reason_1": "exercise significantly improves children's attention and learning efficiency",
+      "reason_2": "students who exercise more than 1 hour a day have noticeably lower myopia rates",
+      "distractor_1": "Take a sip after exercise — double your energy",
+      "distractor_2": "exercise takes away time from already-packed academics"
     },
     "hints": [
-      "Find the claim the author most wants you to accept",
-      "The conclusion often follows 'so' or 'therefore'",
-      "The one-hour proposal is the issue under debate, not the supporters' conclusion"
+      "Find the conclusion first: what is the supporter asking you to accept?",
+      "Then find the reasons: how many pieces of evidence support it?",
+      "Watch out: the ad slogan and the parents' worry are not supporting reasons"
     ],
-    "explanation": "\u201cSchools should enforce this standard\u201d is the conclusion — the position supporters want you to adopt. \u201cExercise improves attention and learning efficiency\u201d is the reason supporting it. The one-hour requirement is the issue being debated, and the line about worries is a rebuttal to opponents, not this argument's conclusion. Distinguishing issue / conclusion / reason is the first step of panning for gold."
+    "explanation": "The conclusion is 'at least 1 hour of exercise at school every day' — the position supporters want you to accept. 'Improves attention and learning efficiency' and 'lowers myopia rates' are two independent reasons. The ad slogan 'double your energy' is marketing, not an argument; 'takes away time from academics' is the opponents' worry that this argument is trying to answer. Separating issue / conclusion / reasons is step one of panning-for-gold thinking."
   }
 }

@@ -8,18 +8,19 @@
   "mode": "scan",
   "nodes": [
     { "nodeId": "conclusion_1", "type": "conclusion", "textRef": "conclusion_1" },
-    { "nodeId": "reason_sick", "type": "reason", "textRef": "reason_sick" },
-    { "nodeId": "reason_efficiency", "type": "reason", "textRef": "reason_efficiency" }
+    { "nodeId": "reason_1", "type": "reason", "textRef": "reason_1" },
+    { "nodeId": "reason_2", "type": "reason", "textRef": "reason_2" }
   ],
   "distractors": [
-    { "nodeId": "distractor_data", "type": "ambiguous_term", "textRef": "distractor_data" }
+    { "nodeId": "distractor_1", "type": "ambiguous_term", "textRef": "distractor_1" },
+    { "nodeId": "distractor_2", "type": "reason", "textRef": "distractor_2" }
   ],
   "correctChain": [
-    { "from": "reason_sick", "to": "conclusion_1" },
-    { "from": "reason_efficiency", "to": "conclusion_1" }
+    { "from": "reason_1", "to": "conclusion_1" },
+    { "from": "reason_2", "to": "conclusion_1" }
   ],
   "steps": [
     { "stepId": "s1", "targets": ["conclusion_1"] },
-    { "stepId": "s2", "targets": ["reason_sick", "reason_efficiency"] }
+    { "stepId": "s2", "targets": ["reason_1", "reason_2"] }
   ]
 }

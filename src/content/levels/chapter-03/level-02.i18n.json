@@ -1,32 +1,34 @@
 {
   "zh": {
-    "sourceText": "早餐是一天中最重要的一餐。首先，早餐为身体补充一晚上的能量消耗，让人上午更有精力。其次，多项研究表明，吃早餐的学生在课堂上的专注度明显更高。因此，学校应当保证每个学生都能吃上早餐。",
+    "sourceText": "营养专家建议，早餐应该是一天中最丰盛的一餐。首先，早餐为身体补充一晚上的能量消耗，让人上午更有精力；其次，规律吃早餐能稳定血糖，降低患胆结石的风险。然而，现实是许多年轻人为了多睡十分钟干脆不吃早餐。某燕麦片品牌广告称：『每天一碗燕麦，健康一辈子！』",
     "textRefs": {
-      "conclusion_1": "学校应当保证每个学生都能吃上早餐",
-      "reason_energy": "早餐为身体补充一晚上的能量消耗，让人上午更有精力",
-      "reason_focus": "吃早餐的学生在课堂上的专注度明显更高",
-      "distractor_claim": "早餐是一天中最重要的一餐"
+      "conclusion_1": "早餐应该是一天中最丰盛的一餐",
+      "reason_1": "早餐为身体补充一晚上的能量消耗，让人上午更有精力",
+      "reason_2": "规律吃早餐能稳定血糖，降低患胆结石的风险",
+      "distractor_1": "每天一碗燕麦，健康一辈子",
+      "distractor_2": "许多年轻人为了多睡十分钟干脆不吃早餐"
     },
     "hints": [
-      "先找结论——「因此」之后的那句话",
-      "再找支撑结论的理由——通常不止一个",
-      "「早餐是最重要的一餐」是结论的重复强调，不是新理由"
+      "结论是专家的建议，找『应该』后面的主张",
+      "两个理由分别关于能量和健康",
+      "『年轻人不吃早餐』是现象描述，广告语是推销——哪个支撑建议？"
     ],
-    "explanation": "结论是「学校应当保证每个学生都能吃上早餐」，由两个理由支撑：补充能量、提升专注度。把两个理由分别和结论连起来，就看清了这条论证的支撑结构——理由越多越强的论证，才值得相信。"
+    "explanation": "结论是「早餐应该是一天中最丰盛的一餐」。理由一：补充能量、上午更有精力；理由二：稳定血糖、降低胆结石风险。「年轻人不吃早餐」只是现实描述，不是支持建议的理由；「每天一碗燕麦」是燕麦品牌的营销话术，借机带货。找理由时要问：这句话是在『支撑结论』还是在『描述现象 / 卖东西』？"
   },
   "en": {
-    "sourceText": "Breakfast is the most important meal of the day. First, breakfast replenishes the energy spent overnight, making people more energetic in the morning. Second, several studies show that students who eat breakfast are noticeably more focused in class. Therefore, schools should ensure every student can get breakfast.",
+    "sourceText": "Nutritionists recommend that breakfast should be the most substantial meal of the day. First, breakfast replenishes the energy spent overnight, giving you more energy in the morning. Second, eating breakfast regularly stabilizes blood sugar and lowers the risk of gallstones. In reality, however, many young people skip breakfast just to sleep ten more minutes. An oatmeal brand advertises: 'One bowl of oatmeal a day — health for a lifetime!'",
     "textRefs": {
-      "conclusion_1": "schools should ensure every student can get breakfast",
-      "reason_energy": "breakfast replenishes the energy spent overnight, making people more energetic in the morning",
-      "reason_focus": "students who eat breakfast are noticeably more focused in class",
-      "distractor_claim": "Breakfast is the most important meal of the day"
+      "conclusion_1": "breakfast should be the most substantial meal of the day",
+      "reason_1": "breakfast replenishes the energy spent overnight",
+      "reason_2": "eating breakfast regularly stabilizes blood sugar and lowers the risk of gallstones",
+      "distractor_1": "One bowl of oatmeal a day — health for a lifetime",
+      "distractor_2": "many young people skip breakfast just to sleep ten more minutes"
     },
     "hints": [
-      "Find the conclusion first — the sentence after \"therefore\"",
-      "Then find the reasons supporting it — usually more than one",
-      "\"Breakfast is the most important meal\" repeats the claim; it is not a new reason"
+      "The conclusion is the expert's recommendation — find the 'should' claim",
+      "The two reasons concern energy and health",
+      "'Young people skip breakfast' describes reality; the ad sells. Which supports the recommendation?"
     ],
-    "explanation": "The conclusion is \"schools should ensure every student can get breakfast\", supported by two reasons: replenishing energy and improving focus. Linking each reason to the conclusion reveals the argument's supporting structure — the more and stronger the reasons, the more the argument deserves belief."
+    "explanation": "The conclusion is 'breakfast should be the most substantial meal'. Reason one: it replenishes energy for the morning. Reason two: it stabilizes blood sugar and lowers gallstone risk. 'Young people skip breakfast' is a description of reality, not a supporting reason; 'health for a lifetime' is the oatmeal brand's marketing. When looking for reasons, ask: does this sentence support the conclusion, describe reality, or sell something?"
   }
 }

@@ -1,32 +1,34 @@
 {
   "zh": {
-    "sourceText": "某公司宣布将全面取消远程办公。管理层解释，远程办公降低了团队协作效率，因为面对面沟通能减少误解；同时，线下办公更有利于新员工的快速成长。有员工担心这会增加通勤成本，但这种担心并不影响公司的决定。",
+    "sourceText": "某科技公司宣布将全面取消远程办公，回归线下办公。管理层解释：远程办公降低了团队协作效率，因为面对面沟通比视频会议高效得多；而且，长期远程会让员工缺乏归属感，优秀人才更容易流失。支持这一决定的数据显示，过去一年远程办公的项目平均延期 30%。不过也有员工表示，每天通勤三小时才是真正的效率杀手。某办公软件厂商趁机推销：『重回办公室，效率立刻翻倍！』",
     "textRefs": {
-      "conclusion_1": "公司宣布将全面取消远程办公",
+      "conclusion_1": "全面取消远程办公，回归线下办公",
       "reason_1": "远程办公降低了团队协作效率",
-      "reason_2": "线下办公更有利于新员工的快速成长",
-      "distractor_1": "这种担心并不影响公司的决定"
+      "reason_2": "长期远程会让员工缺乏归属感，优秀人才更容易流失",
+      "distractor_1": "重回办公室，效率立刻翻倍",
+      "distractor_2": "每天通勤三小时才是真正的效率杀手"
     },
     "hints": [
-      "找一找公司想让你接受的立场——它宣布了什么？",
-      "理由由「因为」「同时」引出，它们回答『为什么这么做』",
-      "最后一句是在回应反对者，不是在为决定提供理由"
+      "结论在开头：管理层决定怎么做？",
+      "两个理由分别关于『协作效率』和『员工留任』",
+      "『延期 30%』只是数字，注意它属于哪一方；通勤和广告都不支持结论"
     ],
-    "explanation": "「全面取消远程办公」是结论——公司希望你接受的立场。支撑它的理由有两个：「协作效率」与「新员工成长」，它们回答『为什么』。而最后那句回应员工担心的话，只是在反驳反对意见，并没有为决定提供任何新理由。理由 ≠ 反驳：区分「支撑结论的理由」和「回应质疑的辩驳」，是本章的核心能力。"
+    "explanation": "结论是「全面取消远程办公」。理由一：远程降低协作效率；理由二：远程削弱归属感、人才易流失。『延期 30%』是支撑理由的补充数据。而「通勤三小时是效率杀手」是员工的反对观点，「效率立刻翻倍」是软件厂商的营销口号——它们都不是支持取消远程的理由。一个论证里常混着多方的声音，要逐一归位。"
   },
   "en": {
-    "sourceText": "A company announces it will end remote work entirely. Management explains that remote work reduces team collaboration, because face-to-face communication prevents misunderstandings; meanwhile, working in the office helps new employees grow faster. Some employees worry this increases commuting costs, but such worries do not affect the company's decision.",
+    "sourceText": "A tech company announced it will fully abolish remote work and return to the office. Management explains: remote work lowers team collaboration efficiency, because face-to-face communication is far more effective than video meetings. Moreover, long-term remote work makes employees feel less connected, and top talent is more likely to leave. Data supporting this decision shows that remote projects were delayed by 30% on average last year. Some employees, however, say that a three-hour daily commute is the real efficiency killer. An office-software vendor is cashing in: 'Back to the office, double your efficiency instantly!'",
     "textRefs": {
-      "conclusion_1": "it will end remote work entirely",
-      "reason_1": "remote work reduces team collaboration",
-      "reason_2": "working in the office helps new employees grow faster",
-      "distractor_1": "such worries do not affect the company's decision"
+      "conclusion_1": "fully abolish remote work and return to the office",
+      "reason_1": "remote work lowers team collaboration efficiency",
+      "reason_2": "long-term remote work makes employees feel less connected",
+      "distractor_1": "Back to the office, double your efficiency instantly",
+      "distractor_2": "a three-hour daily commute is the real efficiency killer"
     },
     "hints": [
-      "Find the position the company wants you to accept — what did it announce?",
-      "Reasons are introduced by 'because' and 'meanwhile' — they answer 'why'",
-      "The last sentence replies to opponents; it adds no support for the decision"
+      "The conclusion is at the start: what decision did management make?",
+      "The two reasons concern 'collaboration' and 'retention'",
+      "'30% delayed' is a number — note whose side it supports; the commute and the ad don't"
     ],
-    "explanation": "\u201cEnding remote work entirely\u201d is the conclusion — the position the company wants you to accept. Two reasons support it: collaboration efficiency and new-employee growth; they answer \u201cwhy\u201d. The final sentence only rebuts employees' worries; it offers no new support for the decision. Reasons \u2260 rebuttals: telling them apart is the core skill of this chapter."
+    "explanation": "The conclusion is 'fully abolish remote work'. Reason one: remote lowers collaboration efficiency. Reason two: remote weakens belonging and loses talent. 'Delayed by 30%' backs up the reasons. 'Commute is the efficiency killer' is the employees' objection, and 'double your efficiency' is vendor marketing — neither supports the decision. Arguments often mix many voices; sort each one to its owner."
   }
 }

@@ -8,14 +8,15 @@
   "mode": "scan",
   "nodes": [
     { "nodeId": "conclusion_1", "type": "conclusion", "textRef": "conclusion_1" },
-    { "nodeId": "reason_1", "type": "reason", "textRef": "reason_1" }
+    { "nodeId": "reason_1", "type": "reason", "textRef": "reason_1" },
+    { "nodeId": "reason_2", "type": "reason", "textRef": "reason_2" }
   ],
   "distractors": [
-    { "nodeId": "distractor_warn", "type": "reason", "textRef": "distractor_warn" },
-    { "nodeId": "distractor_bg", "type": "ambiguous_term", "textRef": "distractor_bg" }
+    { "nodeId": "distractor_1", "type": "ambiguous_term", "textRef": "distractor_1" },
+    { "nodeId": "distractor_2", "type": "reason", "textRef": "distractor_2" }
   ],
   "steps": [
     { "stepId": "s1", "targets": ["conclusion_1"] },
-    { "stepId": "s2", "targets": ["reason_1"] }
+    { "stepId": "s2", "targets": ["reason_1", "reason_2"] }
   ]
 }

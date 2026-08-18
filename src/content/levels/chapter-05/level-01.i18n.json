@@ -1,32 +1,34 @@
 {
   "zh": {
-    "sourceText": "市政府宣布将大幅提高香烟税率。支持者认为，吸烟危害健康，提高税率能显著减少吸烟人数，从而改善全民健康。商家担心此举影响销量，但这并不改变支持者的立场。",
+    "sourceText": "市政府宣布将大幅提高香烟税率，理由是吸烟危害健康，提高税率能显著减少吸烟人口。支持者还指出，更高的香烟价格会直接降低青少年的尝试率，从源头上减少未来的烟民。然而，这项政策能奏效，有一个前提常常被忽略：烟民们不会因为价格上涨就转向购买更便宜的黑市香烟。某戒烟产品趁机宣传：『税涨了？正好，一贴戒烟！』",
     "textRefs": {
-      "conclusion_1": "市政府宣布将大幅提高香烟税率",
-      "reason_1": "提高税率能显著减少吸烟人数",
-      "assumption_1": "公共健康比个人吸烟自由更重要",
-      "distractor_1": "商家担心此举影响销量"
+      "conclusion_1": "大幅提高香烟税率",
+      "reason_1": "吸烟危害健康，提高税率能显著减少吸烟人口",
+      "reason_2": "更高的香烟价格会直接降低青少年的尝试率",
+      "assumption_1": "烟民们不会因为价格上涨就转向购买更便宜的黑市香烟",
+      "distractor_1": "税涨了？正好，一贴戒烟"
     },
     "hints": [
-      "先扫出结论和理由——它们在明处",
-      "论证成立还缺一个默认的前提，去下面的挖掘区挖一挖",
-      "支持者默认：健康的价值比吸烟者的自由更重要——这就是价值观假设"
+      "先找结论（政策）和两个理由",
+      "最后一步去挖掘区：这个论证默认了什么没明说的前提？",
+      "广告语『一贴戒烟』是推销，不是论证"
     ],
-    "explanation": "结论是提高香烟税率，理由是减少吸烟人数。但要让论证真正成立，支持者还默认了一个没说出来、却决定立场方向的前提：公共健康比个人吸烟自由更值得优先。这种藏在论证背后的价值观选择，就是「价值观假设」——把它挖出来，你才看清论证的立场从何而来。"
+    "explanation": "结论是「大幅提高香烟税率」，两个显性理由是『减少吸烟人口』和『降低青少年尝试率』。但这个论证偷偷默认了一个前提：涨税后烟民不会转向黑市香烟——如果黑市渠道畅通，涨税只是把生意赶进地下，政策目标落空。找到这个隐藏假设，你就能反问：『凭什么假设烟民不会去买更便宜的黑市烟？』这就是挖假设的威力。"
   },
   "en": {
-    "sourceText": "The city government announces a large tax increase on cigarettes. Supporters argue that smoking harms health, and higher taxes will significantly reduce the number of smokers, improving public health. Businesses worry this will hurt sales, but that does not change the supporters' position.",
+    "sourceText": "The city government announced a sharp increase in cigarette taxes, arguing that smoking harms health and higher taxes significantly reduce the smoking population. Supporters add that higher cigarette prices directly lower teenagers' experimentation rates, cutting off future smokers at the source. What is often overlooked, however, is a hidden premise: that smokers will not simply switch to cheaper black-market cigarettes when prices rise. A quit-smoking product is cashing in: 'Taxes up? Perfect — one patch, quit now!'",
     "textRefs": {
-      "conclusion_1": "announces a large tax increase on cigarettes",
-      "reason_1": "higher taxes will significantly reduce the number of smokers",
-      "assumption_1": "Public health matters more than individual freedom to smoke",
-      "distractor_1": "Businesses worry this will hurt sales"
+      "conclusion_1": "a sharp increase in cigarette taxes",
+      "reason_1": "smoking harms health and higher taxes significantly reduce the smoking population",
+      "reason_2": "higher cigarette prices directly lower teenagers' experimentation rates",
+      "assumption_1": "smokers will not simply switch to cheaper black-market cigarettes when prices rise",
+      "distractor_1": "one patch, quit now"
     },
     "hints": [
-      "Scan for the conclusion and the reason — they are in plain sight",
-      "The argument needs an unstated premise — dig for it below",
-      "Supporters assume health outweighs smokers' freedom — that's the value assumption"
+      "Find the conclusion (the policy) and the two reasons first",
+      "Finally, head to the dig site: what unstated premise does this argument assume?",
+      "The ad slogan 'quit now' is marketing, not argument"
     ],
-    "explanation": "The conclusion is the tax increase; the reason is fewer smokers. But for the argument to work, supporters assume something unsaid that steers the whole stance: public health deserves priority over individual freedom to smoke. That hidden value choice is the value assumption — dig it out and you see where the argument's position really comes from."
+    "explanation": "The conclusion is 'a sharp increase in cigarette taxes', with two visible reasons: 'reduce the smoking population' and 'lower teenagers' experimentation'. But the argument silently assumes smokers won't turn to the black market when prices rise — if illicit channels thrive, the tax just drives business underground and the policy fails. Spotting that hidden assumption lets you ask: 'Why assume smokers won't buy cheaper black-market cigarettes?' That's the power of digging for assumptions."
   }
 }

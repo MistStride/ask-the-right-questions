@@ -1,32 +1,34 @@
 {
   "zh": {
-    "sourceText": "公司应该鼓励员工每天运动。有数据显示，坚持运动的员工请病假的天数明显更少。而且，运动后的大脑更清醒，工作效率也随之提高。所以，管理层应当为员工提供免费健身福利。",
+    "sourceText": "公司应该鼓励员工每天运动。有数据显示，坚持运动的员工请病假的天数明显更少，长期坚持还能降低焦虑和抑郁的风险。而且，运动带来的精力提升会直接反映在工作效率上，让团队跑得更快。不过，也有管理者担心，安排运动时间会压缩工时，影响项目进度。某健身房在写字楼电梯里投放广告：『每天 30 分钟，激活你的职场竞争力！』",
     "textRefs": {
-      "conclusion_1": "管理层应当为员工提供免费健身福利",
-      "reason_sick": "坚持运动的员工请病假的天数明显更少",
-      "reason_efficiency": "运动后的大脑更清醒，工作效率也随之提高",
-      "distractor_data": "有数据显示"
+      "conclusion_1": "公司应该鼓励员工每天运动",
+      "reason_1": "坚持运动的员工请病假的天数明显更少",
+      "reason_2": "运动带来的精力提升会直接反映在工作效率上",
+      "distractor_1": "每天 30 分钟，激活你的职场竞争力",
+      "distractor_2": "安排运动时间会压缩工时，影响项目进度"
     },
     "hints": [
-      "结论在「所以」之后——作者最想让你接受的建议",
-      "理由可以是事实、数据或因果推理",
-      "「有数据显示」是引出理由的引导语，本身不是理由"
+      "结论是给公司的建议，找『应该』句",
+      "理由一关于健康（病假），理由二关于效率",
+      "管理者的担心和健身房广告，哪个是支持理由？"
     ],
-    "explanation": "结论是「管理层应当提供免费健身福利」，两条理由分别是「病假更少」和「效率更高」。把理由连到结论，就看到了论证的骨架——注意「有数据显示」只是引出理由的套话，不是理由本身。"
+    "explanation": "结论是「公司应该鼓励员工每天运动」。理由一：坚持运动的员工病假更少（健康成本下降）；理由二：运动提升精力、提高工作效率（产出上升）。「压缩工时影响进度」是管理者的担忧，属于需要回应的反对意见；「激活职场竞争力」是健身房广告。支撑结论的理由要『直接服务于结论』，广告和担忧都不满足。"
   },
   "en": {
-    "sourceText": "Companies should encourage employees to exercise daily. Data shows that employees who exercise regularly take noticeably fewer sick days. Moreover, after exercise the brain is more alert and work efficiency rises. So, management should provide free fitness benefits for employees.",
+    "sourceText": "Companies should encourage employees to exercise daily. Data shows that employees who exercise regularly take noticeably fewer sick days, and long-term exercise also lowers the risk of anxiety and depression. Moreover, the energy boost from exercise directly improves work efficiency, helping teams move faster. Some managers, however, worry that scheduling exercise time will cut into working hours and delay projects. A gym advertises in office elevators: '30 minutes a day — power up your career edge!'",
     "textRefs": {
-      "conclusion_1": "management should provide free fitness benefits for employees",
-      "reason_sick": "employees who exercise regularly take noticeably fewer sick days",
-      "reason_efficiency": "after exercise the brain is more alert and work efficiency rises",
-      "distractor_data": "Data shows"
+      "conclusion_1": "Companies should encourage employees to exercise daily",
+      "reason_1": "employees who exercise regularly take noticeably fewer sick days",
+      "reason_2": "the energy boost from exercise directly improves work efficiency",
+      "distractor_1": "30 minutes a day — power up your career edge",
+      "distractor_2": "scheduling exercise time will cut into working hours and delay projects"
     },
     "hints": [
-      "The conclusion follows \"so\" — the recommendation the author most wants you to accept",
-      "Reasons can be facts, data, or causal reasoning",
-      "\"Data shows\" is a lead-in phrase, not a reason itself"
+      "The conclusion is a recommendation to companies — find the 'should' sentence",
+      "Reason one is about health (sick days), reason two is about efficiency",
+      "The managers' worry and the gym ad — which one supports the conclusion?"
     ],
-    "explanation": "The conclusion is \"management should provide free fitness benefits\", supported by two reasons: fewer sick days and higher efficiency. Linking reasons to the conclusion reveals the argument's skeleton — note that \"data shows\" is only a phrase introducing the reason, not the reason itself."
+    "explanation": "The conclusion is 'companies should encourage employees to exercise daily'. Reason one: regular exercisers take fewer sick days (lower health cost). Reason two: exercise boosts energy and improves efficiency (higher output). 'Cutting into working hours' is managers' worry — an objection to answer, not a reason. 'Power up your career edge' is a gym ad. A supporting reason must directly serve the conclusion; ads and worries don't."
   }
 }

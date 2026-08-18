@@ -1,32 +1,34 @@
 {
   "zh": {
-    "sourceText": "公司应当鼓励员工主动加班。加班能加快项目进度，让公司更快推出产品、抢占市场。员工加班越多，公司发展越快，大家的日子才会更好过。",
+    "sourceText": "公司应当鼓励员工主动加班。加班能加快项目进度，让公司更快推出产品、抢占市场。此外，加班多的人往往获得更快的晋升，这对想上进的员工是实打实的激励。但这一切建立在一个假设之上：加班真的能提升总产出，而不是把白天能做完的活拖到晚上再做一遍。某能量饮料在茶水间刷屏：『加班喝一口，思路不断流！』",
     "textRefs": {
       "conclusion_1": "公司应当鼓励员工主动加班",
       "reason_1": "加班能加快项目进度，让公司更快推出产品、抢占市场",
-      "assumption_1": "公司发展越快，就一定会让每个员工的日子更好过",
-      "distractor_1": "员工加班越多"
+      "reason_2": "加班多的人往往获得更快的晋升，这对想上进的员工是实打实的激励",
+      "assumption_1": "加班真的能提升总产出，而不是把白天能做完的活拖到晚上再做一遍",
+      "distractor_1": "加班喝一口，思路不断流"
     },
     "hints": [
-      "先扫明处的结论和理由",
-      "再到挖掘区挖出隐藏的假设——理由成立的前提",
-      "价值假设：作者默认「公司利益 = 员工利益」，这一定成立吗？"
+      "先扫出结论与两个理由",
+      "去挖掘区找那个没明说的前提——它决定了整个论证成不成立",
+      "能量饮料的广告和论证无关"
     ],
-    "explanation": "论证表面是「加班 → 公司发展 → 大家好过」，但中间藏着一个价值假设：公司发展越快，员工就一定受益。如果公司的利润只属于股东，加班可能只是「更快的压榨」——识别这个默认假设，论证就站不稳了。"
+    "explanation": "结论是「公司应当鼓励员工主动加班」，理由是『加快项目进度』与『更快晋升的激励』。但论证默认了关键假设：加班确实增加总产出。如果加班只是把白天的低效挪到晚上，产出没有增加，反而消耗了员工健康——两个理由就都塌了。批判性思维不是反对加班，而是追问：『加班真的增加了产出吗？』"
   },
   "en": {
-    "sourceText": "Companies should encourage employees to work overtime voluntarily. Overtime speeds up projects, letting the company ship products faster and seize the market. The more employees work overtime, the faster the company grows, and everyone's life will be better.",
+    "sourceText": "Companies should encourage employees to work overtime. Overtime speeds up projects, letting the company ship products faster and seize the market. Moreover, employees who work overtime tend to get promoted faster, which is a real incentive for ambitious workers. But all of this rests on one assumption: that overtime actually increases total output, rather than dragging work that could be done in the day into the night. An energy drink is everywhere in the break room: 'Sip while you work late — ideas never stop!'",
     "textRefs": {
-      "conclusion_1": "Companies should encourage employees to work overtime voluntarily",
+      "conclusion_1": "Companies should encourage employees to work overtime",
       "reason_1": "Overtime speeds up projects, letting the company ship products faster and seize the market",
-      "assumption_1": "The faster the company grows, the better every employee's life will certainly be",
-      "distractor_1": "The more employees work overtime"
+      "reason_2": "employees who work overtime tend to get promoted faster",
+      "assumption_1": "overtime actually increases total output, rather than dragging work that could be done in the day into the night",
+      "distractor_1": "ideas never stop"
     },
     "hints": [
-      "Scan the visible conclusion and reason first",
-      "Then dig out the hidden assumption — the premise the reason depends on",
-      "Value assumption: the author assumes \"company interest = employee interest\". Is that guaranteed?"
+      "Scan for the conclusion and the two reasons",
+      "Head to the dig site for the unstated premise — the whole argument stands on it",
+      "The energy drink ad is irrelevant to the argument"
     ],
-    "explanation": "The argument looks like \"overtime → growth → everyone benefits\", but hidden inside is a value assumption: faster company growth always benefits employees. If profits belong only to shareholders, overtime may just be \"faster exploitation\" — expose this default assumption and the argument collapses."
+    "explanation": "The conclusion is 'companies should encourage overtime', with reasons 'faster projects' and 'promotion incentives'. But the argument assumes that overtime genuinely adds output. If overtime merely moves daytime inefficiency into the night, output doesn't grow and health suffers — both reasons collapse. Critical thinking isn't anti-overtime; it's asking: 'Does overtime actually increase output?'"
   }
 }

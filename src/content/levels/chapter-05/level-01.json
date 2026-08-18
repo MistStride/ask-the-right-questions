@@ -9,15 +9,19 @@
   "nodes": [
     { "nodeId": "conclusion_1", "type": "conclusion", "textRef": "conclusion_1" },
     { "nodeId": "reason_1", "type": "reason", "textRef": "reason_1" },
+    { "nodeId": "reason_2", "type": "reason", "textRef": "reason_2" },
     { "nodeId": "assumption_1", "type": "assumption", "textRef": "assumption_1", "hidden": true }
   ],
   "distractors": [
-    { "nodeId": "distractor_1", "type": "reason", "textRef": "distractor_1" }
+    { "nodeId": "distractor_1", "type": "ambiguous_term", "textRef": "distractor_1" }
   ],
-  "correctChain": [{ "from": "reason_1", "to": "conclusion_1" }],
+  "correctChain": [
+    { "from": "reason_1", "to": "conclusion_1" },
+    { "from": "reason_2", "to": "conclusion_1" }
+  ],
   "steps": [
     { "stepId": "s1", "targets": ["conclusion_1"] },
-    { "stepId": "s2", "targets": ["reason_1"] },
+    { "stepId": "s2", "targets": ["reason_1", "reason_2"] },
     { "stepId": "s3", "targets": ["assumption_1"] }
   ]
 }

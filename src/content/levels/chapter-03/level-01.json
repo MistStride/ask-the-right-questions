@@ -12,7 +12,8 @@
     { "nodeId": "reason_2", "type": "reason", "textRef": "reason_2" }
   ],
   "distractors": [
-    { "nodeId": "distractor_1", "type": "reason", "textRef": "distractor_1" }
+    { "nodeId": "distractor_1", "type": "ambiguous_term", "textRef": "distractor_1" },
+    { "nodeId": "distractor_2", "type": "reason", "textRef": "distractor_2" }
   ],
   "correctChain": [
     { "from": "reason_1", "to": "conclusion_1" },

@@ -2,7 +2,7 @@
   "levelId": "ch05-level03",
   "chapter": 5,
   "engine": "xray",
-  "difficulty": 2,
+  "difficulty": 3,
   "contributor": "atrq-team",
   "rewardTags": ["assumption"],
   "mode": "dig",
@@ -12,8 +12,9 @@
     { "nodeId": "assumption_1", "type": "assumption", "textRef": "assumption_1", "hidden": true }
   ],
   "distractors": [
-    { "nodeId": "distractor_1", "type": "conclusion", "textRef": "distractor_1" }
+    { "nodeId": "distractor_1", "type": "ambiguous_term", "textRef": "distractor_1" }
   ],
+  "correctChain": [{ "from": "reason_1", "to": "conclusion_1" }],
   "steps": [
     { "stepId": "s1", "targets": ["conclusion_1"] },
     { "stepId": "s2", "targets": ["reason_1"] },

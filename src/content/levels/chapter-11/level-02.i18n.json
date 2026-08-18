@@ -1,44 +1,46 @@
 {
   "zh": {
-    "sourceText": "某洗发水广告宣称：『销量全国第一！』广告想让你相信，销量第一就代表它是最好的洗发水。然而，【gap:g1】。没有这些信息，『销量第一』根本说明不了质量问题。",
+    "sourceText": "某洗发水广告宣称：『销量全国第一！』广告想让你相信，销量第一就代表它是最好的洗发水，所以你应该选择它。【gap:gap1】某测评博主则说：『我用过一百种洗发水，这款确实最好。』",
     "textRefs": {
-      "conclusion_1": "销量第一就代表它是最好的洗发水",
-      "distractor_1": "销量全国第一",
-      "gap_g1": "这份销量数据是谁统计的？覆盖了多少家门店？统计了多长时间？"
+      "conclusion_1": "你应该选择它",
+      "reason_1": "销量第一就代表它是最好的洗发水",
+      "gap1_correct": "广告没有交代『销量第一』的统计口径——覆盖哪些渠道、统计周期多长",
+      "distractor_1": "我用过一百种洗发水，这款确实最好"
     },
     "gapRefs": {
-      "g1": [
-        "这份销量数据是谁统计的？覆盖了多少家门店？统计了多长时间？",
-        "这款洗发水洗完后头发很顺滑",
-        "广告里明星的头发看起来非常漂亮"
+      "gap1": [
+        "广告没有交代『销量第一』的统计口径——覆盖哪些渠道、统计周期多长",
+        "洗发水含有氨基酸等保湿成分",
+        "测评博主的评测视频超过十万播放量"
       ]
     },
     "hints": [
-      "先点出广告的结论",
-      "再补上被撕掉的信息——广告最不愿意让你知道的那部分",
-      "「销量第一」背后：谁统计的？范围多大？统计多久？"
+      "先找结论和理由：销量高 = 最好？这个跳跃有多大？",
+      "最后一步找空洞：广告藏起了什么关键信息？",
+      "『销量第一』的统计口径，你知道吗？"
     ],
-    "explanation": "「销量第一」被广告用来证明「最好」，但它省略了最关键的信息：数据来源、统计范围和周期。可能只是某个小渠道、某几天的销量，甚至统计口径本身就有问题。会问「被省略了什么」的人，不会被一句「销量第一」唬住。"
+    "explanation": "结论是「你应该选择它」，理由是『销量第一就是最好』。但广告藏起的关键信息是：『销量第一』到底怎么统计的？只算电商？只算某季度？不同口径下结果可能完全不同。没有统计口径的数字，等于没有数字。另外『测评博主自用』只是个人证言。看广告时永远要问：这个数字是怎么来的？"
   },
   "en": {
-    "sourceText": "A shampoo ad boasts: \"#1 in sales nationwide!\" The ad wants you to believe that being #1 in sales means it is the best shampoo. However, 【gap:g1】. Without this information, \"#1 in sales\" says nothing about quality.",
+    "sourceText": "A shampoo ad claims: 'Best-selling in the country!' The ad wants you to believe that being the best-seller means it's the best shampoo, so you should choose it.【gap:gap1】A reviewer influencer says: 'I've tried a hundred shampoos — this one really is the best.'",
     "textRefs": {
-      "conclusion_1": "being #1 in sales means it is the best shampoo",
-      "distractor_1": "#1 in sales nationwide",
-      "gap_g1": "Who collected these sales figures? How many stores were covered? Over what time period?"
+      "conclusion_1": "you should choose it",
+      "reason_1": "being the best-seller means it's the best shampoo",
+      "gap1_correct": "The ad never explains how 'best-selling' was measured — which channels were counted, over what period",
+      "distractor_1": "this one really is the best"
     },
     "gapRefs": {
-      "g1": [
-        "Who collected these sales figures? How many stores were covered? Over what time period?",
-        "This shampoo leaves hair very smooth",
-        "The celebrity's hair in the ad looks gorgeous"
+      "gap1": [
+        "The ad never explains how 'best-selling' was measured — which channels were counted, over what period",
+        "The shampoo contains moisturizing ingredients such as amino acids",
+        "The reviewer's video has over 100,000 views"
       ]
     },
     "hints": [
-      "Point out the ad's conclusion first",
-      "Then patch the torn-out information — the part the ad least wants you to know",
-      "\"#1 in sales\" behind it: who counted? how broad? how long?"
+      "Find the conclusion and the reason: best-seller = best? How big is that leap?",
+      "Finally, find the gap: what key information does the ad hide?",
+      "Do you actually know what 'best-selling' is measured by?"
     ],
-    "explanation": "\"#1 in sales\" is used to prove \"best\", but it omits the crucial information: data source, coverage, and time span. It could be a tiny channel, a few days of sales, or a rigged metric. People who ask \"what is left out?\" won't be fooled by a \"#1\" slogan."
+    "explanation": "The conclusion is 'you should choose it', supported by 'best-seller means best'. But the ad hides the crucial detail: how was 'best-selling' measured? Online only? One quarter only? Different measures give completely different results. A number without methodology is not a number. The influencer's 'I've tried a hundred' is just personal testimony. Whenever you see an ad, ask: where does this number come from?"
   }
 }

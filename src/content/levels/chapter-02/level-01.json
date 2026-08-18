@@ -5,17 +5,18 @@
   "difficulty": 1,
   "contributor": "atrq-team",
   "rewardTags": ["structure"],
+  "mode": "scan",
   "nodes": [
     { "nodeId": "conclusion_1", "type": "conclusion", "textRef": "conclusion_1" },
-    { "nodeId": "reason_1", "type": "reason", "textRef": "reason_1" }
+    { "nodeId": "reason_1", "type": "reason", "textRef": "reason_1" },
+    { "nodeId": "reason_2", "type": "reason", "textRef": "reason_2" }
   ],
   "distractors": [
-    { "nodeId": "distractor_issue", "type": "ambiguous_term", "textRef": "distractor_issue" },
-    { "nodeId": "distractor_rebuttal", "type": "reason", "textRef": "distractor_rebuttal" }
+    { "nodeId": "distractor_1", "type": "ambiguous_term", "textRef": "distractor_1" },
+    { "nodeId": "distractor_2", "type": "reason", "textRef": "distractor_2" }
   ],
-  "correctChain": [{ "from": "reason_1", "to": "conclusion_1" }],
   "steps": [
     { "stepId": "s1", "targets": ["conclusion_1"] },
-    { "stepId": "s2", "targets": ["reason_1"] }
+    { "stepId": "s2", "targets": ["reason_1", "reason_2"] }
   ]
 }

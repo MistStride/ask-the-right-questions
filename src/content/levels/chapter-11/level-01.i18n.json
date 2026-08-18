@@ -1,46 +1,46 @@
 {
   "zh": {
-    "sourceText": "某媒体调查显示，78% 的受访者支持在市中心修建新的高架桥。报道称，市民普遍支持这一工程，因此项目应当尽快动工。这项调查由市交通局出资开展。【gap:gap1】",
+    "sourceText": "某媒体调查显示，78% 的受访者支持在市中心修建新的高架桥。报道称，市民普遍支持该项目，所以高架桥应该尽快开工。【gap:gap1】调查由市交通局出资，只访问了 200 名经常开车的受访者，其中多数住在桥址附近。某地产商趁势宣传：『桥通了，房价起飞！』",
     "textRefs": {
-      "conclusion_1": "项目应当尽快动工",
-      "reason_1": "78% 的受访者支持在市中心修建新的高架桥",
-      "gap1_correct": "受访者均通过交通局官网主动报名，样本严重偏向支持者",
-      "distractor_1": "这项调查由市交通局出资开展"
+      "conclusion_1": "高架桥应该尽快开工",
+      "reason_1": "市民普遍支持该项目",
+      "gap1_correct": "这 200 名受访者多数住在桥址附近，样本严重偏向支持者，不能代表全体市民",
+      "distractor_1": "桥通了，房价起飞"
     },
     "gapRefs": {
       "gap1": [
-        "受访者均通过交通局官网主动报名，样本严重偏向支持者",
+        "这 200 名受访者多数住在桥址附近，样本严重偏向支持者，不能代表全体市民",
         "高架桥的建设工期预计为三年",
         "市政府此前多次召开公开听证会"
       ]
     },
     "hints": [
-      "报道里有什么没说？关键信息被撕掉了",
-      "想一想：「78%」这个数字可信吗？调查对象是怎么选出来的？",
-      "谁出资、受访者从哪来——这些通常会被有意无意地省略"
+      "先扫描结论与理由：『市民普遍支持』来自哪里？",
+      "最后一步找空洞：报道为了让你信服，藏起了哪些信息？",
+      "调查是谁出钱的？受访者是怎么来的？"
     ],
-    "explanation": "报道省略了最关键的信息：受访者是通过交通局官网主动报名的，样本严重偏向本来就支持工程的人。没有这条信息，「78% 支持」很可能只是「本来支持的人」的声音，而不是全体市民的意见。批判性阅读的关键动作之一，就是主动追问：有什么重要的信息被省略了？"
+    "explanation": "结论是「高架桥应该尽快开工」，理由是『78% 受访者支持』。但报道藏起了关键信息：调查由交通局出资，且只访问了 200 名经常开车、多数住在桥址附近的受访者——样本严重偏向支持者，根本不能代表全体市民。这就是「遗漏信息」：看任何『XX% 的人支持』，都要先问：样本是谁？怎么选的？谁出的钱？"
   },
   "en": {
-    "sourceText": "A media survey reports that 78% of respondents support building a new viaduct downtown. The report claims residents broadly support the project, so construction should start soon. The survey was funded by the city's transport bureau.【gap:gap1】",
+    "sourceText": "A media survey reports that 78% of respondents support building a new viaduct downtown. The report claims residents broadly support the project, so construction should start soon.【gap:gap1】The survey was funded by the city's transport bureau and only interviewed 200 respondents who drive regularly, most of them living near the proposed site. A real-estate developer is cashing in: 'Bridge opens, property prices take off!'",
     "textRefs": {
       "conclusion_1": "construction should start soon",
-      "reason_1": "78% of respondents support building a new viaduct downtown",
-      "gap1_correct": "Respondents volunteered through the transport bureau's website, so the sample skews toward supporters",
-      "distractor_1": "The survey was funded by the city's transport bureau"
+      "reason_1": "residents broadly support the project",
+      "gap1_correct": "The 200 respondents mostly live near the proposed site — a sample heavily skewed toward supporters, not representative of all residents",
+      "distractor_1": "property prices take off"
     },
     "gapRefs": {
       "gap1": [
-        "Respondents volunteered through the transport bureau's website, so the sample skews toward supporters",
+        "The 200 respondents mostly live near the proposed site — a sample heavily skewed toward supporters, not representative of all residents",
         "The viaduct is expected to take three years to build",
         "The city previously held several public hearings"
       ]
     },
     "hints": [
-      "What is missing from the report? A key piece was torn away",
-      "Is '78%' trustworthy? How were respondents chosen?",
-      "Who funded the survey and where respondents came from are usually omitted"
+      "Scan for the conclusion and the reason: where does 'broad support' come from?",
+      "Finally, find the gap: what information did the report hide to persuade you?",
+      "Who funded the survey? How were respondents chosen?"
     ],
-    "explanation": "The report omits the crucial detail: respondents volunteered through the transport bureau's website, so the sample skews toward people who already favored the project. Without it, \u201c78% support\u201d may only echo the voices of those who supported it all along. A key habit of critical reading: always ask — what significant information is omitted?"
+    "explanation": "The conclusion is 'construction should start soon', supported by '78% of respondents support it'. But the report hides a key fact: the survey was funded by the transport bureau and covered only 200 regular drivers, most living near the site — a sample skewed toward supporters, unrepresentative of all residents. That's omitted information: whenever you see 'X% of people support', ask: who was sampled, how were they chosen, and who paid?"
   }
 }

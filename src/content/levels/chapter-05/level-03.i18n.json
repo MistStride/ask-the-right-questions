@@ -1,32 +1,32 @@
 {
   "zh": {
-    "sourceText": "吃素比吃肉更健康。数据显示，素食者的心血管疾病发生率明显低于肉食者。既然素食能降低患病风险，大家就应该选择素食。",
+    "sourceText": "吃素比吃肉更健康。数据显示，素食者的心血管疾病发生率明显低于肉食者，平均寿命也更长。既然素食能降低疾病风险、延长寿命，我们每个人都不妨试试以植物为主的饮食。不过，这个结论悄悄藏了一个假设：素食者更低的发病率完全来自饮食本身，而不是因为他们整体上更注重健康、更常运动、更少抽烟。某植物奶品牌在超市门口试饮：『植物力量，喝出健康！』",
     "textRefs": {
-      "conclusion_1": "大家就应该选择素食",
-      "reason_1": "素食者的心血管疾病发生率明显低于肉食者",
-      "assumption_1": "素食不会带来其他健康隐患，比如某些营养素的缺乏",
-      "distractor_1": "吃素比吃肉更健康"
+      "conclusion_1": "我们每个人都不妨试试以植物为主的饮食",
+      "reason_1": "素食者的心血管疾病发生率明显低于肉食者，平均寿命也更长",
+      "assumption_1": "素食者更低的发病率完全来自饮食本身，而不是因为他们整体上更注重健康、更常运动、更少抽烟",
+      "distractor_1": "植物力量，喝出健康"
     },
     "hints": [
-      "先扫明处的结论与理由",
-      "去挖掘区挖出隐藏假设——这条理由背后默认了什么？",
-      "描述性假设：素食降风险，但会不会同时带来别的问题？"
+      "先找结论和支撑它的数据理由",
+      "去挖掘区：发病率低一定归因于吃素吗？",
+      "健康的生活方式可能同时解释了『吃素』和『少生病』"
     ],
-    "explanation": "论证依赖一个隐藏的描述性假设：素食只降风险、没有副作用。但长期素食可能导致铁、B12 等营养素缺乏。如果这个假设不成立，「素食更健康」的结论就要打个大问号——描述性假设描述的是「世界是怎样的」，它必须为真，论证才站得住。"
+    "explanation": "结论是「不妨试试以植物为主的饮食」，理由是『素食者心血管疾病率更低』。但这个论证默认：更低发病率完全由饮食造成。可另一种可能同样成立——选择吃素的人往往也更注重锻炼、更少抽烟，是这些因素（而非素食本身）带来了健康。这就是「相关性不等于因果」的经典陷阱：找假设时，永远要问『还有别的解释吗？』"
   },
   "en": {
-    "sourceText": "Eating vegetarian is healthier than eating meat. Data shows vegetarians have noticeably lower rates of cardiovascular disease than meat-eaters. Since vegetarianism lowers disease risk, everyone should choose a vegetarian diet.",
+    "sourceText": "Eating vegetarian is healthier than eating meat. Data shows that vegetarians have significantly lower rates of cardiovascular disease than meat-eaters, and they also live longer on average. Since a plant-based diet lowers disease risk and extends life, we should all try eating mostly plants. This conclusion, however, quietly assumes that vegetarians' lower disease rates come entirely from their diet — not from the fact that they tend to be more health-conscious overall, exercising more and smoking less. A plant-milk brand is giving out samples at the supermarket entrance: 'Plant power, drink your way to health!'",
     "textRefs": {
-      "conclusion_1": "everyone should choose a vegetarian diet",
-      "reason_1": "vegetarians have noticeably lower rates of cardiovascular disease than meat-eaters",
-      "assumption_1": "A vegetarian diet brings no other health risks, such as a lack of certain nutrients",
-      "distractor_1": "Eating vegetarian is healthier than eating meat"
+      "conclusion_1": "we should all try eating mostly plants",
+      "reason_1": "vegetarians have significantly lower rates of cardiovascular disease than meat-eaters",
+      "assumption_1": "vegetarians' lower disease rates come entirely from their diet — not from the fact that they tend to be more health-conscious overall, exercising more and smoking less",
+      "distractor_1": "drink your way to health"
     },
     "hints": [
-      "Scan the visible conclusion and reason first",
-      "Dig out the hidden assumption — what does this reason silently rely on?",
-      "Descriptive assumption: vegetarianism lowers risk, but does it also create other problems?"
+      "Find the conclusion and the statistical reason supporting it",
+      "Head to the dig site: is the lower disease rate really caused by the diet?",
+      "A healthy lifestyle could explain both 'being vegetarian' and 'fewer illnesses'"
     ],
-    "explanation": "The argument relies on a hidden descriptive assumption: vegetarianism only lowers risk with no side effects. But long-term vegetarian diets may cause deficiencies in iron, B12, and more. If that assumption fails, \"vegetarian is healthier\" needs a big question mark — descriptive assumptions describe how the world is, and they must be true for the argument to stand."
+    "explanation": "The conclusion is 'we should all try eating mostly plants', supported by 'vegetarians have lower cardiovascular rates'. But the argument assumes diet alone causes the lower rate. Another equally plausible story: people who choose vegetarianism also tend to exercise more and smoke less — those factors, not the diet itself, drive the health gains. This is the classic 'correlation is not causation' trap. When digging for assumptions, always ask: 'Is there another explanation?'"
   }
 }

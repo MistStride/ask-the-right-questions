@@ -1,32 +1,34 @@
 {
   "zh": {
-    "sourceText": "人工智能正在走进课堂。不少学校尝试用 AI 助教为学生答疑。校长表示：AI 能根据每个学生的水平定制练习，所以我们决定下个学期在全校引入 AI 助教。老师们则提醒：AI 也可能给出错误答案。",
+    "sourceText": "人工智能正在走进课堂。不少学校开始用 AI 助教为学生答疑，校长表示：AI 能根据每个学生的水平定制练习，所以我们决定下个学期在全校引入 AI 助教。学生们也觉得，问 AI 比举手提问更自在，不用担心被同学笑话。但一线老师们则提醒：AI 也可能给出错误答案，而且长期依赖 AI 可能会削弱学生独立思考的能力。某教育科技公司趁势宣传：『AI 助教，让孩子爱上学习，一用就上瘾！』",
     "textRefs": {
       "conclusion_1": "我们决定下个学期在全校引入 AI 助教",
       "reason_1": "AI 能根据每个学生的水平定制练习",
-      "distractor_warn": "AI 也可能给出错误答案",
-      "distractor_bg": "人工智能正在走进课堂"
+      "reason_2": "问 AI 比举手提问更自在，不用担心被同学笑话",
+      "distractor_1": "AI 助教，让孩子爱上学习，一用就上瘾",
+      "distractor_2": "AI 也可能给出错误答案"
     },
     "hints": [
-      "结论是说话人要你接受的「决定」或「立场」——通常在「所以」之后",
-      "老师的提醒是担忧，不是校长的结论",
-      "开头交代的大背景也不是结论"
+      "结论是校长做的决定，找『我们要做什么』",
+      "两个理由：一个关于学习效果，一个关于学生心理",
+      "老师的提醒和公司的广告语，哪一个是支持理由？"
     ],
-    "explanation": "校长的结论是「下个学期在全校引入 AI 助教」（一个决定），支撑它的是「AI 能根据每个学生水平定制练习」这个理由。「AI 会答错」是老师们的提醒——引述别人的担忧不等于作者自己的结论。"
+    "explanation": "结论是校长的决定「全校引入 AI 助教」。理由一：AI 能个性化定制练习（效果）；理由二：学生问 AI 不害羞（心理门槛降低）。「AI 可能给错误答案」「削弱独立思考」是老师的反对意见；「让孩子爱上学习」是营销口号，都不是支撑结论的理由。注意：论证中出现的每一句话不一定都在为结论服务。"
   },
   "en": {
-    "sourceText": "Artificial intelligence is entering classrooms. Many schools are trying AI teaching assistants to answer students' questions. The principal says: AI can tailor exercises to each student's level, so we have decided to bring AI teaching assistants to the whole school next semester. Teachers warn that AI may also give wrong answers.",
+    "sourceText": "AI is entering the classroom. Many schools are using AI teaching assistants to answer students' questions. The principal says: AI can create practice tailored to each student's level, so we have decided to introduce AI assistants school-wide next semester. Students also feel more comfortable asking an AI than raising their hand, without worrying about being laughed at. But frontline teachers warn that AI can also give wrong answers, and that long-term reliance on AI may weaken students' independent thinking. An edtech company is cashing in: 'AI assistant — make kids love learning, addictive at first use!'",
     "textRefs": {
-      "conclusion_1": "we have decided to bring AI teaching assistants to the whole school next semester",
-      "reason_1": "AI can tailor exercises to each student's level",
-      "distractor_warn": "AI may also give wrong answers",
-      "distractor_bg": "Artificial intelligence is entering classrooms"
+      "conclusion_1": "we have decided to introduce AI assistants school-wide next semester",
+      "reason_1": "AI can create practice tailored to each student's level",
+      "reason_2": "Students also feel more comfortable asking an AI than raising their hand",
+      "distractor_1": "make kids love learning, addictive at first use",
+      "distractor_2": "AI can also give wrong answers"
     },
     "hints": [
-      "The conclusion is the decision or stance the speaker wants you to accept — usually after \"so\"",
-      "The teachers' warning is a concern, not the principal's conclusion",
-      "The big-picture background at the start is not the conclusion"
+      "The conclusion is the principal's decision — find the 'we will do X'",
+      "Two reasons: one about learning effect, one about student psychology",
+      "The teachers' warning and the company's slogan — which supports the conclusion?"
     ],
-    "explanation": "The principal's conclusion is \"bring AI teaching assistants to the whole school next semester\" (a decision), supported by the reason \"AI can tailor exercises to each student's level\". \"AI may give wrong answers\" is the teachers' warning — quoting someone's concern is not the same as the author's own conclusion."
+    "explanation": "The conclusion is the principal's decision: 'introduce AI assistants school-wide'. Reason one: AI personalizes practice (effect). Reason two: students feel less embarrassed asking an AI (lower psychological barrier). 'AI can give wrong answers' and 'weaken independent thinking' are teachers' objections; 'make kids love learning' is a marketing slogan. Not every sentence in an argument serves the conclusion — that's the point."
   }
 }
