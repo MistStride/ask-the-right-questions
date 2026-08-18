@@ -1,112 +1,128 @@
 {
   "zh": {
-    "scenario": "直播间里，主播高举「第三季新品」大喊：全网都在抢！研究证明它有效！弹幕疯狂刷屏「不买就亏了」……",
+    "scenario": "直播间里，主播高举「第三季新品」大喊：全网都在抢！权威检测报告就在这里！弹幕疯狂刷屏「不买后悔一辈子」……",
     "impulsePrompts": {
       "ev_conformity": "全网都在买，肯定是好东西！",
-      "ev_conclusion2": "这么多人买，不买就亏了！",
-      "ev_bw2": "要么信主播，要么是黑粉！",
-      "ev_ego2": "我朋友都说好，肯定没错！",
-      "ev_evidence": "他说研究证明有效，那就是真的！"
+      "ev_report": "他拿出「权威检测报告」，肯定没问题！",
+      "ev_bw2": "要么信主播，要么是黑粉，没有中间地带！",
+      "ev_ego2": "我朋友用了都说好，肯定没问题！",
+      "ev_data": "他晒出了实验室数据，这下没得说了！",
+      "ev_regret": "弹幕都说「不买后悔一辈子」！"
     },
     "options": {
-      "opt_ask_c1": "销量高就等于质量好吗？",
-      "opt_buy": "赶紧下单，晚了就没货了",
-      "opt_like": "主播说得对，我也这么觉得",
-      "opt_ask_c2": "大家买 = 我该买？从众不能代替判断",
-      "opt_panic": "不买就亏了，快下单",
-      "opt_share": "转发给朋友一起买",
-      "opt_ask_c3": "主播的话有证据支撑吗？",
-      "opt_insult": "说不好的人都是黑粉",
-      "opt_silence": "算了，不评论了",
-      "opt_ask_c4": "几个朋友的评价，能代表全部用户吗？",
-      "opt_friends": "我朋友不会骗我",
-      "opt_more": "再找 5 个朋友确认",
-      "opt_ask_c5": "什么研究？样本多大？谁做的？",
-      "opt_believe": "有研究就肯定是真的",
-      "opt_ask_name": "这研究叫什么名字？"
+      "opt_snow": "销量都破百万了，群众的眼睛是雪亮的",
+      "opt_ask_c1": "销量高说明营销做得好，能说明质量好吗？",
+      "opt_rhet": "大家都在买，就你聪明？",
+      "opt_seal": "报告都盖章了，还有什么好怀疑的？",
+      "opt_ask_c5": "检测报告是谁出的？检测了哪些项目？",
+      "opt_doubt": "盖章的报告当然是真的，别想太多",
+      "opt_accept": "我就是不信任这个主播，我就是黑粉，怎么了？",
+      "opt_ask_c3": "对主播有质疑，就等于否定他的一切吗？",
+      "opt_echo": "黑粉说得也有道理啊",
+      "opt_friends": "朋友不会害我，他们的体验就是最真实的",
+      "opt_ask_c4": "三个朋友的体验，能代表全体用户的体验吗？",
+      "opt_band": "朋友都买了，我不买显得不合群",
+      "opt_stubborn": "数据都摆出来了，再质疑就是抬杠",
+      "opt_ask_c6": "这组数据是哪个机构做的？样本量多大？",
+      "opt_trust": "数据肯定是真的，实验室不会造假",
+      "opt_rhet2": "你确定不买真的会后悔吗？",
+      "opt_check": "「不买会后悔」——这句话有依据吗？",
+      "opt_ignore": "后悔不后悔是别人的事，不管了"
     },
     "eventMeta": {
       "ev_conformity": {
-        "calm": "从众：销量是营销的结果，不是质量的证据。买的人多 ≠ 东西好。",
+        "calm": "「群众的眼睛是雪亮」和「就你聪明」都是在用人数压制你，而不是用证据说服你——销量是营销的结果，不是质量的证明。",
         "biasLabel": "从众"
       },
-      "ev_conclusion2": {
-        "calm": "「不买就亏」是商家制造的稀缺恐慌——稀缺感不等于价值。",
+      "ev_report": {
+        "calm": "「盖章」是权威的符号，不是证据本身。要问的是：谁出的报告、检测了哪些项目、按什么标准——符号代替不了内容。",
         "biasLabel": "跳到结论"
       },
       "ev_bw2": {
-        "calm": "「信主播 or 黑粉」是二元话术——质疑和黑粉根本不是一回事。",
+        "calm": "「质疑=黑粉」是逼你站队的二元话术。真正的质疑是具体的、有理据的，和「黑粉」这种标签完全是两回事。",
         "biasLabel": "非黑即白"
       },
       "ev_ego2": {
-        "calm": "几个朋友的好评是小样本，代表不了全部用户。",
+        "calm": "朋友的体验是小样本，合群压力也是从众的一种——「大家都买了」和「东西好不好」没有必然联系。",
         "biasLabel": "自我中心"
       },
-      "ev_evidence": {
-        "calm": "「研究证明」要追问三件套：样本多大？方法严谨吗？谁做的、有没有利益关系？",
+      "ev_data": {
+        "calm": "「实验室不会造假」是信任，不是检验。数据的价值取决于来源和方法——谁做的、样本多大、怎么测的。",
         "biasLabel": "跳到结论"
+      },
+      "ev_regret": {
+        "calm": "最难的一个：反问（「你确定不买真的会后悔吗？」）听起来像提问，其实已经预设了「会后悔」。真正的检验，是把断言当成断言，问它有没有依据。",
+        "biasLabel": "伪问题"
       }
     },
     "hints": [
-      "从众压力越大，越要问：大家买 = 好吗？",
-      "「研究证明」四个字不够——样本、方法、来源都要追问",
-      "「信主播 or 黑粉」是操纵话术，质疑不是黑粉"
+      "小心「反问」——它看起来像问题，其实已经替你下了结论",
+      "正确项不一定是问句：把断言当作断言去检验，也是批判性思维",
+      "「权威」「检测」「数据」这些词本身不是证据，来源和方法才是"
     ],
-    "explanation": "终章把前 12 章的技能汇成一句话：看到任何说法，先问证据、样本、来源、替代解释。你没有被从众、稀缺话术和「研究证明」的空头支票带走——骑象人，你踏平了虚假论证的荒原。"
+    "explanation": "这一关的六个冲动，每个都有「看似合理实则站不住」的选项：诉诸大众、权威符号、二元站队、小样本、信任代替检验——还有最难的反问式伪问题。批判性思维不是「会提问」，而是「能辨别真问题与假问题、会检验断言与证据」。"
   },
   "en": {
-    "scenario": "In the livestream, the host holds up the \"Season 3 new product\" and shouts: everyone is buying it! Research proves it works! The barrage floods with \"buy it before it's gone\"...",
+    "scenario": "In the livestream, the host raises the \"Season 3 new product\": everyone is buying it! The authoritative lab report is right here! The barrage floods with \"you'll regret not buying it\"...",
     "impulsePrompts": {
       "ev_conformity": "Everyone is buying it, so it must be good!",
-      "ev_conclusion2": "So many people are buying — I'll miss out if I don't!",
-      "ev_bw2": "Either trust the host, or you're a hater!",
-      "ev_ego2": "My friends all say it's great, so it must be fine!",
-      "ev_evidence": "He says research proves it works, so it must be true!"
+      "ev_report": "He's showing an \"authoritative test report\" — it must be fine!",
+      "ev_bw2": "Either trust the host, or you're a hater — no middle ground!",
+      "ev_ego2": "My friends all love it, so it must be fine!",
+      "ev_data": "He showed lab data — there's nothing left to argue!",
+      "ev_regret": "The barrage says \"you'll regret not buying it\"!"
     },
     "options": {
-      "opt_ask_c1": "Does high sales volume equal good quality?",
-      "opt_buy": "Order now before it sells out",
-      "opt_like": "The host is right, I feel the same way",
-      "opt_ask_c2": "Everyone buying = I should buy? Conformity is not judgment",
-      "opt_panic": "Missing out is a loss — order now",
-      "opt_share": "Share with friends and buy together",
-      "opt_ask_c3": "Is there any evidence behind what the host says?",
-      "opt_insult": "Anyone who says it's bad is a hater",
-      "opt_silence": "Forget it, I won't comment",
-      "opt_ask_c4": "Can a few friends' reviews represent all users?",
-      "opt_friends": "My friends would never lie to me",
-      "opt_more": "Let me ask 5 more friends to confirm",
-      "opt_ask_c5": "What research? How big was the sample? Who did it?",
-      "opt_believe": "If there's research, it must be true",
-      "opt_ask_name": "What's the study called?"
+      "opt_snow": "A million sold — the crowd is always right",
+      "opt_ask_c1": "High sales prove good marketing — do they prove good quality?",
+      "opt_rhet": "Everyone is buying, are you the only smart one?",
+      "opt_seal": "The report is stamped, what else is there to doubt?",
+      "opt_ask_c5": "Who issued the test report? What exactly was tested?",
+      "opt_doubt": "A stamped report is obviously real, don't overthink",
+      "opt_accept": "I just don't trust this host, so I'm a hater — so what?",
+      "opt_ask_c3": "Does questioning the host mean rejecting everything he says?",
+      "opt_echo": "The haters have a point too",
+      "opt_friends": "Friends wouldn't hurt me — their experience is the realest data",
+      "opt_ask_c4": "Can three friends' experiences represent all users?",
+      "opt_band": "All my friends bought it — I'll look left out if I don't",
+      "opt_stubborn": "The data is right there — questioning it is just trolling",
+      "opt_ask_c6": "Which lab ran this data? How big was the sample?",
+      "opt_trust": "The data must be real — labs don't fake results",
+      "opt_rhet2": "Are you sure you won't really regret not buying it?",
+      "opt_check": "\"You'll regret it\" — is there any evidence behind that claim?",
+      "opt_ignore": "Whether I regret it is my own business, forget it"
     },
     "eventMeta": {
       "ev_conformity": {
-        "calm": "Conformity: sales are the result of marketing, not evidence of quality. Many buyers ≠ good product.",
+        "calm": "\"The crowd is always right\" and \"are you the only smart one?\" both pressure you with numbers, not evidence — sales are the result of marketing, not proof of quality.",
         "biasLabel": "Conformity"
       },
-      "ev_conclusion2": {
-        "calm": "\"You'll miss out\" is manufactured scarcity — scarcity is not value.",
+      "ev_report": {
+        "calm": "A \"stamp\" is a symbol of authority, not evidence. Ask who issued the report, what was tested, and under what standard — symbols don't replace content.",
         "biasLabel": "Jumping to Conclusions"
       },
       "ev_bw2": {
-        "calm": "\"Trust the host or you're a hater\" is binary manipulation — questioning is not hating.",
+        "calm": "\"Questioning = hating\" is binary rhetoric that forces you to pick a side. Real questioning is specific and reasoned — nothing like the \"hater\" label.",
         "biasLabel": "Black-and-White"
       },
       "ev_ego2": {
-        "calm": "A few friends' praise is a tiny sample; it cannot represent all users.",
+        "calm": "Friends' experiences are a tiny sample, and herd pressure is conformity too — \"everyone bought it\" has no necessary link to \"it's good\".",
         "biasLabel": "Egocentrism"
       },
-      "ev_evidence": {
-        "calm": "\"Research proves it\" demands a three-part follow-up: sample size? rigorous methods? who did it and do they have a conflict of interest?",
+      "ev_data": {
+        "calm": "\"Labs don't fake results\" is trust, not scrutiny. A data set's value depends on its source and method — who ran it, sample size, how it was measured.",
         "biasLabel": "Jumping to Conclusions"
+      },
+      "ev_regret": {
+        "calm": "The hardest one: a rhetorical question (\"are you sure you won't regret it?\") sounds like a question but already assumes \"you will regret it\". Real scrutiny treats the claim as a claim and asks for evidence.",
+        "biasLabel": "Pseudo-Question"
       }
     },
     "hints": [
-      "The greater the herd pressure, the more you ask: everyone buying = good?",
-      "\"Research proves it\" is not enough — ask about sample, method, and source",
-      "\"Trust the host or you're a hater\" is a manipulation tactic; questioning is not hating"
+      "Beware rhetorical questions — they look like questions but already decide the answer for you",
+      "The right move is not always a question: testing a claim as a claim is critical thinking too",
+      "\"Authority\", \"testing\", \"data\" are not evidence in themselves — source and method are"
     ],
-    "explanation": "The final chapter condenses the previous 12 into one line: when you meet any claim, first ask about evidence, sample, source, and rival explanations. You were not carried away by conformity, scarcity talk, or the blank check of \"research proves it\" — rider, you have trampled the wasteland of fake arguments."
+    "explanation": "All six impulses in this level hide plausible-but-unfounded options: appeal to the crowd, authority symbols, binary side-picking, small samples, trust instead of scrutiny — and the hardest, the rhetorical pseudo-question. Critical thinking is not \"asking questions\" — it is telling real questions from fake ones, and putting claims and evidence to the test."
   }
 }

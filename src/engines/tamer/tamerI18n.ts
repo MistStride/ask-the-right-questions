@@ -21,6 +21,8 @@ export const TAMER_UI = {
     reset: '重新驯象',
     back: '返回章节',
     progress: '安抚',
+    modeTutorial: 'TAMER · 心智驯兽场（教程）',
+    modeBoss: 'TAMER · 终章 BOSS',
   },
   en: {
     objective: '🐘 Calm the elephant inside you — don\'t let impulse speak for you, ask a critical question first',
@@ -43,6 +45,8 @@ export const TAMER_UI = {
     reset: 'Retame',
     back: 'Back',
     progress: 'Calmed',
+    modeTutorial: 'TAMER · TAMING ARENA (TUTORIAL)',
+    modeBoss: 'TAMER · FINAL BOSS',
   },
 } as const
 

@@ -19,14 +19,14 @@
     {
       "eventId": "ev_ego",
       "biasType": "egocentrism",
-      "optionRefs": ["opt_ask2", "opt_trust", "opt_hate"],
+      "optionRefs": ["opt_rhet1", "opt_ask2", "opt_blood"],
       "correctOptionRef": "opt_ask2"
     },
     {
-      "eventId": "ev_bw",
-      "biasType": "black_and_white",
-      "optionRefs": ["opt_ask3", "opt_choose", "opt_abandon"],
-      "correctOptionRef": "opt_ask3"
+      "eventId": "ev_person",
+      "biasType": "jumping_to_conclusion",
+      "optionRefs": ["opt_college", "opt_logic", "opt_giveup"],
+      "correctOptionRef": "opt_logic"
     }
   ]
 }

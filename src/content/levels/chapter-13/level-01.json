@@ -7,38 +7,44 @@
   "rewardTags": ["emotion"],
   "mode": "boss",
   "scenarioRef": "scenario",
-  "initialRage": 20,
-  "ragePerMiss": 20,
+  "initialRage": 15,
+  "ragePerMiss": 15,
   "impulseEvents": [
     {
       "eventId": "ev_conformity",
       "biasType": "conformity",
-      "optionRefs": ["opt_ask_c1", "opt_buy", "opt_like"],
+      "optionRefs": ["opt_snow", "opt_ask_c1", "opt_rhet"],
       "correctOptionRef": "opt_ask_c1"
     },
     {
-      "eventId": "ev_conclusion2",
+      "eventId": "ev_report",
       "biasType": "jumping_to_conclusion",
-      "optionRefs": ["opt_ask_c2", "opt_panic", "opt_share"],
-      "correctOptionRef": "opt_ask_c2"
+      "optionRefs": ["opt_seal", "opt_ask_c5", "opt_doubt"],
+      "correctOptionRef": "opt_ask_c5"
     },
     {
       "eventId": "ev_bw2",
       "biasType": "black_and_white",
-      "optionRefs": ["opt_ask_c3", "opt_insult", "opt_silence"],
+      "optionRefs": ["opt_accept", "opt_ask_c3", "opt_echo"],
       "correctOptionRef": "opt_ask_c3"
     },
     {
       "eventId": "ev_ego2",
       "biasType": "egocentrism",
-      "optionRefs": ["opt_ask_c4", "opt_friends", "opt_more"],
+      "optionRefs": ["opt_friends", "opt_ask_c4", "opt_band"],
       "correctOptionRef": "opt_ask_c4"
     },
     {
-      "eventId": "ev_evidence",
+      "eventId": "ev_data",
       "biasType": "jumping_to_conclusion",
-      "optionRefs": ["opt_ask_c5", "opt_believe", "opt_ask_name"],
-      "correctOptionRef": "opt_ask_c5"
+      "optionRefs": ["opt_stubborn", "opt_ask_c6", "opt_trust"],
+      "correctOptionRef": "opt_ask_c6"
+    },
+    {
+      "eventId": "ev_regret",
+      "biasType": "jumping_to_conclusion",
+      "optionRefs": ["opt_rhet2", "opt_check", "opt_ignore"],
+      "correctOptionRef": "opt_check"
     }
   ]
 }

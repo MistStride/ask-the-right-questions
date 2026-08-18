@@ -103,7 +103,7 @@ export default function TamerEngine({
           ← {t.back}
         </button>
         <span className="rounded-lg border border-tamer/40 bg-tamer/5 px-3 py-1.5 font-mono text-xs font-semibold tracking-widest text-tamer">
-          {isTutorial ? 'TAMER · 心智驯兽场（教程）' : 'TAMER · 终章 BOSS'}
+          {isTutorial ? t.modeTutorial : t.modeBoss}
         </span>
         <span className="text-sm text-slate-600">{chapterTitle}</span>
         <span className="ml-auto font-mono text-sm text-tamer">
