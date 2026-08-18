@@ -26,8 +26,8 @@
 | 阶段 4 引擎B 法庭 | ✅ | ch06 逻辑诊所 / ch07 专家质询 / ch08 研究审计 / ch09 对质墙（lineup） |
 | 阶段 5 引擎C+D | ✅ | ch04/12 天平校准（scale 词义光谱）+ ch10 数据拆弹（defusal） |
 | 阶段 6 引擎E 驯兽场 | ✅ | ch01 教程（海绵vs淘金）+ ch13 终章 BOSS（5→6 冲动，已难度升级） |
-| 阶段 7 战绩分享卡 | ❌ **未做** | 雷达图升级"思维诊断报告" + html-to-image 生成分享图 |
-| 阶段 8 开源基建 | ⚠️ 部分 | 8.1 Actions 部署✅（现改为纯 CI 构建检查，部署走 main/docs）；8.4 push✅；8.2 关卡脚手架 CLI ❌；8.3 CONTRIBUTING/Issue 模板 ❌ |
+| 阶段 7 战绩分享卡 | ✅ | 雷达图升级"思维诊断报告"（`src/components/ShareCard.tsx`：6 档头衔 + 静态雷达 + 强弱 chip）+ html-to-image toPng pixelRatio=3 导出 1080x1440 高清 PNG |
+| 阶段 8 开源基建 | ⚠️ 部分 | 8.1 Actions 部署✅（纯 CI 构建检查，部署走 main/docs）；8.4 push✅；8.2 关卡脚手架 CLI ❌；8.3 CONTRIBUTING/Issue 模板 ❌ |
 
 **关卡总量**：35 关（ch01=1 教程、ch02~12 各 3、ch13=1 BOSS），全部中英双语。
 git 历史：约 20 个 commit，远程 main 最新。
