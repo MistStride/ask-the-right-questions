@@ -50,15 +50,18 @@ The repo is already configured to build with `base: '/<repo-name>/'`, so any of 
 
 ### Option A — Deploy from a branch (simplest, no Actions)
 
+This project commits its **build output into `docs/`** (see `vite.config.ts` → `build.outDir`), so branch deployment works out of the box:
+
 1. Push the project to GitHub (it must be **public** for free Pages).
 2. Go to your repo → **Settings → Pages** (left sidebar).
 3. Under **Build and deployment** → **Source**, select **Deploy from a branch**.
-4. Choose branch **`main`** and folder **`/ (root)`**, click **Save**.
+4. Choose branch **`main`** and folder **`/docs`**, click **Save**.
 5. Wait 1–2 minutes. Your site appears at:
    `https://<your-username>.github.io/<repo-name>/`
    e.g. `https://miststride.github.io/ask-the-right-questions/`
 
-> Every subsequent `git push` to `main` triggers an automatic rebuild — no extra setup.
+> After changing code, rebuild and commit the new output: `npm run build && git add docs && git commit && git push`.
+> (Folder `/ (root)` publishes the raw source and will show a blank page — always use `/docs`.)
 
 ### Option B — GitHub Actions (recommended for production)
 
@@ -139,7 +142,7 @@ src/
 3. Run `npm run dev` — the level index validates your JSON (Zod) and reports any error clearly.
 4. Open a Pull Request. That's it — no engine knowledge required.
 
-Design docs for each engine live in `docs/` (e.g. `docs/ENGINE-B-DESIGN.md`).
+Design docs for each engine live in `design/` (e.g. `design/ENGINE-B-DESIGN.md`).
 
 ## 📄 License
 

@@ -36,7 +36,7 @@ React 19 · TypeScript · Vite · Tailwind CSS 4 · Zustand · Framer Motion · 
 ```bash
 npm install
 npm run dev        # http://localhost:5173
-npm run build      # 生产构建 → dist/
+npm run build      # 生产构建 → docs/（Pages 用）
 npm run preview    # 本地预览生产构建
 ```
 
@@ -48,16 +48,23 @@ npm run preview    # 本地预览生产构建
 
 ### 方式 A — GitHub Actions（推荐，本项目已内置）
 
-1. 项目根目录已包含 `.github/workflows/deploy.yml`（自动 `npm ci && npm run build`，把 `dist/` 部署到 Pages）
+1. 项目根目录已包含 `.github/workflows/deploy.yml`（自动 `npm ci && npm run build`，部署构建产物到 Pages）
 2. 仓库 → **Settings → Pages → Build and deployment → Source**，选择 **GitHub Actions**
 3. 之后每次 push 到 `main` 都会自动构建部署，约 1-2 分钟生效
 4. 访问：`https://<用户名>.github.io/<仓库名>/`，例如 `https://miststride.github.io/ask-the-right-questions/`
 
 > 可在仓库 **Actions** 页签查看构建进度与日志。
 
-### 方式 B — Deploy from a branch（仅当仓库根目录有构建产物时可用）
+### 方式 B — Deploy from a branch（简单直接，本项目已把构建产物提交进 `docs/`）
 
-Vite 项目**不推荐**此方式：仓库里是源码（`index.html` 引用 `src/main.tsx`），`dist/` 被 `.gitignore` 忽略，直接发分支会把源码当静态页发布 → **白屏**。除非你把构建产物提交到分支（如 `gh-pages`）。
+本项目把构建产物输出到 **`docs/`**（见 `vite.config.ts` 的 `build.outDir`），所以分支部署开箱即用：
+
+1. 仓库 → **Settings → Pages → Build and deployment → Source**，选择 **Deploy from a branch**
+2. 分支选 **`main`**，文件夹选 **`/docs`**，点 **Save**
+3. 等 1-2 分钟，访问 `https://<用户名>.github.io/<仓库名>/`
+
+> 改代码后记得重建并提交产物：`npm run build && git add docs && git commit && git push`。
+> 文件夹选 `/(root)` 会发布源码 → 白屏；**必须选 `/docs`**。
 
 ### 白屏排查
 
@@ -92,7 +99,7 @@ src/
 3. 运行 `npm run dev` —— 索引会自动校验（Zod），写错会给出清晰报错
 4. 发起 Pull Request。就这么简单，不需要懂引擎代码
 
-各引擎设计文档在 `docs/` 目录（如 `docs/ENGINE-B-DESIGN.md`）。
+各引擎设计文档在 `design/` 目录（如 `design/ENGINE-B-DESIGN.md`）。
 
 ## 📄 License
 
