@@ -1,0 +1,11 @@
+{
+  "levelId": "ch12-level02",
+  "chapter": 12,
+  "engine": "scale",
+  "difficulty": 2,
+  "contributor": "atrq-team",
+  "rewardTags": ["data"],
+  "mode": "conclusion",
+  "idealRange": [30, 68],
+  "idealPoint": 50
+}

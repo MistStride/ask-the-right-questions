@@ -1,0 +1,32 @@
+{
+  "zh": {
+    "sourceText": "越来越多的学生开始使用在线网课。支持者认为，网课让偏远地区的学生也能听到名师讲课，因此网课应该成为学校日常教学的一部分。反对者则担心孩子盯着屏幕太久会伤害眼睛。",
+    "textRefs": {
+      "conclusion_1": "网课应该成为学校日常教学的一部分",
+      "reason_1": "网课让偏远地区的学生也能听到名师讲课",
+      "distractor_screen": "担心孩子盯着屏幕太久会伤害眼睛",
+      "distractor_background": "越来越多的学生开始使用在线网课"
+    },
+    "hints": [
+      "先找作者最想让你接受的那句话——通常在「因此」「所以」之后",
+      "反对者的担心是别人的观点，不是作者的结论",
+      "文章开头交代的背景，也不是结论"
+    ],
+    "explanation": "作者要你接受的是「网课应该成为学校日常教学的一部分」（结论），用「偏远地区学生也能听到名师讲课」来支撑（理由）。「担心伤眼睛」是反对者的观点——区分「作者的观点」和「别人（被提及）的观点」，是找结论的第一步。"
+  },
+  "en": {
+    "sourceText": "More and more students are using online courses. Supporters argue that online courses let students in remote areas hear famous teachers, so online courses should become a regular part of school teaching. Opponents worry that children staring at screens too long may hurt their eyes.",
+    "textRefs": {
+      "conclusion_1": "online courses should become a regular part of school teaching",
+      "reason_1": "online courses let students in remote areas hear famous teachers",
+      "distractor_screen": "children staring at screens too long may hurt their eyes",
+      "distractor_background": "More and more students are using online courses"
+    },
+    "hints": [
+      "Find the sentence the author most wants you to accept — usually after \"so\" or \"therefore\"",
+      "The opponents' worry is someone else's view, not the author's conclusion",
+      "Background facts at the start are not the conclusion"
+    ],
+    "explanation": "The author wants you to accept \"online courses should become a regular part of school teaching\" (conclusion), supported by \"students in remote areas can hear famous teachers\" (reason). \"Hurting eyes\" is the opponents' view — telling the author's view from views merely mentioned is the first step to finding a conclusion."
+  }
+}

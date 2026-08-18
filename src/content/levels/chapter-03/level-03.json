@@ -1,0 +1,25 @@
+{
+  "levelId": "ch03-level03",
+  "chapter": 3,
+  "engine": "xray",
+  "difficulty": 2,
+  "contributor": "atrq-team",
+  "rewardTags": ["structure"],
+  "mode": "scan",
+  "nodes": [
+    { "nodeId": "conclusion_1", "type": "conclusion", "textRef": "conclusion_1" },
+    { "nodeId": "reason_sick", "type": "reason", "textRef": "reason_sick" },
+    { "nodeId": "reason_efficiency", "type": "reason", "textRef": "reason_efficiency" }
+  ],
+  "distractors": [
+    { "nodeId": "distractor_data", "type": "ambiguous_term", "textRef": "distractor_data" }
+  ],
+  "correctChain": [
+    { "from": "reason_sick", "to": "conclusion_1" },
+    { "from": "reason_efficiency", "to": "conclusion_1" }
+  ],
+  "steps": [
+    { "stepId": "s1", "targets": ["conclusion_1"] },
+    { "stepId": "s2", "targets": ["reason_sick", "reason_efficiency"] }
+  ]
+}

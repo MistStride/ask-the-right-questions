@@ -1,0 +1,32 @@
+{
+  "zh": {
+    "sourceText": "公司应当鼓励员工主动加班。加班能加快项目进度，让公司更快推出产品、抢占市场。员工加班越多，公司发展越快，大家的日子才会更好过。",
+    "textRefs": {
+      "conclusion_1": "公司应当鼓励员工主动加班",
+      "reason_1": "加班能加快项目进度，让公司更快推出产品、抢占市场",
+      "assumption_1": "公司发展越快，就一定会让每个员工的日子更好过",
+      "distractor_1": "员工加班越多"
+    },
+    "hints": [
+      "先扫明处的结论和理由",
+      "再到挖掘区挖出隐藏的假设——理由成立的前提",
+      "价值假设：作者默认「公司利益 = 员工利益」，这一定成立吗？"
+    ],
+    "explanation": "论证表面是「加班 → 公司发展 → 大家好过」，但中间藏着一个价值假设：公司发展越快，员工就一定受益。如果公司的利润只属于股东，加班可能只是「更快的压榨」——识别这个默认假设，论证就站不稳了。"
+  },
+  "en": {
+    "sourceText": "Companies should encourage employees to work overtime voluntarily. Overtime speeds up projects, letting the company ship products faster and seize the market. The more employees work overtime, the faster the company grows, and everyone's life will be better.",
+    "textRefs": {
+      "conclusion_1": "Companies should encourage employees to work overtime voluntarily",
+      "reason_1": "Overtime speeds up projects, letting the company ship products faster and seize the market",
+      "assumption_1": "The faster the company grows, the better every employee's life will certainly be",
+      "distractor_1": "The more employees work overtime"
+    },
+    "hints": [
+      "Scan the visible conclusion and reason first",
+      "Then dig out the hidden assumption — the premise the reason depends on",
+      "Value assumption: the author assumes \"company interest = employee interest\". Is that guaranteed?"
+    ],
+    "explanation": "The argument looks like \"overtime → growth → everyone benefits\", but hidden inside is a value assumption: faster company growth always benefits employees. If profits belong only to shareholders, overtime may just be \"faster exploitation\" — expose this default assumption and the argument collapses."
+  }
+}

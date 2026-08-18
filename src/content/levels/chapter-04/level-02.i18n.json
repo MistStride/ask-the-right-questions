@@ -1,0 +1,22 @@
+{
+  "zh": {
+    "prompt": "「他真是个勇敢的人」——什么样的行为才算真正的「勇敢」？",
+    "spectrumLabels": ["不计后果地往前冲", "什么都怕、不敢行动"],
+    "hints": [
+      "勇敢不是鲁莽，也不是懦弱",
+      "评估风险后的坚持，才是勇敢的核心",
+      "想想「明知山有虎」和「盲目送死」的区别"
+    ],
+    "explanation": "「勇敢」是个典型的歧义词：左端把它等同于鲁莽冲动，右端把谨慎等同于懦弱。真正的勇敢，是看清了风险之后仍然坚持做正确的事——理性的灰度地带。讨论「勇敢」前，先确认双方指的是哪种勇敢。"
+  },
+  "en": {
+    "prompt": "\"He is a truly brave person\" — what kind of behavior actually counts as \"brave\"?",
+    "spectrumLabels": ["Charge ahead recklessly", "Too scared to act"],
+    "hints": [
+      "Bravery is neither recklessness nor cowardice",
+      "Persisting after assessing the risk is the core of bravery",
+      "Think of the difference between \"knowing the tiger is there\" and \"blindly rushing in\""
+    ],
+    "explanation": "\"Brave\" is a classic ambiguous term: one end equates it with reckless impulse, the other equates caution with cowardice. Real bravery is persisting in doing what is right after clearly seeing the risk — the rational gray zone. Before debating \"bravery\", clarify which kind of bravery each side means."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "zh": {
+    "prompt": "一项实验发现：喝绿茶组在注意力测试中的得分明显高于喝白水组。据此，关于「绿茶与大脑」能得出什么结论？",
+    "spectrumLabels": ["绿茶能提升智商", "绿茶对大脑毫无影响"],
+    "hints": [
+      "「注意力得分高」不等于「智商高」——概念别偷换",
+      "一次实验有多少人？是否双盲？",
+      "从「一次实验」到「普遍结论」，中间隔着多少复现？"
+    ],
+    "explanation": "这份证据能支持「饮用绿茶与短期注意力提升存在关联」，但推不到「提升智商」：注意力只是智力的一个侧面，一次小实验也远不足以证明普适效果。合理结论：绿茶可能对注意力有短暂助益，仅此而已。"
+  },
+  "en": {
+    "prompt": "An experiment found that the green-tea group scored significantly higher on an attention test than the water group. Based on this, what conclusion about \"green tea and the brain\" is reasonable?",
+    "spectrumLabels": ["Green tea boosts IQ", "Green tea does nothing for the brain"],
+    "hints": [
+      "\"Higher attention score\" is not \"higher IQ\" — don't swap concepts",
+      "How many people were in this single experiment? Was it double-blind?",
+      "From \"one experiment\" to \"universal conclusion\" lie how many replications?"
+    ],
+    "explanation": "This evidence supports \"drinking green tea is linked to a short-term attention boost\", but it cannot reach \"boosts IQ\": attention is only one facet of intelligence, and one small experiment is far from proof of a universal effect. A reasonable conclusion: green tea may briefly aid attention — and nothing more."
+  }
+}

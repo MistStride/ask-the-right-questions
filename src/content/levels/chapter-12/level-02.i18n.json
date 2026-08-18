@@ -1,0 +1,22 @@
+{
+  "zh": {
+    "prompt": "数据显示：每天刷手机超过 3 小时的学生，成绩平均低一个档次。据此，关于「刷手机与成绩」能得出多强结论？",
+    "spectrumLabels": ["刷手机毁掉成绩", "刷手机与成绩毫无关系"],
+    "hints": [
+      "相关不等于因果——也许成绩差的学生才更爱刷手机",
+      "「平均低一个档次」背后有多少人？什么学校？",
+      "结论要匹配证据的强度，别滑向任何一端"
+    ],
+    "explanation": "这份数据只能支持「刷手机时间与成绩存在相关性」，不足以证明「刷手机导致成绩下降」——因果方向可能是反的，也可能有第三个因素（如家庭监督）同时影响两者。合理结论落在中间：两者有关联，但不能断言因果。"
+  },
+  "en": {
+    "prompt": "Data shows that students who spend more than 3 hours a day on their phones score one grade level lower on average. Based on this, how strong a conclusion about \"phone use and grades\" is reasonable?",
+    "spectrumLabels": ["Phone use ruins grades", "Phone use has nothing to do with grades"],
+    "hints": [
+      "Correlation is not causation — maybe lower-achieving students use phones more",
+      "How many students, and which schools, sit behind \"one grade lower on average\"?",
+      "The conclusion must match the evidence's strength; don't slide to either extreme"
+    ],
+    "explanation": "This data only supports \"phone use and grades are correlated\", not \"phone use causes lower grades\" — the causal direction could be reversed, or a third factor (like parental supervision) could affect both. The reasonable conclusion sits in the middle: there is a link, but causation cannot be asserted."
+  }
+}

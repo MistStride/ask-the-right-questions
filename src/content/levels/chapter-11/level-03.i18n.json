@@ -1,0 +1,44 @@
+{
+  "zh": {
+    "sourceText": "某牙膏广告宣称：『80% 的牙医推荐本品牌！』广告的潜台词是：牙医都认可，所以它最专业。可是【gap:g1】，我们凭什么相信这个比例？",
+    "textRefs": {
+      "conclusion_1": "牙医都认可，所以它最专业",
+      "distractor_1": "80% 的牙医推荐本品牌",
+      "gap_g1": "这 80% 是从多少牙医里统计的？调查怎么做？受访者是否收过品牌方的好处？"
+    },
+    "gapRefs": {
+      "g1": [
+        "这 80% 是从多少牙医里统计的？调查怎么做？受访者是否收过品牌方的好处？",
+        "这款牙膏的泡沫非常丰富",
+        "这款牙膏的包装设计很时尚"
+      ]
+    },
+    "hints": [
+      "先点出广告的结论（潜台词）",
+      "再补上被省略的信息——比例背后的统计细节",
+      "「80% 牙医推荐」：统计了多少人？方法是什么？有没有利益关系？"
+    ],
+    "explanation": "「80% 牙医推荐」听起来权威，但省略了三件要命的事：样本量（可能只问了 10 个）、调查方法（线上自选？）、利益关系（受访者是否收钱）。数字本身不会骗人，省略了背景的数字才最会骗人。"
+  },
+  "en": {
+    "sourceText": "A toothpaste ad claims: \"80% of dentists recommend our brand!\" The implication is: dentists all approve, so it is the most professional. But 【gap:g1】, why should we trust this percentage?",
+    "textRefs": {
+      "conclusion_1": "dentists all approve, so it is the most professional",
+      "distractor_1": "80% of dentists recommend our brand",
+      "gap_g1": "How many dentists was this 80% based on? How was the survey done? Were the respondents paid by the brand?"
+    },
+    "gapRefs": {
+      "g1": [
+        "How many dentists was this 80% based on? How was the survey done? Were the respondents paid by the brand?",
+        "This toothpaste produces very rich foam",
+        "This toothpaste has a trendy package design"
+      ]
+    },
+    "hints": [
+      "Point out the ad's conclusion (the implication) first",
+      "Then patch the omitted information — the statistical details behind the percentage",
+      "\"80% of dentists\": how many were surveyed? what method? any conflicts of interest?"
+    ],
+    "explanation": "\"80% of dentists recommend\" sounds authoritative but omits three crucial facts: sample size (maybe only 10 dentists), survey method (self-selected online?), and conflicts of interest (were respondents paid?). Numbers don't lie — numbers with their context stripped away are the ones that lie best."
+  }
+}

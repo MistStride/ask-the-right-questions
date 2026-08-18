@@ -1,0 +1,32 @@
+{
+  "zh": {
+    "sourceText": "早餐是一天中最重要的一餐。首先，早餐为身体补充一晚上的能量消耗，让人上午更有精力。其次，多项研究表明，吃早餐的学生在课堂上的专注度明显更高。因此，学校应当保证每个学生都能吃上早餐。",
+    "textRefs": {
+      "conclusion_1": "学校应当保证每个学生都能吃上早餐",
+      "reason_energy": "早餐为身体补充一晚上的能量消耗，让人上午更有精力",
+      "reason_focus": "吃早餐的学生在课堂上的专注度明显更高",
+      "distractor_claim": "早餐是一天中最重要的一餐"
+    },
+    "hints": [
+      "先找结论——「因此」之后的那句话",
+      "再找支撑结论的理由——通常不止一个",
+      "「早餐是最重要的一餐」是结论的重复强调，不是新理由"
+    ],
+    "explanation": "结论是「学校应当保证每个学生都能吃上早餐」，由两个理由支撑：补充能量、提升专注度。把两个理由分别和结论连起来，就看清了这条论证的支撑结构——理由越多越强的论证，才值得相信。"
+  },
+  "en": {
+    "sourceText": "Breakfast is the most important meal of the day. First, breakfast replenishes the energy spent overnight, making people more energetic in the morning. Second, several studies show that students who eat breakfast are noticeably more focused in class. Therefore, schools should ensure every student can get breakfast.",
+    "textRefs": {
+      "conclusion_1": "schools should ensure every student can get breakfast",
+      "reason_energy": "breakfast replenishes the energy spent overnight, making people more energetic in the morning",
+      "reason_focus": "students who eat breakfast are noticeably more focused in class",
+      "distractor_claim": "Breakfast is the most important meal of the day"
+    },
+    "hints": [
+      "Find the conclusion first — the sentence after \"therefore\"",
+      "Then find the reasons supporting it — usually more than one",
+      "\"Breakfast is the most important meal\" repeats the claim; it is not a new reason"
+    ],
+    "explanation": "The conclusion is \"schools should ensure every student can get breakfast\", supported by two reasons: replenishing energy and improving focus. Linking each reason to the conclusion reveals the argument's supporting structure — the more and stronger the reasons, the more the argument deserves belief."
+  }
+}

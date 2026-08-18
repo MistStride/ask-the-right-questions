@@ -1,0 +1,22 @@
+{
+  "zh": {
+    "prompt": "「这款产品是健康食品」——什么样的食品才算得上「健康食品」？",
+    "spectrumLabels": ["只有白水煮菜才算", "包装上写了「健康」就算"],
+    "hints": [
+      "「健康」不是非黑即白，加工食品里也有健康的",
+      "看营养成分和配料表，而不是广告词",
+      "同一个词，超市货架和营养师口中的含义可能完全不同"
+    ],
+    "explanation": "「健康食品」的含义在两端被严重扭曲：一端说只有白水煮菜才健康，另一端把包装上的「健康」标签当作事实。真实的答案要看营养成分与配料——广告词不是定义。争论前先问：你说的「健康」是什么标准？"
+  },
+  "en": {
+    "prompt": "\"This product is a healthy food\" — what actually counts as \"healthy food\"?",
+    "spectrumLabels": ["Only boiled vegetables", "Whatever the package says"],
+    "hints": [
+      "\"Healthy\" is not black-and-white; some processed foods are healthy",
+      "Read the nutrition facts and ingredient list, not the marketing words",
+      "The same word can mean very different things on a store shelf vs. in a dietitian's mouth"
+    ],
+    "explanation": "\"Healthy food\" gets distorted at both ends: one claims only boiled vegetables count, the other treats the package's \"healthy\" label as fact. The real answer lies in nutrition and ingredients — marketing words are not definitions. Before arguing, ask: what standard of \"healthy\" do you mean?"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "levelId": "ch04-level02",
+  "chapter": 4,
+  "engine": "scale",
+  "difficulty": 2,
+  "contributor": "atrq-team",
+  "rewardTags": ["structure"],
+  "mode": "spectrum",
+  "idealRange": [40, 75],
+  "idealPoint": 58
+}

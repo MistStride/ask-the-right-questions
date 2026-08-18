@@ -1,0 +1,32 @@
+{
+  "zh": {
+    "sourceText": "人工智能正在走进课堂。不少学校尝试用 AI 助教为学生答疑。校长表示：AI 能根据每个学生的水平定制练习，所以我们决定下个学期在全校引入 AI 助教。老师们则提醒：AI 也可能给出错误答案。",
+    "textRefs": {
+      "conclusion_1": "我们决定下个学期在全校引入 AI 助教",
+      "reason_1": "AI 能根据每个学生的水平定制练习",
+      "distractor_warn": "AI 也可能给出错误答案",
+      "distractor_bg": "人工智能正在走进课堂"
+    },
+    "hints": [
+      "结论是说话人要你接受的「决定」或「立场」——通常在「所以」之后",
+      "老师的提醒是担忧，不是校长的结论",
+      "开头交代的大背景也不是结论"
+    ],
+    "explanation": "校长的结论是「下个学期在全校引入 AI 助教」（一个决定），支撑它的是「AI 能根据每个学生水平定制练习」这个理由。「AI 会答错」是老师们的提醒——引述别人的担忧不等于作者自己的结论。"
+  },
+  "en": {
+    "sourceText": "Artificial intelligence is entering classrooms. Many schools are trying AI teaching assistants to answer students' questions. The principal says: AI can tailor exercises to each student's level, so we have decided to bring AI teaching assistants to the whole school next semester. Teachers warn that AI may also give wrong answers.",
+    "textRefs": {
+      "conclusion_1": "we have decided to bring AI teaching assistants to the whole school next semester",
+      "reason_1": "AI can tailor exercises to each student's level",
+      "distractor_warn": "AI may also give wrong answers",
+      "distractor_bg": "Artificial intelligence is entering classrooms"
+    },
+    "hints": [
+      "The conclusion is the decision or stance the speaker wants you to accept — usually after \"so\"",
+      "The teachers' warning is a concern, not the principal's conclusion",
+      "The big-picture background at the start is not the conclusion"
+    ],
+    "explanation": "The principal's conclusion is \"bring AI teaching assistants to the whole school next semester\" (a decision), supported by the reason \"AI can tailor exercises to each student's level\". \"AI may give wrong answers\" is the teachers' warning — quoting someone's concern is not the same as the author's own conclusion."
+  }
+}

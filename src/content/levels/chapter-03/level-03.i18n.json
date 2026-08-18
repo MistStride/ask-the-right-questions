@@ -1,0 +1,32 @@
+{
+  "zh": {
+    "sourceText": "公司应该鼓励员工每天运动。有数据显示，坚持运动的员工请病假的天数明显更少。而且，运动后的大脑更清醒，工作效率也随之提高。所以，管理层应当为员工提供免费健身福利。",
+    "textRefs": {
+      "conclusion_1": "管理层应当为员工提供免费健身福利",
+      "reason_sick": "坚持运动的员工请病假的天数明显更少",
+      "reason_efficiency": "运动后的大脑更清醒，工作效率也随之提高",
+      "distractor_data": "有数据显示"
+    },
+    "hints": [
+      "结论在「所以」之后——作者最想让你接受的建议",
+      "理由可以是事实、数据或因果推理",
+      "「有数据显示」是引出理由的引导语，本身不是理由"
+    ],
+    "explanation": "结论是「管理层应当提供免费健身福利」，两条理由分别是「病假更少」和「效率更高」。把理由连到结论，就看到了论证的骨架——注意「有数据显示」只是引出理由的套话，不是理由本身。"
+  },
+  "en": {
+    "sourceText": "Companies should encourage employees to exercise daily. Data shows that employees who exercise regularly take noticeably fewer sick days. Moreover, after exercise the brain is more alert and work efficiency rises. So, management should provide free fitness benefits for employees.",
+    "textRefs": {
+      "conclusion_1": "management should provide free fitness benefits for employees",
+      "reason_sick": "employees who exercise regularly take noticeably fewer sick days",
+      "reason_efficiency": "after exercise the brain is more alert and work efficiency rises",
+      "distractor_data": "Data shows"
+    },
+    "hints": [
+      "The conclusion follows \"so\" — the recommendation the author most wants you to accept",
+      "Reasons can be facts, data, or causal reasoning",
+      "\"Data shows\" is a lead-in phrase, not a reason itself"
+    ],
+    "explanation": "The conclusion is \"management should provide free fitness benefits\", supported by two reasons: fewer sick days and higher efficiency. Linking reasons to the conclusion reveals the argument's skeleton — note that \"data shows\" is only a phrase introducing the reason, not the reason itself."
+  }
+}
