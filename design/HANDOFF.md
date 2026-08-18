@@ -27,17 +27,16 @@
 | 阶段 5 引擎C+D | ✅ | ch04/12 天平校准（scale 词义光谱）+ ch10 数据拆弹（defusal） |
 | 阶段 6 引擎E 驯兽场 | ✅ | ch01 教程（海绵vs淘金）+ ch13 终章 BOSS（5→6 冲动，已难度升级） |
 | 阶段 7 战绩分享卡 | ✅ | 雷达图升级"思维诊断报告"（`src/components/ShareCard.tsx`：6 档头衔 + 静态雷达 + 强弱 chip）+ html-to-image toPng pixelRatio=3 导出 1080x1440 高清 PNG |
-| 阶段 8 开源基建 | ⚠️ 部分 | 8.1 Actions 部署✅（纯 CI 构建检查，部署走 main/docs）；8.4 push✅；8.2 关卡脚手架 CLI ❌；8.3 CONTRIBUTING/Issue 模板 ❌ |
+| 阶段 8 开源基建 | ✅ | 8.1 Actions 部署✅（纯 CI 构建检查，部署走 main/docs）；8.2 `scripts/new-level.mjs` 关卡脚手架 CLI ✅（`npm run new-level`，5 引擎合法模板）；8.3 CONTRIBUTING.md + 4 个 Issue 模板 ✅；8.4 push ✅ |
 
 **关卡总量**：35 关（ch01=1 教程、ch02~12 各 3、ch13=1 BOSS），全部中英双语。
 git 历史：约 20 个 commit，远程 main 最新。
 
 ## 3. 与纲要对比，没实现好 / 待办的部分
 
-1. **阶段 7 战绩分享卡（传播钩子，最值得做）**：雷达页目前只有雷达图，没有"思维诊断报告"（头衔+高光时刻），没有一键生成可发小红书/朋友圈的分享图片（计划用 html-to-image）。
-2. **8.2 关卡脚手架 CLI**：写关卡靠手抄模板 JSON，重复劳动；计划 `scripts/new-level.ts` 一行生成。
-3. **8.3 开源协作文档**：CONTRIBUTING.md、Issue 模板（新增关卡/翻译/难度校准）未写——影响"社区填 JSON 贡献关卡"的愿景落地。
-4. **3.1 正式 i18n**：现有轻量字典可用但零散（每个页面自带 t 字典），react-i18next 迁移被暂缓——功能没问题，属于工程整洁度。
+> 阶段 0-8 已全部完成。剩余为"精修级"改进，见第 4 节。
+
+1. **3.1 正式 i18n**：现有轻量字典可用但零散（每个页面自带 t 字典），react-i18next 迁移被暂缓——功能没问题，属于工程整洁度（依赖已装：i18next/react-i18next）。
 
 ## 4. 可改进清单（精修方向，按优先级）
 
@@ -47,15 +46,17 @@ git 历史：约 20 个 commit，远程 main 最新。
 - [ ] 通关结算更细的得分拆解（每步判定给分原因）
 - [ ] 游戏音效/震动反馈（目前纯视觉）
 
-**B. 传播与留存（阶段 7）**
-- [ ] 雷达图 → "思维诊断报告"卡片（头衔、六维、高光时刻、可下载分享图）
+**B. 传播与留存（阶段 7 已落地基础版）**
+- [x] 雷达图 → "思维诊断报告"卡片（头衔、六维、高光时刻、可下载分享图）✅
 - [ ] OG meta / 分享预览（链接卡片好看）
+- [ ] 分享卡可扩展：通关时间/连续通关天数/最弱维度鼓励语
 
 **C. 工程与开源**
-- [ ] `scripts/new-level.ts` 关卡脚手架 CLI
-- [ ] CONTRIBUTING.md + Issue 模板（关卡/翻译/难度校准）
+- [x] `scripts/new-level.mjs` 关卡脚手架 CLI（`npm run new-level`）✅
+- [x] CONTRIBUTING.md + Issue 模板（关卡/翻译/难度校准/bug）✅
 - [ ] 移动端适配检查（目前以桌面布局为主）
 - [ ] 自动化测试：目前验证靠 .preview/verify-*.cjs（Playwright 脚本），可考虑接入 CI
+- [ ] 社区示例关卡（用 CLI 产出一个"Good First Issue"标签的示例 PR 模板）
 
 **D. 已知技术债（本次已清理一部分）**
 - [x] 首页"第 2 章可玩"遗留文案 → 改为实时统计
@@ -90,10 +91,9 @@ git 历史：约 20 个 commit，远程 main 最新。
 做完在界面里验证效果再提交推送（记得 npm run build 把 docs/ 产物一起提交）。
 ```
 
-## 7. 本次会话已完成的最后一件事（2026-08-18 15:40）
+## 7. 本会话已完成的最后事项（2026-08-19 05:20）
 
-- 清理全部"加工遗留物"文案：首页"第 2 章可玩/开发中"、章节页"敬请期待"、死代码 `src/i18n/ui.ts`
-- workflow 从"部署型"改为"纯 CI 构建检查"（修复 gh-pages 同步必失败的 bug，绿勾不再红叉）
-- 关卡扩容两批共 22 个新关（每章 3 关，共 35 关）+ 法庭锚点扫描修复
-- 心智驯兽场难度升级（反问伪问题/陈述句正确项/看似合理干扰项）
-- GitHub Pages 白屏终极修复（main/docs 分支内提交产物 + folder=/docs）
+- **阶段 7 战绩分享卡**：雷达图升级"思维诊断报告"（头衔 6 档 + 静态雷达 + 强弱 chip）+ html-to-image 导出 1080x1440 高清 PNG
+- **阶段 8.2 关卡脚手架 CLI**：`scripts/new-level.mjs`（`npm run new-level`，参数/交互双模式，5 引擎合法模板，实测过 Zod+锚点校验）
+- **阶段 8.3 开源协作**：CONTRIBUTING.md（EN）+ .github/ISSUE_TEMPLATE/ 4 个模板（关卡/翻译/难度/bug）；README 中英补 CLI 与 CONTRIBUTING 链接
+- **此前已完成**：遗留文案清理、workflow 改纯 CI 构建检查、关卡扩容 35 关、tamer 难度升级、Pages 白屏终极修复

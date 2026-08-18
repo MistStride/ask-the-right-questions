@@ -91,10 +91,23 @@ src/
 
 ## 🤝 贡献一个关卡
 
+**推荐方式 —— 脚手架 CLI：**
+
+```bash
+npm run new-level                      # 交互式
+npm run new-level -- xray 4            # 引擎 + 章节，其余默认
+```
+
+它会按所选引擎生成一份**结构合法**的模板（`level-<N>.json` + `.i18n.json`），
+你只需要填入文案（中英双语），`npm run build` 通过即可。
+
+**或者复制现有关卡：**
 1. 复制 `src/content/levels/<章节>/` 下的一个关卡目录
 2. 编辑 `level-01.json`（结构与判定）和 `level-01.i18n.json`（EN/ZH 文案）
-3. 运行 `npm run dev` —— 索引会自动校验（Zod），写错会给出清晰报错
+3. 运行 `npm run build` —— Zod + 锚点校验，写错会给出清晰报错
 4. 发起 Pull Request。就这么简单，不需要懂引擎代码
+
+完整指南、Issue 模板与工程规范见 **[CONTRIBUTING.md](CONTRIBUTING.md)**。
 
 各引擎设计文档在 `design/` 目录（如 `design/ENGINE-B-DESIGN.md`）。
 

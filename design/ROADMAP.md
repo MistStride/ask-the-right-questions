@@ -21,10 +21,10 @@
 - ✅ 阶段 6 完成：引擎 E 心智驯兽场（第 1 章教程关 海绵vs淘金+3 冲动 / 第 13 章终章 BOSS 5 冲动）—详见 `docs/ENGINE-E-DESIGN.md`
 - ✅ 推送完成：远程 main = 875a9db（阶段 6 待推送）
 
-> **状态更新（2026-08-19 04:50）**：阶段 0-7 全部完成（阶段 7 战绩分享卡 2026-08-19 凌晨补完）；
-> 关卡扩容两批完成（35 关，每章 3 关）；Pages 部署走 main/docs 分支模式（workflow 改为纯 CI 构建检查）；
-> 遗留文案已清理；首页两处残留垃圾（引擎标题色+下一关卡重复）已修复。
-> **未完成**：8.2 关卡脚手架 CLI、8.3 CONTRIBUTING/Issue 模板。
+> **状态更新（2026-08-19 05:20）**：阶段 0-8 全部完成 ✅（8.2 关卡脚手架 CLI + 8.3 CONTRIBUTING/Issue 模板已于本日补完）；
+> 关卡扩容两批完成（35 关，每章 3 关）；Pages 部署走 main/docs 分支模式（workflow 为纯 CI 构建检查）；
+> 遗留文案已清理；首页残留垃圾已修复；阶段 7 战绩分享卡已上线。
+> **下一阶段建议**：HANDOFF 第 4 节可改进清单（各引擎难度校准 / 关卡内逐步提示 / OG 分享预览 / 移动端适配 / CI 自动化测试）。
 
 ---
 
@@ -98,12 +98,12 @@
 
 ## 阶段 8｜开源基础设施 + 部署
 
-| 步骤 | 内容 | 验收标准 |
-|---|---|---|
-| 8.1 | GitHub Actions 自动构建部署 GitHub Pages | 仓库有在线 demo 链接，README 可贴 |
-| 8.2 | `scripts/new-level.ts` 关卡脚手架 CLI | 一行命令生成关卡模板 |
-| 8.3 | CONTRIBUTING.md + Issue 模板（新增关卡/翻译/难度校准） | 贡献者按模板提 PR |
-| 8.4 | 完成首次 push（GitHub Desktop 或命令行） | 远程仓库可见全部代码 |
+| 步骤 | 内容 | 验收标准 | 状态 |
+|---|---|---|---|
+| 8.1 | GitHub Actions 自动构建部署 GitHub Pages | 仓库有在线 demo 链接，README 可贴 | ✅ 完成（纯 CI 构建检查 + main/docs 分支部署） |
+| 8.2 | `scripts/new-level.mjs` 关卡脚手架 CLI | 一行命令生成关卡模板 | ✅ 完成（参数+交互双模式，5 引擎合法模板，实测生成 courtroom 过 Zod+锚点校验） |
+| 8.3 | CONTRIBUTING.md + Issue 模板（新增关卡/翻译/难度校准/bug） | 贡献者按模板提 PR | ✅ 完成（CONTRIBUTING.md + .github/ISSUE_TEMPLATE/ 4 个模板） |
+| 8.4 | 完成首次 push | 远程仓库可见全部代码 | ✅ 完成（约 24 个 commit） |
 
 ---
 

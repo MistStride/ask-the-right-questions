@@ -96,10 +96,23 @@ src/
 
 ## 🤝 Contributing a Level
 
+**The easy way — scaffold CLI (recommended):**
+
+```bash
+npm run new-level                      # interactive
+npm run new-level -- xray 4            # engine + chapter
+```
+
+This generates a valid template (`level-<N>.json` + `.i18n.json`) with the right structure
+for the engine you picked — you just fill in the text (both EN and ZH) and it validates.
+
+**Or copy an existing level:**
 1. Copy an existing level folder under `src/content/levels/<chapter>/`.
 2. Edit `level-01.json` (structure & rules) and `level-01.i18n.json` (EN/ZH texts).
-3. Run `npm run dev` — the level index validates your JSON (Zod) and reports any error clearly.
+3. Run `npm run build` — Zod + anchor validation reports any error clearly.
 4. Open a Pull Request. That's it — no engine knowledge required.
+
+Full guide, issue templates, and engineering rules: see **[CONTRIBUTING.md](CONTRIBUTING.md)**.
 
 Design docs for each engine live in `design/` (e.g. `design/ENGINE-B-DESIGN.md`).
 
