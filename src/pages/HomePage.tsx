@@ -62,7 +62,6 @@ export default function HomePage() {
       roadmap: '淘金路线图',
       roadmapSub: '13 个章节节点 · 5 套思维引擎',
       playable: '可玩',
-      coming: '即将到来',
       engineTitle: '思维引擎',
       engineDesc: '不是刷题，而是执行五组可复用的「思维动作」',
       progress: `已打通 ${doneLevels}/${totalLevels} 关`,
@@ -89,7 +88,6 @@ export default function HomePage() {
       roadmap: 'The Gold Road',
       roadmapSub: '13 chapter nodes · 5 thinking engines',
       playable: 'Playable',
-      coming: 'Coming soon',
       engineTitle: 'Thinking Engines',
       engineDesc: 'Not quizzes — five reusable thinking moves',
       progress: `${doneLevels}/${totalLevels} levels cleared`,
@@ -280,8 +278,8 @@ export default function HomePage() {
         </div>
         <p className="mt-2 text-center text-[11px] text-slate-600">
           {locale === 'zh'
-            ? '路线图按章节顺序延伸，目前第 2 章可玩，其余章节正在按同一套引擎架构开发中'
-            : 'Chapters unlock in order — Ch.2 is playable now, more engines are being built on the same architecture'}
+            ? `${CHAPTERS.length} 章 · ${totalLevels} 关 · 5 套思维引擎，全部开放，按章节顺序通关`
+            : `${CHAPTERS.length} chapters · ${totalLevels} levels · 5 thinking engines — all open, play in order`}
         </p>
       </section>
 
@@ -309,13 +307,9 @@ export default function HomePage() {
                 <span className="text-2xl">{icon}</span>
                 <p className="mt-2 text-sm font-semibold text-slate-200">{b[locale]}</p>
                 <p className="mt-1 text-[11px] text-slate-500">
-                  {actives.length > 0
-                    ? locale === 'zh'
-                      ? `${actives.length} 个关卡已上线`
-                      : `${actives.length} level(s) live`
-                    : locale === 'zh'
-                      ? '开发中'
-                      : 'In development'}
+                  {locale === 'zh'
+                    ? `${actives.length} 个关卡已上线`
+                    : `${actives.length} level(s) live`}
                 </p>
               </div>
             )

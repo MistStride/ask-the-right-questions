@@ -69,7 +69,7 @@ export default function ChapterPage() {
           </p>
           {levels.length === 0 ? (
             <div className="rounded-2xl border border-dashed border-line p-10 text-center text-sm text-slate-500">
-              {locale === 'zh' ? '本章关卡正在开发中，敬请期待' : 'Levels for this chapter are in development'}
+              {locale === 'zh' ? '本章关卡筹备中' : 'Levels for this chapter are being prepared'}
             </div>
           ) : (
             <div className="space-y-3">
