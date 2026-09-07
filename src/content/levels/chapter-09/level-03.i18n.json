@@ -10,8 +10,8 @@
       "debunk_exam": "以偏概全：一个同桌的例子推不出「这一代孩子」的整体结论——单一样本撑不起大结论。",
       "q_blame": "成绩下滑一定是因为平板作业吗？有没有同时发生的其他变化？",
       "q_exam": "一个同桌的情况，能代表这一代孩子吗？",
-      "q_d1": "平板是什么牌子的？",
-      "q_d2": "月考一共考了几科？",
+      "q_d1": "平板是学校统一配发，还是家长自己买的？",
+      "q_d2": "月考成绩是当场公布，还是隔天才公布？",
       "q_d3": "班主任平时几点下班？"
     },
     "hints": [
@@ -32,8 +32,8 @@
       "debunk_exam": "Hasty generalization: one deskmate's case cannot support a conclusion about \"this generation\" — a single sample cannot carry a sweeping claim.",
       "q_blame": "Must the grade drop come from tablet homework? Were there other simultaneous changes?",
       "q_exam": "Can one deskmate's situation represent this generation?",
-      "q_d1": "What brand of tablet was used?",
-      "q_d2": "How many subjects did the monthly exam cover?",
+      "q_d1": "Were the tablets issued by the school or bought by parents?",
+      "q_d2": "Were the exam results announced right away or the next day?",
       "q_d3": "What time does the homeroom teacher leave work?"
     },
     "hints": [

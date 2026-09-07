@@ -10,8 +10,8 @@
       "debunk_generalize": "以偏概全：随机采访几位顾客，不代表全体市民的习惯——小样本撑不起「长期习惯」这种大结论。",
       "q_after": "销量暴涨一定是因为超市促销吗？会不会是居民主动抢购、超市被动补货？",
       "q_generalize": "采访几位顾客，能代表全体市民的长期习惯吗？",
-      "q_d1": "饮用水是什么牌子的？",
-      "q_d2": "超市货架摆了几排？",
+      "q_d1": "台风预警是提前几天发布的？",
+      "q_d2": "超市当天一共卖出了多少瓶饮用水？",
       "q_d3": "台风登陆当天天气怎么样？"
     },
     "hints": [
@@ -32,8 +32,8 @@
       "debunk_generalize": "Hasty generalization: a few randomly interviewed customers cannot represent all residents' long-term habits — a tiny sample cannot support a sweeping conclusion.",
       "q_after": "Must the surge be caused by the supermarket's promotion? Could residents have rushed to buy while the store passively restocked?",
       "q_generalize": "Can interviewing a few customers represent the long-term habits of all residents?",
-      "q_d1": "What brand of water was involved?",
-      "q_d2": "How many shelves did the supermarket use?",
+      "q_d1": "How many days before landfall was the typhoon warning issued?",
+      "q_d2": "How many bottles of water did the supermarket sell that day?",
       "q_d3": "What was the weather like on the day of landfall?"
     },
     "hints": [

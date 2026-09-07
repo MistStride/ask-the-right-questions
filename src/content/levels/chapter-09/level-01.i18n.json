@@ -11,7 +11,7 @@
       "q_post_hoc": "两件事几乎同时上升，就一定是谁导致了谁吗？",
       "q_hasty": "「大多是」能推出「根本原因」吗？样本足够完整吗？",
       "q_d1": "冰淇淋店最近是不是在做促销？",
-      "q_d2": "儿童平均几岁开始学游泳？",
+      "q_d2": "调查人员在海滩上蹲点观察了多少天？",
       "q_d3": "这些数据是谁统计的？"
     },
     "hints": [
@@ -33,7 +33,7 @@
       "q_post_hoc": "Do two things rising at the same time always mean one caused the other?",
       "q_hasty": "Can \"most\" prove a \"root cause\"? Is the sample complete enough?",
       "q_d1": "Is the ice cream shop running a promotion lately?",
-      "q_d2": "At what age do children usually learn to swim?",
+      "q_d2": "How many days did the investigators observe at the beach?",
       "q_d3": "Who collected these statistics?"
     },
     "hints": [
