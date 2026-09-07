@@ -1,34 +1,36 @@
 {
   "zh": {
-    "sourceText": "人工智能正在走进课堂。不少学校开始用 AI 助教为学生答疑，校长表示：AI 能根据每个学生的水平定制练习，所以我们决定下个学期在全校引入 AI 助教。学生们也觉得，问 AI 比举手提问更自在，不用担心被同学笑话。但一线老师们则提醒：AI 也可能给出错误答案，而且长期依赖 AI 可能会削弱学生独立思考的能力。某教育科技公司趁势宣传：『AI 助教，让孩子爱上学习，一用就上瘾！』",
+    "sourceText": "某头部社交平台发布青少年防沉迷新规：14 岁以下用户每日使用时长被强制限制在 40 分钟以内，且晚 10 点后无法登录，超时后将自动锁定摄像头与麦克风权限。平台在声明中强调，这一改动源于我们对未成年人保护的社会责任。第三方机构绿网观察发布的测评称，试点城市青少年深夜活跃度下降了 37%，证明限制确实有效；但该机构同时承认，样本仅来自 3 座一线城市且未公开问卷设计，结论能否推广存疑。神经科学研究者指出，单纯缩短时长未必改善睡眠质量，关键在于内容而非时长，而睡前无节制刷短视频本身对睡眠的干扰可能远大于时长。部分教育博主进一步担忧，若所有平台都照搬 40 分钟上限，青少年会被迫把社交转移到更隐蔽、更难监管的私聊空间。一位家长在论坛写道，我家孩子现在更珍惜那 40 分钟，反而聊得更走心了。竞品平台趁机打出口号：不限时，才自由！某自媒体则断言：40 分钟足够毁掉一代人的社交能力。平台发言人补充：我们的目标，是让每一分钟都更有质量。",
     "textRefs": {
-      "conclusion_1": "我们决定下个学期在全校引入 AI 助教",
-      "reason_1": "AI 能根据每个学生的水平定制练习",
-      "reason_2": "问 AI 比举手提问更自在，不用担心被同学笑话",
-      "distractor_1": "AI 助教，让孩子爱上学习，一用就上瘾",
-      "distractor_2": "AI 也可能给出错误答案"
+      "conclusion_1": "14 岁以下用户每日使用时长被强制限制在 40 分钟以内，且晚 10 点后无法登录",
+      "reason_1": "这一改动源于我们对未成年人保护的社会责任",
+      "reason_2": "试点城市青少年深夜活跃度下降了 37%",
+      "distractor_1": "我们的目标，是让每一分钟都更有质量",
+      "distractor_2": "40 分钟足够毁掉一代人的社交能力",
+      "distractor_3": "不限时，才自由"
     },
     "hints": [
-      "结论是校长做的决定，找『我们要做什么』",
-      "两个理由：一个关于学习效果，一个关于学生心理",
-      "老师的提醒和公司的广告语，哪一个是支持理由？"
+      "文中不止一个『结论』：只有平台的管制政策，才是作者真正要你接受的主张",
+      "平台的『社会责任』和绿网观察的『37% 下降』，才是支撑这条政策的理由",
+      "小心：自媒体的『毁掉一代人』和竞品的『不限时才自由』也是结论，但它们是反对/竞争立场，不是本论证的理由"
     ],
-    "explanation": "结论是校长的决定「全校引入 AI 助教」。理由一：AI 能个性化定制练习（效果）；理由二：学生问 AI 不害羞（心理门槛降低）。「AI 可能给错误答案」「削弱独立思考」是老师的反对意见；「让孩子爱上学习」是营销口号，都不是支撑结论的理由。注意：论证中出现的每一句话不一定都在为结论服务。"
+    "explanation": "真正的结论是平台的管制政策「14 岁以下限 40 分钟、晚 10 点后禁登录」——这是作者（平台声明）希望你接受的主张。两条理由：①价值——『源于保护未成年人的社会责任』；②数据——『深夜活跃度下降 37%』（尽管样本存疑）。高级陷阱在于：文中还出现了另外两个『结论』——自媒体「40 分钟足够毁掉一代人的社交能力」是反对立场的极端断言，竞品「不限时才自由」是竞争口号，平台发言人「让每一分钟更有质量」是空泛的价值标语，三者都不是支撑本政策的理由。挑战难度要求你区分：谁在提主张、这个主张是不是被当前论证所服务。"
   },
   "en": {
-    "sourceText": "AI is entering the classroom. Many schools are using AI teaching assistants to answer students' questions. The principal says: AI can create practice tailored to each student's level, so we have decided to introduce AI assistants school-wide next semester. Students also feel more comfortable asking an AI than raising their hand, without worrying about being laughed at. But frontline teachers warn that AI can also give wrong answers, and that long-term reliance on AI may weaken students' independent thinking. An edtech company is cashing in: 'AI assistant — make kids love learning, addictive at first use!'",
+    "sourceText": "A leading social platform released new teenage anti-addiction rules: users under 14 are forced to limit daily use to within 40 minutes, and cannot log in after 10 p.m., with camera and microphone access auto-locked once the limit is exceeded. The platform stressed in its statement that this change stems from our social responsibility to protect minors. The third-party group Green Web Watch reported that in pilot cities teenage late-night activity fell by 37%, proving the limit works; but it also admitted the sample came from only 3 first-tier cities and its questionnaire was not published, so whether the conclusion generalizes is doubtful. Neuroscience researchers point out that simply cutting duration may not improve sleep quality, and what matters is content rather than time, while unrestricted late-night short-video scrolling itself may hurt sleep far more than duration does. Some education bloggers worry further that if every platform copies the 40-minute cap, teenagers will be pushed to move their social life into more hidden, harder-to-supervise private chats. A parent wrote on a forum that my child now treasures those 40 minutes more and talks more heart-to-heart. A rival platform seized the moment with the slogan: no time limits means real freedom! A self-media account claimed: 40 minutes is enough to ruin a generation's social skills. A platform spokesperson added: our goal is to make every minute more meaningful.",
     "textRefs": {
-      "conclusion_1": "we have decided to introduce AI assistants school-wide next semester",
-      "reason_1": "AI can create practice tailored to each student's level",
-      "reason_2": "Students also feel more comfortable asking an AI than raising their hand",
-      "distractor_1": "make kids love learning, addictive at first use",
-      "distractor_2": "AI can also give wrong answers"
+      "conclusion_1": "users under 14 are forced to limit daily use to within 40 minutes, and cannot log in after 10 p.m.",
+      "reason_1": "this change stems from our social responsibility to protect minors",
+      "reason_2": "in pilot cities teenage late-night activity fell by 37%",
+      "distractor_1": "our goal is to make every minute more meaningful",
+      "distractor_2": "40 minutes is enough to ruin a generation's social skills",
+      "distractor_3": "no time limits means real freedom"
     },
     "hints": [
-      "The conclusion is the principal's decision — find the 'we will do X'",
-      "Two reasons: one about learning effect, one about student psychology",
-      "The teachers' warning and the company's slogan — which supports the conclusion?"
+      "There is more than one 'conclusion' here: only the platform's rule is the claim the author wants you to accept",
+      "The platform's 'social responsibility' and Green Web Watch's '37% drop' are the reasons supporting that rule",
+      "Watch: the self-media 'ruin a generation' and the rival 'no limits means freedom' are also conclusions — but opposing or competing, not reasons for this argument"
     ],
-    "explanation": "The conclusion is the principal's decision: 'introduce AI assistants school-wide'. Reason one: AI personalizes practice (effect). Reason two: students feel less embarrassed asking an AI (lower psychological barrier). 'AI can give wrong answers' and 'weaken independent thinking' are teachers' objections; 'make kids love learning' is a marketing slogan. Not every sentence in an argument serves the conclusion — that's the point."
+    "explanation": "The real conclusion is the platform's rule — 'under 14 limited to 40 minutes, no login after 10 p.m.' — the claim the author (the platform statement) wants you to accept. Two reasons: ① value — 'stems from our responsibility to protect minors'; ② data — 'late-night activity fell by 37%' (though the sample is questionable). The advanced trap: two other 'conclusions' appear — the self-media '40 minutes is enough to ruin a generation's social skills' is an extreme opposing claim, the rival 'no limits means real freedom' is a competing slogan, and the spokesperson's 'make every minute more meaningful' is a vague value line. None supports this rule. The challenge is to tell whose claim it is and whether it serves the current argument."
   }
 }

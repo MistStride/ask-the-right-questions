@@ -1,34 +1,36 @@
 {
   "zh": {
-    "sourceText": "网课正在改变教育。越来越多的学校把课程搬到线上，支持者认为，网课应该成为学校日常教学的一部分。首先，网课让偏远地区的学生也能听到名师的课，缩小了城乡教育差距；其次，课程可以随时回放，学生没听懂能反复看。不过也有老师反映，网络不稳定时整节课都卡顿，学生注意力容易分散。某网课平台则在广告里宣称：『90% 的学生用了我们的课，成绩都提升了！』",
+    "sourceText": "市教育局宣布，下学期起在 30 所中学试点 AI 助教，由系统为每个学生生成个性化练习。研发方称，早期测试中 AI 助教让班级平均分提升了 12 分，且能解放教师重复批改的时间。一位受访教师补充，学生更愿意向不会嘲笑自己的程序提问，课堂参与更主动。不过教育学者提醒，个性化练习依赖学生答题数据，存在隐私外泄的风险；也有家长质疑，机器能否替代师生间的情感陪伴。某培训机构借势推广：用了 AI 助教，孩子半年上清北！",
     "textRefs": {
-      "conclusion_1": "网课应该成为学校日常教学的一部分",
-      "reason_1": "网课让偏远地区的学生也能听到名师的课",
-      "reason_2": "课程可以随时回放，学生没听懂能反复看",
-      "distractor_1": "90% 的学生用了我们的课，成绩都提升了",
-      "distractor_2": "网络不稳定时整节课都卡顿，学生注意力容易分散"
+      "conclusion_1": "下学期起在 30 所中学试点 AI 助教",
+      "reason_1": "早期测试中 AI 助教让班级平均分提升了 12 分",
+      "reason_2": "学生更愿意向不会嘲笑自己的程序提问，课堂参与更主动",
+      "reason_3": "能解放教师重复批改的时间",
+      "distractor_1": "个性化练习依赖学生答题数据",
+      "distractor_2": "用了 AI 助教，孩子半年上清北"
     },
     "hints": [
-      "结论藏在第一段：支持者希望网课在学校里扮演什么角色？",
-      "两个理由都来自支持者的论述，注意它们和『卡顿』『成绩提升』的区别",
-      "广告里的数字听起来很厉害，但它是在论证吗？"
+      "结论是第一句话里的『决定』：市教育局要做什么？",
+      "真正的理由来自研发方和教师——注意它们分别用数据、心理、效率支撑",
+      "陷阱：『依赖答题数据』听起来像在说效率，其实是在提醒风险；培训广告更不是理由"
     ],
-    "explanation": "结论是「网课应该成为学校日常教学的一部分」。理由一：让偏远地区学生听到名师课（公平性）；理由二：可回放、反复看（学习效果）。广告『90% 成绩提升』没有交代统计对象和口径，只是宣传话术；「网络卡顿」是反对意见，不是支持这个结论的理由。区分『支持理由』和『反对意见 / 营销话术』，是找理由时的常见陷阱。"
+    "explanation": "结论是「在 30 所中学试点 AI 助教」。三条理由分别是：①数据——平均分提升 12 分；②心理——学生敢向不嘲笑人的程序提问；③效率——解放教师重复批改。注意「个性化练习依赖学生答题数据」看似在讲功能，实际是学者提出的隐私风险，并不是支持试点的理由；「半年上清北」是培训机构的夸张广告。进阶难度在于：有些句子读起来像理由，实则是反对意见或营销话术，必须逐句判断它是否真的在支撑结论。"
   },
   "en": {
-    "sourceText": "Online courses are changing education. More and more schools are moving classes online, and supporters believe that online courses should become a regular part of daily teaching. First, online courses let students in remote areas hear lessons from top teachers, narrowing the urban-rural education gap. Second, lessons can be replayed anytime, so students can review what they didn't understand. Some teachers, however, report that unstable networks make entire classes lag and students' attention easily drifts. An online platform claims in its ads: '90% of students using our courses improved their grades!'",
+    "sourceText": "The education bureau announced that starting next semester, AI teaching assistants will be piloted in 30 middle schools, with the system generating personalized practice for each student. The developer says that in early tests AI assistants raised the class average by 12 points and freed teachers from repetitive grading. An interviewed teacher added that students are more willing to ask a program that will not laugh at them, making class participation more active. Education scholars, however, warn that personalized practice relies on student answer data and risks privacy leaks; some parents also question whether machines can replace the emotional bond between teachers and students. A training agency is cashing in: use AI assistants and your child gets into a top university in half a year!",
     "textRefs": {
-      "conclusion_1": "online courses should become a regular part of daily teaching",
-      "reason_1": "online courses let students in remote areas hear lessons from top teachers",
-      "reason_2": "lessons can be replayed anytime",
-      "distractor_1": "90% of students using our courses improved their grades",
-      "distractor_2": "unstable networks make entire classes lag"
+      "conclusion_1": "starting next semester, AI teaching assistants will be piloted in 30 middle schools",
+      "reason_1": "in early tests AI assistants raised the class average by 12 points",
+      "reason_2": "students are more willing to ask a program that will not laugh at them, making class participation more active",
+      "reason_3": "freed teachers from repetitive grading",
+      "distractor_1": "personalized practice relies on student answer data",
+      "distractor_2": "use AI assistants and your child gets into a top university in half a year"
     },
     "hints": [
-      "The conclusion is in the first paragraph: what role do supporters want online courses to play in schools?",
-      "Both reasons come from the supporters — note how they differ from 'lag' and 'grade improvement'",
-      "The ad's number sounds impressive — but is it arguing?"
+      "The conclusion is the decision in the first sentence: what will the bureau do?",
+      "Real reasons come from the developer and the teacher — data, psychology, efficiency",
+      "Trap: 'relies on answer data' sounds like a feature but is a privacy risk; the ad is not a reason"
     ],
-    "explanation": "The conclusion is 'online courses should become a regular part of daily teaching'. Reason one: remote students can hear top teachers (fairness). Reason two: lessons can be replayed (learning effect). The ad's '90% improved grades' gives no sample or methodology — it's marketing, not argument. 'Network lag' is an objection, not a supporting reason. Telling supporting reasons from objections and ad slogans is a classic trap."
+    "explanation": "The conclusion is 'pilot AI teaching assistants in 30 middle schools'. Three reasons: ① data — average up 12 points; ② psychology — students dare ask a program that won't laugh; ③ efficiency — frees teachers from repetitive grading. Note that 'personalized practice relies on student answer data' sounds functional but is actually the scholar's privacy risk, not a reason for the pilot; 'top university in half a year' is an agency's exaggeration. The intermediate challenge: some sentences read like reasons but are objections or slogans — judge each one by whether it truly supports the conclusion."
   }
 }

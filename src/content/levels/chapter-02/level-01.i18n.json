@@ -1,11 +1,11 @@
 {
   "zh": {
-    "sourceText": "某市教育部门提议：中小学生每天在校运动时间不应少于 1 小时。支持者认为，运动能显著提升孩子的注意力和学习效率，让他们在课堂上更专注。还有调查数据显示，每天运动超过 1 小时的学生，近视率明显更低。但也有家长担心，运动挤占了本就不多的课业时间。某运动饮料品牌借机宣传：『孩子运动后，喝一口，能量翻倍！』",
+    "sourceText": "某市教育部门提议：中小学生每天在校运动时间不应少于 1 小时。支持者认为，运动能显著提升孩子的注意力和学习效率，让他们在课堂上更专注。调查还显示，每天运动超过 1 小时的学生，近视率明显更低。不过也有家长担心，运动挤占了本就不多的课业时间。某运动饮料品牌趁机宣传：孩子运动后喝一口，能量翻倍！",
     "textRefs": {
       "conclusion_1": "中小学生每天在校运动时间不应少于 1 小时",
       "reason_1": "运动能显著提升孩子的注意力和学习效率",
       "reason_2": "每天运动超过 1 小时的学生，近视率明显更低",
-      "distractor_1": "孩子运动后，喝一口，能量翻倍",
+      "distractor_1": "孩子运动后喝一口，能量翻倍",
       "distractor_2": "运动挤占了本就不多的课业时间"
     },
     "hints": [
@@ -13,15 +13,15 @@
       "再找理由：文中有几条证据在支撑这个结论？",
       "小心：广告语和家长的担忧都不是支持理由"
     ],
-    "explanation": "「每天在校运动不少于 1 小时」是论证的结论——它是支持者希望你采纳的立场；「提升注意力与学习效率」「降低近视率」是两个独立的支撑理由。广告语『能量翻倍』是推销话术，不是论证理由；「挤占课业时间」是反对者的担忧，恰恰是要被这个论证反驳的对象。先分清「论题 / 结论 / 理由」，是淘金式思维的第一步。"
+    "explanation": "「每天在校运动不少于 1 小时」是论证的结论——它是支持者希望你采纳的立场；「提升注意力与学习效率」「降低近视率」是两个独立的支撑理由。广告语「能量翻倍」是推销话术，不是论证理由；「挤占课业时间」是反对者的担忧，恰恰是要被这个论证反驳的对象。先分清「论题 / 结论 / 理由」，是淘金式思维的第一步。"
   },
   "en": {
-    "sourceText": "An education department proposed that primary and middle school students should get at least 1 hour of exercise at school every day. Supporters believe that exercise significantly improves children's attention and learning efficiency, helping them focus better in class. Survey data also shows that students who exercise more than 1 hour a day have noticeably lower myopia rates. Some parents, however, worry that exercise takes away time from already-packed academics. A sports drink brand is cashing in: 'Take a sip after exercise — double your energy!'",
+    "sourceText": "An education department proposed that primary and middle school students should get at least 1 hour of exercise at school every day. Supporters believe that exercise significantly improves children's attention and learning efficiency, helping them focus better in class. Surveys also show that students who exercise more than 1 hour a day have noticeably lower myopia rates. Some parents, however, worry that exercise takes away time from already-packed academics. A sports drink brand is cashing in: take a sip after exercise and double your energy!",
     "textRefs": {
-      "conclusion_1": "students should get at least 1 hour of exercise at school every day",
+      "conclusion_1": "primary and middle school students should get at least 1 hour of exercise at school every day",
       "reason_1": "exercise significantly improves children's attention and learning efficiency",
       "reason_2": "students who exercise more than 1 hour a day have noticeably lower myopia rates",
-      "distractor_1": "Take a sip after exercise — double your energy",
+      "distractor_1": "take a sip after exercise and double your energy",
       "distractor_2": "exercise takes away time from already-packed academics"
     },
     "hints": [

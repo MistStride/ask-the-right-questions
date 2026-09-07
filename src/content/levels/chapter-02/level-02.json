@@ -9,7 +9,8 @@
   "nodes": [
     { "nodeId": "conclusion_1", "type": "conclusion", "textRef": "conclusion_1" },
     { "nodeId": "reason_1", "type": "reason", "textRef": "reason_1" },
-    { "nodeId": "reason_2", "type": "reason", "textRef": "reason_2" }
+    { "nodeId": "reason_2", "type": "reason", "textRef": "reason_2" },
+    { "nodeId": "reason_3", "type": "reason", "textRef": "reason_3" }
   ],
   "distractors": [
     { "nodeId": "distractor_1", "type": "ambiguous_term", "textRef": "distractor_1" },
@@ -17,6 +18,6 @@
   ],
   "steps": [
     { "stepId": "s1", "targets": ["conclusion_1"] },
-    { "stepId": "s2", "targets": ["reason_1", "reason_2"] }
+    { "stepId": "s2", "targets": ["reason_1", "reason_2", "reason_3"] }
   ]
 }

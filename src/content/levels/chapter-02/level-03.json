@@ -2,7 +2,7 @@
   "levelId": "ch02-level03",
   "chapter": 2,
   "engine": "xray",
-  "difficulty": 2,
+  "difficulty": 3,
   "contributor": "atrq-team",
   "rewardTags": ["structure"],
   "mode": "scan",
@@ -13,7 +13,8 @@
   ],
   "distractors": [
     { "nodeId": "distractor_1", "type": "ambiguous_term", "textRef": "distractor_1" },
-    { "nodeId": "distractor_2", "type": "reason", "textRef": "distractor_2" }
+    { "nodeId": "distractor_2", "type": "conclusion", "textRef": "distractor_2" },
+    { "nodeId": "distractor_3", "type": "reason", "textRef": "distractor_3" }
   ],
   "steps": [
     { "stepId": "s1", "targets": ["conclusion_1"] },
