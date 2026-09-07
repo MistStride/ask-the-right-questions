@@ -6,16 +6,16 @@
   "contributor": "atrq-team",
   "rewardTags": ["data"],
   "chartData": [
-    { "labelRef": "bar_vip", "value": 99 },
-    { "labelRef": "bar_regular", "value": 92 },
-    { "labelRef": "bar_trial", "value": 61 },
-    { "labelRef": "bar_cancel", "value": 15 }
+    { "labelRef": "bar_noscreen_surv", "value": 2 },
+    { "labelRef": "bar_screen_surv", "value": 3 },
+    { "labelRef": "bar_noscreen_found", "value": 50 },
+    { "labelRef": "bar_screen_found", "value": 80 }
   ],
-  "yAxis": { "min": 0, "max": 100, "start": 90 },
+  "yAxis": { "min": 0, "max": 100, "start": 1 },
   "suspectSpots": [
-    { "spotId": "spot_axis3", "barIndex": 0, "isTrap": true, "debunkRef": "debunk_axis3" },
-    { "spotId": "spot_avg", "barIndex": 3, "isTrap": true, "debunkRef": "debunk_avg" },
-    { "spotId": "spot_dummy3", "barIndex": 1, "isTrap": false }
+    { "spotId": "spot_survival", "barIndex": 1, "isTrap": true, "debunkRef": "debunk_survival" },
+    { "spotId": "spot_overdiag", "barIndex": 3, "isTrap": true, "debunkRef": "debunk_overdiag" },
+    { "spotId": "spot_dummy3", "barIndex": 0, "isTrap": false }
   ],
-  "manualRefs": ["m_axis3", "m_avg"]
+  "manualRefs": ["m_survival", "m_overdiag"]
 }

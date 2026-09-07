@@ -1,36 +1,36 @@
 {
   "zh": {
-    "chartTitle": "客户满意度高达 99%？单位：%",
-    "labels": ["VIP 客户", "普通客户", "试用客户", "已流失客户"],
+    "chartTitle": "某防癌筛查机构海报：「早发现，让五年生存率提升 50%！」附两组数据（单位：%）。海报没提的是，筛查也会查出许多终生不会发病的结节。",
+    "labels": ["不筛查·五年存活", "筛查·五年存活", "不筛查·年检出", "筛查·年检出"],
     "textRefs": {
-      "debunk_axis3": "Y 轴起点是 90%——柱子之间的差异被夸大了，让人以为满意度和「近乎完美」只有一步之遥；真实起点 0 时差距就没那么体面了。",
-      "debunk_avg": "这根柱是「已流失客户」的满意度（15%）——它被拉低，是因为流失的人根本不在抽样里！把他们的真实感受算进来，「99% 满意度」就站不住了。"
+      "debunk_survival": "「五年生存率提升 50%」是相对说法：从 2% 涨到 3%，绝对值只多了 1 个百分点。相对值听着惊天动地，绝对值才决定它到底意味着什么。",
+      "debunk_overdiag": "筛查组「年检出」80 远高于不筛查组 50——多出来的，大多是终生不会发病、却被提前贴上「病人」标签的过度诊断（lead-time bias）。存活曲线变长，可能只是更早被记录，而非真的多活了几年。"
     },
     "manual": [
-      "检查 Y 轴起点是不是 0",
-      "平均值有没有掩盖极端值或没被算进去的人？"
+      "这个「50%」到底在比什么？两个数差多少，才配叫「提升一半」？",
+      "筛查多找出的病例，是治好了更多人，还是只是更早发现了原本无害的东西？"
     ],
     "hints": [
-      "Y 轴从 90% 起，「接近满分」是假象",
-      "流失客户的低分柱，暴露了抽样的漏洞"
+      "「提升 50%」是相对值还是绝对值？",
+      "「查出更多」等于「救了更多」吗？"
     ],
-    "explanation": "这张满意度图有两个陷阱：①Y 轴从 90% 起，把各组的微小差距放大成「都很满意」的假象；②「已流失客户」只有 15% 满意度，说明抽样根本没覆盖不活跃用户——把流失的人算进去，整体满意度会大打折扣。看满意度数据先问：问了谁？没问谁？"
+    "explanation": "这张海报玩了两个文字游戏：①「提升 50%」是相对值（2%→3%），绝对值只多 1 个百分点，听起来天差地别实则微乎其微；②筛查多检出的，很多是终生无害的结节（过度诊断），存活率变长可能只是 lead-time bias——更早被记录，不是更被治愈。看任何「生存率暴涨」先问：是相对还是绝对？多查出的，是救了还是吓到了？"
   },
   "en": {
-    "chartTitle": "Customer Satisfaction as High as 99%? Unit: %",
-    "labels": ["VIP customers", "Regular customers", "Trial users", "Churned customers"],
+    "chartTitle": "A cancer-screening poster: 'Early detection raised 5-year survival by 50%!' with two data sets (unit: %). What the poster omits: screening also finds many nodules that would never become disease.",
+    "labels": ["No-screen·5yr surv", "Screen·5yr surv", "No-screen·found/yr", "Screen·found/yr"],
     "textRefs": {
-      "debunk_axis3": "The Y axis starts at 90% — the gaps between bars are exaggerated, making everything look one step from \"near perfect\"; from an honest baseline of 0 the differences are far less flattering.",
-      "debunk_avg": "This bar is churned customers' satisfaction (15%) — it is dragged down because churned users were never in the sample! Count their true feelings and the \"99% satisfaction\" collapses."
+      "debunk_survival": "'5-year survival up 50%' is a relative claim: from 2% to 3%, the absolute gain is just 1 percentage point. Relative numbers sound earth-shaking; the absolute number decides what it actually means.",
+      "debunk_overdiag": "The screened group's 'found per year' is 80 vs 50 unscreened — most of the excess are over-diagnosed nodules that would never cause disease yet get labeled 'patient' early (lead-time bias). A longer survival curve may just mean earlier recording, not more years truly lived."
     },
     "manual": [
-      "Check whether the Y axis starts at 0",
-      "Does the average hide extremes or people who were never surveyed?"
+      "What exactly is this '50%' comparing? How big a gap between two numbers earns the words 'half again'?",
+      "Did screening find and cure more people, or merely spot harmless things earlier?"
     ],
     "hints": [
-      "With the Y axis starting at 90%, \"nearly perfect\" is an illusion",
-      "The churned customers' low bar exposes the sampling hole"
+      "Is 'up 50%' relative or absolute?",
+      "Does 'finding more' equal 'saving more'?"
     ],
-    "explanation": "This satisfaction chart hides two traps: ① the Y axis starts at 90%, inflating tiny gaps into the illusion that everyone is happy; ② \"churned customers\" score only 15%, showing the survey never covered inactive users — include the leavers and overall satisfaction collapses. When reading satisfaction data, ask: who was asked? who was not?"
+    "explanation": "This poster plays two word games: ① 'up 50%' is relative (2%→3%), an absolute gain of just 1 point — sounds monumental, means little; ② much of what screening finds is harmless nodules (over-diagnosis), and a longer survival curve may be lead-time bias — recorded earlier, not truly cured longer. With any 'survival surge', ask: relative or absolute? Did finding more save more, or just scare more?"
   }
 }

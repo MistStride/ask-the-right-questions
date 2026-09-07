@@ -1,36 +1,36 @@
 {
   "zh": {
-    "chartTitle": "本季度营收「稳健增长」？单位：万元",
-    "labels": ["Q1", "Q2", "Q3", "Q4"],
+    "chartTitle": "某创业公司融资稿：「营收连续四季度稳健增长」——附季度图（单位：万元）。但细看年报，年终其实还有一笔数据没被画进图里。",
+    "labels": ["Q1", "Q2", "Q3", "Q4（已画）"],
     "textRefs": {
-      "debunk_axis2": "Y 轴起点被抬到 1000 万——Q1-Q3 的「增长」被视觉放大了好几倍！真实起点是 0，前三季度其实只是缓慢爬坡。",
-      "debunk_quarter": "Q4 这根柱（480 万）被刻意放在图表下方压低——如果把它算进全年，所谓「稳健增长」就变成了「年底大跌」。"
+      "debunk_axis2": "Y 轴起点被抬到 1000 万——Q1 到 Q3 那点爬坡被视觉放大了好几倍！真实起点是 0，前三季度其实只是缓慢上行。",
+      "debunk_quarter": "Q4 这根柱（480 万）被压在图表最底下——如果把它算进全年，所谓「稳健增长」其实是「年底大跌」。图里缺的这根，才是真相。"
     },
     "manual": [
-      "检查 Y 轴起点是不是 0",
-      "所有的数据都画进图里了吗？"
+      "纵轴起点诚实吗？小增长被放大了几次？",
+      "图里画的是「全部」季度吗，还是漏了某个？"
     ],
     "hints": [
-      "看看 Y 轴从几开始——0 才是诚实的起点",
-      "有没有哪根柱子被故意矮化或藏起来了？"
+      "纵轴从 1000 万起，「增长」被夸大了",
+      "有没有哪根柱子被故意矮化或没画出来？"
     ],
-    "explanation": "这张营收图动了两个手脚：①Y 轴从 1000 万起，把前三季度的小幅爬坡放大成「稳健增长」；②把暴跌的 Q4 柱压在最底下，让读者忽略全年其实是下跌的。看营收图先问：轴从哪里开始？柱子是全的吗？"
+    "explanation": "这张营收图动了两个手脚：①Y 轴从 1000 万起，把前三季度的小幅爬坡放大成「稳健增长」；②把暴跌的 Q4 压在最底下、还不画进对比，让读者忽略全年其实是下跌的。看营收图先问：轴从哪里开始？柱子是全的吗？"
   },
   "en": {
-    "chartTitle": "This Quarter's Revenue \"Steady Growth\"? Unit: 10k CNY",
-    "labels": ["Q1", "Q2", "Q3", "Q4"],
+    "chartTitle": "A startup's funding pitch: 'revenue grew steadily four quarters straight' — with a quarterly chart (unit: 10k CNY). But the annual report quietly hides one year-end data point not drawn in.",
+    "labels": ["Q1", "Q2", "Q3", "Q4 (drawn)"],
     "textRefs": {
-      "debunk_axis2": "The Y axis starts at 10 million — the Q1-Q3 \"growth\" is visually amplified several times! The honest baseline is 0; the first three quarters were just a slow crawl.",
-      "debunk_quarter": "The Q4 bar (4.8 million) is deliberately pushed down at the bottom of the chart — count it into the annual total and the \"steady growth\" becomes a year-end plunge."
+      "debunk_axis2": "The Y axis starts at 10 million — the Q1-to-Q3 crawl is visually amplified several times! The honest baseline is 0; the first three quarters were just a slow uptick.",
+      "debunk_quarter": "The Q4 bar (4.8 million) is squashed at the chart's bottom — count it into the year and the 'steady growth' is really a 'year-end plunge'. The missing bar is the truth."
     },
     "manual": [
-      "Check whether the Y axis starts at 0",
-      "Is every data point actually in the chart?"
+      "Is the Y axis baseline honest? How many times was a small rise magnified?",
+      "Does the chart show ALL the quarters, or did one get left out?"
     ],
     "hints": [
-      "Look at where the Y axis starts — 0 is the honest baseline",
-      "Is any bar deliberately shrunk or hidden?"
+      "Y axis starts at 10M — 'growth' is exaggerated",
+      "Is any bar deliberately shrunk or left out?"
     ],
-    "explanation": "This revenue chart cheats twice: ① the Y axis starts at 10 million, amplifying the first three quarters' small climb into \"steady growth\"; ② the plunging Q4 bar is squashed at the bottom so readers miss that the year is actually down. When reading a revenue chart, ask: where does the axis start? are all the bars there?"
+    "explanation": "This revenue chart cheats twice: ① the Y axis starts at 10 million, blowing the first three quarters' small climb into 'steady growth'; ② the plunging Q4 is squashed at the bottom and kept out of the comparison, so readers miss that the year is actually down. With revenue charts, ask: where does the axis start? are all the bars there?"
   }
 }

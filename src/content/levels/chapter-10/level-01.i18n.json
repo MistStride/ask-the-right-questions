@@ -1,36 +1,32 @@
 {
   "zh": {
-    "chartTitle": "两款减肥茶的「惊人效果」对比（单位：kg）",
-    "labels": ["A 产品 · 前", "A 产品 · 后", "B 产品 · 前", "B 产品 · 后"],
+    "chartTitle": "某 App 广告：日活「一年涨 3 倍」！请看对比图（单位：万人）",
+    "labels": ["本 App·去年", "本 App·今年", "竞品·去年", "竞品·今年"],
     "textRefs": {
-      "debunk_axis": "Y 轴起点被抬到了 0.9——A 与 B 的差距被视觉放大了好几倍！真实起点应为 0，B 其实只比 A 多减了 0.1kg。",
-      "debunk_cherry": "「A 产品 · 后」这根柱只统计了效果最好的那两周——选择性展示数据！把全程平均算进去，差异就没这么夸张了。"
+      "debunk_axis": "纵轴起点被抬到 25——10 万到 30 万的差距被拉成陡峭直线！真实基线该是 0；而且竞品同样从 10 涨到 29，这更像是全行业的风口，不是它一家厉害。"
     },
     "manual": [
-      "检查 Y 轴起点是不是 0",
-      "数据是不是只挑了好日子"
+      "纵轴是从 0 开始，还是从某个高位起？再想想：涨的只有它一家吗？"
     ],
     "hints": [
-      "看看 Y 轴从几开始——0 才是诚实的起点",
-      "图表展示的是全部数据，还是只挑了最好看的？"
+      "看纵轴起点是不是 0",
+      "对照一下竞品的走势"
     ],
-    "explanation": "这张图动了两个手脚：①Y 轴从 0.9 起，把 0.1kg 的微小差异放大成「两倍差距」的错觉；②只挑选效果最好的时段展示。看任何图表先问三件事：坐标起点诚实吗？数据完整吗？样本有代表性吗？"
+    "explanation": "这张图只动了一个手脚：纵轴从 25 起，把 10→30 的常规增长放大成「爆发」错觉。真实起点是 0。会拆弹的人，先把这个轴拽回地面，再问一句：同行是不是也涨了？"
   },
   "en": {
-    "chartTitle": "Two Diet Teas: \"Amazing\" Results Compared (kg)",
-    "labels": ["Tea A · before", "Tea A · after", "Tea B · before", "Tea B · after"],
+    "chartTitle": "An App ad: Daily users \"tripled in a year\"! See the comparison (unit: 10k users)",
+    "labels": ["Our App·last yr", "Our App·this yr", "Rival·last yr", "Rival·this yr"],
     "textRefs": {
-      "debunk_axis": "The Y axis starts at 0.9 — the gap between A and B is visually exaggerated several times over! The honest baseline is 0; B only beat A by 0.1 kg.",
-      "debunk_cherry": "The \"Tea A · after\" bar only counts the best two weeks — cherry-picked data! Averaged over the whole period, the difference is far less dramatic."
+      "debunk_axis": "The Y axis starts at 25 — the gap from 10 to 30 is stretched into a steep line! The honest baseline is 0; and the rival also rose from 10 to 29, so this looks more like an industry-wide wind than one company's feat."
     },
     "manual": [
-      "Check whether the Y axis starts at 0",
-      "Is the data cherry-picked from the best days?"
+      "Does the Y axis start at 0, or from some high point? And think: did only this one grow?"
     ],
     "hints": [
-      "Look at where the Y axis starts — 0 is the honest baseline",
-      "Does the chart show all the data, or only the best-looking part?"
+      "Check whether the Y axis starts at 0",
+      "Compare the rival's trajectory"
     ],
-    "explanation": "This chart cheats twice: ① the Y axis starts at 0.9, turning a tiny 0.1 kg difference into the illusion of a \"two-fold gap\"; ② it only shows the best-performing period. When reading any chart, ask three things: is the axis baseline honest? Is the data complete? Is the sample representative?"
+    "explanation": "This chart cheats only once: the Y axis starts at 25, blowing a normal 10→30 climb into an 'explosion' illusion. The honest baseline is 0. A good defuser first drags the axis back to the ground, then asks: did rivals grow too?"
   }
 }
