@@ -1,46 +1,48 @@
 {
   "zh": {
-    "sourceText": "某洗发水广告宣称：『销量全国第一！』广告想让你相信，销量第一就代表它是最好的洗发水，所以你应该选择它。【gap:gap1】某测评博主则说：『我用过一百种洗发水，这款确实最好。』",
+    "sourceText": "某洗发水品牌在黄金时段反复投放广告：『连续五年销量全国第一！』广告想让你相信，销量第一就代表它是最好的洗发水，所以你应该选择它。品牌还请来当红明星代言，明星在片尾说：『我也只用它。』【gap:gap1】然而，一家第三方零售监测机构去年的报告显示，在连锁药店渠道的去屑品类里，销量第一的其实是另一款平价品牌。某测评博主随后发声：『我用过一百种洗发水，这款确实最好。』",
     "textRefs": {
       "conclusion_1": "你应该选择它",
       "reason_1": "销量第一就代表它是最好的洗发水",
-      "gap1_correct": "广告没有交代『销量第一』的统计口径——覆盖哪些渠道、统计周期多长",
-      "distractor_1": "我用过一百种洗发水，这款确实最好"
+      "gap1_correct": "广告没有交代『连续五年销量全国第一』的统计口径——覆盖哪些渠道、统计周期多长，而第三方报告显示换一个渠道，结果就完全不同",
+      "distractor_1": "我用过一百种洗发水，这款确实最好",
+      "distractor_2": "我也只用它"
     },
     "gapRefs": {
       "gap1": [
-        "广告没有交代『销量第一』的统计口径——覆盖哪些渠道、统计周期多长",
-        "洗发水含有氨基酸等保湿成分",
-        "测评博主的评测视频超过十万播放量"
+        "广告没有交代『连续五年销量全国第一』的统计口径——覆盖哪些渠道、统计周期多长，而第三方报告显示换一个渠道，结果就完全不同",
+        "该品牌请明星代言花费高达数千万元，说明品牌实力雄厚、值得信赖",
+        "去屑洗发水的整体市场规模近三年一直在萎缩"
       ]
     },
     "hints": [
-      "先找结论和理由：销量高 = 最好？这个跳跃有多大？",
-      "最后一步找空洞：广告藏起了什么关键信息？",
-      "『销量第一』的统计口径，你知道吗？"
+      "先找结论与理由：『销量第一 = 最好』，这个跳跃你接受吗？",
+      "留意正文里哪些是广告方的『证据』，哪些是第三方信息",
+      "最后一步找空洞：『全国第一』到底是怎么统计出来的？"
     ],
-    "explanation": "结论是「你应该选择它」，理由是『销量第一就是最好』。但广告藏起的关键信息是：『销量第一』到底怎么统计的？只算电商？只算某季度？不同口径下结果可能完全不同。没有统计口径的数字，等于没有数字。另外『测评博主自用』只是个人证言。看广告时永远要问：这个数字是怎么来的？"
+    "explanation": "结论是「你应该选择它」，理由是『销量第一就代表最好』。广告用明星代言、博主证言制造可信氛围，但真正该追问的是：『连续五年全国第一』按什么口径统计？第三方监测报告显示，在药店去屑品类里销量第一的是另一款平价品牌——说明『第一』取决于你怎么数渠道。没有统计口径的数字等于没有数字；代言和『我用过一百种』都只是个人背书。"
   },
   "en": {
-    "sourceText": "A shampoo ad claims: 'Best-selling in the country!' The ad wants you to believe that being the best-seller means it's the best shampoo, so you should choose it.【gap:gap1】A reviewer influencer says: 'I've tried a hundred shampoos — this one really is the best.'",
+    "sourceText": "A shampoo brand keeps running a prime-time ad: 'Best-selling in the country for five straight years!' The ad wants you to believe that being the best-seller means it is the best shampoo, so you should choose it. The brand also hired a popular star, who says at the end of the commercial: 'I only use it too.'【gap:gap1】Yet a report last year by an independent retail-monitoring agency showed that in the anti-dandruff category sold through chain pharmacies, the best-seller was actually another budget brand. A reviewer influencer then chimed in: 'I've tried a hundred shampoos — this one really is the best.'",
     "textRefs": {
       "conclusion_1": "you should choose it",
-      "reason_1": "being the best-seller means it's the best shampoo",
-      "gap1_correct": "The ad never explains how 'best-selling' was measured — which channels were counted, over what period",
-      "distractor_1": "this one really is the best"
+      "reason_1": "being the best-seller means it is the best shampoo",
+      "gap1_correct": "The ad never explains how 'best-selling in the country for five straight years' was measured — which channels were counted and over what period — and the third-party report shows a different channel gives a completely different winner",
+      "distractor_1": "this one really is the best",
+      "distractor_2": "I only use it too"
     },
     "gapRefs": {
       "gap1": [
-        "The ad never explains how 'best-selling' was measured — which channels were counted, over what period",
-        "The shampoo contains moisturizing ingredients such as amino acids",
-        "The reviewer's video has over 100,000 views"
+        "The ad never explains how 'best-selling in the country for five straight years' was measured — which channels were counted and over what period — and the third-party report shows a different channel gives a completely different winner",
+        "The brand spent tens of millions hiring the star, which shows the brand is strong and trustworthy",
+        "The overall anti-dandruff market has been shrinking for the past three years"
       ]
     },
     "hints": [
-      "Find the conclusion and the reason: best-seller = best? How big is that leap?",
-      "Finally, find the gap: what key information does the ad hide?",
-      "Do you actually know what 'best-selling' is measured by?"
+      "Find the conclusion and the reason: 'best-seller = best' — do you accept that leap?",
+      "Notice which parts of the text are the advertiser's 'evidence' and which are third-party information",
+      "Finally, find the gap: how exactly was 'best in the country' measured?"
     ],
-    "explanation": "The conclusion is 'you should choose it', supported by 'best-seller means best'. But the ad hides the crucial detail: how was 'best-selling' measured? Online only? One quarter only? Different measures give completely different results. A number without methodology is not a number. The influencer's 'I've tried a hundred' is just personal testimony. Whenever you see an ad, ask: where does this number come from?"
+    "explanation": "The conclusion is 'you should choose it', supported by 'being the best-seller means being the best'. The ad builds trust with a celebrity endorsement and a blogger's testimony, but what you should really ask is: on what methodology does 'best-seller for five straight years' rest? The third-party report shows that in pharmacy anti-dandruff sales, a different budget brand ranks first — 'number one' depends entirely on which channels you count. A number without methodology is not a number; endorsements and 'I've tried a hundred' are just personal backing."
   }
 }

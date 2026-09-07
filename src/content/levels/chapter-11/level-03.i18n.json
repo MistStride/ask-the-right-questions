@@ -1,46 +1,48 @@
 {
   "zh": {
-    "sourceText": "某牙膏广告宣称：『80% 的牙医推荐本品牌！』广告的潜台词是：牙医都认可，所以它一定是最专业的牙膏，你应该放心购买。【gap:gap1】某牙科诊所的柜台也摆上了同款牙膏，柜员热情推荐：『我们自己都在用。』",
+    "sourceText": "某牙膏品牌的新广告宣称：『80% 的牙医推荐本品牌！』广告画面里，几位穿白大褂的医生对着镜头微笑点头。潜台词是：牙医都认可，所以它一定是最专业的牙膏，你应该放心购买。但这份调查背后的情况很少被提及：它由品牌委托一家市场调查公司执行，问卷只发给了与品牌有合作关系的牙科机构，最终只回收了 37 份有效问卷。一家独立的牙医协会也在官网声明，他们从未参与过任何牙膏品牌的推荐调查。【gap:gap1】与此同时，某牙科诊所的柜台摆上了同款牙膏，柜员热情推荐：『我们自己都在用。』",
     "textRefs": {
       "conclusion_1": "它一定是最专业的牙膏",
       "reason_1": "牙医都认可",
-      "gap1_correct": "广告没有说明『80% 的牙医』是怎么被挑出来统计的——样本多大、是否随机、问的是哪些牙医",
-      "distractor_1": "我们自己都在用"
+      "gap1_correct": "广告只抛出『80%』这个数字，却隐去了样本来源——调查由品牌出资、问卷发给合作机构、仅回收 37 份，根本无法代表牙医群体",
+      "distractor_1": "我们自己都在用",
+      "distractor_2": "几位穿白大褂的医生对着镜头微笑点头"
     },
     "gapRefs": {
       "gap1": [
-        "广告没有说明『80% 的牙医』是怎么被挑出来统计的——样本多大、是否随机、问的是哪些牙医",
-        "牙膏的氟含量符合国家标准",
-        "牙科诊所的柜员从业超过十年"
+        "广告只抛出『80%』这个数字，却隐去了样本来源——调查由品牌出资、问卷发给合作机构、仅回收 37 份，根本无法代表牙医群体",
+        "牙膏的氟含量符合国家标准，安全性有保障",
+        "广告中出镜的医生都持有执业医师资格证书"
       ]
     },
     "hints": [
-      "先找结论与理由：『牙医都认可』这个前提站得住吗？",
-      "最后一步找空洞：80% 这个数字缺了什么？",
-      "这 80% 是从多少牙医里统计的？怎么选的？"
+      "先找结论与理由：『牙医都认可』，这个前提真的被证实了吗？",
+      "正文里有多处线索都在暗示这份『80%』不可靠，试着把它们串起来",
+      "最后一步找空洞：广告最该交代却始终没说清的是什么？"
     ],
-    "explanation": "结论是「它一定是最专业的牙膏」，理由是『80% 的牙医推荐』。但广告藏起了关键信息：这 80% 是怎么统计的——样本多大？是否随机？问的是专科牙医还是随便找的？如果只问了 10 位，80% 就是 8 个人。『柜员自用』只是个人证言。权威数字（专家、牙医、研究报告）同样需要追问样本与口径。"
+    "explanation": "结论是「它一定是最专业的牙膏」，理由是『80% 的牙医推荐』。正文里其实埋了三处线索：调查由品牌自己委托、问卷只发给合作机构、仅回收 37 份；独立的牙医协会还声明从未参与——它们共同指向同一个致命空洞：广告从不交代这份 80% 是怎么来的。37 份样本里 80% 也不过是约 30 人。医生点头、柜员自用、氟含量达标都只是氛围与证言，替代不了抽样方法。"
   },
   "en": {
-    "sourceText": "A toothpaste ad claims: '80% of dentists recommend our brand!' The subtext is: dentists approve of it, so it must be the most professional toothpaste — you can buy it with confidence.【gap:gap1】The counter at a dental clinic also displays the same toothpaste, and the clerk cheerfully recommends: 'We use it ourselves.'",
+    "sourceText": "A toothpaste brand's new ad claims: '80% of dentists recommend our brand!' In the commercial, several doctors in white coats smile and nod at the camera. The subtext is: dentists approve of it, so it must be the most professional toothpaste — you can buy it with confidence. But what is rarely mentioned is what lies behind the survey: it was commissioned by the brand from a market-research firm, the questionnaire was sent only to dental clinics that cooperate with the brand, and in the end only 37 valid responses were collected. An independent dentists' association also stated on its website that it has never taken part in any toothpaste recommendation survey.【gap:gap1】Meanwhile, the counter at a dental clinic displays the same toothpaste, and the clerk cheerfully recommends: 'We use it ourselves.'",
     "textRefs": {
       "conclusion_1": "it must be the most professional toothpaste",
       "reason_1": "dentists approve of it",
-      "gap1_correct": "The ad doesn't say how those '80% of dentists' were selected — sample size, whether random, and which dentists were asked",
-      "distractor_1": "We use it ourselves"
+      "gap1_correct": "The ad throws out the number '80%' while hiding where the sample came from — the survey was funded by the brand, sent to cooperating clinics, and collected only 37 responses, so it cannot represent dentists at large",
+      "distractor_1": "We use it ourselves",
+      "distractor_2": "several doctors in white coats smile and nod at the camera"
     },
     "gapRefs": {
       "gap1": [
-        "The ad doesn't say how those '80% of dentists' were selected — sample size, whether random, and which dentists were asked",
-        "The toothpaste's fluoride level meets national standards",
-        "The clinic clerk has over ten years of experience"
+        "The ad throws out the number '80%' while hiding where the sample came from — the survey was funded by the brand, sent to cooperating clinics, and collected only 37 responses, so it cannot represent dentists at large",
+        "The toothpaste's fluoride level meets national standards, so its safety is assured",
+        "The doctors shown in the ad all hold valid medical licenses"
       ]
     },
     "hints": [
-      "Find the conclusion and the reason: does the premise 'dentists approve' hold up?",
-      "Finally, find the gap: what is missing from the 80% figure?",
-      "How many dentists was the 80% based on, and how were they chosen?"
+      "Find the conclusion and the reason: has the premise 'dentists approve' actually been proven?",
+      "Several clues in the text hint that this '80%' is unreliable — try to connect them",
+      "Finally, find the gap: what should the ad have disclosed but never did?"
     ],
-    "explanation": "The conclusion is 'it must be the most professional toothpaste', supported by '80% of dentists recommend it'. But the ad hides the key info: how was the 80% measured — sample size, randomness, which dentists? If only 10 dentists were asked, 80% means 8 people. 'We use it ourselves' is just personal testimony. Authority numbers — experts, dentists, research reports — demand the same scrutiny of sample and methodology."
+    "explanation": "The conclusion is 'it must be the most professional toothpaste', supported by '80% of dentists recommend it'. The text actually plants three clues: the survey was commissioned by the brand itself, the questionnaire went only to cooperating clinics, and just 37 responses were collected; an independent association even says it never took part — together they point to one fatal gap: the ad never reveals where the 80% came from. Eighty percent of a 37-person sample is roughly 30 people. The nodding doctors, the clerk's testimony, and the fluoride level are all atmosphere and endorsement — none substitutes for sampling method."
   }
 }

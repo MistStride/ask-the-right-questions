@@ -1,46 +1,46 @@
 {
   "zh": {
-    "sourceText": "某媒体调查显示，78% 的受访者支持在市中心修建新的高架桥。报道称，市民普遍支持该项目，所以高架桥应该尽快开工。【gap:gap1】调查由市交通局出资，只访问了 200 名经常开车的受访者，其中多数住在桥址附近。某地产商趁势宣传：『桥通了，房价起飞！』",
+    "sourceText": "某媒体调查显示，78% 的受访者支持在市中心修建新的高架桥。报道称，市民普遍支持该项目，所以高架桥应该尽快开工。【gap:gap1】调查由市交通局出资，只访问了 200 名经常开车的受访者，其中多数住在桥址附近。市政府的新闻稿随即转引了这一数据，称『民心所向，当尽快动工』。环保组织则提醒，高架桥可能加剧沿线区域的空气污染。某地产商趁势宣传：『桥通了，房价起飞！』",
     "textRefs": {
       "conclusion_1": "高架桥应该尽快开工",
       "reason_1": "市民普遍支持该项目",
-      "gap1_correct": "这 200 名受访者多数住在桥址附近，样本严重偏向支持者，不能代表全体市民",
+      "gap1_correct": "调查由市交通局出资，只访问了 200 名经常开车、多数住在桥址附近的受访者——样本与出资方都偏向支持方，根本不能代表全体市民",
       "distractor_1": "桥通了，房价起飞"
     },
     "gapRefs": {
       "gap1": [
-        "这 200 名受访者多数住在桥址附近，样本严重偏向支持者，不能代表全体市民",
-        "高架桥的建设工期预计为三年",
-        "市政府此前多次召开公开听证会"
+        "调查由市交通局出资，只访问了 200 名经常开车、多数住在桥址附近的受访者——样本与出资方都偏向支持方，根本不能代表全体市民",
+        "高架桥的建设工期预计为三年，建成后能分流两成车流",
+        "市政府此前多次召开过公开听证会，程序并无缺失"
       ]
     },
     "hints": [
-      "先扫描结论与理由：『市民普遍支持』来自哪里？",
-      "最后一步找空洞：报道为了让你信服，藏起了哪些信息？",
-      "调查是谁出钱的？受访者是怎么来的？"
+      "先扫描结论与理由：『市民普遍支持』这个前提来自哪里？",
+      "正文里藏着几处关于调查的细节，把它们串起来看",
+      "调查是谁出钱的？受访者是怎么被选中的？"
     ],
-    "explanation": "结论是「高架桥应该尽快开工」，理由是『78% 受访者支持』。但报道藏起了关键信息：调查由交通局出资，且只访问了 200 名经常开车、多数住在桥址附近的受访者——样本严重偏向支持者，根本不能代表全体市民。这就是「遗漏信息」：看任何『XX% 的人支持』，都要先问：样本是谁？怎么选的？谁出的钱？"
+    "explanation": "结论是「高架桥应该尽快开工」，理由是『78% 受访者支持』。但把正文里的碎片拼起来：调查由交通局出资、只访问了 200 名开车族、多数还住在桥址附近——样本和出资方都偏向支持方，根本代表不了全体市民；市政府转引、地产商炒作更是各怀目的。这就是「遗漏信息」的陷阱：看到『XX% 的人支持』，先问样本是谁、怎么选的、谁出的钱。"
   },
   "en": {
-    "sourceText": "A media survey reports that 78% of respondents support building a new viaduct downtown. The report claims residents broadly support the project, so construction should start soon.【gap:gap1】The survey was funded by the city's transport bureau and only interviewed 200 respondents who drive regularly, most of them living near the proposed site. A real-estate developer is cashing in: 'Bridge opens, property prices take off!'",
+    "sourceText": "A media survey reports that 78% of respondents support building a new viaduct downtown. The report claims residents broadly support the project, so construction should start soon.【gap:gap1】The survey was funded by the city's transport bureau and covered only 200 respondents who drive regularly, most of them living near the proposed site. The city government's press release promptly cited the figure, declaring 'the people want it — work should begin without delay'. Environmental groups warn that a viaduct could worsen air pollution along the corridor. A real-estate developer is cashing in: 'Bridge opens, property prices take off!'",
     "textRefs": {
       "conclusion_1": "construction should start soon",
       "reason_1": "residents broadly support the project",
-      "gap1_correct": "The 200 respondents mostly live near the proposed site — a sample heavily skewed toward supporters, not representative of all residents",
+      "gap1_correct": "The survey was funded by the transport bureau and covered only 200 regular drivers, most living near the proposed site — both the sample and the funder lean toward supporters, so it cannot represent all residents",
       "distractor_1": "property prices take off"
     },
     "gapRefs": {
       "gap1": [
-        "The 200 respondents mostly live near the proposed site — a sample heavily skewed toward supporters, not representative of all residents",
-        "The viaduct is expected to take three years to build",
-        "The city previously held several public hearings"
+        "The survey was funded by the transport bureau and covered only 200 regular drivers, most living near the proposed site — both the sample and the funder lean toward supporters, so it cannot represent all residents",
+        "The viaduct is expected to take three years to build and will divert one fifth of the traffic",
+        "The city has held several public hearings before, so the procedure is complete"
       ]
     },
     "hints": [
-      "Scan for the conclusion and the reason: where does 'broad support' come from?",
-      "Finally, find the gap: what information did the report hide to persuade you?",
-      "Who funded the survey? How were respondents chosen?"
+      "Scan for the conclusion and the reason: where does the premise of 'broad support' come from?",
+      "Several details about the survey are scattered in the text — connect them",
+      "Who funded the survey? How were the respondents chosen?"
     ],
-    "explanation": "The conclusion is 'construction should start soon', supported by '78% of respondents support it'. But the report hides a key fact: the survey was funded by the transport bureau and covered only 200 regular drivers, most living near the site — a sample skewed toward supporters, unrepresentative of all residents. That's omitted information: whenever you see 'X% of people support', ask: who was sampled, how were they chosen, and who paid?"
+    "explanation": "The conclusion is 'construction should start soon', supported by '78% of respondents support it'. But piece the fragments together: the survey was funded by the transport bureau, covered only 200 regular drivers, most living near the site — both sample and funder lean toward supporters, so it represents no one but supporters; the city citing the figure and the developer hyping it each have their own agenda. That is the trap of omitted information: whenever you see 'X% of people support', ask who was sampled, how they were chosen, and who paid."
   }
 }
