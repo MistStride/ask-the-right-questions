@@ -1,22 +1,22 @@
 {
   "zh": {
-    "prompt": "一项实验发现：喝绿茶组在注意力测试中的得分明显高于喝白水组。据此，关于「绿茶与大脑」能得出什么结论？",
-    "spectrumLabels": ["绿茶能提升智商", "绿茶对大脑毫无影响"],
+    "prompt": "某实验室发布：喝绿茶组在一项注意力测试中得分明显高于白水组，并配文「绿茶，大脑的天然燃料」。媒体据此标题「每天一杯绿茶，智商悄悄涨」。但论文注明：样本仅 40 人、未做双盲、测试只测了「持续注意」一项；原作者也在脚注说「效果可能源于咖啡因而非茶多酚」。那么从这份证据出发，关于「绿茶与大脑」该下多强的结论？",
+    "spectrumLabels": ["绿茶提升智商", "绿茶对大脑无用"],
     "hints": [
       "「注意力得分高」不等于「智商高」——概念别偷换",
-      "一次实验有多少人？是否双盲？",
-      "从「一次实验」到「普遍结论」，中间隔着多少复现？"
+      "40 人、非双盲、单维度，离「普遍结论」隔着多少复现？",
+      "媒体把「一次实验」抬成了「规律」，把「注意」偷换成「智商」"
     ],
-    "explanation": "这份证据能支持「饮用绿茶与短期注意力提升存在关联」，但推不到「提升智商」：注意力只是智力的一个侧面，一次小实验也远不足以证明普适效果。合理结论：绿茶可能对注意力有短暂助益，仅此而已。"
+    "explanation": "证据只支持「绿茶与短期注意提升可能有关」，且连这点都可能是咖啡因的功劳。从 40 人、非双盲、单维度测试，推不到「提升智商」，更推不到「普遍有益」。这关的陷阱是：媒体把「注意」偷换成「智商」，把「一次实验」抬成「规律」。合理结论压得很低：或有短暂助益，仅此而已。"
   },
   "en": {
-    "prompt": "An experiment found that the green-tea group scored significantly higher on an attention test than the water group. Based on this, what conclusion about \"green tea and the brain\" is reasonable?",
-    "spectrumLabels": ["Green tea boosts IQ", "Green tea does nothing for the brain"],
+    "prompt": "A lab reports the green-tea group scored clearly higher than the water group on one attention test, captioned 'green tea, the brain's natural fuel.' Media headline it 'one cup a day, IQ quietly rises.' But the paper notes: only 40 participants, not double-blind, and the test measured only 'sustained attention'; the authors themselves footnote that 'the effect may come from caffeine, not catechins.' From this evidence, how strong a conclusion about 'green tea and the brain' is reasonable?",
+    "spectrumLabels": ["Green tea boosts IQ", "Green tea useless for brain"],
     "hints": [
-      "\"Higher attention score\" is not \"higher IQ\" — don't swap concepts",
-      "How many people were in this single experiment? Was it double-blind?",
-      "From \"one experiment\" to \"universal conclusion\" lie how many replications?"
+      "'Higher attention score' is not 'higher IQ' — don't swap concepts",
+      "40 people, not double-blind, one dimension — how many replications from 'universal'?",
+      "Media turned 'one experiment' into a 'rule' and 'attention' into 'IQ'"
     ],
-    "explanation": "This evidence supports \"drinking green tea is linked to a short-term attention boost\", but it cannot reach \"boosts IQ\": attention is only one facet of intelligence, and one small experiment is far from proof of a universal effect. A reasonable conclusion: green tea may briefly aid attention — and nothing more."
+    "explanation": "The evidence only supports 'green tea may relate to a short-term attention boost' — and even that may be caffeine's doing. From 40 non-double-blind, single-dimension participants you cannot reach 'boosts IQ', let alone 'universally beneficial'. The trap: media swapped 'attention' for 'IQ' and one experiment for a 'rule'. The reasonable conclusion sits very low: perhaps a brief aid, and nothing more."
   }
 }

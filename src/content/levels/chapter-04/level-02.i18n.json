@@ -1,22 +1,22 @@
 {
   "zh": {
-    "prompt": "「他真是个勇敢的人」——什么样的行为才算真正的「勇敢」？",
-    "spectrumLabels": ["不计后果地往前冲", "什么都怕、不敢行动"],
+    "prompt": "期末老师宣布「考试绝对公平」：同卷、同时、同标准阅卷。但患阅读障碍的小明申请延长 50% 时间，老师拒绝：「给他特权，对别的同学就不公平。」家长群里也有人附和。这里被争来争去的「公平」，究竟指规则完全一致，还是结果绝对对等？请在校准尺上标出它的合理范围。",
+    "spectrumLabels": ["规则的完全一致", "结果的绝对对等"],
     "hints": [
-      "勇敢不是鲁莽，也不是懦弱",
-      "评估风险后的坚持，才是勇敢的核心",
-      "想想「明知山有虎」和「盲目送死」的区别"
+      "「公平」在此藏着真歧义，不是非黑即白",
+      "给阅读障碍者延长时长，可能恰恰是为了机会对等",
+      "想清你捍卫的是形式齐一，还是实质对等"
     ],
-    "explanation": "「勇敢」是个典型的歧义词：左端把它等同于鲁莽冲动，右端把谨慎等同于懦弱。真正的勇敢，是看清了风险之后仍然坚持做正确的事——理性的灰度地带。讨论「勇敢」前，先确认双方指的是哪种勇敢。"
+    "explanation": "「公平」在这里是一个真歧义：一端把它等同于规则对每个人都一模一样，另一端等同于每个人都拿到相同结果。但给阅读障碍者延长时长，可能恰恰是为了「规则面前机会对等」。校准时要想清：你捍卫的，是形式的齐一，还是实质的对等？这正是灰度的关键。"
   },
   "en": {
-    "prompt": "\"He is a truly brave person\" — what kind of behavior actually counts as \"brave\"?",
-    "spectrumLabels": ["Charge ahead recklessly", "Too scared to act"],
+    "prompt": "At finals the teacher declares 'the exam is absolutely fair': same paper, same time, same grading. But Xiaoming, who has a reading disability, asks for 50% extra time; the teacher refuses, saying 'that privilege would be unfair to others.' Parents in the group chat agree. The 'fairness' being argued over — does it mean perfectly identical rules, or perfectly equal outcomes? Mark its reasonable range on the scale.",
+    "spectrumLabels": ["Perfectly identical rules", "Perfectly equal outcomes"],
     "hints": [
-      "Bravery is neither recklessness nor cowardice",
-      "Persisting after assessing the risk is the core of bravery",
-      "Think of the difference between \"knowing the tiger is there\" and \"blindly rushing in\""
+      "Here 'fairness' hides a real ambiguity, not a black-and-white",
+      "Extra time for a reading disability may itself be about equal opportunity",
+      "Clarify whether you defend formal uniformity or substantive parity"
     ],
-    "explanation": "\"Brave\" is a classic ambiguous term: one end equates it with reckless impulse, the other equates caution with cowardice. Real bravery is persisting in doing what is right after clearly seeing the risk — the rational gray zone. Before debating \"bravery\", clarify which kind of bravery each side means."
+    "explanation": "Here 'fairness' is a genuine ambiguity: one end equates it with rules identical for everyone, the other with identical outcomes for everyone. Yet giving extra time to a reading-disabled student may precisely serve 'equal opportunity before the rules.' When calibrating, ask which fairness you defend — formal uniformity or substantive parity. That is the heart of gray thinking."
   }
 }

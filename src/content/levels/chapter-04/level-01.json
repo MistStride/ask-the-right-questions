@@ -6,6 +6,6 @@
   "contributor": "atrq-team",
   "rewardTags": ["structure"],
   "mode": "spectrum",
-  "idealRange": [45, 80],
+  "idealRange": [42, 80],
   "idealPoint": 62
 }

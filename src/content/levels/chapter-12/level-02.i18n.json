@@ -1,22 +1,22 @@
 {
   "zh": {
-    "prompt": "数据显示：每天刷手机超过 3 小时的学生，成绩平均低一个档次。据此，关于「刷手机与成绩」能得出多强结论？",
-    "spectrumLabels": ["刷手机毁掉成绩", "刷手机与成绩毫无关系"],
+    "prompt": "数据显示：每天刷手机超 3 小时的学生，成绩平均低一个档次。但同一份报告附注，这批学生里家庭监督较弱的比例也更高，且「低一个档次」仅来自三所城市的抽样。据此，关于「刷手机与成绩」能得出多强的结论？",
+    "spectrumLabels": ["刷手机毁掉成绩", "刷手机与成绩无关"],
     "hints": [
       "相关不等于因果——也许成绩差的学生才更爱刷手机",
-      "「平均低一个档次」背后有多少人？什么学校？",
-      "结论要匹配证据的强度，别滑向任何一端"
+      "「低一个档次」背后是多少人、什么学校？样本仅三城",
+      "结论要匹配证据强度，别滑向任何一端"
     ],
-    "explanation": "这份数据只能支持「刷手机时间与成绩存在相关性」，不足以证明「刷手机导致成绩下降」——因果方向可能是反的，也可能有第三个因素（如家庭监督）同时影响两者。合理结论落在中间：两者有关联，但不能断言因果。"
+    "explanation": "这份数据只支持「刷手机时长与成绩存在相关性」。因果方向可能相反（成绩差才更爱刷），也可能有第三因素（家庭监督）同时影响两者；且样本仅三城，推广存疑。合理结论落中段偏左：有关联，但不能断言因果，更别滑向「毁掉」或「无关」。"
   },
   "en": {
-    "prompt": "Data shows that students who spend more than 3 hours a day on their phones score one grade level lower on average. Based on this, how strong a conclusion about \"phone use and grades\" is reasonable?",
-    "spectrumLabels": ["Phone use ruins grades", "Phone use has nothing to do with grades"],
+    "prompt": "Data shows students on phones over 3 hours daily score one grade lower on average. But the same report notes these students were also more likely to come from weakly-supervised homes, and 'one grade lower' comes only from samples in three cities. Based on this, how strong a conclusion about 'phone use and grades' is reasonable?",
+    "spectrumLabels": ["Phones ruin grades", "Phones unrelated to grades"],
     "hints": [
-      "Correlation is not causation — maybe lower-achieving students use phones more",
-      "How many students, and which schools, sit behind \"one grade lower on average\"?",
-      "The conclusion must match the evidence's strength; don't slide to either extreme"
+      "Correlation is not causation — maybe lower achievers use phones more",
+      "How many students, which schools, sit behind 'one grade lower'? Only three cities",
+      "The conclusion must match the evidence's strength; don't slide to either end"
     ],
-    "explanation": "This data only supports \"phone use and grades are correlated\", not \"phone use causes lower grades\" — the causal direction could be reversed, or a third factor (like parental supervision) could affect both. The reasonable conclusion sits in the middle: there is a link, but causation cannot be asserted."
+    "explanation": "This data only supports 'phone time and grades are correlated'. The causal direction could be reversed (weaker students use phones more), or a third factor (parental supervision) could affect both; the three-city sample also limits generalization. The reasonable conclusion sits left of center: there is a link, but causation cannot be asserted, let alone 'ruins' or 'unrelated'."
   }
 }
