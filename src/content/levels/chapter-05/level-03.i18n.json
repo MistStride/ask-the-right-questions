@@ -1,32 +1,36 @@
 {
   "zh": {
-    "sourceText": "吃素比吃肉更健康。数据显示，素食者的心血管疾病发生率明显低于肉食者，平均寿命也更长。既然素食能降低疾病风险、延长寿命，我们每个人都不妨试试以植物为主的饮食。不过，这个结论悄悄藏了一个假设：素食者更低的发病率完全来自饮食本身，而不是因为他们整体上更注重健康、更常运动、更少抽烟。某植物奶品牌在超市门口试饮：『植物力量，喝出健康！』",
+    "sourceText": "营养学会建议，每人每周至少应有三天以植物性饮食为主。支持者给出两组数据：素食者的心血管疾病发生率明显低于肉食者，平均寿命也更长；同时，畜牧业排放的温室气体约占全球总量的 15%，减少肉类消费是普通人最易做到的减排方式。既然吃素既利己又利环境，我们每个人都不妨试试以植物为主的饮食。不过，这个结论悄悄藏了一个假设：素食者更低的发病率完全来自饮食本身，而不是因为他们整体上更注重健康、更常运动、更少抽烟。一位健身教练则唱起反调：肌肉需要优质蛋白，只吃植物很难练出线条，力量训练人群不该跟风。某植物奶品牌在超市门口试饮：『植物力量，喝出健康！』",
     "textRefs": {
       "conclusion_1": "我们每个人都不妨试试以植物为主的饮食",
       "reason_1": "素食者的心血管疾病发生率明显低于肉食者，平均寿命也更长",
+      "reason_2": "畜牧业排放的温室气体约占全球总量的 15%，减少肉类消费是普通人最易做到的减排方式",
       "assumption_1": "素食者更低的发病率完全来自饮食本身，而不是因为他们整体上更注重健康、更常运动、更少抽烟",
-      "distractor_1": "植物力量，喝出健康"
+      "distractor_1": "植物力量，喝出健康",
+      "distractor_2": "肌肉需要优质蛋白，只吃植物很难练出线条，力量训练人群不该跟风"
     },
     "hints": [
-      "先找结论和支撑它的数据理由",
+      "先找结论和两条理由（健康、环境）",
       "去挖掘区：发病率低一定归因于吃素吗？",
-      "健康的生活方式可能同时解释了『吃素』和『少生病』"
+      "健康的生活方式可能同时解释了『吃素』和『少生病』；教练的质疑针对特定人群，方向也偏离"
     ],
-    "explanation": "结论是「不妨试试以植物为主的饮食」，理由是『素食者心血管疾病率更低』。但这个论证默认：更低发病率完全由饮食造成。可另一种可能同样成立——选择吃素的人往往也更注重锻炼、更少抽烟，是这些因素（而非素食本身）带来了健康。这就是「相关性不等于因果」的经典陷阱：找假设时，永远要问『还有别的解释吗？』"
+    "explanation": "结论是「不妨试试以植物为主的饮食」，理由一：素食者心血管病率更低、寿命更长；理由二：畜牧业排放大，少吃肉是易行的减排。但论证默认：更低发病率完全由饮食造成。可另一种解释同样成立——选择吃素的人往往更注重锻炼、更少抽烟，是这些因素（而非素食本身）带来了健康。这就是「相关性不等于因果」的经典陷阱：挖假设时永远要问『还有别的解释吗？』教练那句只适用于力量训练人群，是局部反例而非全盘否定；广告语更只是带货。"
   },
   "en": {
-    "sourceText": "Eating vegetarian is healthier than eating meat. Data shows that vegetarians have significantly lower rates of cardiovascular disease than meat-eaters, and they also live longer on average. Since a plant-based diet lowers disease risk and extends life, we should all try eating mostly plants. This conclusion, however, quietly assumes that vegetarians' lower disease rates come entirely from their diet — not from the fact that they tend to be more health-conscious overall, exercising more and smoking less. A plant-milk brand is giving out samples at the supermarket entrance: 'Plant power, drink your way to health!'",
+    "sourceText": "The Nutrition Society recommends that everyone eat a mostly plant-based diet at least three days a week. Supporters cite two sets of data: vegetarians have significantly lower rates of cardiovascular disease than meat-eaters and live longer on average; meanwhile, livestock farming accounts for about fifteen percent of global greenhouse-gas emissions, and eating less meat is the easiest way for ordinary people to cut emissions. Since eating vegetarian is good for both yourself and the planet, we should all try eating mostly plants. This conclusion, however, quietly assumes that vegetarians' lower disease rates come entirely from their diet — not from the fact that they tend to be more health-conscious overall, exercising more and smoking less. A fitness coach pushes back: muscles need quality protein, plant-only diets make it hard to build definition, and strength-training people should not follow the trend. A plant-milk brand is giving out samples at the supermarket entrance: 'Plant power, drink your way to health!'",
     "textRefs": {
       "conclusion_1": "we should all try eating mostly plants",
-      "reason_1": "vegetarians have significantly lower rates of cardiovascular disease than meat-eaters",
+      "reason_1": "vegetarians have significantly lower rates of cardiovascular disease than meat-eaters and live longer on average",
+      "reason_2": "livestock farming accounts for about fifteen percent of global greenhouse-gas emissions, and eating less meat is the easiest way for ordinary people to cut emissions",
       "assumption_1": "vegetarians' lower disease rates come entirely from their diet — not from the fact that they tend to be more health-conscious overall, exercising more and smoking less",
-      "distractor_1": "drink your way to health"
+      "distractor_1": "Plant power, drink your way to health",
+      "distractor_2": "muscles need quality protein, plant-only diets make it hard to build definition, and strength-training people should not follow the trend"
     },
     "hints": [
-      "Find the conclusion and the statistical reason supporting it",
+      "Find the conclusion and the two reasons (health, environment)",
       "Head to the dig site: is the lower disease rate really caused by the diet?",
-      "A healthy lifestyle could explain both 'being vegetarian' and 'fewer illnesses'"
+      "A healthy lifestyle could explain both 'being vegetarian' and 'fewer illnesses'; the coach's objection targets only specific people"
     ],
-    "explanation": "The conclusion is 'we should all try eating mostly plants', supported by 'vegetarians have lower cardiovascular rates'. But the argument assumes diet alone causes the lower rate. Another equally plausible story: people who choose vegetarianism also tend to exercise more and smoke less — those factors, not the diet itself, drive the health gains. This is the classic 'correlation is not causation' trap. When digging for assumptions, always ask: 'Is there another explanation?'"
+    "explanation": "The conclusion is 'we should all try eating mostly plants'. Reason one: vegetarians have lower cardiovascular rates and live longer. Reason two: livestock emissions are huge, so eating less meat is an easy way to cut them. But the argument assumes diet alone causes the lower disease rate. Another equally plausible story: people who choose vegetarianism also tend to exercise more and smoke less — those factors, not the diet itself, drive the health gains. This is the classic 'correlation is not causation' trap. When digging for assumptions, always ask: 'Is there another explanation?' The coach's claim applies only to strength-training people — a partial counterexample, not a total refutation; the slogan is just marketing."
   }
 }

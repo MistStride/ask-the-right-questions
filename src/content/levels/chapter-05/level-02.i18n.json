@@ -1,34 +1,36 @@
 {
   "zh": {
-    "sourceText": "公司应当鼓励员工主动加班。加班能加快项目进度，让公司更快推出产品、抢占市场。此外，加班多的人往往获得更快的晋升，这对想上进的员工是实打实的激励。但这一切建立在一个假设之上：加班真的能提升总产出，而不是把白天能做完的活拖到晚上再做一遍。某能量饮料在茶水间刷屏：『加班喝一口，思路不断流！』",
+    "sourceText": "公司应当鼓励员工主动加班。加班能加快项目进度，让公司在竞品之前推出产品、抢占市场，管理层举例说，隔壁竞品正是靠连续三周的冲刺拿下了年度大单。此外，加班多的人往往获得更快的晋升，这对想上进的员工是实打实的激励。不过，人力资源部门提醒，去年公司主动离职的员工中，超过六成把『长期加班』列为主因之一。而这一切论证都建立在一个假设之上：加班真的能提升总产出，而不是把白天能做完的活拖到晚上再做一遍。某能量饮料在茶水间刷屏：『加班喝一口，思路不断流！』",
     "textRefs": {
       "conclusion_1": "公司应当鼓励员工主动加班",
-      "reason_1": "加班能加快项目进度，让公司更快推出产品、抢占市场",
+      "reason_1": "加班能加快项目进度，让公司在竞品之前推出产品、抢占市场",
       "reason_2": "加班多的人往往获得更快的晋升，这对想上进的员工是实打实的激励",
       "assumption_1": "加班真的能提升总产出，而不是把白天能做完的活拖到晚上再做一遍",
-      "distractor_1": "加班喝一口，思路不断流"
+      "distractor_1": "加班喝一口，思路不断流",
+      "distractor_2": "去年公司主动离职的员工中，超过六成把『长期加班』列为主因之一"
     },
     "hints": [
-      "先扫出结论与两个理由",
+      "先扫出结论与两个理由（进度、晋升）",
       "去挖掘区找那个没明说的前提——它决定了整个论证成不成立",
-      "能量饮料的广告和论证无关"
+      "HR 的离职数据听着像支持，方向却指向加班的代价；能量饮料广告更与论证无关"
     ],
-    "explanation": "结论是「公司应当鼓励员工主动加班」，理由是『加快项目进度』与『更快晋升的激励』。但论证默认了关键假设：加班确实增加总产出。如果加班只是把白天的低效挪到晚上，产出没有增加，反而消耗了员工健康——两个理由就都塌了。批判性思维不是反对加班，而是追问：『加班真的增加了产出吗？』"
+    "explanation": "结论是「公司应当鼓励员工主动加班」，理由是『加快项目进度、抢占市场』与『更快晋升的激励』。但论证默认了关键假设：加班确实增加总产出。如果加班只是把白天的低效挪到晚上，产出没有增加，反而消耗员工健康，两个理由就都塌了。注意 HR 那句「离职员工六成归因于长期加班」——它听起来是条『理由』，方向却是在揭示加班的代价，属于需要回应的反证，而不是支撑结论的理由。批判性思维不是反对加班，而是追问：『加班真的增加了产出吗？代价谁来付？』"
   },
   "en": {
-    "sourceText": "Companies should encourage employees to work overtime. Overtime speeds up projects, letting the company ship products faster and seize the market. Moreover, employees who work overtime tend to get promoted faster, which is a real incentive for ambitious workers. But all of this rests on one assumption: that overtime actually increases total output, rather than dragging work that could be done in the day into the night. An energy drink is everywhere in the break room: 'Sip while you work late — ideas never stop!'",
+    "sourceText": "Companies should encourage employees to work overtime. Overtime speeds up projects, letting the company ship products before rivals and seize the market — management cites how a competing firm won the year's biggest contract on the back of a three-week sprint. Moreover, employees who work overtime tend to get promoted faster, which is a real incentive for ambitious workers. The HR department, however, points out that among employees who voluntarily left last year, more than sixty percent listed 'chronic overtime' as one of the main reasons. And the entire argument rests on one assumption: that overtime actually increases total output, rather than dragging work that could be done in the day into the night. An energy drink is everywhere in the break room: 'Sip while you work late — ideas never stop!'",
     "textRefs": {
       "conclusion_1": "Companies should encourage employees to work overtime",
-      "reason_1": "Overtime speeds up projects, letting the company ship products faster and seize the market",
+      "reason_1": "Overtime speeds up projects, letting the company ship products before rivals and seize the market",
       "reason_2": "employees who work overtime tend to get promoted faster",
       "assumption_1": "overtime actually increases total output, rather than dragging work that could be done in the day into the night",
-      "distractor_1": "ideas never stop"
+      "distractor_1": "ideas never stop",
+      "distractor_2": "more than sixty percent listed 'chronic overtime' as one of the main reasons"
     },
     "hints": [
-      "Scan for the conclusion and the two reasons",
+      "Scan for the conclusion and the two reasons (progress, promotion)",
       "Head to the dig site for the unstated premise — the whole argument stands on it",
-      "The energy drink ad is irrelevant to the argument"
+      "HR's attrition data sounds supportive but points to the cost of overtime; the energy drink ad is even more irrelevant"
     ],
-    "explanation": "The conclusion is 'companies should encourage overtime', with reasons 'faster projects' and 'promotion incentives'. But the argument assumes that overtime genuinely adds output. If overtime merely moves daytime inefficiency into the night, output doesn't grow and health suffers — both reasons collapse. Critical thinking isn't anti-overtime; it's asking: 'Does overtime actually increase output?'"
+    "explanation": "The conclusion is 'companies should encourage overtime', with reasons 'faster projects and market share' and 'promotion incentives'. But the argument assumes that overtime genuinely adds output. If overtime merely moves daytime inefficiency into the night, output doesn't grow and employee health suffers — both reasons collapse. Note HR's line that 'sixty percent of leavers blamed chronic overtime': it reads like a 'reason' but actually reveals the cost of overtime, making it counter-evidence to address rather than a supporting reason. Critical thinking isn't anti-overtime; it's asking: 'Does overtime really add output — and who pays for it?'"
   }
 }

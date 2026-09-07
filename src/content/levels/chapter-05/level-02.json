@@ -13,7 +13,8 @@
     { "nodeId": "assumption_1", "type": "assumption", "textRef": "assumption_1", "hidden": true }
   ],
   "distractors": [
-    { "nodeId": "distractor_1", "type": "ambiguous_term", "textRef": "distractor_1" }
+    { "nodeId": "distractor_1", "type": "ambiguous_term", "textRef": "distractor_1" },
+    { "nodeId": "distractor_2", "type": "reason", "textRef": "distractor_2" }
   ],
   "correctChain": [
     { "from": "reason_1", "to": "conclusion_1" },
