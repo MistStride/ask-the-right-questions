@@ -13,8 +13,8 @@
       "q_celebrity": "明星的肌肉，真的是这款蛋白粉的功劳吗？有没有其他因素？",
       "q_noqual": "「最专业的营养师团队」具体是谁？能提供资质和履历吗？",
       "q_sponsor": "销量下滑有没有更简单的解释，比如产品本身的问题？",
-      "q_d1": "这支广告拍了多久？",
-      "q_d2": "明星平时喜欢什么颜色？"
+      "q_d1": "这支广告的拍摄成本是多少？",
+      "q_d2": "蛋白粉包装上建议每天喝几次、每次几勺？"
     },
     "hints": [
       "名人代言 ≠ 产品有效——明星也是被雇来念稿的",
@@ -37,8 +37,8 @@
       "q_celebrity": "Are the celebrity's muscles really thanks to this powder? Could other factors be at play?",
       "q_noqual": "Who exactly is \"the most professional team of nutritionists\"? Can you show credentials and track records?",
       "q_sponsor": "Is there a simpler explanation for the sales decline, like a problem with the product itself?",
-      "q_d1": "How long did the commercial shoot take?",
-      "q_d2": "What is the celebrity's favorite color?"
+      "q_d1": "How much did this commercial cost to produce?",
+      "q_d2": "How many scoops per day does the label recommend?"
     },
     "hints": [
       "Celebrity endorsement ≠ effective product — stars are hired to read a script",

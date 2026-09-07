@@ -13,8 +13,8 @@
       "q_selfclaim": "「养生导师」是正规职业吗？有什么可查证的资质或机构认证？",
       "q_singlecase": "老王的「治好」有没有医院诊断记录？单一案例能代表所有人吗？",
       "q_emotion": "用「孩子的未来」煽动情绪，能替代科学证据吗？",
-      "q_d1": "这碗草药水的味道怎么样？",
-      "q_d2": "老王今年多大年纪？"
+      "q_d1": "这碗草药水每天要喝几次、连着喝多久才见效？",
+      "q_d2": "您自己或家里人喝过这个草药水吗？"
     },
     "hints": [
       "自称头衔不等于资质——问可查证的凭证",
@@ -37,8 +37,8 @@
       "q_selfclaim": "Is \"wellness guru\" a real profession? Any verifiable credentials or institutional certification?",
       "q_singlecase": "Does Wang's \"recovery\" have hospital records? Can one case represent everyone?",
       "q_emotion": "Can stirring emotions with \"your children's future\" replace scientific evidence?",
-      "q_d1": "How does the herbal brew taste?",
-      "q_d2": "How old is Wang?"
+      "q_d1": "How many times a day should you drink the brew, and for how long before it works?",
+      "q_d2": "Have you or your family ever drunk this herbal brew yourselves?"
     },
     "hints": [
       "A self-proclaimed title is not qualification — ask for verifiable credentials",

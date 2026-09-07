@@ -2,7 +2,7 @@
   "levelId": "ch07-level03",
   "chapter": 7,
   "engine": "courtroom",
-  "difficulty": 2,
+  "difficulty": 3,
   "contributor": "atrq-team",
   "rewardTags": ["evidence"],
   "mode": "trial",

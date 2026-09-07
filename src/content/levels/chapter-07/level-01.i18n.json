@@ -13,8 +13,8 @@
       "q_qualification": "您是否有权威机构认证的营养学资质？",
       "q_personal": "您三天瘦五斤的个人体验，能代表产品对所有人有效吗？",
       "q_conflict": "您是否从这款产品的销售中直接获利？",
-      "q_d1": "这个茶的口味是否醇厚？",
-      "q_d2": "您平时几点睡觉？"
+      "q_d1": "这款茶是用什么工艺生产的？",
+      "q_d2": "媒体报道过研究所，具体是哪些权威媒体？"
     },
     "hints": [
       "自称「专家」不等于真有资质——看看他能否给出硬凭证",
@@ -37,8 +37,8 @@
       "q_qualification": "Do you hold any nutrition qualification certified by an authoritative body?",
       "q_personal": "Does your personal three-day weight loss prove the product works for everyone?",
       "q_conflict": "Do you profit directly from the sales of this product?",
-      "q_d1": "Is the tea's flavor rich and smooth?",
-      "q_d2": "What time do you usually go to bed?"
+      "q_d1": "What process is used to produce this tea?",
+      "q_d2": "Which authoritative media outlets have actually covered your institute?"
     },
     "hints": [
       "Calling yourself an \"expert\" is not the same as being one — ask for hard credentials",
