@@ -1,34 +1,36 @@
 {
   "zh": {
-    "sourceText": "公司应该鼓励员工每天运动。有数据显示，坚持运动的员工请病假的天数明显更少，长期坚持还能降低焦虑和抑郁的风险。而且，运动带来的精力提升会直接反映在工作效率上，让团队跑得更快。不过，也有管理者担心，安排运动时间会压缩工时，影响项目进度。某健身房在写字楼电梯里投放广告：『每天 30 分钟，激活你的职场竞争力！』",
+    "sourceText": "市教育局宣布，从下学期起在市直属初中试点『每周无屏日』——每周三全天不使用任何电子屏幕上课。市教育局在新闻稿中解释，首批试点学校中，学生在无屏日次日的课堂专注力测评平均提升了近一成，说明减少屏幕依赖能改善听课质量；同时，国家睡眠研究所去年发布的一项研究也发现，睡前两小时使用电子屏与入睡时间延迟存在显著相关，这为限制屏幕时间提供了健康依据。政策公布后，教育科技公司纷纷跟进，某品牌打出广告：『无屏教育，就是回归教育的本真！』并顺势推出配套的纸质教辅礼包。而不少一线教师表达了担忧：压缩屏幕教学会让课程进度变慢，也会让买不起平板的家庭和买得起的家庭差距更大。一位家长则在群里断言：电子屏正在毁掉这一代孩子的大脑，学校早就该全面禁屏了！对此，市教育局回应，试点规模暂限定在每周一天，将根据评估结果再决定是否推广。",
     "textRefs": {
-      "conclusion_1": "公司应该鼓励员工每天运动",
-      "reason_1": "坚持运动的员工请病假的天数明显更少",
-      "reason_2": "运动带来的精力提升会直接反映在工作效率上",
-      "distractor_1": "每天 30 分钟，激活你的职场竞争力",
-      "distractor_2": "安排运动时间会压缩工时，影响项目进度"
+      "conclusion_1": "在市直属初中试点『每周无屏日』",
+      "reason_1": "学生在无屏日次日的课堂专注力测评平均提升了近一成",
+      "reason_2": "睡前两小时使用电子屏与入睡时间延迟存在显著相关",
+      "distractor_1": "无屏教育，就是回归教育的本真",
+      "distractor_2": "电子屏正在毁掉这一代孩子的大脑，学校早就该全面禁屏了",
+      "distractor_3": "压缩屏幕教学会让课程进度变慢，也会让买不起平板的家庭和买得起的家庭差距更大"
     },
     "hints": [
-      "结论是给公司的建议，找『应该』句",
-      "理由一关于健康（病假），理由二关于效率",
-      "管理者的担心和健身房广告，哪个是支持理由？"
+      "结论在前两句：市里试点做什么？范围是什么？",
+      "两个理由分别来自课堂测评和睡眠研究",
+      "三个干扰各有心思：教育公司在卖货、教师在担忧、家长把『试点一天』夸大成『全面禁屏』"
     ],
-    "explanation": "结论是「公司应该鼓励员工每天运动」。理由一：坚持运动的员工病假更少（健康成本下降）；理由二：运动提升精力、提高工作效率（产出上升）。「压缩工时影响进度」是管理者的担忧，属于需要回应的反对意见；「激活职场竞争力」是健身房广告。支撑结论的理由要『直接服务于结论』，广告和担忧都不满足。"
+    "explanation": "结论是「市直属初中试点每周无屏日」——注意范围：仅试点、每周一天。理由一：试点校专注力测评提升近一成；理由二：睡眠研究发现睡前用屏与入睡延迟显著相关（注意是『相关』而非『导致』）。「回归教育本真」是教育科技公司的广告；「进度变慢、差距拉大」是教师对政策的担忧，属于反对意见；「毁掉一代人大脑、全面禁屏」听起来最像『结论』，实则是家长把政策极端化后的断言，方向已偏离原文。看结论要连它的限定条件一起看，别被更响亮的说法带跑。"
   },
   "en": {
-    "sourceText": "Companies should encourage employees to exercise daily. Data shows that employees who exercise regularly take noticeably fewer sick days, and long-term exercise also lowers the risk of anxiety and depression. Moreover, the energy boost from exercise directly improves work efficiency, helping teams move faster. Some managers, however, worry that scheduling exercise time will cut into working hours and delay projects. A gym advertises in office elevators: '30 minutes a day — power up your career edge!'",
+    "sourceText": "The city education bureau announced that, starting next semester, it will pilot a 'weekly screen-free day' at directly affiliated junior high schools — every Wednesday, classes will run entirely without electronic screens. The bureau explained in its press release that in the first pilot schools, students' classroom-focus assessments improved by nearly ten percent on the day after a screen-free day, showing that reducing screen dependence can improve the quality of listening in class. Meanwhile, a study released last year by the National Sleep Research Institute also found that using electronic screens within two hours of bedtime is significantly associated with delayed sleep onset, which provides a health basis for limiting screen time. After the policy was announced, education-technology companies piled in: one brand ran the ad 'Screen-free education means returning to the true essence of learning!' and launched a matching paper-based teaching-aid gift box. Quite a few frontline teachers, however, voiced concern: cutting screen-based teaching will slow down the curriculum and widen the gap between families that can afford tablets and those that cannot. One parent asserted in a group chat: electronic screens are destroying this generation's brains, and schools should have banned them completely long ago! In response, the bureau said the pilot is limited to one day per week for now, and whether to expand it will depend on evaluation results.",
     "textRefs": {
-      "conclusion_1": "Companies should encourage employees to exercise daily",
-      "reason_1": "employees who exercise regularly take noticeably fewer sick days",
-      "reason_2": "the energy boost from exercise directly improves work efficiency",
-      "distractor_1": "30 minutes a day — power up your career edge",
-      "distractor_2": "scheduling exercise time will cut into working hours and delay projects"
+      "conclusion_1": "pilot a 'weekly screen-free day' at directly affiliated junior high schools",
+      "reason_1": "students' classroom-focus assessments improved by nearly ten percent on the day after a screen-free day",
+      "reason_2": "using electronic screens within two hours of bedtime is significantly associated with delayed sleep onset",
+      "distractor_1": "Screen-free education means returning to the true essence of learning",
+      "distractor_2": "electronic screens are destroying this generation's brains, and schools should have banned them completely long ago",
+      "distractor_3": "cutting screen-based teaching will slow down the curriculum and widen the gap between families that can afford tablets and those that cannot"
     },
     "hints": [
-      "The conclusion is a recommendation to companies — find the 'should' sentence",
-      "Reason one is about health (sick days), reason two is about efficiency",
-      "The managers' worry and the gym ad — which one supports the conclusion?"
+      "The conclusion is in the first two sentences: what is the pilot, and what is its scope?",
+      "The two reasons come from classroom assessments and sleep research",
+      "Each of the three distractors has its own agenda: an ed-tech firm selling, teachers worrying, and a parent inflating 'a one-day pilot' into a 'total ban'"
     ],
-    "explanation": "The conclusion is 'companies should encourage employees to exercise daily'. Reason one: regular exercisers take fewer sick days (lower health cost). Reason two: exercise boosts energy and improves efficiency (higher output). 'Cutting into working hours' is managers' worry — an objection to answer, not a reason. 'Power up your career edge' is a gym ad. A supporting reason must directly serve the conclusion; ads and worries don't."
+    "explanation": "The conclusion is 'pilot a weekly screen-free day at city junior highs' — note the scope: a pilot, one day per week. Reason one: focus assessments improved by nearly ten percent in pilot schools. Reason two: sleep research found screen use before bed is significantly associated with delayed sleep onset (note: 'associated', not 'causes'). 'Returning to the true essence of learning' is an ed-tech ad; 'slower curriculum and a wider gap' is teachers' worry — an objection to the policy; 'destroying brains and banning screens completely' sounds the most like a 'conclusion' but is actually a parent's exaggerated assertion that drifts from the original claim. When reading a conclusion, keep its qualifiers in view — don't be swept away by a louder statement."
   }
 }

@@ -1,34 +1,36 @@
 {
   "zh": {
-    "sourceText": "营养专家建议，早餐应该是一天中最丰盛的一餐。首先，早餐为身体补充一晚上的能量消耗，让人上午更有精力；其次，规律吃早餐能稳定血糖，降低患胆结石的风险。然而，现实是许多年轻人为了多睡十分钟干脆不吃早餐。某燕麦片品牌广告称：『每天一碗燕麦，健康一辈子！』",
+    "sourceText": "某外卖平台宣布，将对平台上高油、高盐、高糖的商家实行流量限制，新规则从下季度起逐步推行。平台在公告中解释，这类餐品的复购主要依赖重口味刺激，持续推送会助长用户不健康的饮食习惯；同时，平台数据显示，长期点这类餐品的用户体检异常率明显更高，平台认为推荐算法不该加剧这一风险；此外，国家营养学会在公开科普中也多次呼吁，外卖平台应当承担引导健康饮食的社会责任。公告发出后，小吃餐饮协会提出质疑：限流会让依赖高毛利小吃的夫妻店率先倒闭，这碗饭不该由平台来砸。而另一家外卖平台趁机打出广告：『你的胃，由你自己做主。』",
     "textRefs": {
-      "conclusion_1": "早餐应该是一天中最丰盛的一餐",
-      "reason_1": "早餐为身体补充一晚上的能量消耗，让人上午更有精力",
-      "reason_2": "规律吃早餐能稳定血糖，降低患胆结石的风险",
-      "distractor_1": "每天一碗燕麦，健康一辈子",
-      "distractor_2": "许多年轻人为了多睡十分钟干脆不吃早餐"
+      "conclusion_1": "将对平台上高油、高盐、高糖的商家实行流量限制",
+      "reason_1": "这类餐品的复购主要依赖重口味刺激，持续推送会助长用户不健康的饮食习惯",
+      "reason_2": "平台数据显示，长期点这类餐品的用户体检异常率明显更高",
+      "reason_3": "国家营养学会在公开科普中也多次呼吁，外卖平台应当承担引导健康饮食的社会责任",
+      "distractor_1": "限流会让依赖高毛利小吃的夫妻店率先倒闭",
+      "distractor_2": "你的胃，由你自己做主"
     },
     "hints": [
-      "结论是专家的建议，找『应该』后面的主张",
-      "两个理由分别关于能量和健康",
-      "『年轻人不吃早餐』是现象描述，广告语是推销——哪个支撑建议？"
+      "结论在开头一句：平台要对哪类商家做什么？",
+      "三个理由分别从用户习惯、体检数据、营养学会三个角度出发",
+      "『夫妻店倒闭』听着像因果，但方向与结论相反；『由你自己做主』是竞品在打广告"
     ],
-    "explanation": "结论是「早餐应该是一天中最丰盛的一餐」。理由一：补充能量、上午更有精力；理由二：稳定血糖、降低胆结石风险。「年轻人不吃早餐」只是现实描述，不是支持建议的理由；「每天一碗燕麦」是燕麦品牌的营销话术，借机带货。找理由时要问：这句话是在『支撑结论』还是在『描述现象 / 卖东西』？"
+    "explanation": "结论是「对高油高盐高糖商家实行流量限制」。理由一：重口味养成不健康饮食习惯；理由二：常点用户体检异常率更高；理由三：营养学会呼吁平台担起责任。注意「限流会让夫妻店率先倒闭」看似有因果链条，实则是小吃协会的反对意见，方向与结论相反；「你的胃由你自己做主」是竞品平台借机营销。判断理由要看方向：它是在支撑结论，还是在反驳结论、顺带带货？"
   },
   "en": {
-    "sourceText": "Nutritionists recommend that breakfast should be the most substantial meal of the day. First, breakfast replenishes the energy spent overnight, giving you more energy in the morning. Second, eating breakfast regularly stabilizes blood sugar and lowers the risk of gallstones. In reality, however, many young people skip breakfast just to sleep ten more minutes. An oatmeal brand advertises: 'One bowl of oatmeal a day — health for a lifetime!'",
+    "sourceText": "A food-delivery platform announced it will limit traffic to merchants whose food is high in oil, salt, and sugar, rolling out the new rules gradually from next quarter. The platform explained in its statement that repeat purchases of such meals rely mainly on heavy-flavor stimulation, and continuously recommending them encourages users' unhealthy eating habits. Meanwhile, platform data shows that users who frequently order such meals have noticeably higher rates of abnormal health checkups, and the platform believes its recommendation algorithm should not amplify this risk. In addition, the National Nutrition Society has repeatedly urged in public science outreach that delivery platforms should shoulder the social responsibility of guiding healthy eating. After the announcement, the snack-and-restaurant association raised doubts: the traffic limit will let mom-and-pop shops that depend on high-margin snacks go out of business first, and this is not a bowl of rice the platform should smash. Another delivery platform then ran an ad: 'Your stomach, your own choice.'",
     "textRefs": {
-      "conclusion_1": "breakfast should be the most substantial meal of the day",
-      "reason_1": "breakfast replenishes the energy spent overnight",
-      "reason_2": "eating breakfast regularly stabilizes blood sugar and lowers the risk of gallstones",
-      "distractor_1": "One bowl of oatmeal a day — health for a lifetime",
-      "distractor_2": "many young people skip breakfast just to sleep ten more minutes"
+      "conclusion_1": "limit traffic to merchants whose food is high in oil, salt, and sugar",
+      "reason_1": "repeat purchases of such meals rely mainly on heavy-flavor stimulation, and continuously recommending them encourages users' unhealthy eating habits",
+      "reason_2": "users who frequently order such meals have noticeably higher rates of abnormal health checkups",
+      "reason_3": "the National Nutrition Society has repeatedly urged in public science outreach that delivery platforms should shoulder the social responsibility of guiding healthy eating",
+      "distractor_1": "the traffic limit will let mom-and-pop shops that depend on high-margin snacks go out of business first",
+      "distractor_2": "Your stomach, your own choice"
     },
     "hints": [
-      "The conclusion is the expert's recommendation — find the 'should' claim",
-      "The two reasons concern energy and health",
-      "'Young people skip breakfast' describes reality; the ad sells. Which supports the recommendation?"
+      "The conclusion is in the first sentence: what will the platform do to which merchants?",
+      "The three reasons come from user habits, health-checkup data, and the nutrition society",
+      "'Mom-and-pop shops go out of business' sounds causal but runs against the conclusion; 'your stomach, your own choice' is a rival's ad"
     ],
-    "explanation": "The conclusion is 'breakfast should be the most substantial meal'. Reason one: it replenishes energy for the morning. Reason two: it stabilizes blood sugar and lowers gallstone risk. 'Young people skip breakfast' is a description of reality, not a supporting reason; 'health for a lifetime' is the oatmeal brand's marketing. When looking for reasons, ask: does this sentence support the conclusion, describe reality, or sell something?"
+    "explanation": "The conclusion is 'limit traffic to high-oil, high-salt, high-sugar merchants'. Reason one: heavy flavors breed unhealthy habits. Reason two: frequent customers have higher abnormal-checkup rates. Reason three: the nutrition society urges platforms to take responsibility. 'Mom-and-pop shops go bankrupt first' looks like a causal chain but is the restaurant association's objection — its direction opposes the conclusion. 'Your stomach, your own choice' is a rival platform cashing in. To judge a reason, check its direction: does it support the conclusion, rebut it, or sell something on the side?"
   }
 }

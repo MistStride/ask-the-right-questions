@@ -1,34 +1,34 @@
 {
   "zh": {
-    "sourceText": "某科技公司宣布将全面取消远程办公，回归线下办公。管理层解释：远程办公降低了团队协作效率，因为面对面沟通比视频会议高效得多；而且，长期远程会让员工缺乏归属感，优秀人才更容易流失。支持这一决定的数据显示，过去一年远程办公的项目平均延期 30%。不过也有员工表示，每天通勤三小时才是真正的效率杀手。某办公软件厂商趁机推销：『重回办公室，效率立刻翻倍！』",
+    "sourceText": "某市实验中学宣布，禁止学生携带智能手机进入校园，新规从下学期开学起执行。校长在说明会上解释：课堂上少了手机提示音和偷偷刷屏，任课老师普遍反映学生注意力明显更集中。同时，该校心理辅导室的记录显示，涉及网络欺凌的投诉比去年同期下降了四成。校门口，某儿童手机品牌趁机投放广告：『孩子成长的关键期，值得拥有更精彩的数字世界！』也有学生代表提出，手机里的学习类 App 是查资料的重要工具，一刀切并不合理。",
     "textRefs": {
-      "conclusion_1": "全面取消远程办公，回归线下办公",
-      "reason_1": "远程办公降低了团队协作效率",
-      "reason_2": "长期远程会让员工缺乏归属感，优秀人才更容易流失",
-      "distractor_1": "重回办公室，效率立刻翻倍",
-      "distractor_2": "每天通勤三小时才是真正的效率杀手"
+      "conclusion_1": "禁止学生携带智能手机进入校园",
+      "reason_1": "课堂上少了手机提示音和偷偷刷屏，任课老师普遍反映学生注意力明显更集中",
+      "reason_2": "该校心理辅导室的记录显示，涉及网络欺凌的投诉比去年同期下降了四成",
+      "distractor_1": "孩子成长的关键期，值得拥有更精彩的数字世界",
+      "distractor_2": "手机里的学习类 App 是查资料的重要工具，一刀切并不合理"
     },
     "hints": [
-      "结论在开头：管理层决定怎么做？",
-      "两个理由分别关于『协作效率』和『员工留任』",
-      "『延期 30%』只是数字，注意它属于哪一方；通勤和广告都不支持结论"
+      "结论在开头：学校宣布的新规是什么？",
+      "两个理由分别来自『课堂专注』和『心理辅导室记录』",
+      "校门口的广告在卖手机，学生的质疑在反对新规——谁在支撑结论？"
     ],
-    "explanation": "结论是「全面取消远程办公」。理由一：远程降低协作效率；理由二：远程削弱归属感、人才易流失。『延期 30%』是支撑理由的补充数据。而「通勤三小时是效率杀手」是员工的反对观点，「效率立刻翻倍」是软件厂商的营销口号——它们都不是支持取消远程的理由。一个论证里常混着多方的声音，要逐一归位。"
+    "explanation": "结论是「禁止学生携带智能手机进入校园」。理由一：课堂上少了手机干扰，老师反映注意力更集中；理由二：网络欺凌投诉下降四成。「值得拥有数字世界」是儿童手机品牌的广告，借新规话题卖货；「App 是查资料工具、一刀切不合理」是学生的反对意见。找理由时要问：这句话是在支持这项规定，还是在趁机卖东西或唱反调？"
   },
   "en": {
-    "sourceText": "A tech company announced it will fully abolish remote work and return to the office. Management explains: remote work lowers team collaboration efficiency, because face-to-face communication is far more effective than video meetings. Moreover, long-term remote work makes employees feel less connected, and top talent is more likely to leave. Data supporting this decision shows that remote projects were delayed by 30% on average last year. Some employees, however, say that a three-hour daily commute is the real efficiency killer. An office-software vendor is cashing in: 'Back to the office, double your efficiency instantly!'",
+    "sourceText": "A city experimental middle school announced it will ban students from bringing smartphones onto campus, effective next semester. The principal explained at a briefing: with fewer notification sounds and fewer students secretly scrolling in class, teachers generally report that students are noticeably more focused. At the same time, records from the school counseling office show that complaints about cyberbullying fell by forty percent compared with the same period last year. Outside the school gate, a children's phone brand seized the moment with an ad: 'These crucial growing years deserve a more wonderful digital world!' Some student representatives also argued that educational apps on phones are important research tools, so an outright ban is unreasonable.",
     "textRefs": {
-      "conclusion_1": "fully abolish remote work and return to the office",
-      "reason_1": "remote work lowers team collaboration efficiency",
-      "reason_2": "long-term remote work makes employees feel less connected",
-      "distractor_1": "Back to the office, double your efficiency instantly",
-      "distractor_2": "a three-hour daily commute is the real efficiency killer"
+      "conclusion_1": "ban students from bringing smartphones onto campus",
+      "reason_1": "with fewer notification sounds and fewer students secretly scrolling in class, teachers generally report that students are noticeably more focused",
+      "reason_2": "complaints about cyberbullying fell by forty percent compared with the same period last year",
+      "distractor_1": "These crucial growing years deserve a more wonderful digital world",
+      "distractor_2": "educational apps on phones are important research tools, so an outright ban is unreasonable"
     },
     "hints": [
-      "The conclusion is at the start: what decision did management make?",
-      "The two reasons concern 'collaboration' and 'retention'",
-      "'30% delayed' is a number — note whose side it supports; the commute and the ad don't"
+      "The conclusion is at the start: what rule did the school announce?",
+      "The two reasons come from 'classroom focus' and 'counseling office records'",
+      "The ad at the gate sells phones and the students' objection challenges the ban — which supports the conclusion?"
     ],
-    "explanation": "The conclusion is 'fully abolish remote work'. Reason one: remote lowers collaboration efficiency. Reason two: remote weakens belonging and loses talent. 'Delayed by 30%' backs up the reasons. 'Commute is the efficiency killer' is the employees' objection, and 'double your efficiency' is vendor marketing — neither supports the decision. Arguments often mix many voices; sort each one to its owner."
+    "explanation": "The conclusion is 'ban students from bringing smartphones onto campus'. Reason one: with less phone distraction in class, teachers report better focus. Reason two: cyberbullying complaints fell by forty percent. 'Deserve a more wonderful digital world' is a phone brand's ad cashing in on the topic; 'educational apps are important tools, so an outright ban is unreasonable' is the students' objection. When hunting for reasons, ask: does this sentence support the rule, sell something, or push back against it?"
   }
 }
