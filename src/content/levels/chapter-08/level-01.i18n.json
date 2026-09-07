@@ -13,8 +13,8 @@
       "q_sample": "一百名受访者是如何选取的？能代表全体人群吗？",
       "q_causation": "睡得少和效率高，谁是因谁是果？会不会是别的因素在起作用？",
       "q_control": "不喝咖啡的人效率高，是否对照过其他生活习惯？",
-      "q_d1": "这项调查是在哪个城市进行的？",
-      "q_d2": "受访者喜欢什么颜色的办公桌？"
+      "q_d1": "这项调查一共进行了多少天？",
+      "q_d2": "受访者每天通勤大概多长时间？"
     },
     "hints": [
       "一百人，能代表所有人吗？怎么选的样本？",
@@ -37,8 +37,8 @@
       "q_sample": "How were the one hundred participants selected? Do they represent everyone?",
       "q_causation": "Between less sleep and higher productivity, which is the cause? Could another factor be at work?",
       "q_control": "For the productive non-coffee-drinkers, were other lifestyle habits controlled?",
-      "q_d1": "In which city was this survey conducted?",
-      "q_d2": "What color are the participants' desks?"
+      "q_d1": "How many days did this survey run in total?",
+      "q_d2": "How long is the respondents' daily commute?"
     },
     "hints": [
       "Can one hundred people represent everyone? How was the sample chosen?",

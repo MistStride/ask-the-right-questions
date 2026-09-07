@@ -13,8 +13,8 @@
       "q_samplebias": "只研究年轻白领，结论能代表老人、病人或体力劳动者吗？",
       "q_corr": "喝咖啡和体检更健康，谁是因谁是果？有没有第三因素？",
       "q_control": "为什么把对照组排除？不喝咖啡的人数据如何？",
-      "q_d1": "这个研究做了几年？",
-      "q_d2": "咖啡是什么牌子的？"
+      "q_d1": "研究团队总共发表过多少篇咖啡相关的论文？",
+      "q_d2": "研究期间志愿者喝的是哪个牌子的咖啡？"
     },
     "hints": [
       "样本是谁？能代表结论覆盖的全体吗？",
@@ -37,8 +37,8 @@
       "q_samplebias": "Studying only young white-collar workers — can the conclusion represent the elderly, the sick, or manual laborers?",
       "q_corr": "Between coffee and better checkups, which is the cause? Could a third factor drive both?",
       "q_control": "Why was the control group excluded? What do the non-drinkers' numbers show?",
-      "q_d1": "How many years did this study run?",
-      "q_d2": "What brand of coffee was used?"
+      "q_d1": "How many coffee-related papers has the research team published in total?",
+      "q_d2": "What brand of coffee did the volunteers drink during the study?"
     },
     "hints": [
       "Who is in the sample? Can it represent the population of the conclusion?",

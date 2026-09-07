@@ -13,8 +13,8 @@
       "q_crosssection": "这是同一时间点的调查吗？能区分「谁先谁后」吗？",
       "q_selfreport": "学生自报的时长准确吗？有没有客观测量？",
       "q_nocontrol2": "户外运动、遗传、用眼习惯这些因素，考虑了吗？",
-      "q_d1": "调查问卷是什么颜色的？",
-      "q_d2": "30 所学校分布在哪些区？"
+      "q_d1": "问卷是纸质的还是电子版发放的？",
+      "q_d2": "这次调查一共投入了多少经费？"
     },
     "hints": [
       "同一时间的调查，说不清谁因谁果",
@@ -37,8 +37,8 @@
       "q_crosssection": "Is this a single-point-in-time survey? Can it tell which came first?",
       "q_selfreport": "Are the self-reported hours accurate? Was there any objective measurement?",
       "q_nocontrol2": "Were outdoor activity, genetics, and eye-use habits considered?",
-      "q_d1": "What color were the survey questionnaires?",
-      "q_d2": "Which districts do the 30 schools belong to?"
+      "q_d1": "Was the questionnaire distributed on paper or digitally?",
+      "q_d2": "How much did this survey cost in total?"
     },
     "hints": [
       "A snapshot in time cannot say which caused which",
