@@ -1,6 +1,6 @@
 {
   "zh": {
-    "scenario": "家族群里，二舅转发了一条链接：「XX 保健品，我爸吃了一周高血压就好了！医生都是骗钱的，大家别去医院了！」三叔马上附和：「这种链接我见多了，发这种链接的人都没上过大学，能信吗？」",
+    "scenario": "家族群里，二舅转发链接：「XX 保健品，我爸吃了一周高血压就好了！医生都是骗钱的，大家别去医院了！」三叔马上附和：「发这种链接的人都没上过大学，能信吗？」你母亲也转来一句：「我同事吃了也说神，咱也买两盒？」你手指悬在「转发」键上——这时候，到底该信谁？",
     "impulsePrompts": {
       "ev_conclusion": "医生都是骗钱的！",
       "ev_ego": "我爸说的就是对的！",
@@ -39,7 +39,7 @@
     "explanation": "这条链接犯了「把个人经历当普遍证据」的错，而三叔的回应犯了「以人废言」——用学历否定内容。中间还藏着一个反问陷阱：「你凭什么不信我爸」表面是提问，实际已预设答案。真正的淘金式思维：问证据、辨真伪、把断言当断言来检验。"
   },
   "en": {
-    "scenario": "In the family group, Uncle #2 forwards a link: \"This supplement fixed my dad's blood pressure in a week! Doctors are all scammers — everyone stop going to the hospital!\" Uncle #3 chimes in: \"I've seen links like this before — people who share them never went to college, how can you trust them?\"",
+    "scenario": "In the family group, Uncle #2 forwards a link: 'This supplement fixed my dad's blood pressure in a week! Doctors are all scammers — everyone stop going to the hospital!' Uncle #3 chimes in: 'I've seen links like this before — people who share them never went to college, how can you trust them?' Your mother adds: 'A coworker took it and says it's magic — should we buy two boxes?' Your finger hovers over 'forward' — so who do you believe?",
     "impulsePrompts": {
       "ev_conclusion": "Doctors are all scammers!",
       "ev_ego": "My dad is right!",
@@ -58,11 +58,11 @@
     },
     "eventMeta": {
       "ev_conclusion": {
-        "calm": "Can one case (my dad) prove that \"all doctors are scammers\"? That conclusion needs a lot of solid data — ask for evidence first, don't jump to conclusions.",
+        "calm": "Can one case (my dad) prove that 'all doctors are scammers'? That conclusion needs a lot of solid data — ask for evidence first, don't jump to conclusions.",
         "biasLabel": "Jumping to Conclusions"
       },
       "ev_ego": {
-        "calm": "Notice: \"What right do you have to doubt my dad?\" is a rhetorical question — it sounds like a question but already assumes \"my dad is right\". Real questions seek evidence; rhetorical ones drag you toward a preset verdict.",
+        "calm": "Notice: 'What right do you have to doubt my dad?' is a rhetorical question — it sounds like a question but already assumes 'my dad is right'. Real questions seek evidence; rhetorical ones drag you toward a preset verdict.",
         "biasLabel": "Egocentrism"
       },
       "ev_person": {
@@ -75,6 +75,6 @@
       "Beware rhetorical questions — they look like questions but already decide the answer",
       "Judge the claim, not the person; the right move is not always a question"
     ],
-    "explanation": "The link commits \"anecdote as universal evidence\", while Uncle #3's reply commits \"judging the messenger\" — dismissing the content because of education. Hidden in between is a rhetorical trap: \"what right do you have to doubt my dad?\" looks like a question but presumes the answer. Real gold-mining thinking: ask for evidence, tell real questions from fake ones, and test claims as claims."
+    "explanation": "The link commits 'anecdote as universal evidence', while Uncle #3's reply commits 'judging the messenger' — dismissing the content because of education. Hidden in between is a rhetorical trap: 'what right do you have to doubt my dad?' looks like a question but presumes the answer. Real gold-mining thinking: ask for evidence, tell real questions from fake ones, and test claims as claims."
   }
 }

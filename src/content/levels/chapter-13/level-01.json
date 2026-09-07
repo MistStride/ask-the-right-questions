@@ -8,7 +8,7 @@
   "mode": "boss",
   "scenarioRef": "scenario",
   "initialRage": 15,
-  "ragePerMiss": 15,
+  "ragePerMiss": 18,
   "impulseEvents": [
     {
       "eventId": "ev_conformity",
@@ -19,14 +19,14 @@
     {
       "eventId": "ev_report",
       "biasType": "jumping_to_conclusion",
-      "optionRefs": ["opt_seal", "opt_ask_c5", "opt_doubt"],
+      "optionRefs": ["opt_seal", "opt_ask_c5", "opt_trust_report"],
       "correctOptionRef": "opt_ask_c5"
     },
     {
       "eventId": "ev_bw2",
       "biasType": "black_and_white",
-      "optionRefs": ["opt_accept", "opt_ask_c3", "opt_echo"],
-      "correctOptionRef": "opt_ask_c3"
+      "optionRefs": ["opt_accept", "opt_judge_bw", "opt_echo"],
+      "correctOptionRef": "opt_judge_bw"
     },
     {
       "eventId": "ev_ego2",
@@ -42,9 +42,21 @@
     },
     {
       "eventId": "ev_regret",
-      "biasType": "jumping_to_conclusion",
+      "biasType": "pseudo_question",
       "optionRefs": ["opt_rhet2", "opt_check", "opt_ignore"],
       "correctOptionRef": "opt_check"
+    },
+    {
+      "eventId": "ev_scarcity",
+      "biasType": "scarcity",
+      "optionRefs": ["opt_panic", "opt_judge_sc", "opt_wait"],
+      "correctOptionRef": "opt_judge_sc"
+    },
+    {
+      "eventId": "ev_sunk",
+      "biasType": "sunk_cost",
+      "optionRefs": ["opt_sunk", "opt_judge_sunk", "opt_refund"],
+      "correctOptionRef": "opt_judge_sunk"
     }
   ]
 }
