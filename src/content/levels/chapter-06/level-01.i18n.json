@@ -2,7 +2,7 @@
   "zh": {
     "caseTitle": "病历：一位烦躁的来访者",
     "witnessName": "小李的自述",
-    "testimony": "大夫，我最近特别烦。我们领导在会上批评了我的方案，说他觉得太激进了。哼，他自己连大学都没上过，凭什么评价我的专业方案？要我说，他就是嫉妒我学历比他高。你们要是听了他的话，肯定也会觉得我不好，那我干脆辞职算了——反正这公司迟早要完，我听说隔壁组已经走了三个人了。",
+    "testimony": "大夫，我最近特别烦。上周我们领导在会上批评了我的新方案，说他觉得太激进了。其实上个月他还夸过我另一个项目，我本来挺高兴的。哼，他自己连大学都没上过，凭什么评价我的专业方案？要我说，他就是嫉妒我学历比他高。你们要是听了他的话，肯定也会觉得我不好，那我干脆辞职算了——反正这公司迟早要完，我听说隔壁组已经走了三个人了，财务那边也有人说要降薪。",
     "textRefs": {
       "spot_ad_hominem": "他自己连大学都没上过，凭什么评价我的专业方案",
       "spot_slippery": "你们要是听了他的话，肯定也会觉得我不好，那我干脆辞职算了",
@@ -13,20 +13,20 @@
       "q_ad_hominem": "领导有没有大学文凭，与他评价的对错有关系吗？",
       "q_slippery": "从批评方案到公司倒闭，中间每一环都必然成立吗？",
       "q_hasty": "三个人的离职能代表整个公司的状况吗？",
-      "q_d1": "领导平时几点下班？",
-      "q_d2": "您今天午饭吃的什么？"
+      "q_d1": "领导是不是平时就爱挑学历比他高的人的毛病？",
+      "q_d2": "公司最近是不是真有大规模的裁员计划？"
     },
     "hints": [
       "注意：他是在评价领导的「人」，还是在评价领导的「观点」？",
       "从批评方案到公司要完，中间是不是跳了好几级？",
       "几个人的例子，能代表整个公司吗？"
     ],
-    "explanation": "这段自述藏着三种常见谬误：①诉诸人身——用「没上过大学」否定对方的观点，而不是讨论观点本身；②滑坡谬误——把一次批评推演成公司倒闭，缺少每一环的证据；③以偏概全——三个人的离职被夸大成公司的整体命运。识别谬误，是抵御被带节奏的第一道防线。"
+    "explanation": "这段自述藏着三种常见谬误：①诉诸人身——用「没上过大学」否定对方的观点，而不是讨论观点本身；②滑坡谬误——把一次批评推演成公司倒闭，缺少每一环的证据；③以偏概全——三个人的离职和一句降薪传闻，被夸大成公司的整体命运。识别谬误，是抵御被带节奏的第一道防线。注意「上个月还夸过我」这类背景细节只是情绪铺垫，与论证对错无关。"
   },
   "en": {
     "caseTitle": "Record: A Frustrated Visitor",
     "witnessName": "Patient Li",
-    "testimony": "Doctor, I have been really upset lately. Our manager criticized my proposal at the meeting, saying it was too aggressive. Well, he never even went to college, so what right does he have to judge my professional proposal? If you listen to him, you will surely think badly of me too, and then I might as well quit — this company is going to collapse anyway. I heard three people already left the team next door.",
+    "testimony": "Doctor, I have been really upset lately. Last week our manager criticized my new proposal at the meeting, saying it was too aggressive. Actually, last month he even praised another project of mine, which made me quite happy. Well, he never even went to college, so what right does he have to judge my professional proposal? If you listen to him, you will surely think badly of me too, and then I might as well quit — this company is going to collapse anyway. I heard three people already left the team next door, and someone in finance says pay cuts are coming.",
     "textRefs": {
       "spot_ad_hominem": "he never even went to college",
       "spot_slippery": "you will surely think badly of me too",
@@ -37,14 +37,14 @@
       "q_ad_hominem": "Does whether the manager went to college change whether his critique is right?",
       "q_slippery": "Is every step from a criticism to a collapsed company truly inevitable?",
       "q_hasty": "Can three resignations represent the whole company?",
-      "q_d1": "What time does the manager usually leave work?",
-      "q_d2": "What did you eat for lunch today?"
+      "q_d1": "Does the manager usually pick on people who are more educated than him?",
+      "q_d2": "Is the company actually planning a large round of layoffs?"
     },
     "hints": [
       "Is he attacking the manager's person, or the manager's argument?",
       "From criticism to collapse — did the reasoning skip several steps?",
       "Can a few examples represent the entire company?"
     ],
-    "explanation": "This monologue hides three common fallacies: ① ad hominem — dismissing the argument because of the manager's education, instead of addressing the argument itself; ② slippery slope — stretching one criticism into a company collapse without evidence at each step; ③ hasty generalization — blowing three resignations up into the company's whole fate. Spotting fallacies is the first line of defense against being led astray."
+    "explanation": "This monologue hides three common fallacies: ① ad hominem — dismissing the argument because of the manager's education, instead of addressing the argument itself; ② slippery slope — stretching one criticism into a company collapse without evidence at each step; ③ hasty generalization — blowing three resignations and a pay-cut rumor up into the company's whole fate. Spotting fallacies is the first line of defense against being led astray. Background details like \"he praised me last month\" are just emotional padding — irrelevant to whether the argument holds."
   }
 }
