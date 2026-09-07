@@ -63,6 +63,15 @@ export default function ChapterPage() {
           )}
         </div>
 
+        {/* 知识教学卡：进入关卡前，把本章接回《学会提问》原书 */}
+        <div className="mt-5 rounded-2xl border border-line bg-panel-2 p-5">
+          <p className="mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-amber-700">
+            <span>📖</span>
+            {locale === 'zh' ? '本章知识点 · 来自《学会提问》' : 'Concept · from Asking the Right Questions'}
+          </p>
+          <p className="text-sm leading-relaxed text-slate-700">{chapter.teaching[locale]}</p>
+        </div>
+
         <div className="mt-5">
           <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-slate-500">
             {locale === 'zh' ? '关卡列表' : 'Levels'} · {doneCount}/{levels.length}
