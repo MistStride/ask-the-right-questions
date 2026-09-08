@@ -9,6 +9,7 @@ import OptionCards, { type TamerOption } from './OptionCards'
 import { TAMER_UI } from './tamerI18n'
 import HintPanel from '../../components/HintPanel'
 import LevelCompleteModal from '../../components/LevelCompleteModal'
+import { applyHintPenalty, hintCostFor, type ScoreBreakdown } from '../../utils/hintPolicy'
 import { useUiStore } from '../../store/uiStore'
 import { useProgressStore } from '../../store/progressStore'
 import { useSettingsStore } from '../../store/settingsStore'
@@ -46,20 +47,29 @@ export default function TamerEngine({
   const [spongeFlash, setSpongeFlash] = useState(false)
   const [modalOpen, setModalOpen] = useState(false)
   const [score, setScore] = useState(80)
+  const [hintsUsed, setHintsUsed] = useState(0)
+  const [scoreDetail, setScoreDetail] = useState<ScoreBreakdown | null>(null)
+  const [attempt, setAttempt] = useState(0)
   const settledRef = useRef(false)
 
   // 通关结算
   useEffect(() => {
     if (isComplete && !settledRef.current) {
       settledRef.current = true
-      const finalScore = Math.max(60, 100 - wrongTries * 10)
+      const raw = Math.max(60, 100 - wrongTries * 10)
+      const finalScore = applyHintPenalty(raw, hintsUsed, level.meta.difficulty)
       setScore(finalScore)
+      setScoreDetail({
+        base: raw,
+        hintsUsed,
+        cost: hintCostFor(level.meta.difficulty),
+      })
       markLevelComplete(level.meta.levelId, finalScore, level.meta.rewardTags)
       const timer = window.setTimeout(() => setModalOpen(true), 900)
       return () => window.clearTimeout(timer)
     }
     return undefined
-  }, [isComplete, wrongTries, level, markLevelComplete])
+  }, [isComplete, wrongTries, hintsUsed, level, markLevelComplete])
 
   const handleOption = (key: string) => {
     const outcome = select(key)
@@ -85,6 +95,8 @@ export default function TamerEngine({
   const handleReplay = () => {
     setModalOpen(false)
     settledRef.current = false
+    setHintsUsed(0)
+    setAttempt((a) => a + 1)
     reset()
     onReplay()
   }
@@ -184,7 +196,13 @@ export default function TamerEngine({
             )}
           </div>
 
-          <HintPanel hints={level.hints} locale={locale} />
+          <HintPanel
+            key={attempt}
+            hints={level.hints}
+            locale={locale}
+            difficulty={level.meta.difficulty}
+            onUsedChange={setHintsUsed}
+          />
 
           {/* 底部操作 */}
           <div className="mt-6 flex items-center gap-3">
@@ -204,6 +222,7 @@ export default function TamerEngine({
         open={modalOpen}
         levelTitle={chapterTitle}
         score={score}
+        scoreDetail={scoreDetail}
         rewardTags={level.meta.rewardTags}
         explanation={level.explanation}
         contributor={level.meta.contributor}

@@ -1,6 +1,7 @@
 // 通关结算弹窗：所有引擎共用。展示深度解析 + 雷达维度奖励 + 操作按钮。
 import { motion } from 'framer-motion'
 import type { Locale, RadarDimension } from '../schema/levelTypes'
+import type { ScoreBreakdown } from '../utils/hintPolicy'
 
 const TAG_LABELS: Record<RadarDimension, { zh: string; en: string }> = {
   structure: { zh: '结构识别力', en: 'Structure' },
@@ -26,6 +27,8 @@ interface Props {
   /** 引擎自定义通关标题/副标题（缺省用透视镜文案） */
   completionTitle?: string
   completionSub?: string
+  /** 得分构成（用于展示「基础分 − 提示扣分 = 总分」），不传则不渲染 */
+  scoreDetail?: ScoreBreakdown | null
 }
 
 const LABELS = {
@@ -33,6 +36,9 @@ const LABELS = {
     complete: '论证结构已还原！',
     sub: '你成功用透视镜扫出了这段论证的骨架',
     scoreLabel: '还原度',
+    baseLabel: '基础准确度',
+    hintLabel: '使用了提示',
+    finalLabel: '最终得分',
     explain: '深度解析',
     next: '下一关 →',
     home: '返回地图',
@@ -44,6 +50,9 @@ const LABELS = {
     complete: 'Argument structure restored!',
     sub: 'You scanned the skeleton of this argument',
     scoreLabel: 'Accuracy',
+    baseLabel: 'Base accuracy',
+    hintLabel: 'Hints used',
+    finalLabel: 'Final score',
     explain: 'Deep Dive',
     next: 'Next Level →',
     home: 'Back to Map',
@@ -67,6 +76,7 @@ export default function LevelCompleteModal({
   locale,
   completionTitle,
   completionSub,
+  scoreDetail,
 }: Props) {
   if (!open) return null
   const t = LABELS[locale]
@@ -108,6 +118,28 @@ export default function LevelCompleteModal({
               </span>
             ))}
           </div>
+
+          {/* 得分构成：基础分 − 提示扣分 = 总分（难度接入机制） */}
+          {scoreDetail && scoreDetail.hintsUsed > 0 && (
+            <div className="mt-3 rounded-lg border border-line bg-slate-50 px-4 py-2.5 text-xs leading-6 text-slate-600">
+              <div className="flex items-center justify-between">
+                <span>{t.baseLabel}</span>
+                <span className="font-mono font-semibold">{scoreDetail.base}</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span>
+                  {t.hintLabel}（{scoreDetail.hintsUsed} × −{scoreDetail.cost}）
+                </span>
+                <span className="font-mono font-semibold text-red-500">
+                  −{scoreDetail.hintsUsed * scoreDetail.cost}
+                </span>
+              </div>
+              <div className="mt-1 flex items-center justify-between border-t border-line pt-1 text-slate-800">
+                <span className="font-medium">{t.finalLabel}</span>
+                <span className="font-mono text-base font-bold text-cyan-700">{score}</span>
+              </div>
+            </div>
+          )}
 
           {/* 深度解析 */}
           <div className="mt-4 rounded-xl border border-line bg-panel-2 p-4">

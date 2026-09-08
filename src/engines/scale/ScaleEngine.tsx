@@ -8,6 +8,7 @@ import CalibrationSlider from './CalibrationSlider'
 import { SCALE_UI } from './scaleI18n'
 import HintPanel from '../../components/HintPanel'
 import LevelCompleteModal from '../../components/LevelCompleteModal'
+import { applyHintPenalty, hintCostFor, type ScoreBreakdown } from '../../utils/hintPolicy'
 import { useUiStore } from '../../store/uiStore'
 import { useProgressStore } from '../../store/progressStore'
 import { useSettingsStore } from '../../store/settingsStore'
@@ -44,6 +45,9 @@ export default function ScaleEngine({
   const [modalOpen, setModalOpen] = useState(false)
   const [score, setScore] = useState(0)
   const [settled, setSettled] = useState(false)
+  const [hintsUsed, setHintsUsed] = useState(0)
+  const [scoreDetail, setScoreDetail] = useState<ScoreBreakdown | null>(null)
+  const [attempt, setAttempt] = useState(0)
 
   const modeLabel = useMemo(
     () => (mode === 'conclusion' ? t.modeConclusion : t.modeSpectrum),
@@ -61,8 +65,14 @@ export default function ScaleEngine({
     }
     if (settled) return
     setSettled(true)
-    const finalScore = bestScore
+    const raw = bestScore
+    const finalScore = applyHintPenalty(raw, hintsUsed, level.meta.difficulty)
     setScore(finalScore)
+    setScoreDetail({
+      base: raw,
+      hintsUsed,
+      cost: hintCostFor(level.meta.difficulty),
+    })
     markLevelComplete(level.meta.levelId, finalScore, level.meta.rewardTags)
     setModalOpen(true)
   }
@@ -71,6 +81,8 @@ export default function ScaleEngine({
     setModalOpen(false)
     setSettled(false)
     setScore(0)
+    setHintsUsed(0)
+    setAttempt((a) => a + 1)
     reset()
     onReplay()
   }
@@ -151,7 +163,13 @@ export default function ScaleEngine({
         </div>
       </div>
 
-      <HintPanel hints={level.hints} locale={locale} />
+      <HintPanel
+        key={attempt}
+        hints={level.hints}
+        locale={locale}
+        difficulty={level.meta.difficulty}
+        onUsedChange={setHintsUsed}
+      />
 
       {/* 底部操作 */}
       <div className="mt-6 flex items-center gap-3">
@@ -178,6 +196,7 @@ export default function ScaleEngine({
         open={modalOpen}
         levelTitle={chapterTitle}
         score={score}
+        scoreDetail={scoreDetail}
         rewardTags={level.meta.rewardTags}
         explanation={level.explanation}
         contributor={level.meta.contributor}

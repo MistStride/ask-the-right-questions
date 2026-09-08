@@ -12,6 +12,7 @@ import CourtroomTestimony from './CourtroomTestimony'
 import CourtroomBurst from './CourtroomBurst'
 import HintPanel from '../../components/HintPanel'
 import LevelCompleteModal from '../../components/LevelCompleteModal'
+import { applyHintPenalty, hintCostFor, type ScoreBreakdown } from '../../utils/hintPolicy'
 import { useUiStore } from '../../store/uiStore'
 import { useProgressStore } from '../../store/progressStore'
 import { useSettingsStore } from '../../store/settingsStore'
@@ -73,6 +74,9 @@ export default function CourtroomEngine({
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [modalOpen, setModalOpen] = useState(false)
   const [score, setScore] = useState(100)
+  const [hintsUsed, setHintsUsed] = useState(0)
+  const [scoreDetail, setScoreDetail] = useState<ScoreBreakdown | null>(null)
+  const [attempt, setAttempt] = useState(0)
   const settledRef = useRef(false)
   const dragQuestionRef = useRef<CourtroomQuestion | null>(null)
 
@@ -96,14 +100,20 @@ export default function CourtroomEngine({
   useEffect(() => {
     if (isComplete && !settledRef.current) {
       settledRef.current = true
-      const finalScore = Math.round(50 + remainingCredibility * 0.4 + Math.max(0, 20 - wrongTries * 5))
+      const raw = Math.round(50 + remainingCredibility * 0.4 + Math.max(0, 20 - wrongTries * 5))
+      const finalScore = applyHintPenalty(raw, hintsUsed, level.meta.difficulty)
       setScore(finalScore)
+      setScoreDetail({
+        base: raw,
+        hintsUsed,
+        cost: hintCostFor(level.meta.difficulty),
+      })
       markLevelComplete(level.meta.levelId, finalScore, level.meta.rewardTags)
       const timer = window.setTimeout(() => setModalOpen(true), 1400)
       return () => window.clearTimeout(timer)
     }
     return undefined
-  }, [isComplete, remainingCredibility, wrongTries, level, markLevelComplete])
+  }, [isComplete, remainingCredibility, wrongTries, hintsUsed, level, markLevelComplete])
 
   const handleStrike = (questionId: string, spot: CourtroomSpot) => {
     const q = questionsById.get(questionId)
@@ -140,6 +150,8 @@ export default function CourtroomEngine({
     setModalOpen(false)
     settledRef.current = false
     setSelectedId(null)
+    setHintsUsed(0)
+    setAttempt((a) => a + 1)
     reset()
     onReplay()
   }
@@ -227,7 +239,13 @@ export default function CourtroomEngine({
         />
       </div>
 
-      <HintPanel hints={level.hints} locale={locale} />
+      <HintPanel
+        key={attempt}
+        hints={level.hints}
+        locale={locale}
+        difficulty={level.meta.difficulty}
+        onUsedChange={setHintsUsed}
+      />
 
       {/* 底部操作 */}
       <div className="mt-6 flex items-center gap-3">
@@ -245,6 +263,7 @@ export default function CourtroomEngine({
         open={modalOpen}
         levelTitle={chapterTitle}
         score={score}
+        scoreDetail={scoreDetail}
         rewardTags={level.meta.rewardTags}
         explanation={level.explanation}
         contributor={level.meta.contributor}

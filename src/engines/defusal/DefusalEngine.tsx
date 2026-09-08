@@ -9,6 +9,7 @@ import BombFlash from './BombFlash'
 import { DEFUSE_UI } from './defusalI18n'
 import HintPanel from '../../components/HintPanel'
 import LevelCompleteModal from '../../components/LevelCompleteModal'
+import { applyHintPenalty, hintCostFor, type ScoreBreakdown } from '../../utils/hintPolicy'
 import { useUiStore } from '../../store/uiStore'
 import { useProgressStore } from '../../store/progressStore'
 import { useSettingsStore } from '../../store/settingsStore'
@@ -43,6 +44,9 @@ export default function DefusalEngine({
 
   const [modalOpen, setModalOpen] = useState(false)
   const [score, setScore] = useState(88)
+  const [hintsUsed, setHintsUsed] = useState(0)
+  const [scoreDetail, setScoreDetail] = useState<ScoreBreakdown | null>(null)
+  const [attempt, setAttempt] = useState(0)
   const settledRef = useRef(false)
 
   const traps = level.spots.filter((s) => s.isTrap)
@@ -51,14 +55,20 @@ export default function DefusalEngine({
   useEffect(() => {
     if (isComplete && !settledRef.current) {
       settledRef.current = true
-      const finalScore = Math.max(70, 100 - wrongCount * 8)
+      const raw = Math.max(70, 100 - wrongCount * 8)
+      const finalScore = applyHintPenalty(raw, hintsUsed, level.meta.difficulty)
       setScore(finalScore)
+      setScoreDetail({
+        base: raw,
+        hintsUsed,
+        cost: hintCostFor(level.meta.difficulty),
+      })
       markLevelComplete(level.meta.levelId, finalScore, level.meta.rewardTags)
       const timer = window.setTimeout(() => setModalOpen(true), 1100)
       return () => window.clearTimeout(timer)
     }
     return undefined
-  }, [isComplete, wrongCount, level, markLevelComplete])
+  }, [isComplete, wrongCount, hintsUsed, level, markLevelComplete])
 
   const handleTapSpot = (spotId: string) => {
     const outcome = tapSpot(spotId)
@@ -75,6 +85,8 @@ export default function DefusalEngine({
   const handleReplay = () => {
     setModalOpen(false)
     settledRef.current = false
+    setHintsUsed(0)
+    setAttempt((a) => a + 1)
     reset()
     onReplay()
   }
@@ -146,7 +158,13 @@ export default function DefusalEngine({
         </p>
       </div>
 
-      <HintPanel hints={level.hints} locale={locale} />
+      <HintPanel
+        key={attempt}
+        hints={level.hints}
+        locale={locale}
+        difficulty={level.meta.difficulty}
+        onUsedChange={setHintsUsed}
+      />
 
       {/* 底部操作 */}
       <div className="mt-6 flex items-center gap-3">
@@ -164,6 +182,7 @@ export default function DefusalEngine({
         open={modalOpen}
         levelTitle={chapterTitle}
         score={score}
+        scoreDetail={scoreDetail}
         rewardTags={level.meta.rewardTags}
         explanation={level.explanation}
         contributor={level.meta.contributor}
