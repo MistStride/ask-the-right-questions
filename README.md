@@ -38,8 +38,11 @@ React 19 · TypeScript · Vite · Tailwind CSS 4 · Zustand · Framer Motion · 
 ```bash
 npm install
 npm run dev        # http://localhost:5173
-npm run build      # production build → dist/
-npm run preview    # preview the production build locally
+npm run lint       # static checks
+npm test           # Vitest unit + content-contract tests
+npm run build      # validated production build → docs/
+npm run test:e2e   # build + five-engine Playwright smoke test
+npm run preview    # GitHub Pages-path production preview
 ```
 
 > Note: the project uses **hash routing** (`/#/level/...`) so it works on any static host without server-side fallback config.
@@ -63,10 +66,10 @@ This project commits its **build output into `docs/`** (see `vite.config.ts` →
 > After changing code, rebuild and commit the new output: `npm run build && git add docs && git commit && git push`.
 > (Folder `/ (root)` publishes the raw source and will show a blank page — always use `/docs`.)
 
-### CI — build check (optional)
+### CI — quality gate
 
-The repo ships `.github/workflows/deploy.yml` as a **build check**: every push to `main`
-runs `npm ci && npm run build`, which also validates all level data (Zod + anchor checks).
+The repo ships `.github/workflows/deploy.yml` as a **quality gate**: every push and pull request to `main`
+runs lint, Vitest, the validated production build, and a five-engine Playwright smoke test against the Pages-path preview.
 You don't need to use GitHub Actions for deployment — Option A above is the live mechanism.
 
 ### Troubleshooting — blank page

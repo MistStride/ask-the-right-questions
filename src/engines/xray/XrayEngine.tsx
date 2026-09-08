@@ -7,7 +7,8 @@ import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { motion } from 'framer-motion'
 import { segmentByAnchors } from '../../utils/matchAnchors'
 import { useXrayLogic } from './useXrayLogic'
-import XrayNode, { NODE_TYPE_LABELS } from './XrayNode'
+import XrayNode from './XrayNode'
+import { NODE_TYPE_LABELS } from './xrayNodeMeta'
 import XrayChainArrows from './XrayChainArrows'
 import DigSite from './DigSite'
 import GapNode from './GapNode'
@@ -297,7 +298,7 @@ export default function XrayEngine({
   }
 
   return (
-    <div className="mx-auto w-full max-w-3xl px-4 pb-16">
+    <div data-engine="xray" className="mx-auto w-full max-w-3xl px-4 pb-16">
       {/* 顶部状态栏 */}
       <div className="mb-4 flex flex-wrap items-center gap-3">
         <button

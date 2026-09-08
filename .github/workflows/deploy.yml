@@ -1,11 +1,13 @@
-# 构建检查（CI）：每次 push 到 main 自动执行。
+# 质量门禁（CI）：每次 push 到 main 或 Pull Request 自动执行。
 # 注意：GitHub Pages 部署不依赖本 workflow —— 采用
 #   Settings → Pages → Deploy from a branch: main / folder: /docs
 # 构建产物已提交进 docs/ 目录（vite build outDir='docs'），push 后 Pages 自动更新。
-name: CI Build Check
+name: CI Quality Gate
 
 on:
   push:
+    branches: [main]
+  pull_request:
     branches: [main]
   workflow_dispatch:
 
@@ -13,7 +15,7 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  quality:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -25,6 +27,15 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci
-      # build 时会执行全部关卡的 Zod 校验 + 锚点校验，数据不合法会直接失败
-      - name: Build (validates all level data)
+      - name: Lint source and tests
+        run: npm run lint
+      - name: Unit tests
+        run: npm test
+      # build 先执行 35 关 Zod/跨文件校验 + 独立锚点校验，再产出 docs/。
+      - name: Validate content and build
         run: npm run build
+      - name: Install Playwright browser
+        run: npx playwright install --with-deps chromium
+      # 启动与 GitHub Pages 同路径的 docs 预览，验证生产产物而不是开发服务器。
+      - name: Smoke test all five engines on production preview
+        run: node scripts/run-e2e.mjs

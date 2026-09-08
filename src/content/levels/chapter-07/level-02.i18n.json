@@ -13,15 +13,15 @@
       "q_celebrity": "明星的肌肉，真的是这款蛋白粉的功劳吗？有没有其他因素？",
       "q_noqual": "「最专业的营养师团队」具体是谁？能提供资质和履历吗？",
       "q_sponsor": "销量下滑有没有更简单的解释，比如产品本身的问题？",
-      "q_d1": "这支广告的拍摄成本是多少？",
-      "q_d2": "蛋白粉包装上建议每天喝几次、每次几勺？"
+      "q_d1": "明星代言上线后，这款蛋白粉的销量提高了多少？",
+      "q_d2": "营养师团队参与这支广告的时间有多长？"
     },
     "hints": [
       "名人代言 ≠ 产品有效——明星也是被雇来念稿的",
       "「我们请了专家」——专家是谁？可查证吗？",
       "利益相关方的「辟谣」，先打个问号"
     ],
-    "explanation": "这则代言证词有三处破绽：①名人「亲身推荐」把个人体验当证据，而明星的肌肉可能和产品毫无关系；②「最专业的营养师团队」无具体信息，无从验证；③公司为销量下滑辩解时存在直接利益冲突。看广告先问：说话的人是谁？他凭什么这么说？他跟这个产品有什么关系？"
+    "explanation": "这则代言证词有三处破绽：名人体验不等于产品功效，「最专业团队」无法核验，公司又有直接利益。销量涨幅只能说明代言有说服力，参与广告多久也不能证明营养师独立或专业；相关信息不等于关键证据。"
   },
   "en": {
     "caseTitle": "Case: A Celebrity-Endorsed Protein Powder",
@@ -37,14 +37,14 @@
       "q_celebrity": "Are the celebrity's muscles really thanks to this powder? Could other factors be at play?",
       "q_noqual": "Who exactly is \"the most professional team of nutritionists\"? Can you show credentials and track records?",
       "q_sponsor": "Is there a simpler explanation for the sales decline, like a problem with the product itself?",
-      "q_d1": "How much did this commercial cost to produce?",
-      "q_d2": "How many scoops per day does the label recommend?"
+      "q_d1": "How much did sales rise after the celebrity campaign launched?",
+      "q_d2": "How long did the nutritionist team work on this advertisement?"
     },
     "hints": [
       "Celebrity endorsement ≠ effective product — stars are hired to read a script",
       "\"We hired experts\" — who are they? Can you verify?",
       "Put a question mark on any \"rebuttal\" from an interested party"
     ],
-    "explanation": "This endorsement testimony has three flaws: ① the celebrity's \"personal recommendation\" treats personal experience as evidence, while his muscles may have nothing to do with the product; ② \"the most professional nutritionist team\" offers no verifiable information; ③ the company's excuse for falling sales is a direct conflict of interest. When you see an ad, ask: who is speaking? Why should we believe them? What's their relationship to the product?"
+    "explanation": "This endorsement has three flaws: celebrity experience does not prove efficacy, the 'most professional team' cannot be verified, and the company has a direct interest. A sales lift measures persuasion, while time spent on the ad proves neither expertise nor independence. Related information is not necessarily decisive evidence."
   }
 }

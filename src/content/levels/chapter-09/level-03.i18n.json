@@ -10,16 +10,16 @@
       "debunk_exam": "以偏概全：一个同桌的例子推不出「这一代孩子」的整体结论——单一样本撑不起大结论。",
       "q_blame": "成绩下滑一定是因为平板作业吗？有没有同时发生的其他变化？",
       "q_exam": "一个同桌的情况，能代表这一代孩子吗？",
-      "q_d1": "平板是学校统一配发，还是家长自己买的？",
-      "q_d2": "月考成绩是当场公布，还是隔天才公布？",
-      "q_d3": "班主任平时几点下班？"
+      "q_d1": "平板作业每天平均会占用学生多长时间？",
+      "q_d2": "同桌过去几次月考的成绩是否也一直在下降？",
+      "q_d3": "这次月考是否恰好发生在平板作业启用之后？"
     },
     "hints": [
       "「之后」不等于「因为」——找同时发生的其他变化",
       "一个孩子的例子，代表不了「这一代孩子」",
       "解释三提出了真正的替代原因——它不是破绽"
     ],
-    "explanation": "成绩下滑的归因里，解释一犯了「时间先后≠因果」（忽略换老师等共同变化），解释二犯了「以偏概全」（同桌≠这一代），解释三给出了合理的替代原因组合。给任何现象找原因时，先问：还有没有别的解释？"
+    "explanation": "成绩下滑的归因里，先后发生不等于因果，一个同桌也代表不了一代人。统计平板作业时长、确认启用顺序，只描述暴露和时间线，仍排除不了换老师等变化；多看同桌几次成绩会加强个案，却仍不能完成群体外推。"
   },
   "en": {
     "caseTitle": "Case: Why Did the Whole Class's Grades Drop?",
@@ -32,15 +32,15 @@
       "debunk_exam": "Hasty generalization: one deskmate's case cannot support a conclusion about \"this generation\" — a single sample cannot carry a sweeping claim.",
       "q_blame": "Must the grade drop come from tablet homework? Were there other simultaneous changes?",
       "q_exam": "Can one deskmate's situation represent this generation?",
-      "q_d1": "Were the tablets issued by the school or bought by parents?",
-      "q_d2": "Were the exam results announced right away or the next day?",
-      "q_d3": "What time does the homeroom teacher leave work?"
+      "q_d1": "How much time does tablet homework take each student per day on average?",
+      "q_d2": "Had the classmate's scores also been falling across earlier monthly exams?",
+      "q_d3": "Did this monthly exam happen immediately after tablet homework was introduced?"
     },
     "hints": [
       "\"Afterward\" is not \"because of\" — look for other simultaneous changes",
       "One child's example cannot represent \"this generation\"",
       "Explanation three offers the real rival causes — it is not a flaw"
     ],
-    "explanation": "In attributing the grade drop, explanation one commits post hoc (ignoring simultaneous changes like the new teacher), explanation two commits hasty generalization (deskmate ≠ generation), and explanation three offers a reasonable set of rival causes. When hunting for a cause, first ask: what other explanations exist?"
+    "explanation": "In attributing the grade drop, sequence is not causation and one classmate is not a generation. Tablet duration and rollout timing describe exposure but do not rule out changes such as a new teacher; checking more exams strengthens one case yet still cannot justify a population-wide claim."
   }
 }

@@ -10,16 +10,16 @@
       "debunk_generalize": "以偏概全：随机采访几位顾客，不代表全体市民的习惯——小样本撑不起「长期习惯」这种大结论。",
       "q_after": "销量暴涨一定是因为超市促销吗？会不会是居民主动抢购、超市被动补货？",
       "q_generalize": "采访几位顾客，能代表全体市民的长期习惯吗？",
-      "q_d1": "台风预警是提前几天发布的？",
-      "q_d2": "超市当天一共卖出了多少瓶饮用水？",
-      "q_d3": "台风登陆当天天气怎么样？"
+      "q_d1": "促销广告发布后，有多少顾客点击了活动页面？",
+      "q_d2": "被采访的顾客是否覆盖了不同年龄段？",
+      "q_d3": "抢购发生在促销开始后的第几个小时？"
     },
     "hints": [
       "台风前销量涨，不等于促销导致——可能是同一原因的两面",
       "几位顾客的采访，撑不起「全体市民习惯」的结论",
       "分析师三的解释更合理——它是替代原因，不是破绽"
     ],
-    "explanation": "这是一个替代原因案例：分析师一把「台风前销量涨」当作「促销导致」的证据（时间先后≠因果）；分析师二用几位顾客的采访推出「市民长期习惯」（以偏概全）；而分析师三提出的「避险集中采购」才是直接原因。看到一个解释，先找找还有没有别的解释。"
+    "explanation": "这是一个替代原因案例：促销之后销量涨不等于促销导致，几位顾客也代表不了市民长期习惯。页面点击量和抢购时点只能加强时间关联，不能排除台风避险；扩大受访者年龄能改善多样性，却仍未解决样本少与长期外推。"
   },
   "en": {
     "caseTitle": "Case: The \"Buying Rush\" After a Typhoon",
@@ -32,15 +32,15 @@
       "debunk_generalize": "Hasty generalization: a few randomly interviewed customers cannot represent all residents' long-term habits — a tiny sample cannot support a sweeping conclusion.",
       "q_after": "Must the surge be caused by the supermarket's promotion? Could residents have rushed to buy while the store passively restocked?",
       "q_generalize": "Can interviewing a few customers represent the long-term habits of all residents?",
-      "q_d1": "How many days before landfall was the typhoon warning issued?",
-      "q_d2": "How many bottles of water did the supermarket sell that day?",
-      "q_d3": "What was the weather like on the day of landfall?"
+      "q_d1": "How many customers clicked the promotion page after the ad appeared?",
+      "q_d2": "Did the interviewed customers cover several age groups?",
+      "q_d3": "How many hours after the promotion began did the rush occur?"
     },
     "hints": [
       "Sales rising before a typhoon is not proof of a promotion — the two may share one cause",
       "A few customer interviews cannot prove \"all residents' habits\"",
       "Analyst three's explanation is more reasonable — it is a rival cause, not a flaw"
     ],
-    "explanation": "This is a rival-causes case: analyst one treats \"sales rose before the typhoon\" as proof of promotion (post hoc); analyst two generalizes from a few customers to \"long-term habits\" (hasty generalization); analyst three's \"safety-driven bulk buying\" is the direct cause. When you meet one explanation, first hunt for others."
+    "explanation": "This is a rival-causes case: a sales rise after a promotion does not prove the promotion caused it, and a few customers cannot establish a city's long-term habit. Clicks and timing only strengthen sequence, not rule out storm preparation; broader ages improve diversity but not sample size or long-term generalization."
   }
 }

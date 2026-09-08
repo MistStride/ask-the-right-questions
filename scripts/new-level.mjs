@@ -191,6 +191,7 @@ const TEMPLATES = {
             eventId: 'ev_1', biasType: 'jumping_to_conclusion',
             optionRefs: ['opt_bad', 'opt_ask', 'opt_other'],
             correctOptionRef: 'opt_ask',
+            nearMissOptionRefs: ['opt_other'],
           },
         ],
       }

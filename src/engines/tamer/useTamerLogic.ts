@@ -1,17 +1,28 @@
 // 引擎E 心智驯兽场 判定 hook：
 //  - 点正确批判性问题 → 安抚成功（进入下一冲动）
-//  - 点错 → 大象躁动 +20%（可重选）；满 100% → 暴走（深呼吸重置当前冲动，不惩罚）
+//  - 近失误 → 小幅躁动；完全偏题 → 完整躁动（均可重选）
 //  - 通关 = 全部冲动安抚成功
 import { useCallback, useEffect, useState } from 'react'
 import type { TamerRuntimeLevel } from '../../schema/levelTypes'
 
-export type SelectOutcome = 'calmed' | 'miss' | 'raging'
+export type SelectOutcome = 'calmed' | 'near_miss' | 'miss' | 'raging'
+
+export function classifyTamerOption(
+  optionKey: string,
+  event: Pick<TamerRuntimeLevel['events'][number], 'correctKey' | 'nearMissKeys'>,
+): Exclude<SelectOutcome, 'raging'> {
+  if (optionKey === event.correctKey) return 'calmed'
+  if (event.nearMissKeys.includes(optionKey)) return 'near_miss'
+  return 'miss'
+}
 
 export function useTamerLogic(level: TamerRuntimeLevel) {
   const [idx, setIdx] = useState(0)
   const [rage, setRage] = useState(level.initialRage)
   const [wrongTries, setWrongTries] = useState(0)
+  const [nearMissTries, setNearMissTries] = useState(0)
   const [lastWrongKey, setLastWrongKey] = useState<string | null>(null)
+  const [lastNearMissKey, setLastNearMissKey] = useState<string | null>(null)
   const [calmKey, setCalmKey] = useState(0)
   const [raging, setRaging] = useState(false)
 
@@ -23,16 +34,27 @@ export function useTamerLogic(level: TamerRuntimeLevel) {
   const select = useCallback(
     (optionKey: string): SelectOutcome => {
       if (raging) return 'raging'
-      if (optionKey === current.correctKey) {
+      const outcome = classifyTamerOption(optionKey, current)
+      if (outcome === 'calmed') {
+        setLastWrongKey(null)
+        setLastNearMissKey(null)
         setCalmKey((k) => k + 1)
         setRage(0)
         setIdx((i) => i + 1)
         return 'calmed'
       }
-      setWrongTries((w) => w + 1)
+      if (outcome === 'near_miss') {
+        setLastWrongKey(null)
+        setLastNearMissKey(optionKey)
+        setNearMissTries((n) => n + 1)
+        setRage((r) => Math.min(100, r + Math.max(1, Math.round(level.ragePerMiss / 2))))
+        return 'near_miss'
+      }
+      setLastNearMissKey(null)
       setLastWrongKey(optionKey)
+      setWrongTries((w) => w + 1)
       setRage((r) => Math.min(100, r + level.ragePerMiss))
-      return 'miss'
+      return outcome
     },
     [raging, current, level.ragePerMiss],
   )
@@ -52,7 +74,9 @@ export function useTamerLogic(level: TamerRuntimeLevel) {
     setIdx(0)
     setRage(level.initialRage)
     setWrongTries(0)
+    setNearMissTries(0)
     setLastWrongKey(null)
+    setLastNearMissKey(null)
     setCalmKey(0)
     setRaging(false)
   }, [level.initialRage])
@@ -63,7 +87,9 @@ export function useTamerLogic(level: TamerRuntimeLevel) {
     total,
     rage,
     wrongTries,
+    nearMissTries,
     lastWrongKey,
+    lastNearMissKey,
     calmKey,
     raging,
     isComplete,

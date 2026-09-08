@@ -88,7 +88,7 @@ export default function ScaleEngine({
   }
 
   return (
-    <div className="mx-auto w-full max-w-3xl px-4 pb-16">
+    <div data-engine="scale" className="mx-auto w-full max-w-3xl px-4 pb-16">
       {/* 顶部状态栏 */}
       <div className="mb-4 flex flex-wrap items-center gap-3">
         <button

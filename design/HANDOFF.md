@@ -50,6 +50,7 @@ git 历史：约 20 个 commit，远程 main 最新。
 ## 4. 可改进清单（精修方向，按优先级）
 
 **A. 内容/玩法（用户视角最敏感）**
+- [x] **分级判定与半迷惑题精修（2026-09-08）**：逻辑法庭不再把所有失败统称为无关，按「命中 / 相关但不足 / 偏题」三级反馈和不同扣分；ch06-09 的 17 个 D2/D3 干扰问题改为能改善证据、但不能单独击穿论证的近失误。ch13 驯兽场 8 个事件新增 `nearMissOptionRefs`，近失误只增加一半躁动、扣 4 分（完整错误扣 10 分），中英 UI 用琥珀色明确反馈。内容契约测试保证中高难法庭保留近失误、BOSS 每个事件都有近失误。
 - [x] **难度梯度 2.0 · 全量铺开（2026-09-07 晚，35 关）**：难度分布 D1×12 / D2×11 / D3×12。逐引擎：xray scan ch02 试点（8a46bcd）→ scale ch04/12（题干拉长、区间收窄）→ defusal ch10（D3 手册只给方向不给位置）→ tamer ch01/ch13（BOSS 8 事件、正确项混合追问/判断 + 伪问题陷阱）→ xray ch03/05/11（正文 127→357 字级阶梯，L3 含「结论伪装」干扰、dig 挖双重隐藏假设、gap 埋多重遗漏线索）→ courtroom ch06-09 全部 12 关（干扰提问从卡通级升级为"看似关心案情实则跑题"的半迷惑问题，各章 L1/L2/L3 难度修正为 1/2/3 阶梯）。校验：`scripts/check-anchors.mjs` 全过、构建零错误、已推送线上。
 - [x] **难度接入机制（2026-09-08）**：difficulty 从"展示标签"变为真实影响结算——新建 `src/utils/hintPolicy.ts`（D1 提示免费 / D2 每条 −10 / D3 每条 −15，最高可用条数 D3 限 2 条，结算 `base − 条数×代价` 保底 1 分）；`HintPanel` 按钮标注扣分并上报使用数；5 引擎通关算分统一走 `applyHintPenalty`；`LevelCompleteModal` 新增"得分构成"（基础准确度 − 提示扣分 = 总分）补齐"只给总分无分步反馈"缺口的一步；重玩清零并重挂 HintPanel。
 - [ ] 结算"每步判定"复盘（per-step 对错逐条列出，5 引擎语义差异大，需按引擎定制）
@@ -64,7 +65,7 @@ git 历史：约 20 个 commit，远程 main 最新。
 - [x] `scripts/new-level.mjs` 关卡脚手架 CLI（`npm run new-level`）✅
 - [x] CONTRIBUTING.md + Issue 模板（关卡/翻译/难度校准/bug）✅
 - [ ] 移动端适配检查（目前以桌面布局为主）
-- [ ] 自动化测试：目前验证靠 .preview/verify-*.cjs（Playwright 脚本），可考虑接入 CI
+- [x] 自动化质量门禁（2026-09-08）：独立关卡校验 + 13 项 Vitest + 5 引擎 Playwright 生产烟测；CI 对 push/PR 执行 lint/test/build/Pages 路径 preview
 - [ ] 社区示例关卡（用 CLI 产出一个"Good First Issue"标签的示例 PR 模板）
 
 **D. 已知技术债（本次已清理一部分）**
@@ -85,7 +86,7 @@ git 历史：约 20 个 commit，远程 main 最新。
    workflow `.github/workflows/deploy.yml` 只是 CI 构建检查（不要改回部署型，gh-pages 同步步骤有坑会红叉）。
    **每次改完代码必须**：`npm run build`（产物进 docs/）→ `git add -A && git commit && git push` → Pages 1-2 分钟自动更新。
 8. **推送命令**（沙箱环境）：`git -c credential.helper= -c credential.https://github.com.helper=wincred -c credential.helper=wincred -c http.proxy=http://127.0.0.1:7897 -c https.proxy=http://127.0.0.1:7897 push origin main`
-9. **验证脚本**：`C:/Users/shoyo/WorkBuddy/2026-08-18-04-07-00/.preview/` 下有 verify-*.cjs（Playwright，dev server 须先起），URL 必须用 hash 形式 `http://localhost:5173/#/level/xxx`。
+9. **验证命令**：`npm test` 跑单测与内容契约；`npm run test:e2e` 构建后启动与 Pages 同路径的 `docs/` 预览，并烟测 5 个引擎。
 10. **路由是 HashRouter**：URL 形如 `/#/level/ch07-level01`；验证脚本改 locale 用 localStorage（key `atrq-settings-v1`）后必须 `page.reload()` 才生效（纯 hash 导航不重载页面）。
 
 ## 6. 重开对话推荐提示词（直接复制使用）

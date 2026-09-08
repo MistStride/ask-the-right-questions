@@ -12,19 +12,19 @@
       "ev_sunk": "你都付了定金了，退了多亏！"
     },
     "options": {
-      "opt_snow": "销量都破百万了，群众的眼睛是雪亮的",
+      "opt_snow": "百万销量至少说明很多人愿意复购，应该能侧面反映质量",
       "opt_ask_c1": "销量高说明营销做得好，能说明质量好吗？",
       "opt_rhet": "大家都在买，就你聪明？",
-      "opt_seal": "报告都盖章了，还有什么好怀疑的？",
+      "opt_seal": "先看看报告里的数值是否达到合格线，再决定要不要信",
       "opt_ask_c5": "检测报告是谁出的？检测了哪些项目？",
       "opt_trust_report": "盖章的报告当然是真的，别想太多",
       "opt_accept": "我就是不信任这个主播，我就是黑粉",
       "opt_judge_bw": "质疑某一个卖点，不等于否定整个主播或整个产品",
-      "opt_echo": "黑粉说得也有道理啊",
-      "opt_friends": "朋友不会害我，他们的体验就是最真实的",
+      "opt_echo": "主播和质疑者都有立场，各信一半会比较客观",
+      "opt_friends": "三个朋友用了都没出问题，至少安全性应该有参考价值",
       "opt_ask_c4": "三个朋友的体验，能代表全体用户的体验吗？",
       "opt_band": "朋友都买了，我不买显得不合群",
-      "opt_stubborn": "数据都摆出来了，再质疑就是抬杠",
+      "opt_stubborn": "数据总比口头宣传可靠，可以先按这组结果判断",
       "opt_ask_c6": "这组数据是哪个机构做的？样本量多大？",
       "opt_trust": "数据肯定是真的，实验室不会造假",
       "opt_rhet2": "你确定不买真的会后悔吗？",
@@ -32,18 +32,18 @@
       "opt_ignore": "后悔不后悔是别人的事，不管了",
       "opt_panic": "再不抢就没了，赶紧加钱",
       "opt_judge_sc": "「只剩 3 个」是谁在数？这可能是制造紧迫感的套路，不是非买不可",
-      "opt_wait": "别人都慌，我也跟着慌",
+      "opt_wait": "先等倒计时结束，看它是不是真的恢复原价",
       "opt_sunk": "定金都交了，硬着头皮也要买",
       "opt_judge_sunk": "已付的定金是过去成本，决定买不买该看东西本身值不值",
-      "opt_refund": "那我马上退，管它呢"
+      "opt_refund": "能退定金就退；如果不能退，继续买完至少不浪费"
     },
     "eventMeta": {
       "ev_conformity": {
-        "calm": "「群众的眼睛是雪亮」和「就你聪明」都是在用人数压你，不是用证据说服你——销量是营销的结果，不是质量的证明。",
+        "calm": "销量可以是一条线索，但把它解释成复购或质量仍需证据；「就你聪明」更是在用人数施压。真正要检验的是销量能否支持质量结论。",
         "biasLabel": "从众"
       },
       "ev_report": {
-        "calm": "「盖章」是权威的符号，不是证据本身。要问的是：谁出的报告、检测了哪些项目、按什么标准——符号代替不了内容。",
+        "calm": "先看数值比盲信盖章更谨慎，却仍默认报告来源和检测项目可信。应先问谁出的、测了什么、按什么标准，再解释数值。",
         "biasLabel": "跳到结论"
       },
       "ev_bw2": {
@@ -55,7 +55,7 @@
         "biasLabel": "自我中心"
       },
       "ev_data": {
-        "calm": "「实验室不会造假」是信任，不是检验。数据的价值取决于来源和方法——谁做的、样本多大、怎么测的。",
+        "calm": "承认数据通常优于口头宣传是合理起点，却不能跳过来源与方法。要追问谁做的、样本多大、怎么测的。",
         "biasLabel": "跳到结论"
       },
       "ev_regret": {
@@ -63,11 +63,11 @@
         "biasLabel": "伪问题"
       },
       "ev_scarcity": {
-        "calm": "「只剩 3 个」「倒计时」是稀缺性话术，制造紧迫感催你冲动下单。它和「这东西我到底需不需要」是两件事。把紧迫感当理由，就落进了套路。",
+        "calm": "等待倒计时能检验促销是否真实，却仍没回答产品值不值得买。「只剩 3 个」制造的紧迫感，和实际需求是两件事。",
         "biasLabel": "稀缺性"
       },
       "ev_sunk": {
-        "calm": "「定金都交了」是沉没成本——钱已经花出去，不该影响「现在该不该买」的决定。决定该看东西本身值不值，而不是为了不亏已交的定金硬买。",
+        "calm": "能不能退款影响未来损失，却不该让已付定金替产品价值背书。决定是否继续，应比较从现在起的成本与收益。",
         "biasLabel": "沉没成本"
       }
     },
@@ -76,7 +76,7 @@
       "正确项不一定是问句：把断言当作断言去检验，也是批判性思维",
       "「权威」「稀缺」「已付定金」这些词本身不是该买的理由，来源和方法才是"
     ],
-    "explanation": "这一关的八个冲动，正确项不再固定为「追问」：有问句（销量≠质量、报告谁出的、朋友样本够吗、数据谁做的），也有判断句（质疑≠黑粉、稀缺是套路、定金是沉没成本）。最难的是 ev_regret——两个选项都像提问，其中一个却是伪装成提问的伪问题。批判性思维不是「会问」，而是「能辨别真问题与假问题、会检验断言与证据」。"
+    "explanation": "这一关不再只有明显的对错项：每个冲动都有一个「方向合理但没问到核心」的近失误，它只会让大象小幅躁动。正确项也不固定为问句：有追问，也有判断。批判性思维不是挑出最像标准答案的话，而是比较每个问题究竟能排除哪种解释、还遗漏了什么。"
   },
   "en": {
     "scenario": "In the livestream the host waves the 'Season 3 product': everyone is buying! The authoritative lab report is right here! The barrage floods with 'you'll regret not buying'. You just paid a deposit; the host adds: first 100 get a 'radiation shield' free, only 3 spots left — countdown starts. Your phone buzzes: 'articles matching your views, tap to read'.",
@@ -91,19 +91,19 @@
       "ev_sunk": "You already paid the deposit — refunding wastes it!"
     },
     "options": {
-      "opt_snow": "A million sold — the crowd is always right",
+      "opt_snow": "A million sales at least suggest many repeat buyers, which may reflect quality",
       "opt_ask_c1": "High sales prove good marketing — do they prove good quality?",
       "opt_rhet": "Everyone is buying, are you the only smart one?",
-      "opt_seal": "The report is stamped, what else is there to doubt?",
+      "opt_seal": "First check whether the reported figures pass the standard, then decide whether to trust it",
       "opt_ask_c5": "Who issued the test report? What exactly was tested?",
       "opt_trust_report": "A stamped report is obviously real, don't overthink",
       "opt_accept": "I just don't trust this host, so I'm a hater",
       "opt_judge_bw": "Questioning one claim is not rejecting the whole host or product",
-      "opt_echo": "The haters have a point too",
-      "opt_friends": "Friends wouldn't hurt me — their experience is the realest data",
+      "opt_echo": "The host and critics both have agendas, so believing half of each seems objective",
+      "opt_friends": "Three friends had no problems, so their experience should at least indicate safety",
       "opt_ask_c4": "Can three friends' experiences represent all users?",
       "opt_band": "All my friends bought it — I'll look left out if I don't",
-      "opt_stubborn": "The data is right there — questioning it is just trolling",
+      "opt_stubborn": "Data is more reliable than sales talk, so I can provisionally follow these results",
       "opt_ask_c6": "Which lab ran this data? How big was the sample?",
       "opt_trust": "The data must be real — labs don't fake results",
       "opt_rhet2": "Are you sure you won't really regret not buying it?",
@@ -111,18 +111,18 @@
       "opt_ignore": "Whether I regret it is my own business, forget it",
       "opt_panic": "Gone if I wait, add money now",
       "opt_judge_sc": "Who counted 'only 3 left'? That may be a scarcity tactic, not a real reason to buy",
-      "opt_wait": "Everyone's panicking, so I panic too",
+      "opt_wait": "Wait for the countdown to end and see whether the price really goes back up",
       "opt_sunk": "Deposit paid, I'll just buy it through gritted teeth",
       "opt_judge_sunk": "The deposit is a sunk cost — whether to buy now should rest on the product's value",
-      "opt_refund": "Then I'll refund right away, forget it"
+      "opt_refund": "Refund if possible; if not, completing the purchase at least avoids wasting it"
     },
     "eventMeta": {
       "ev_conformity": {
-        "calm": "'The crowd is always right' and 'are you the only smart one?' both pressure you with numbers, not evidence — sales are marketing's result, not proof of quality.",
+        "calm": "Sales can be a clue, but treating them as repeat buying or quality still needs evidence; 'are you the only smart one?' is pure social pressure. Test whether sales support the quality claim.",
         "biasLabel": "Conformity"
       },
       "ev_report": {
-        "calm": "A 'stamp' is a symbol of authority, not evidence. Ask who issued it, what was tested, under what standard — symbols don't replace content.",
+        "calm": "Checking the figures is better than trusting a stamp, but it still assumes the source and tested items are sound. Ask who issued it, what was tested, and under which standard first.",
         "biasLabel": "Jumping to Conclusions"
       },
       "ev_bw2": {
@@ -134,7 +134,7 @@
         "biasLabel": "Egocentrism"
       },
       "ev_data": {
-        "calm": "'Labs don't fake results' is trust, not scrutiny. A data set's value depends on source and method — who ran it, sample size, how measured.",
+        "calm": "Treating data as better than sales talk is a reasonable start, but it cannot replace checking source and method — who ran it, sample size, and how it was measured.",
         "biasLabel": "Jumping to Conclusions"
       },
       "ev_regret": {
@@ -142,11 +142,11 @@
         "biasLabel": "Pseudo-Question"
       },
       "ev_scarcity": {
-        "calm": "'Only 3 left' and the countdown are scarcity tactics that manufacture urgency to rush you. They are separate from 'do I actually need this?'. Treating urgency as a reason is falling for the script.",
+        "calm": "Waiting out the timer can test whether the promotion is genuine, but not whether the product is worth buying. Manufactured urgency and actual need are separate questions.",
         "biasLabel": "Scarcity"
       },
       "ev_sunk": {
-        "calm": "The deposit is a sunk cost — money already spent shouldn't decide 'should I buy now'. The decision should rest on the product's value, not on avoiding 'wasting' the deposit.",
+        "calm": "Refundability changes future loss, but the paid deposit cannot prove product value. Compare costs and benefits from this point forward when deciding whether to continue.",
         "biasLabel": "Sunk Cost"
       }
     },
@@ -155,6 +155,6 @@
       "The right move is not always a question: testing a claim as a claim is critical thinking too",
       "'Authority', 'scarcity', 'deposit paid' are not reasons to buy — source and method are"
     ],
-    "explanation": "All eight impulses here mix question-correct and judgment-correct moves — no longer always 'ask'. Some are questions (sales≠quality, who issued the report, do friends represent all, which lab ran the data); some are judgments (questioning≠hating, scarcity is a tactic, deposit is sunk cost). The hardest is ev_regret — two options look like questions, yet one is a pseudo-question in disguise. Critical thinking is not 'asking' — it is telling real questions from fake ones, and putting claims and evidence to the test."
+    "explanation": "This level no longer offers only obvious right and wrong choices: every impulse includes a near miss that sounds reasonable but misses the core test, causing only a smaller rise in rage. Correct moves also mix questions and judgments. Critical thinking means comparing what each question can actually rule out—and what it still leaves untested—not choosing the line that merely sounds most academic."
   }
 }

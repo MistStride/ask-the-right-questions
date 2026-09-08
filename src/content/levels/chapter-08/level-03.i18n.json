@@ -13,15 +13,15 @@
       "q_crosssection": "这是同一时间点的调查吗？能区分「谁先谁后」吗？",
       "q_selfreport": "学生自报的时长准确吗？有没有客观测量？",
       "q_nocontrol2": "户外运动、遗传、用眼习惯这些因素，考虑了吗？",
-      "q_d1": "问卷是纸质的还是电子版发放的？",
-      "q_d2": "这次调查一共投入了多少经费？"
+      "q_d1": "这份问卷覆盖的是一个月，还是一整个学期？",
+      "q_d2": "问卷是否匿名，以减少学生故意少报使用时长？"
     },
     "hints": [
       "同一时间的调查，说不清谁因谁果",
       "自己报的数据，可靠吗？",
       "「不影响结论」——其他因素真的排除了吗？"
     ],
-    "explanation": "这份近视调查有三个漏洞：①横断面数据只能说明相关，说不清因果方向；②屏幕时长靠学生自报，存在失真；③视力正常组更爱户外运动等替代解释被一句「不影响结论」跳过。调查报告也要像法庭质询一样追问：怎么测的？样本怎么选？还有没有别的解释？"
+    "explanation": "这份调查用横断面相关推因果，依赖学生自报，还跳过了户外运动等替代解释。延长问卷覆盖期仍不能回答谁先谁后；匿名能减少故意少报，却不能消除记忆误差，方向正确不等于已经击中要害。"
   },
   "en": {
     "caseTitle": "Case: A Survey Linking \"Phone Use and Myopia\"",
@@ -37,14 +37,14 @@
       "q_crosssection": "Is this a single-point-in-time survey? Can it tell which came first?",
       "q_selfreport": "Are the self-reported hours accurate? Was there any objective measurement?",
       "q_nocontrol2": "Were outdoor activity, genetics, and eye-use habits considered?",
-      "q_d1": "Was the questionnaire distributed on paper or digitally?",
-      "q_d2": "How much did this survey cost in total?"
+      "q_d1": "Did the questionnaire cover one month or an entire semester?",
+      "q_d2": "Was the survey anonymous to reduce deliberate under-reporting of screen time?"
     },
     "hints": [
       "A snapshot in time cannot say which caused which",
       "Self-reported data — how reliable is it?",
       "\"Does not affect our conclusion\" — were other factors really ruled out?"
     ],
-    "explanation": "This myopia survey has three holes: ① cross-sectional data only shows correlation, not causal direction; ② screen time relies on self-reports that can be distorted; ③ rival explanations like outdoor activity are waved away with \"does not affect our conclusion\". Survey reports deserve the same cross-examination as a courtroom witness: how was it measured? how was the sample chosen? what other explanations exist?"
+    "explanation": "This survey infers causation from a cross-section, relies on self-report, and skips alternatives such as outdoor activity. A longer questionnaire window still cannot establish what came first; anonymity can reduce deliberate under-reporting but not memory error. A better direction is not yet a direct hit."
   }
 }

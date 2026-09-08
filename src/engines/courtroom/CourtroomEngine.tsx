@@ -59,7 +59,9 @@ export default function CourtroomEngine({
     hitCount,
     total,
     wrongTries,
+    nearMissTries,
     usedQuestions,
+    nearMissQuestions,
     flashSpotId,
     flashQuestionId,
     remainingCredibility,
@@ -100,7 +102,9 @@ export default function CourtroomEngine({
   useEffect(() => {
     if (isComplete && !settledRef.current) {
       settledRef.current = true
-      const raw = Math.round(50 + remainingCredibility * 0.4 + Math.max(0, 20 - wrongTries * 5))
+      const raw = Math.round(
+        50 + remainingCredibility * 0.4 + Math.max(0, 20 - wrongTries * 5 - nearMissTries * 2),
+      )
       const finalScore = applyHintPenalty(raw, hintsUsed, level.meta.difficulty)
       setScore(finalScore)
       setScoreDetail({
@@ -113,7 +117,7 @@ export default function CourtroomEngine({
       return () => window.clearTimeout(timer)
     }
     return undefined
-  }, [isComplete, remainingCredibility, wrongTries, hintsUsed, level, markLevelComplete])
+  }, [isComplete, remainingCredibility, wrongTries, nearMissTries, hintsUsed, level, markLevelComplete])
 
   const handleStrike = (questionId: string, spot: CourtroomSpot) => {
     const q = questionsById.get(questionId)
@@ -122,6 +126,8 @@ export default function CourtroomEngine({
     if (outcome === 'hit') {
       showToast(`${t.hitToast} ${spot.debunkText}`, 'success')
       setSelectedId(null)
+    } else if (outcome === 'near_miss') {
+      showToast(t.nearMissToast, 'info')
     } else if (outcome === 'miss') {
       showToast(t.missToast, 'error')
     } else {
@@ -160,7 +166,7 @@ export default function CourtroomEngine({
   const word = WORD_OF[locale][mode]
 
   return (
-    <div className="mx-auto w-full max-w-3xl px-4 pb-16">
+    <div data-engine="courtroom" className="mx-auto w-full max-w-3xl px-4 pb-16">
       {/* 顶部状态栏 */}
       <div className="mb-4 flex flex-wrap items-center gap-3">
         <button
@@ -229,6 +235,7 @@ export default function CourtroomEngine({
           mode={mode}
           questions={level.questions}
           usedIds={usedQuestions}
+          nearMissIds={nearMissQuestions}
           flashQuestionId={flashQuestionId}
           selectedId={selectedId}
           onSelect={setSelectedId}

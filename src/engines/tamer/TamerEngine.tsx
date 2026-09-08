@@ -41,7 +41,22 @@ export default function TamerEngine({
   const isTutorial = level.mode === 'tutorial'
 
   const logic = useTamerLogic(level)
-  const { current, calmedCount, total, rage, wrongTries, lastWrongKey, calmKey, raging, isComplete, select, breathe, reset } = logic
+  const {
+    current,
+    calmedCount,
+    total,
+    rage,
+    wrongTries,
+    nearMissTries,
+    lastWrongKey,
+    lastNearMissKey,
+    calmKey,
+    raging,
+    isComplete,
+    select,
+    breathe,
+    reset,
+  } = logic
 
   const [spongeOpen, setSpongeOpen] = useState(isTutorial)
   const [spongeFlash, setSpongeFlash] = useState(false)
@@ -56,7 +71,7 @@ export default function TamerEngine({
   useEffect(() => {
     if (isComplete && !settledRef.current) {
       settledRef.current = true
-      const raw = Math.max(60, 100 - wrongTries * 10)
+      const raw = Math.max(60, 100 - wrongTries * 10 - nearMissTries * 4)
       const finalScore = applyHintPenalty(raw, hintsUsed, level.meta.difficulty)
       setScore(finalScore)
       setScoreDetail({
@@ -69,13 +84,15 @@ export default function TamerEngine({
       return () => window.clearTimeout(timer)
     }
     return undefined
-  }, [isComplete, wrongTries, hintsUsed, level, markLevelComplete])
+  }, [isComplete, wrongTries, nearMissTries, hintsUsed, level, markLevelComplete])
 
   const handleOption = (key: string) => {
     const outcome = select(key)
     if (outcome === 'calmed') {
       const ev = level.events[calmedCount]
       showToast(`${t.calmToast}${ev?.calm ?? ''}`, 'success')
+    } else if (outcome === 'near_miss') {
+      showToast(t.nearMissToast, 'info')
     } else if (outcome === 'miss') {
       showToast(t.missToast, 'error')
     }
@@ -104,7 +121,7 @@ export default function TamerEngine({
   const options: TamerOption[] = current?.options ?? []
 
   return (
-    <div className="mx-auto w-full max-w-3xl px-4 pb-16">
+    <div data-engine="tamer" className="mx-auto w-full max-w-3xl px-4 pb-16">
       {/* 顶部状态栏 */}
       <div className="mb-4 flex flex-wrap items-center gap-3">
         <button
@@ -191,7 +208,13 @@ export default function TamerEngine({
             {current && !isComplete && (
               <div className="mt-4">
                 <p className="mb-2 text-xs text-slate-400">{t.chooseHint}</p>
-                <OptionCards options={options} lastWrongKey={lastWrongKey} disabled={raging} onSelect={handleOption} />
+                <OptionCards
+                  options={options}
+                  lastWrongKey={lastWrongKey}
+                  lastNearMissKey={lastNearMissKey}
+                  disabled={raging}
+                  onSelect={handleOption}
+                />
               </div>
             )}
           </div>

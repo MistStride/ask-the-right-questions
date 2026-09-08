@@ -5,9 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "oxlint",
-    "preview": "vite preview",
+    "validate": "vitest run --configLoader runner tests/unit/content.validation.test.ts && node scripts/check-anchors.mjs",
+    "build": "npm run validate && tsc -b && vite build",
+    "lint": "oxlint src scripts tests playwright.config.ts vitest.config.ts vite.config.ts",
+    "test": "vitest run --configLoader runner",
+    "test:e2e": "npm run build && node scripts/run-e2e.mjs",
+    "preview": "node scripts/preview-docs.mjs",
     "new-level": "node scripts/new-level.mjs"
   },
   "dependencies": {
@@ -28,8 +31,10 @@
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.4",
+    "@playwright/test": "^1.55.0",
     "oxlint": "^1.75.0",
     "typescript": "~6.0.2",
-    "vite": "^8.2.0"
+    "vite": "^8.2.0",
+    "vitest": "^3.2.4"
   }
 }

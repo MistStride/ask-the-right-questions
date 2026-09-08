@@ -22,12 +22,22 @@ export interface CourtroomQuestion {
   isRelevant: boolean
 }
 
-export type StrikeOutcome = 'hit' | 'miss' | 'already'
+export type StrikeOutcome = 'hit' | 'near_miss' | 'miss' | 'already'
+
+export function classifyCourtroomStrike(
+  question: CourtroomQuestion,
+  spot: CourtroomSpot,
+): Exclude<StrikeOutcome, 'already'> {
+  if (question.targetIssue !== spot.issueType) return 'miss'
+  return question.isRelevant ? 'hit' : 'near_miss'
+}
 
 export function useCourtroomLogic(level: CourtroomRuntimeLevel) {
   const [hitSpots, setHitSpots] = useState<Set<string>>(new Set())
   const [wrongTries, setWrongTries] = useState(0)
+  const [nearMissTries, setNearMissTries] = useState(0)
   const [usedQuestions, setUsedQuestions] = useState<Set<string>>(new Set())
+  const [nearMissQuestions, setNearMissQuestions] = useState<Set<string>>(new Set())
   const [flashSpotId, setFlashSpotId] = useState<string | null>(null)
   const [flashQuestionId, setFlashQuestionId] = useState<string | null>(null)
   const [burstOpen, setBurstOpen] = useState(false)
@@ -49,7 +59,8 @@ export function useCourtroomLogic(level: CourtroomRuntimeLevel) {
   const strike = useCallback(
     (question: CourtroomQuestion, spot: CourtroomSpot): StrikeOutcome => {
       if (hitSpots.has(spot.spotId)) return 'already'
-      if (question.targetIssue === spot.issueType && question.isRelevant) {
+      const outcome = classifyCourtroomStrike(question, spot)
+      if (outcome === 'hit') {
         setHitSpots((prev) => new Set(prev).add(spot.spotId))
         setFlashSpotId(spot.spotId)
         setFlashQuestionId(null)
@@ -57,11 +68,16 @@ export function useCourtroomLogic(level: CourtroomRuntimeLevel) {
         if (hitSpots.size + 1 >= total) setBurstOpen(true)
         return 'hit'
       }
-      setWrongTries((w) => w + 1)
+      if (outcome === 'near_miss') {
+        setNearMissTries((n) => n + 1)
+        setNearMissQuestions((prev) => new Set(prev).add(question.questionId))
+      } else {
+        setWrongTries((w) => w + 1)
+      }
       setUsedQuestions((prev) => new Set(prev).add(question.questionId))
       setFlashQuestionId(question.questionId)
       setFlashSpotId(null)
-      return 'miss'
+      return outcome
     },
     [hitSpots, total],
   )
@@ -79,7 +95,9 @@ export function useCourtroomLogic(level: CourtroomRuntimeLevel) {
   const reset = useCallback(() => {
     setHitSpots(new Set())
     setWrongTries(0)
+    setNearMissTries(0)
     setUsedQuestions(new Set())
+    setNearMissQuestions(new Set())
     setFlashSpotId(null)
     setFlashQuestionId(null)
     setBurstOpen(false)
@@ -90,7 +108,9 @@ export function useCourtroomLogic(level: CourtroomRuntimeLevel) {
     hitCount,
     total,
     wrongTries,
+    nearMissTries,
     usedQuestions,
+    nearMissQuestions,
     flashSpotId,
     flashQuestionId,
     remainingCredibility,

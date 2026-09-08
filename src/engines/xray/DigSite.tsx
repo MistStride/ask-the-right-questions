@@ -1,7 +1,7 @@
 // 考古挖掘区（dig 模式）：隐藏节点埋在土层下，点铲子逐层剥土，挖出即点亮。
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { NODE_TYPE_LABELS, NODE_VISUALS } from './XrayNode'
+import { NODE_TYPE_LABELS, NODE_VISUALS } from './xrayNodeMeta'
 import type { Locale, XrayAnchor } from '../../schema/levelTypes'
 
 const LAYERS = 3

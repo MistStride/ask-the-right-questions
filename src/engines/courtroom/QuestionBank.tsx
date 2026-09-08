@@ -8,6 +8,7 @@ interface Props {
   mode: CourtroomMode
   questions: CourtroomQuestion[]
   usedIds: Set<string>
+  nearMissIds: Set<string>
   flashQuestionId: string | null
   selectedId: string | null
   onSelect: (id: string | null) => void
@@ -19,6 +20,7 @@ export default function QuestionBank({
   mode,
   questions,
   usedIds,
+  nearMissIds,
   flashQuestionId,
   selectedId,
   onSelect,
@@ -41,6 +43,7 @@ export default function QuestionBank({
       <div className="mt-3 flex gap-2 overflow-x-auto pb-2 scroll-thin">
         {questions.map((q) => {
           const used = usedIds.has(q.questionId)
+          const nearMiss = nearMissIds.has(q.questionId)
           const flash = flashQuestionId === q.questionId
           const selected = selectedId === q.questionId
           return (
@@ -59,8 +62,12 @@ export default function QuestionBank({
               } ${used && !selected ? 'opacity-50' : ''}`}
             >
               {used ? (
-                <span className="absolute -top-2 right-2 rounded-full bg-court/80 px-1.5 py-0.5 text-[10px] font-bold text-white">
-                  ✗ {locale === 'zh' ? '试错' : 'Miss'}
+                <span
+                  className={`absolute -top-2 right-2 rounded-full px-1.5 py-0.5 text-[10px] font-bold text-white ${
+                    nearMiss ? 'bg-amber-500' : 'bg-court/80'
+                  }`}
+                >
+                  {nearMiss ? `△ ${locale === 'zh' ? '接近' : 'Close'}` : `✗ ${locale === 'zh' ? '试错' : 'Miss'}`}
                 </span>
               ) : selected ? (
                 <span className="absolute -top-2 right-2 rounded-full bg-court px-1.5 py-0.5 text-[10px] font-bold text-white">

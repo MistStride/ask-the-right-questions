@@ -13,15 +13,15 @@
       "q_authority": "巴菲特真的说过这句话吗？他说的「多元化」和这里的「开户」是一回事吗？",
       "q_strawman": "反对者的真实观点是什么？有人反对过「理财」本身，还是只反对这家机构？",
       "q_redherring": "房价和孩子上学，和「这家机构是否值得信任」有什么关系？",
-      "q_d1": "讲座结束后，现场有多少人当场开了户？",
-      "q_d2": "您最近是不是正好有一笔闲钱，才去听的讲座？"
+      "q_d1": "除了巴菲特，还有哪些知名投资人赞成这种开户方式？",
+      "q_d2": "反对这家机构的人里，有多少人自己从来不做理财？"
     },
     "hints": [
       "借名人的话压人，是权威，不是证据",
       "把反对者说成极端可笑的样子再攻击——这是稻草人",
       "用焦虑和未来吓你，让你忘记讨论眼前的问题——这是转移话题"
     ],
-    "explanation": "这段推销话术连犯三个谬误：①拿巴菲特的旗号压人（诉诸权威，无证据），学员收益截图也只是无法核实的「成功故事」；②把反对者曲解成「存床底的守财奴」（稻草人）；③用房价、孩子上学制造焦虑岔开话题（转移话题）。识别这三种套路，推销话术就失灵了——当场多少人开户、您有没有闲钱，都替代不了对机构资质的追问。"
+    "explanation": "这段推销话术连犯三个谬误：①拿巴菲特的旗号压人；②把反对者曲解成「存床底的守财奴」；③用房价、孩子上学制造焦虑。追问更多名人只能叠加权威，调查批评者是否理财仍在攻击人；它们听来相关，却没有检验机构资质与论证本身。"
   },
   "en": {
     "caseTitle": "Record: A Client Brainwashed by a Salesman",
@@ -37,14 +37,14 @@
       "q_authority": "Did Buffett actually say that? Is his \"diversification\" the same as \"opening an account here\"?",
       "q_strawman": "What do the opponents actually believe? Did anyone oppose investing itself, or just this firm?",
       "q_redherring": "What do housing prices and kids' tuition have to do with whether this firm is trustworthy?",
-      "q_d1": "How many people at the lecture opened accounts on the spot?",
-      "q_d2": "Did you happen to have spare cash lately, which is why you went to the lecture?"
+      "q_d1": "Besides Buffett, which famous investors endorse this way of opening accounts?",
+      "q_d2": "How many critics of this firm never invest their own money at all?"
     },
     "hints": [
       "Leaning on a celebrity's words is authority, not evidence",
       "Painting opponents as ridiculous extremes before attacking — that is a straw man",
       "Using anxiety about the future to make you forget the issue at hand — that is a red herring"
     ],
-    "explanation": "This sales pitch commits three fallacies in a row: ① leveraging Buffett's name (appeal to authority, no evidence) — and the return screenshots are just unverifiable \"success stories\"; ② caricaturing opponents as \"mattress hoarders\" (straw man); ③ distracting with housing and tuition anxiety (red herring). Spot these three tricks and sales pitches stop working — how many people opened accounts or whether you have spare cash can never replace asking about the firm's credentials."
+    "explanation": "This pitch commits three fallacies: ① leaning on Buffett's name; ② caricaturing critics as mattress hoarders; ③ distracting with housing and tuition anxiety. Asking for more famous endorsers only stacks authorities, while checking whether critics invest still attacks people. Both sound related but leave the firm's credentials and reasoning untested."
   }
 }

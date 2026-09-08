@@ -2,7 +2,7 @@
 // 步骤条显示进度；当前步目标高亮（脉冲），已完成打勾置灰，未来步骤锁定（🔒）。
 // 找错类型会被判错并提示当前目标——玩家始终只被要求做一件事。
 import { motion } from 'framer-motion'
-import { NODE_TYPE_LABELS } from './XrayNode'
+import { NODE_TYPE_LABELS } from './xrayNodeMeta'
 import type { Locale, NodeType, XrayAnchor, XrayMode, XrayStepRef } from '../../schema/levelTypes'
 
 const OBJECTIVE: Record<XrayMode, { zh: string; en: string }> = {

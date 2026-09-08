@@ -234,6 +234,9 @@ export const tamerBiasSchema = z.enum([
   'egocentrism',
   'black_and_white',
   'conformity',
+  'pseudo_question',
+  'scarcity',
+  'sunk_cost',
 ])
 
 export const tamerImpulseSchema = z.object({
@@ -241,6 +244,7 @@ export const tamerImpulseSchema = z.object({
   biasType: tamerBiasSchema,
   optionRefs: z.array(z.string().min(1)).min(3, '至少需要 3 个候选回应'),
   correctOptionRef: z.string().min(1, 'correctOptionRef 不能为空'),
+  nearMissOptionRefs: z.array(z.string().min(1)).optional(),
 })
 
 export const tamerLevelSchema = z
@@ -265,6 +269,22 @@ export const tamerLevelSchema = z
           path: ['impulseEvents'],
           message: `事件 ${ev.eventId} 的 correctOptionRef「${ev.correctOptionRef}」不在 optionRefs 中`,
         })
+      }
+      for (const ref of ev.nearMissOptionRefs ?? []) {
+        if (!ev.optionRefs.includes(ref)) {
+          ctx.addIssue({
+            code: 'custom',
+            path: ['impulseEvents'],
+            message: `事件 ${ev.eventId} 的 nearMissOptionRef「${ref}」不在 optionRefs 中`,
+          })
+        }
+        if (ref === ev.correctOptionRef) {
+          ctx.addIssue({
+            code: 'custom',
+            path: ['impulseEvents'],
+            message: `事件 ${ev.eventId} 的正确项不能同时标记为 near miss`,
+          })
+        }
       }
     }
   })

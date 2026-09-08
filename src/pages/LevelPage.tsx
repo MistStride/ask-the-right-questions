@@ -53,6 +53,7 @@ export default function LevelPage() {
         impulsePrompt: texts.impulsePrompts[ev.eventId] ?? '',
         options: ev.optionRefs.map((ref) => ({ key: ref, text: texts.options[ref] ?? ref })),
         correctKey: ev.correctOptionRef,
+        nearMissKeys: ev.nearMissOptionRefs ?? [],
         calm: texts.eventMeta[ev.eventId]?.calm ?? '',
       }))
       const result: TamerRuntimeLevel = {

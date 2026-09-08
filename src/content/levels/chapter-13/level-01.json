@@ -14,49 +14,57 @@
       "eventId": "ev_conformity",
       "biasType": "conformity",
       "optionRefs": ["opt_snow", "opt_ask_c1", "opt_rhet"],
-      "correctOptionRef": "opt_ask_c1"
+      "correctOptionRef": "opt_ask_c1",
+      "nearMissOptionRefs": ["opt_snow"]
     },
     {
       "eventId": "ev_report",
       "biasType": "jumping_to_conclusion",
       "optionRefs": ["opt_seal", "opt_ask_c5", "opt_trust_report"],
-      "correctOptionRef": "opt_ask_c5"
+      "correctOptionRef": "opt_ask_c5",
+      "nearMissOptionRefs": ["opt_seal"]
     },
     {
       "eventId": "ev_bw2",
       "biasType": "black_and_white",
       "optionRefs": ["opt_accept", "opt_judge_bw", "opt_echo"],
-      "correctOptionRef": "opt_judge_bw"
+      "correctOptionRef": "opt_judge_bw",
+      "nearMissOptionRefs": ["opt_echo"]
     },
     {
       "eventId": "ev_ego2",
       "biasType": "egocentrism",
       "optionRefs": ["opt_friends", "opt_ask_c4", "opt_band"],
-      "correctOptionRef": "opt_ask_c4"
+      "correctOptionRef": "opt_ask_c4",
+      "nearMissOptionRefs": ["opt_friends"]
     },
     {
       "eventId": "ev_data",
       "biasType": "jumping_to_conclusion",
       "optionRefs": ["opt_stubborn", "opt_ask_c6", "opt_trust"],
-      "correctOptionRef": "opt_ask_c6"
+      "correctOptionRef": "opt_ask_c6",
+      "nearMissOptionRefs": ["opt_stubborn"]
     },
     {
       "eventId": "ev_regret",
       "biasType": "pseudo_question",
       "optionRefs": ["opt_rhet2", "opt_check", "opt_ignore"],
-      "correctOptionRef": "opt_check"
+      "correctOptionRef": "opt_check",
+      "nearMissOptionRefs": ["opt_rhet2"]
     },
     {
       "eventId": "ev_scarcity",
       "biasType": "scarcity",
       "optionRefs": ["opt_panic", "opt_judge_sc", "opt_wait"],
-      "correctOptionRef": "opt_judge_sc"
+      "correctOptionRef": "opt_judge_sc",
+      "nearMissOptionRefs": ["opt_wait"]
     },
     {
       "eventId": "ev_sunk",
       "biasType": "sunk_cost",
       "optionRefs": ["opt_sunk", "opt_judge_sunk", "opt_refund"],
-      "correctOptionRef": "opt_judge_sunk"
+      "correctOptionRef": "opt_judge_sunk",
+      "nearMissOptionRefs": ["opt_refund"]
     }
   ]
 }

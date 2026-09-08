@@ -36,8 +36,11 @@ React 19 · TypeScript · Vite · Tailwind CSS 4 · Zustand · Framer Motion · 
 ```bash
 npm install
 npm run dev        # http://localhost:5173
-npm run build      # 生产构建 → docs/（Pages 用）
-npm run preview    # 本地预览生产构建
+npm run lint       # 静态检查
+npm test           # Vitest 单测 + 关卡契约测试
+npm run build      # 校验后生产构建 → docs/（Pages 用）
+npm run test:e2e   # 构建 + 五引擎 Playwright 烟测
+npm run preview    # 按 GitHub Pages 路径本地预览
 ```
 
 > 说明：项目使用 **hash 路由**（`/#/level/...`），在任何静态托管上都能直接刷新/直达子页面，无需服务器端 fallback 配置。
@@ -58,10 +61,11 @@ npm run preview    # 本地预览生产构建
 > 改代码后记得重建并提交产物：`npm run build && git add docs && git commit && git push`。
 > 文件夹选 `/(root)` 会发布源码 → 白屏；**必须选 `/docs`**。
 
-### CI — 构建检查（可选）
+### CI — 质量门禁
 
-仓库内置 `.github/workflows/deploy.yml` 作为**构建检查**：每次 push 到 `main` 自动执行
-`npm ci && npm run build`（同时校验全部关卡数据的 Zod 与锚点）。部署不依赖它，方式 A 才是线上生效机制。
+仓库内置 `.github/workflows/deploy.yml` 作为**质量门禁**：每次 push 或向 `main` 提交 PR，
+都会依次执行 lint、Vitest、带关卡校验的生产构建，以及针对 Pages 路径预览的五引擎 Playwright 烟测。
+部署不依赖它，方式 A 才是线上生效机制。
 
 ### 白屏排查
 

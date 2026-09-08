@@ -13,15 +13,15 @@
       "q_selfclaim": "「养生导师」是正规职业吗？有什么可查证的资质或机构认证？",
       "q_singlecase": "老王的「治好」有没有医院诊断记录？单一案例能代表所有人吗？",
       "q_emotion": "用「孩子的未来」煽动情绪，能替代科学证据吗？",
-      "q_d1": "这碗草药水每天要喝几次、连着喝多久才见效？",
-      "q_d2": "您自己或家里人喝过这个草药水吗？"
+      "q_d1": "老王服用前后的体重和血压分别变化了多少？",
+      "q_d2": "听完这番话后，有多少家长当场决定购买？"
     },
     "hints": [
       "自称头衔不等于资质——问可查证的凭证",
       "一个邻居的案例，能证明草药水有效吗？",
       "用「孩子的未来」催泪——情绪不是证据"
     ],
-    "explanation": "这段「养生导师」的证言三处破绽：①自称「二十多年经验」却没有任何可查证的资质；②用邻居老王的单一案例当证据（可能是自愈或巧合）；③用「孩子的未来」煽动家长情绪。健康决策面前，情绪和个案都不能代替临床证据——尤其是当发言者并非真专家时。"
+    "explanation": "这段证言用不可核验的资历、一个邻居的案例和「孩子的未来」替代临床证据。把老王的变化测得更精确，仍只是单一个案；统计被打动的家长，只能测出话术效果，不能测出草药效果。"
   },
   "en": {
     "caseTitle": "Case: A \"Home Remedy\" Circulating on Social Media",
@@ -37,14 +37,14 @@
       "q_selfclaim": "Is \"wellness guru\" a real profession? Any verifiable credentials or institutional certification?",
       "q_singlecase": "Does Wang's \"recovery\" have hospital records? Can one case represent everyone?",
       "q_emotion": "Can stirring emotions with \"your children's future\" replace scientific evidence?",
-      "q_d1": "How many times a day should you drink the brew, and for how long before it works?",
-      "q_d2": "Have you or your family ever drunk this herbal brew yourselves?"
+      "q_d1": "How much did Lao Wang's weight and blood pressure change after taking it?",
+      "q_d2": "How many parents decided to buy immediately after hearing this appeal?"
     },
     "hints": [
       "A self-proclaimed title is not qualification — ask for verifiable credentials",
       "Can one neighbor's case prove the brew works?",
       "Tugging heartstrings with \"your children's future\" — emotion is not evidence"
     ],
-    "explanation": "This \"wellness guru\" testimony has three flaws: ① self-claims \"twenty years of experience\" with no verifiable credentials; ② uses one neighbor's single case as evidence (could be self-healing or coincidence); ③ plays on parents' emotions with \"your children's future\". In health decisions, emotion and anecdotes cannot replace clinical evidence — especially when the speaker is not a real expert."
+    "explanation": "This testimony substitutes unverifiable credentials, one neighbor's story, and fear for clinical evidence. Measuring Lao Wang more precisely still leaves one uncontrolled case; counting persuaded parents measures rhetorical impact, not whether the remedy works."
   }
 }

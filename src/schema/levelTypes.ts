@@ -325,6 +325,9 @@ export type TamerBias =
   | 'egocentrism' // 自我中心
   | 'black_and_white' // 非黑即白
   | 'conformity' // 从众
+  | 'pseudo_question' // 伪问题/修辞性施压
+  | 'scarcity' // 稀缺性诱导
+  | 'sunk_cost' // 沉没成本
 
 export interface TamerImpulseRef {
   eventId: string
@@ -333,6 +336,8 @@ export interface TamerImpulseRef {
   optionRefs: string[]
   /** 正确回应的 i18n 键（必须 ∈ optionRefs） */
   correctOptionRef: string
+  /** 方向合理但没有检验核心断言的回应（必须 ∈ optionRefs，且不能是正确项） */
+  nearMissOptionRefs?: string[]
 }
 
 export interface TamerLevelData {
@@ -375,6 +380,7 @@ export interface TamerRuntimeLevel {
     impulsePrompt: string
     options: { key: string; text: string }[]
     correctKey: string
+    nearMissKeys: string[]
     calm: string
   }[]
   initialRage: number

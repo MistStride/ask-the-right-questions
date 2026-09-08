@@ -5,7 +5,7 @@ import { CHAPTERS, ENGINE_BADGES } from '../content/chapters'
 import { LEVELS } from '../content/levelIndex'
 import { useSettingsStore } from '../store/settingsStore'
 import { useProgressStore } from '../store/progressStore'
-import { RADAR_DIMENSIONS } from '../components/RadarChart'
+import { RADAR_DIMENSIONS } from '../components/radarDimensions'
 import type { EngineType } from '../schema/levelTypes'
 
 const DIMENSION_LABEL = {

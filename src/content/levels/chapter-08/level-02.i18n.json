@@ -13,15 +13,15 @@
       "q_samplebias": "只研究年轻白领，结论能代表老人、病人或体力劳动者吗？",
       "q_corr": "喝咖啡和体检更健康，谁是因谁是果？有没有第三因素？",
       "q_control": "为什么把对照组排除？不喝咖啡的人数据如何？",
-      "q_d1": "研究团队总共发表过多少篇咖啡相关的论文？",
-      "q_d2": "研究期间志愿者喝的是哪个牌子的咖啡？"
+      "q_d1": "年轻白领样本里的男女比例是否均衡？",
+      "q_d2": "志愿者每天喝的咖啡剂量是否保持一致？"
     },
     "hints": [
       "样本是谁？能代表结论覆盖的全体吗？",
       "「更健康」和「喝咖啡」谁先谁后？",
       "没有对照组的比较，等于没有比较"
     ],
-    "explanation": "这篇「咖啡延寿」报道有三处硬伤：①样本只来自年轻健康的科技公司员工，却推广到所有人；②相关关系被说成因果关系；③把对照组排除在分析外。看研究结论记住三问：样本代表谁？相关还是因果？对照组在哪？"
+    "explanation": "这篇报道把年轻科技员工推广到所有人，把相关说成因果，还排除了对照组。平衡样本内的男女比例只能改善内部构成，无法代表老人或病人；统一咖啡剂量也不能替代不喝咖啡的对照。"
   },
   "en": {
     "caseTitle": "Case: A Report Claiming \"Coffee Extends Life\"",
@@ -37,14 +37,14 @@
       "q_samplebias": "Studying only young white-collar workers — can the conclusion represent the elderly, the sick, or manual laborers?",
       "q_corr": "Between coffee and better checkups, which is the cause? Could a third factor drive both?",
       "q_control": "Why was the control group excluded? What do the non-drinkers' numbers show?",
-      "q_d1": "How many coffee-related papers has the research team published in total?",
-      "q_d2": "What brand of coffee did the volunteers drink during the study?"
+      "q_d1": "Was the gender balance even within the young office-worker sample?",
+      "q_d2": "Did volunteers consume the same dose of coffee each day?"
     },
     "hints": [
       "Who is in the sample? Can it represent the population of the conclusion?",
       "Which came first — \"healthier\" or \"coffee\"?",
       "A comparison without a control group is no comparison at all"
     ],
-    "explanation": "This \"coffee extends life\" report has three hard flaws: ① the sample only covers young, healthy tech employees yet is generalized to everyone; ② correlation is dressed up as causation; ③ the control group was excluded from the analysis. When reading any study, remember three questions: who does the sample represent? correlation or causation? where is the control group?"
+    "explanation": "The report generalizes from young tech workers, turns correlation into causation, and excludes its control group. Balancing gender within that sample improves its composition but not its reach to older or ill people; equalizing coffee doses still cannot replace a non-coffee control."
   }
 }

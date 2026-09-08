@@ -2,11 +2,11 @@
 // 竖版 3:4（360x480 固定尺寸，导出时 pixelRatio=3 → 1080x1440 高清）
 // 纯静态无动画（html-to-image 导出稳定）：深色战绩卡 + 金色点缀
 // 内容：品牌 + 头衔 + 六维雷达 + 通关统计 + 强/弱维度 + 标语
-import { RADAR_DIMENSIONS } from './RadarChart'
+import { RADAR_DIMENSIONS } from './radarDimensions'
 import type { Locale, RadarDimension } from '../schema/levelTypes'
 
 /* ---------- 头衔（按通关数 6 档） ---------- */
-export function getTitle(doneCount: number, total: number, locale: Locale): string {
+function getTitle(doneCount: number, total: number, locale: Locale): string {
   const ratio = doneCount / total
   const zhTitles = ['淘金新手', '论证学徒', '淘金好手', '批判侦探', '批判思维大师']
   const enTitles = ['Gold Rookie', 'Argument Apprentice', 'Skilled Panner', 'Critical Detective', 'Master Critic']
