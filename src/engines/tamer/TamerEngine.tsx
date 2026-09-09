@@ -14,6 +14,7 @@ import { useUiStore } from '../../store/uiStore'
 import { useProgressStore } from '../../store/progressStore'
 import { useSettingsStore } from '../../store/settingsStore'
 import type { TamerRuntimeLevel } from '../../schema/levelTypes'
+import type { TamerStepReview } from '../../schema/stepReview'
 
 interface Props {
   level: TamerRuntimeLevel
@@ -65,6 +66,8 @@ export default function TamerEngine({
   const [hintsUsed, setHintsUsed] = useState(0)
   const [scoreDetail, setScoreDetail] = useState<ScoreBreakdown | null>(null)
   const [attempt, setAttempt] = useState(0)
+  const [eventTries, setEventTries] = useState<Map<string, { wrong: number; nearMiss: number }>>(new Map())
+  const [stepsReview, setStepsReview] = useState<TamerStepReview | null>(null)
   const settledRef = useRef(false)
 
   // 通关结算
@@ -79,15 +82,52 @@ export default function TamerEngine({
         hintsUsed,
         cost: hintCostFor(level.meta.difficulty),
       })
+      const items = level.events.map((ev, i) => {
+        const t = eventTries.get(ev.eventId) ?? { wrong: 0, nearMiss: 0 }
+        const correct = ev.options.find((o) => o.key === ev.correctKey)?.text ?? ''
+        return {
+          eventId: ev.eventId,
+          biasLabel: ev.biasLabel,
+          impulsePrompt: ev.impulsePrompt,
+          status: (i < calmedCount ? 'hit' : 'miss') as 'hit' | 'miss',
+          wrongTries: t.wrong,
+          nearMissTries: t.nearMiss,
+          correctText: correct,
+          calmExplanation: ev.calm,
+        }
+      })
+      setStepsReview({
+        kind: 'tamer',
+        items,
+        summary: { calmedCount, total, wrongTries, nearMissTries },
+      })
       markLevelComplete(level.meta.levelId, finalScore, level.meta.rewardTags)
       const timer = window.setTimeout(() => setModalOpen(true), 900)
       return () => window.clearTimeout(timer)
     }
     return undefined
-  }, [isComplete, wrongTries, nearMissTries, hintsUsed, level, markLevelComplete])
+  }, [isComplete, wrongTries, nearMissTries, hintsUsed, level, markLevelComplete, calmedCount, total, eventTries])
 
   const handleOption = (key: string) => {
     const outcome = select(key)
+    if (current) {
+      const evId = current.eventId
+      if (outcome === 'near_miss') {
+        setEventTries((prev) => {
+          const m = new Map(prev)
+          const e = m.get(evId) ?? { wrong: 0, nearMiss: 0 }
+          m.set(evId, { ...e, nearMiss: e.nearMiss + 1 })
+          return m
+        })
+      } else if (outcome === 'miss') {
+        setEventTries((prev) => {
+          const m = new Map(prev)
+          const e = m.get(evId) ?? { wrong: 0, nearMiss: 0 }
+          m.set(evId, { ...e, wrong: e.wrong + 1 })
+          return m
+        })
+      }
+    }
     if (outcome === 'calmed') {
       const ev = level.events[calmedCount]
       showToast(`${t.calmToast}${ev?.calm ?? ''}`, 'success')
@@ -113,6 +153,8 @@ export default function TamerEngine({
     setModalOpen(false)
     settledRef.current = false
     setHintsUsed(0)
+    setEventTries(new Map())
+    setStepsReview(null)
     setAttempt((a) => a + 1)
     reset()
     onReplay()
@@ -246,6 +288,7 @@ export default function TamerEngine({
         levelTitle={chapterTitle}
         score={score}
         scoreDetail={scoreDetail}
+        stepsReview={stepsReview}
         rewardTags={level.meta.rewardTags}
         explanation={level.explanation}
         contributor={level.meta.contributor}

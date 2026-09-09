@@ -20,6 +20,7 @@ import { useUiStore } from '../../store/uiStore'
 import { useProgressStore } from '../../store/progressStore'
 import { useSettingsStore } from '../../store/settingsStore'
 import type { XrayAnchor, XrayRuntimeLevel } from '../../schema/levelTypes'
+import type { XrayStepReview } from '../../schema/stepReview'
 
 interface Props {
   level: XrayRuntimeLevel
@@ -167,6 +168,8 @@ export default function XrayEngine({
   const [hintsUsed, setHintsUsed] = useState(0)
   const [scoreDetail, setScoreDetail] = useState<ScoreBreakdown | null>(null)
   const [attempt, setAttempt] = useState(0)
+  const [wrongClicked, setWrongClicked] = useState<Set<string>>(new Set())
+  const [stepsReview, setStepsReview] = useState<XrayStepReview | null>(null)
   const settledRef = useRef(false)
 
   useEffect(() => {
@@ -180,16 +183,38 @@ export default function XrayEngine({
         hintsUsed,
         cost: hintCostFor(level.meta.difficulty),
       })
+      // 构建每步判定复盘（5 引擎统一契约）
+      const descById = new Map<string, { id: string; text: string; type: string }>()
+      for (const a of targets) descById.set(a.nodeId, { id: a.nodeId, text: a.anchorText, type: a.type })
+      const items = steps.map((step, i) => {
+        const targetDescs = step.targets.map((id) => descById.get(id) ?? { id, text: id, type: 'unknown' })
+        const stepFound = step.targets.filter((id) => foundIds.has(id))
+        const stepMissed = step.targets.filter((id) => !foundIds.has(id))
+        return { stepIdx: i, stepLabel: stepLabelOf(step), targetDescs, foundIds: stepFound, missedIds: stepMissed }
+      })
+      const wrongClicks = [...wrongClicked].map((id) => {
+        const correct = targets.find((t) => t.nodeId === id)
+        const any = level.anchors.find((a) => a.nodeId === id)
+        const text = correct?.anchorText ?? any?.anchorText ?? id
+        const type = (correct?.type ?? any?.type ?? 'unknown') as string
+        let note: string
+        if (correct) note = locale === 'zh' ? '顺序错' : 'out-of-order'
+        else if (any) note = locale === 'zh' ? '干扰项' : 'distractor'
+        else note = locale === 'zh' ? '错选' : 'wrong pick'
+        return { id, text, type, note }
+      })
+      setStepsReview({ kind: 'xray', items, wrongClicks, summary: { foundCount, total, mistakes } })
       markLevelComplete(level.meta.levelId, finalScore, level.meta.rewardTags)
       const timer = window.setTimeout(() => setModalOpen(true), 700)
       return () => window.clearTimeout(timer)
     }
     return undefined
-  }, [isComplete, mistakes, hintsUsed, level, markLevelComplete])
+  }, [isComplete, mistakes, hintsUsed, level, markLevelComplete, foundIds, foundCount, total, steps, targets, wrongClicked, locale])
 
   const handleNodeClick = (anchor: XrayAnchor) => {
     if (!anchor.isCorrect) {
       registerMistake(anchor.nodeId)
+      setWrongClicked((prev) => new Set(prev).add(anchor.nodeId))
       showToast(WRONG_MSG[locale](anchor.type), 'error')
       return
     }
@@ -198,6 +223,7 @@ export default function XrayEngine({
       showToast(FOUND_MSG[locale](anchor.type), 'success')
     } else {
       registerMistake(anchor.nodeId)
+      setWrongClicked((prev) => new Set(prev).add(anchor.nodeId))
       showToast(ORDER_MSG[locale](currentLabel), 'error')
     }
   }
@@ -207,6 +233,7 @@ export default function XrayEngine({
     if (!gap) return
     if (!activeIds.has(`gap:${gapId}`)) {
       registerMistake(`gap:${gapId}`)
+      setWrongClicked((prev) => new Set(prev).add(`gap:${gapId}`))
       showToast(ORDER_MSG[locale](currentLabel), 'error')
       return
     }
@@ -215,6 +242,7 @@ export default function XrayEngine({
       showToast(locale === 'zh' ? '🩹 关键遗漏已补全！' : 'Key omission patched!', 'success')
     } else {
       registerMistake(`gap:${gapId}`)
+      setWrongClicked((prev) => new Set(prev).add(`gap:${gapId}`))
       showToast(locale === 'zh' ? '✗ 这不是关键遗漏' : '✗ Not the missing key info', 'error')
     }
   }
@@ -222,6 +250,7 @@ export default function XrayEngine({
   const handleUnearth = (node: XrayAnchor) => {
     if (!activeIds.has(node.nodeId)) {
       registerMistake(node.nodeId)
+      setWrongClicked((prev) => new Set(prev).add(node.nodeId))
       showToast(ORDER_MSG[locale](currentLabel), 'error')
       return
     }
@@ -241,6 +270,8 @@ export default function XrayEngine({
     settledRef.current = false
     setStepIdx(0)
     setHintsUsed(0)
+    setWrongClicked(new Set())
+    setStepsReview(null)
     setAttempt((a) => a + 1)
     reset()
     onReplay()
@@ -415,6 +446,7 @@ export default function XrayEngine({
         levelTitle={chapterTitle}
         score={score}
         scoreDetail={scoreDetail}
+        stepsReview={stepsReview}
         rewardTags={level.meta.rewardTags}
         explanation={level.explanation}
         contributor={level.meta.contributor}

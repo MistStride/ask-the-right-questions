@@ -13,6 +13,7 @@ import { useUiStore } from '../../store/uiStore'
 import { useProgressStore } from '../../store/progressStore'
 import { useSettingsStore } from '../../store/settingsStore'
 import type { ScaleRuntimeLevel } from '../../schema/levelTypes'
+import type { ScaleStepReview } from '../../schema/stepReview'
 
 interface Props {
   level: ScaleRuntimeLevel
@@ -48,6 +49,8 @@ export default function ScaleEngine({
   const [hintsUsed, setHintsUsed] = useState(0)
   const [scoreDetail, setScoreDetail] = useState<ScoreBreakdown | null>(null)
   const [attempt, setAttempt] = useState(0)
+  const [triesLog, setTriesLog] = useState<Array<{ position: number; precision: number; inRange: boolean; dir?: 'left' | 'right' }>>([])
+  const [stepsReview, setStepsReview] = useState<ScaleStepReview | null>(null)
 
   const modeLabel = useMemo(
     () => (mode === 'conclusion' ? t.modeConclusion : t.modeSpectrum),
@@ -55,7 +58,11 @@ export default function ScaleEngine({
   )
 
   const handleRelease = (pos: number) => {
-    judge(pos)
+    const r = judge(pos)
+    setTriesLog((prev) => [
+      ...prev,
+      { position: pos, precision: r.precision ?? 0, inRange: r.inRange, dir: r.dir },
+    ])
   }
 
   const handleSubmit = () => {
@@ -73,6 +80,15 @@ export default function ScaleEngine({
       hintsUsed,
       cost: hintCostFor(level.meta.difficulty),
     })
+    const lastHit = [...triesLog].reverse().find((t) => t.inRange)
+    setStepsReview({
+      kind: 'scale',
+      tries: triesLog,
+      bestScore: raw,
+      idealRange: level.idealRange,
+      idealPoint: level.idealPoint,
+      finalInRange: Boolean(lastHit),
+    })
     markLevelComplete(level.meta.levelId, finalScore, level.meta.rewardTags)
     setModalOpen(true)
   }
@@ -82,6 +98,8 @@ export default function ScaleEngine({
     setSettled(false)
     setScore(0)
     setHintsUsed(0)
+    setTriesLog([])
+    setStepsReview(null)
     setAttempt((a) => a + 1)
     reset()
     onReplay()
@@ -197,6 +215,7 @@ export default function ScaleEngine({
         levelTitle={chapterTitle}
         score={score}
         scoreDetail={scoreDetail}
+        stepsReview={stepsReview}
         rewardTags={level.meta.rewardTags}
         explanation={level.explanation}
         contributor={level.meta.contributor}

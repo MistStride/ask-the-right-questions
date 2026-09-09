@@ -17,6 +17,7 @@ import { useUiStore } from '../../store/uiStore'
 import { useProgressStore } from '../../store/progressStore'
 import { useSettingsStore } from '../../store/settingsStore'
 import type { CourtroomRuntimeLevel } from '../../schema/levelTypes'
+import type { CourtroomStepReview } from '../../schema/stepReview'
 
 interface Props {
   level: CourtroomRuntimeLevel
@@ -79,6 +80,8 @@ export default function CourtroomEngine({
   const [hintsUsed, setHintsUsed] = useState(0)
   const [scoreDetail, setScoreDetail] = useState<ScoreBreakdown | null>(null)
   const [attempt, setAttempt] = useState(0)
+  const [spotStats, setSpotStats] = useState<Map<string, { wrong: number; nearMiss: number; hitByQuestionId?: string; hitByText?: string }>>(new Map())
+  const [stepsReview, setStepsReview] = useState<CourtroomStepReview | null>(null)
   const settledRef = useRef(false)
   const dragQuestionRef = useRef<CourtroomQuestion | null>(null)
 
@@ -112,23 +115,60 @@ export default function CourtroomEngine({
         hintsUsed,
         cost: hintCostFor(level.meta.difficulty),
       })
+      const items = level.weakSpots.map((ws) => {
+        const s = spotStats.get(ws.spotId) ?? { wrong: 0, nearMiss: 0 }
+        const hit = hitSpots.has(ws.spotId)
+        return {
+          spotId: ws.spotId,
+          anchorText: ws.anchorText,
+          issueType: ws.issueType,
+          status: (hit ? 'hit' : 'miss') as 'hit' | 'miss',
+          hitByText: s.hitByText,
+          wrongTries: s.wrong,
+          nearMissTries: s.nearMiss,
+          debunkText: ws.debunkText,
+        }
+      })
+      setStepsReview({
+        kind: 'courtroom',
+        items,
+        summary: { hitCount, total, wrongTries, nearMissTries },
+      })
       markLevelComplete(level.meta.levelId, finalScore, level.meta.rewardTags)
       const timer = window.setTimeout(() => setModalOpen(true), 1400)
       return () => window.clearTimeout(timer)
     }
     return undefined
-  }, [isComplete, remainingCredibility, wrongTries, nearMissTries, hintsUsed, level, markLevelComplete])
+  }, [isComplete, remainingCredibility, wrongTries, nearMissTries, hintsUsed, level, markLevelComplete, hitSpots, hitCount, total, spotStats])
 
   const handleStrike = (questionId: string, spot: CourtroomSpot) => {
     const q = questionsById.get(questionId)
     if (!q) return
     const outcome = strike(q, spot)
     if (outcome === 'hit') {
+      setSpotStats((prev) => {
+        const m = new Map(prev)
+        const e = m.get(spot.spotId) ?? { wrong: 0, nearMiss: 0 }
+        m.set(spot.spotId, { ...e, hitByQuestionId: q.questionId, hitByText: q.text })
+        return m
+      })
       showToast(`${t.hitToast} ${spot.debunkText}`, 'success')
       setSelectedId(null)
     } else if (outcome === 'near_miss') {
+      setSpotStats((prev) => {
+        const m = new Map(prev)
+        const e = m.get(spot.spotId) ?? { wrong: 0, nearMiss: 0 }
+        m.set(spot.spotId, { ...e, nearMiss: e.nearMiss + 1 })
+        return m
+      })
       showToast(t.nearMissToast, 'info')
     } else if (outcome === 'miss') {
+      setSpotStats((prev) => {
+        const m = new Map(prev)
+        const e = m.get(spot.spotId) ?? { wrong: 0, nearMiss: 0 }
+        m.set(spot.spotId, { ...e, wrong: e.wrong + 1 })
+        return m
+      })
       showToast(t.missToast, 'error')
     } else {
       showToast(t.alreadyToast, 'info')
@@ -157,6 +197,8 @@ export default function CourtroomEngine({
     settledRef.current = false
     setSelectedId(null)
     setHintsUsed(0)
+    setSpotStats(new Map())
+    setStepsReview(null)
     setAttempt((a) => a + 1)
     reset()
     onReplay()
@@ -271,6 +313,7 @@ export default function CourtroomEngine({
         levelTitle={chapterTitle}
         score={score}
         scoreDetail={scoreDetail}
+        stepsReview={stepsReview}
         rewardTags={level.meta.rewardTags}
         explanation={level.explanation}
         contributor={level.meta.contributor}

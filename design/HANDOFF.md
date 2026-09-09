@@ -1,7 +1,7 @@
 # 项目交接文档 · HANDOFF
 
 > 用途：压缩上下文重开对话时，把这份文档 + ROADMAP 丢给新会话即可无缝接手。
-> 最后更新：2026-09-08（难度接入机制：提示扣分 + 结算得分构成已实现；favicon 换浅色主题版）
+> 最后更新：2026-09-09（OG 分享预览：Pillow 程序绘制 1200×630 → 2x 2400×1260 PNG，纸面+金放大镜+5 引擎胶囊+标语深色卡，og:image 接绝对 GitHub Pages URL，twitter:card=summary_large_image；脚本 `scripts/gen-og-image.py`，产物 `public/og-image.png` / `docs/og-image.png`）
 
 ---
 
@@ -58,7 +58,7 @@ git 历史：约 20 个 commit，远程 main 最新。
 
 **B. 传播与留存（阶段 7 已落地基础版）**
 - [x] 雷达图 → "思维诊断报告"卡片（头衔、六维、高光时刻、可下载分享图）✅
-- [ ] OG meta / 分享预览（链接卡片好看）
+- [x] **OG meta / 分享预览（2026-09-09）**：`scripts/gen-og-image.py`（Pillow 直接绘制，simhei.ttf 字体，2x → 2400×1260 PNG，约 156KB）→ `public/og-image.png`；`index.html` 的 `og:image` 指向绝对 GitHub Pages URL，`twitter:card=summary_large_image`（替换原指向 favicon.svg 的小图）。重生成只需 `python scripts/gen-og-image.py`（依赖本机 simhei.ttf）。
 - [ ] 分享卡可扩展：通关时间/连续通关天数/最弱维度鼓励语
 
 **C. 工程与开源**

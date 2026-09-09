@@ -2,6 +2,8 @@
 import { motion } from 'framer-motion'
 import type { Locale, RadarDimension } from '../schema/levelTypes'
 import type { ScoreBreakdown } from '../utils/hintPolicy'
+import type { StepReviewItem } from '../schema/stepReview'
+import StepReviewPanel from './StepReviewPanel'
 
 const TAG_LABELS: Record<RadarDimension, { zh: string; en: string }> = {
   structure: { zh: '结构识别力', en: 'Structure' },
@@ -29,6 +31,8 @@ interface Props {
   completionSub?: string
   /** 得分构成（用于展示「基础分 − 提示扣分 = 总分」），不传则不渲染 */
   scoreDetail?: ScoreBreakdown | null
+  /** 每步判定复盘（5 引擎统一数据契约，不传则不渲染） */
+  stepsReview?: StepReviewItem | null
 }
 
 const LABELS = {
@@ -77,6 +81,7 @@ export default function LevelCompleteModal({
   completionTitle,
   completionSub,
   scoreDetail,
+  stepsReview,
 }: Props) {
   if (!open) return null
   const t = LABELS[locale]
@@ -148,6 +153,9 @@ export default function LevelCompleteModal({
             </h3>
             <p className="mt-2 text-sm leading-relaxed text-slate-700">{explanation}</p>
           </div>
+
+          {/* 每步判定复盘（默认折叠） */}
+          {stepsReview && <StepReviewPanel review={stepsReview} locale={locale} />}
 
           {contributor && (
             <p className="mt-3 text-right text-xs text-slate-600">

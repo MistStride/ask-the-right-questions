@@ -14,6 +14,7 @@ import { useUiStore } from '../../store/uiStore'
 import { useProgressStore } from '../../store/progressStore'
 import { useSettingsStore } from '../../store/settingsStore'
 import type { DefusalRuntimeLevel } from '../../schema/levelTypes'
+import type { DefusalStepReview } from '../../schema/stepReview'
 
 interface Props {
   level: DefusalRuntimeLevel
@@ -47,6 +48,7 @@ export default function DefusalEngine({
   const [hintsUsed, setHintsUsed] = useState(0)
   const [scoreDetail, setScoreDetail] = useState<ScoreBreakdown | null>(null)
   const [attempt, setAttempt] = useState(0)
+  const [stepsReview, setStepsReview] = useState<DefusalStepReview | null>(null)
   const settledRef = useRef(false)
 
   const traps = level.spots.filter((s) => s.isTrap)
@@ -63,12 +65,24 @@ export default function DefusalEngine({
         hintsUsed,
         cost: hintCostFor(level.meta.difficulty),
       })
+      const traps = level.spots.filter((s) => s.isTrap)
+      setStepsReview({
+        kind: 'defusal',
+        traps: traps.map((s) => ({
+          spotId: s.spotId,
+          label: level.chartData[s.barIndex]?.label ?? '',
+          status: (defused.has(s.spotId) ? 'hit' : 'miss') as 'hit' | 'miss',
+          debunkText: defused.has(s.spotId) ? s.debunkText : undefined,
+        })),
+        wrongDecoys: wrongCount,
+        summary: { defusedCount: defusedCount, total: totalTraps },
+      })
       markLevelComplete(level.meta.levelId, finalScore, level.meta.rewardTags)
       const timer = window.setTimeout(() => setModalOpen(true), 1100)
       return () => window.clearTimeout(timer)
     }
     return undefined
-  }, [isComplete, wrongCount, hintsUsed, level, markLevelComplete])
+  }, [isComplete, wrongCount, hintsUsed, level, markLevelComplete, defused, defusedCount, totalTraps])
 
   const handleTapSpot = (spotId: string) => {
     const outcome = tapSpot(spotId)
@@ -86,6 +100,7 @@ export default function DefusalEngine({
     setModalOpen(false)
     settledRef.current = false
     setHintsUsed(0)
+    setStepsReview(null)
     setAttempt((a) => a + 1)
     reset()
     onReplay()
@@ -183,6 +198,7 @@ export default function DefusalEngine({
         levelTitle={chapterTitle}
         score={score}
         scoreDetail={scoreDetail}
+        stepsReview={stepsReview}
         rewardTags={level.meta.rewardTags}
         explanation={level.explanation}
         contributor={level.meta.contributor}
