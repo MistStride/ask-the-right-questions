@@ -8,6 +8,7 @@ import { useSettingsStore } from '../store/settingsStore'
 import { useProgressStore } from '../store/progressStore'
 import { RADAR_DIMENSIONS } from '../components/radarDimensions'
 import FirstRunOnboarding, { ONBOARDING_STORAGE_KEY } from '../components/FirstRunOnboarding'
+import GitHubLink from '../components/GitHubLink'
 import type { EngineType } from '../schema/levelTypes'
 
 const DIMENSION_LABEL = {
@@ -131,6 +132,7 @@ export default function HomePage() {
             </span>
           </div>
           <div className="flex items-center gap-2">
+            <GitHubLink locale={locale} placement="nav" />
             <button
               type="button"
               onClick={() => navigate('/profile')}
@@ -353,8 +355,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      <footer className="border-t border-line/60 py-6 text-center text-xs text-slate-500">
-        ⛏ {t.footer}
+      <footer className="border-t border-line/60 px-4 py-6 text-xs text-slate-500">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-2 text-center sm:flex-row sm:gap-3">
+          <span>⛏ {t.footer}</span>
+          <span aria-hidden="true" className="hidden text-line sm:inline">
+            ·
+          </span>
+          <GitHubLink locale={locale} placement="footer" />
+        </div>
       </footer>
     </div>
   )

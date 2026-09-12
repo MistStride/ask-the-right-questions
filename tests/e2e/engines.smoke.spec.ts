@@ -17,6 +17,22 @@ test('home primary action starts the first unfinished level', async ({ page }) =
   await expect(page.locator('[data-engine="tamer"]')).toBeVisible()
 })
 
+test('home exposes safe links to the GitHub repository', async ({ page }) => {
+  await page.addInitScript(() => window.localStorage.setItem('atrq-onboarding-v1', 'complete'))
+  await page.goto('./')
+
+  const repositoryLinks = page.getByRole('link', { name: /GitHub/ })
+  await expect(repositoryLinks).toHaveCount(2)
+  for (let index = 0; index < 2; index += 1) {
+    await expect(repositoryLinks.nth(index)).toHaveAttribute(
+      'href',
+      'https://github.com/MistStride/ask-the-right-questions',
+    )
+    await expect(repositoryLinks.nth(index)).toHaveAttribute('target', '_blank')
+    await expect(repositoryLinks.nth(index)).toHaveAttribute('rel', 'noopener noreferrer')
+  }
+})
+
 test('first visit delivers a nuanced judgment before the full learning path', async ({ page }) => {
   await page.goto('./')
 
