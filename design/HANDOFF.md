@@ -68,9 +68,10 @@ git 历史：约 20 个 commit，远程 main 最新。
 - [x] `scripts/new-level.mjs` 关卡脚手架 CLI（`npm run new-level`）✅
 - [x] CONTRIBUTING.md + Issue 模板（关卡/翻译/难度校准/bug）✅
 - [ ] 移动端适配检查（目前以桌面布局为主）
-- [x] 自动化质量门禁（2026-09-12 更新）：独立锚点校验 + 19 项 Vitest（含 6 项灰度质量契约）+ 首访引导、GitHub 外链、短视口结算弹窗与 5 引擎共 9 项 Playwright 生产烟测；CI 对 push/PR 执行 lint/test/build/Pages 路径 preview
+- [x] 自动化质量门禁（2026-09-12 更新）：独立锚点校验 + 19 项 Vitest（含 6 项灰度质量契约）+ 首访引导、思考动作知识弹窗、GitHub 外链、短视口结算弹窗与 5 引擎共 10 项 Playwright 生产烟测；CI 对 push/PR 执行 lint/test/build/Pages 路径 preview
 - [x] 关卡总结弹窗适配短视口：正文/复盘在弹窗内滚动、操作区固定、背景滚动锁定，并提供始终可见的关闭按钮与 Esc 退出
 - [x] 首页 GitHub 入口：顶栏轻量入口 + 页尾“查看源码 · 贡献关卡”，中英双语并使用安全的新标签页跳转
+- [x] “5 个思考动作”知识弹窗：每个动作含适用场景、3 个核心追问、微型示例、对应章节与练习入口；支持中英双语、短视口滚动和 Esc 关闭
 - [ ] 社区示例关卡（用 CLI 产出一个"Good First Issue"标签的示例 PR 模板）
 
 **D. 已知技术债（本次已清理一部分）**

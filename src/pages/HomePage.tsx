@@ -9,6 +9,7 @@ import { useProgressStore } from '../store/progressStore'
 import { RADAR_DIMENSIONS } from '../components/radarDimensions'
 import FirstRunOnboarding, { ONBOARDING_STORAGE_KEY } from '../components/FirstRunOnboarding'
 import GitHubLink from '../components/GitHubLink'
+import ThinkingMoveModal from '../components/ThinkingMoveModal'
 import type { EngineType } from '../schema/levelTypes'
 
 const DIMENSION_LABEL = {
@@ -22,6 +23,7 @@ export default function HomePage() {
   const completed = useProgressStore((s) => s.completed)
   const radar = useProgressStore((s) => s.radar)
   const navigate = useNavigate()
+  const [selectedEngine, setSelectedEngine] = useState<EngineType | null>(null)
   const [showOnboarding, setShowOnboarding] = useState(
     () => typeof window !== 'undefined' && window.localStorage.getItem(ONBOARDING_STORAGE_KEY) === null,
   )
@@ -317,12 +319,12 @@ export default function HomePage() {
         <div className="mt-6 grid gap-3 sm:grid-cols-3 lg:grid-cols-5">
           {(
             [
-              ['xray', '🔍', 'cyan'],
-              ['courtroom', '⚖️', 'rose'],
-              ['scale', '⚗️', 'violet'],
-              ['defusal', '🧨', 'orange'],
-              ['tamer', '🐘', 'gold'],
-            ] as [EngineType, string, string][]
+              ['xray', '🔍'],
+              ['courtroom', '⚖️'],
+              ['scale', '⚗️'],
+              ['defusal', '🧨'],
+              ['tamer', '🐘'],
+            ] as [EngineType, string][]
           ).map(([engine, icon]) => {
             const b = ENGINE_BADGES[engine]
             const action = {
@@ -342,18 +344,38 @@ export default function HomePage() {
               },
             }[locale][engine]
             return (
-              <div
+              <motion.button
                 key={engine}
-                className="rounded-2xl border border-line bg-panel p-4 text-center"
+                data-testid={`thinking-move-${engine}`}
+                type="button"
+                aria-haspopup="dialog"
+                aria-controls="thinking-move-dialog"
+                whileHover={{ y: -4 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={() => setSelectedEngine(engine)}
+                className="group rounded-2xl border border-line bg-panel p-4 text-center transition hover:border-amber-500/45 hover:bg-white hover:shadow-[0_8px_24px_rgba(120,95,45,0.12)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-500"
               >
                 <span className="text-2xl">{icon}</span>
                 <p className="mt-2 text-sm font-bold text-slate-800">{b[locale]}</p>
                 <p className="mt-1 text-[11px] text-slate-500">{action}</p>
-              </div>
+                <p className="mt-3 text-[11px] font-semibold text-amber-700 transition group-hover:translate-x-0.5">
+                  {locale === 'zh' ? '了解这个方法 →' : 'Learn the method →'}
+                </p>
+              </motion.button>
             )
           })}
         </div>
       </section>
+
+      <ThinkingMoveModal
+        engine={selectedEngine}
+        locale={locale}
+        onClose={() => setSelectedEngine(null)}
+        onPractice={(chapterId) => {
+          setSelectedEngine(null)
+          navigate(`/chapter/${chapterId}`)
+        }}
+      />
 
       <footer className="border-t border-line/60 px-4 py-6 text-xs text-slate-500">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-2 text-center sm:flex-row sm:gap-3">

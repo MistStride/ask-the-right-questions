@@ -33,6 +33,27 @@ test('home exposes safe links to the GitHub repository', async ({ page }) => {
   }
 })
 
+test('thinking move cards open lessons and lead into practice', async ({ page }) => {
+  await page.addInitScript(() => window.localStorage.setItem('atrq-onboarding-v1', 'complete'))
+  await page.goto('./')
+
+  await page.getByTestId('thinking-move-xray').click()
+  const lesson = page.getByTestId('thinking-move-modal')
+  await expect(lesson).toBeVisible()
+  await expect(lesson).toContainText(/三个核心追问|Three questions to ask/)
+  await expect(lesson).toContainText(/第 2 章|Ch\. 2/)
+  await expect(page.locator('body')).toHaveCSS('overflow', 'hidden')
+
+  await page.keyboard.press('Escape')
+  await expect(lesson).toBeHidden()
+  await expect(page.locator('body')).not.toHaveCSS('overflow', 'hidden')
+
+  await page.getByTestId('thinking-move-defusal').click()
+  await expect(lesson).toContainText(/分母、基数、样本|denominators, base rates, samples/)
+  await lesson.getByRole('button', { name: /去练习这个动作|Practice this move/ }).click()
+  await expect(page).toHaveURL(/#\/chapter\/10$/)
+})
+
 test('first visit delivers a nuanced judgment before the full learning path', async ({ page }) => {
   await page.goto('./')
 
