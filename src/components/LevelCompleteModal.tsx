@@ -1,4 +1,5 @@
 // 通关结算弹窗：所有引擎共用。展示深度解析 + 雷达维度奖励 + 操作按钮。
+import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import type { Locale, RadarDimension } from '../schema/levelTypes'
 import type { ScoreBreakdown } from '../utils/hintPolicy'
@@ -49,6 +50,7 @@ const LABELS = {
     replay: '再玩一次',
     badge: '雷达维度 +',
     contributor: '关卡贡献者',
+    close: '关闭总结',
   },
   en: {
     complete: 'Argument structure restored!',
@@ -63,6 +65,7 @@ const LABELS = {
     replay: 'Play Again',
     badge: 'Radar +',
     contributor: 'Level by',
+    close: 'Close summary',
   },
 }
 
@@ -83,24 +86,68 @@ export default function LevelCompleteModal({
   scoreDetail,
   stepsReview,
 }: Props) {
-  if (!open) return null
   const t = LABELS[locale]
+  const closeButtonRef = useRef<HTMLButtonElement>(null)
+
+  useEffect(() => {
+    if (!open) return undefined
+    const root = document.documentElement
+    const previousRootOverflow = root.style.overflow
+    const previousBodyOverflow = document.body.style.overflow
+    root.style.overflow = 'hidden'
+    document.body.style.overflow = 'hidden'
+    closeButtonRef.current?.focus()
+    return () => {
+      root.style.overflow = previousRootOverflow
+      document.body.style.overflow = previousBodyOverflow
+    }
+  }, [open])
+
+  useEffect(() => {
+    if (!open) return undefined
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') onHome()
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [open, onHome])
+
+  if (!open) return null
 
   return (
-    <div className="fixed inset-0 z-40 flex items-center justify-center bg-slate-900/30 p-4 backdrop-blur-sm">
+    <div className="fixed inset-0 z-40 flex items-center justify-center overflow-hidden bg-slate-900/30 p-2 backdrop-blur-sm sm:p-4">
       <motion.div
         initial={{ opacity: 0, scale: 0.85, y: 24 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ type: 'spring', stiffness: 300, damping: 24 }}
-        className="relative w-full max-w-lg overflow-hidden rounded-2xl border border-gold/50 bg-white shadow-[0_18px_50px_rgba(120,95,45,0.22)]"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="level-complete-title"
+        className="relative flex max-h-[calc(100dvh-1rem)] w-full max-w-lg flex-col overflow-hidden rounded-2xl border border-gold/50 bg-white shadow-[0_18px_50px_rgba(120,95,45,0.22)] sm:max-h-[calc(100dvh-2rem)]"
       >
         {/* 顶部金色光芒 */}
         <div className="pointer-events-none absolute inset-x-0 -top-24 h-48 bg-amber-200/50 blur-3xl" />
 
-        <div className="relative p-6 sm:p-7">
+        <button
+          ref={closeButtonRef}
+          type="button"
+          onClick={onHome}
+          aria-label={t.close}
+          title={t.close}
+          className="absolute right-3 top-3 z-10 flex h-9 w-9 items-center justify-center rounded-full border border-line bg-white/95 text-lg font-semibold text-slate-500 shadow-sm transition hover:border-amber-400 hover:text-amber-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-500"
+        >
+          ×
+        </button>
+
+        <div
+          data-testid="completion-scroll"
+          className="relative min-h-0 flex-1 touch-pan-y overflow-y-auto overscroll-contain p-5 pb-6 sm:p-7 sm:pb-7"
+        >
           <div className="flex items-center gap-2 text-amber-700">
             <span className="text-2xl">✨</span>
-            <h2 className="text-xl font-bold tracking-wide">{completionTitle ?? t.complete}</h2>
+            <h2 id="level-complete-title" className="pr-10 text-xl font-bold tracking-wide">
+              {completionTitle ?? t.complete}
+            </h2>
           </div>
           <p className="mt-1 text-sm text-slate-500">{completionSub ?? t.sub}</p>
           <p className="mt-2 text-xs font-semibold uppercase tracking-widest text-slate-500">
@@ -162,9 +209,14 @@ export default function LevelCompleteModal({
               {t.contributor} · {contributor}
             </p>
           )}
+        </div>
 
-          {/* 操作 */}
-          <div className="mt-5 flex flex-wrap items-center gap-2.5">
+        {/* 操作区固定在弹窗底部，正文和展开后的复盘独立滚动 */}
+        <div
+          data-testid="completion-actions"
+          className="relative shrink-0 border-t border-line bg-white/95 p-3.5 shadow-[0_-8px_24px_rgba(120,95,45,0.08)] sm:p-4"
+        >
+          <div className="flex flex-wrap items-center gap-2.5">
             {hasNext ? (
               <button
                 type="button"
