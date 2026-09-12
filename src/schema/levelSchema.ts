@@ -109,6 +109,7 @@ export const courtroomTextsSchema = z.object({
   witnessName: z.string().min(1, 'witnessName 不能为空'),
   testimony: z.string().min(1, 'testimony 不能为空'),
   textRefs: z.record(z.string(), z.string().min(1, 'textRef 对应的文案不能为空')),
+  nearMissFeedback: z.record(z.string(), z.string().min(1, '近失误反馈不能为空')).optional(),
   hints: z.array(z.string()),
   explanation: z.string().min(1, 'explanation 不能为空'),
 })
@@ -298,6 +299,7 @@ export const tamerTextsSchema = z.object({
   scenario: z.string().min(1, 'scenario 不能为空'),
   impulsePrompts: z.record(z.string(), z.string().min(1)),
   options: z.record(z.string(), z.string().min(1)),
+  nearMissFeedback: z.record(z.string(), z.string().min(1, '近失误反馈不能为空')).optional(),
   eventMeta: z.record(z.string(), tamerEventMetaSchema),
   hints: z.array(z.string()),
   explanation: z.string().min(1, 'explanation 不能为空'),

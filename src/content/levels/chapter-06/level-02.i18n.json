@@ -16,6 +16,10 @@
       "q_d1": "除了巴菲特，还有哪些知名投资人赞成这种开户方式？",
       "q_d2": "反对这家机构的人里，有多少人自己从来不做理财？"
     },
+    "nearMissFeedback": {
+      "q_d1": "更多名人只能增加权威的数量，仍没有验证这家机构的资质、费用和风险。",
+      "q_d2": "批评者是否理财描述的是人，不是他们对机构的质疑是否成立。"
+    },
     "hints": [
       "借名人的话压人，是权威，不是证据",
       "把反对者说成极端可笑的样子再攻击——这是稻草人",
@@ -39,6 +43,10 @@
       "q_redherring": "What do housing prices and kids' tuition have to do with whether this firm is trustworthy?",
       "q_d1": "Besides Buffett, which famous investors endorse this way of opening accounts?",
       "q_d2": "How many critics of this firm never invest their own money at all?"
+    },
+    "nearMissFeedback": {
+      "q_d1": "More famous endorsers only add authorities; they still do not verify this firm’s credentials, fees, or risks.",
+      "q_d2": "Whether critics invest describes the people, not whether their objections to the firm are sound."
     },
     "hints": [
       "Leaning on a celebrity's words is authority, not evidence",

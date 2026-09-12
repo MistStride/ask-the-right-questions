@@ -14,6 +14,11 @@
       "q_d2": "被采访的顾客是否覆盖了不同年龄段？",
       "q_d3": "抢购发生在促销开始后的第几个小时？"
     },
+    "nearMissFeedback": {
+      "q_d1": "点击量能证明顾客看到了促销，却不能排除台风预警同时推动了点击和购买。",
+      "q_d2": "年龄覆盖能改善样本多样性，但几位受访者仍撑不起全城市的长期习惯。",
+      "q_d3": "时间间隔能把先后关系说得更精确，却仍不能在促销和避险需求之间判定因果。"
+    },
     "hints": [
       "台风前销量涨，不等于促销导致——可能是同一原因的两面",
       "几位顾客的采访，撑不起「全体市民习惯」的结论",
@@ -35,6 +40,11 @@
       "q_d1": "How many customers clicked the promotion page after the ad appeared?",
       "q_d2": "Did the interviewed customers cover several age groups?",
       "q_d3": "How many hours after the promotion began did the rush occur?"
+    },
+    "nearMissFeedback": {
+      "q_d1": "Clicks show that customers saw the promotion, but cannot rule out the typhoon warning driving both clicks and purchases.",
+      "q_d2": "Age coverage improves diversity, but a few interviewees still cannot establish a citywide long-term habit.",
+      "q_d3": "Timing makes the sequence more precise, but still cannot decide between promotion and safety-driven demand as the cause."
     },
     "hints": [
       "Sales rising before a typhoon is not proof of a promotion — the two may share one cause",

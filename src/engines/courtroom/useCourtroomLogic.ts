@@ -20,6 +20,7 @@ export interface CourtroomQuestion {
   sharpness: number
   targetIssue: string
   isRelevant: boolean
+  nearMissFeedback?: string
 }
 
 export type StrikeOutcome = 'hit' | 'near_miss' | 'miss' | 'already'

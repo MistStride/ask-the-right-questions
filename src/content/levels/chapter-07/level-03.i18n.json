@@ -16,6 +16,10 @@
       "q_d1": "老王服用前后的体重和血压分别变化了多少？",
       "q_d2": "听完这番话后，有多少家长当场决定购买？"
     },
+    "nearMissFeedback": {
+      "q_d1": "更精确地记录老王的变化能确认故事，却仍是一个没有对照、无法排除其他治疗的个案。",
+      "q_d2": "购买人数可以衡量这段话多有感染力，不能衡量草药是否有效。"
+    },
     "hints": [
       "自称头衔不等于资质——问可查证的凭证",
       "一个邻居的案例，能证明草药水有效吗？",
@@ -39,6 +43,10 @@
       "q_emotion": "Can stirring emotions with \"your children's future\" replace scientific evidence?",
       "q_d1": "How much did Lao Wang's weight and blood pressure change after taking it?",
       "q_d2": "How many parents decided to buy immediately after hearing this appeal?"
+    },
+    "nearMissFeedback": {
+      "q_d1": "More precise measurements can verify Wang’s story, but it remains one uncontrolled case that cannot rule out other treatment.",
+      "q_d2": "Purchase decisions measure how persuasive the appeal was, not whether the remedy works."
     },
     "hints": [
       "A self-proclaimed title is not qualification — ask for verifiable credentials",

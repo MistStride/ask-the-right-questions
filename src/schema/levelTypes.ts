@@ -146,6 +146,8 @@ export interface CourtroomTexts {
   testimony: string
   /** 弱点句原文 / 问题文案 / debunk 解析的文案池 */
   textRefs: Record<string, string>
+  /** 近失误为什么诱人、又缺了哪一步：questionId → 双语专属反馈 */
+  nearMissFeedback?: Record<string, string>
   hints: string[]
   explanation: string
 }
@@ -171,6 +173,7 @@ export interface CourtroomRuntimeLevel {
     sharpness: number
     targetIssue: string
     isRelevant: boolean
+    nearMissFeedback?: string
   }[]
   hints: string[]
   explanation: string
@@ -363,6 +366,8 @@ export interface TamerTexts {
   impulsePrompts: Record<string, string>
   /** 候选回应文案池：optionKey → 文案 */
   options: Record<string, string>
+  /** 近失误的即时反馈：optionKey → 为什么相关但不足 */
+  nearMissFeedback?: Record<string, string>
   /** 安抚解析 + 偏见标签：eventId → { calm, biasLabel } */
   eventMeta: Record<string, { calm: string; biasLabel: string }>
   hints: string[]
@@ -381,6 +386,7 @@ export interface TamerRuntimeLevel {
     options: { key: string; text: string }[]
     correctKey: string
     nearMissKeys: string[]
+    nearMissFeedback: Record<string, string>
     calm: string
   }[]
   initialRage: number

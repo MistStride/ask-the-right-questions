@@ -37,6 +37,16 @@
       "opt_judge_sunk": "已付的定金是过去成本，决定买不买该看东西本身值不值",
       "opt_refund": "能退定金就退；如果不能退，继续买完至少不浪费"
     },
+    "nearMissFeedback": {
+      "opt_snow": "销量是真线索，但你把“销量”进一步解释成“复购”和“质量”了，这两步都还缺证据。",
+      "opt_seal": "看数值比看盖章更谨慎，却默认了报告来源、检测项目和合格标准都可靠。",
+      "opt_echo": "各信一半看似中立，但立场对称不代表证据对称；客观不是机械折中。",
+      "opt_friends": "朋友体验能提示风险，却是小而自选的样本，不能估计所有用户的安全性。",
+      "opt_stubborn": "数据通常比口号可靠，但在来源、样本和方法未知时，还不能据此下结论。",
+      "opt_rhet2": "它长得像问题，却保留了“你会后悔”的预设，只是在逼对方自证。",
+      "opt_wait": "等待能检验倒计时真假，却回答不了产品是否值得买。",
+      "opt_refund": "退款条件会改变未来损失，但“买完才不浪费”仍让过去成本替产品价值背书。"
+    },
     "eventMeta": {
       "ev_conformity": {
         "calm": "销量可以是一条线索，但把它解释成复购或质量仍需证据；「就你聪明」更是在用人数施压。真正要检验的是销量能否支持质量结论。",
@@ -115,6 +125,16 @@
       "opt_sunk": "Deposit paid, I'll just buy it through gritted teeth",
       "opt_judge_sunk": "The deposit is a sunk cost — whether to buy now should rest on the product's value",
       "opt_refund": "Refund if possible; if not, completing the purchase at least avoids wasting it"
+    },
+    "nearMissFeedback": {
+      "opt_snow": "Sales are a clue, but this silently turns sales into repeat purchases and then into quality; both steps still need evidence.",
+      "opt_seal": "Reading the figures is better than trusting a stamp, but it assumes the source, tested items, and standard are all sound.",
+      "opt_echo": "Splitting belief fifty-fifty looks neutral, but equal positions do not mean equal evidence. Objectivity is not mechanical compromise.",
+      "opt_friends": "Friends’ experience can flag a risk, but it is a tiny self-selected sample and cannot estimate safety for all users.",
+      "opt_stubborn": "Data usually beats slogans, but unknown sources, samples, and methods cannot yet support the conclusion.",
+      "opt_rhet2": "It looks like a question but keeps the premise that you will regret it, forcing the other person to disprove the sales claim.",
+      "opt_wait": "Waiting can test whether the timer is genuine, but not whether the product is worth buying.",
+      "opt_refund": "Refundability changes future loss, but “finish buying so it is not wasted” still lets past cost stand in for product value."
     },
     "eventMeta": {
       "ev_conformity": {

@@ -35,7 +35,8 @@ export default function FeedbackToast() {
 
   useEffect(() => {
     if (!message) return
-    const timer = window.setTimeout(hideToast, 2400)
+    const duration = message.length > 80 ? 5200 : 2400
+    const timer = window.setTimeout(hideToast, duration)
     return () => window.clearTimeout(timer)
   }, [message, id, hideToast])
 
@@ -52,7 +53,9 @@ export default function FeedbackToast() {
             animate={{ y: 0, opacity: 1, scale: 1 }}
             exit={{ y: -18, opacity: 0, scale: 0.96, position: 'absolute' }}
             transition={{ type: 'spring', stiffness: 420, damping: 28 }}
-            className={`flex items-center gap-2.5 rounded-xl border px-4 py-2.5 text-sm font-medium backdrop-blur-md ${t.border} ${t.bg} ${t.shadow}`}
+            role="status"
+            aria-live="polite"
+            className={`flex max-w-2xl items-start gap-2.5 rounded-xl border px-4 py-2.5 text-sm font-medium leading-relaxed backdrop-blur-md ${t.border} ${t.bg} ${t.shadow}`}
           >
             <span className={`text-base font-bold ${t.text}`}>{t.icon}</span>
             <span className="text-slate-800">{message}</span>

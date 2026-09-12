@@ -14,6 +14,11 @@
       "q_d2": "同桌过去几次月考的成绩是否也一直在下降？",
       "q_d3": "这次月考是否恰好发生在平板作业启用之后？"
     },
+    "nearMissFeedback": {
+      "q_d1": "使用时长能描述暴露程度，却不能排除换老师、教材改版和停课等同步变化。",
+      "q_d2": "更多月考能让这个个案更可信，但一个同桌仍代表不了全班，更代表不了一代人。",
+      "q_d3": "它确认了结论已经承认的先后顺序，却没有证明成绩是被平板作业造成的。"
+    },
     "hints": [
       "「之后」不等于「因为」——找同时发生的其他变化",
       "一个孩子的例子，代表不了「这一代孩子」",
@@ -35,6 +40,11 @@
       "q_d1": "How much time does tablet homework take each student per day on average?",
       "q_d2": "Had the classmate's scores also been falling across earlier monthly exams?",
       "q_d3": "Did this monthly exam happen immediately after tablet homework was introduced?"
+    },
+    "nearMissFeedback": {
+      "q_d1": "Usage time describes exposure, but cannot rule out the new teacher, revised textbook, or missed classes changing at the same time.",
+      "q_d2": "More exams make this one case more credible, but one classmate still cannot represent a class or a generation.",
+      "q_d3": "It confirms the sequence already stated in the claim, but does not show that tablet homework caused the decline."
     },
     "hints": [
       "\"Afterward\" is not \"because of\" — look for other simultaneous changes",

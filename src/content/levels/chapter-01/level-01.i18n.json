@@ -9,13 +9,18 @@
     "options": {
       "opt_agree": "对啊，医生都是骗钱的！",
       "opt_ask1": "我爸一个人的经历，能证明所有医生都骗钱吗？",
-      "opt_forward": "转发给更多人，让大家别再被医院骗",
-      "opt_rhet1": "你凭什么不信我爸？",
+      "opt_forward": "先查这篇文章是不是某家医院或保健品公司赞助的",
+      "opt_rhet1": "他吃药前后的血压记录具体是多少？",
       "opt_ask2": "我爸的体验能代表所有人的情况吗？",
       "opt_blood": "不信我爸的都是没良心的",
-      "opt_college": "没上过大学，说得再对也不该听",
+      "opt_college": "先查分享者有没有医学背景，再决定要不要信",
       "opt_logic": "上没上过大学，与他说的内容有没有道理是两回事",
       "opt_giveup": "那我也别听没上过大学的人的建议了"
+    },
+    "nearMissFeedback": {
+      "opt_forward": "查利益关系能帮助判断信源，却没有检验“一个案例能否推出所有医生都骗钱”这个核心跨越。",
+      "opt_rhet1": "血压记录能确认个案是否真实，却仍无法排除同时用药、自然波动等原因，更不能代表所有人。",
+      "opt_college": "专业背景是信源线索，但有学历也可能说错、没学历也可能拿出好证据；最终仍要检查论证本身。"
     },
     "eventMeta": {
       "ev_conclusion": {
@@ -48,13 +53,18 @@
     "options": {
       "opt_agree": "Yeah, doctors are all scammers!",
       "opt_ask1": "Can my dad's single experience prove that all doctors are scammers?",
-      "opt_forward": "Forward it to more people so nobody gets cheated by hospitals",
-      "opt_rhet1": "What right do you have to doubt my dad?",
+      "opt_forward": "First check whether a hospital or supplement company sponsored the article",
+      "opt_rhet1": "What were his actual blood-pressure readings before and after?",
       "opt_ask2": "Can my dad's experience represent everyone's situation?",
       "opt_blood": "Anyone who doesn't trust my dad has no conscience",
-      "opt_college": "Never went to college — no matter how right it sounds, don't listen",
+      "opt_college": "Check whether the person has medical training before deciding whether to trust the post",
       "opt_logic": "Whether someone went to college and whether their content makes sense are two separate things",
       "opt_giveup": "Then I won't take advice from anyone without a college degree"
+    },
+    "nearMissFeedback": {
+      "opt_forward": "Conflicts of interest help judge a source, but they do not test the leap from one case to “all doctors are scammers.”",
+      "opt_rhet1": "Readings can verify the anecdote, but they cannot rule out medication or natural variation, much less represent everyone.",
+      "opt_college": "Credentials are a useful source clue, but experts can be wrong and non-experts can have good evidence. The reasoning still needs inspection."
     },
     "eventMeta": {
       "ev_conclusion": {

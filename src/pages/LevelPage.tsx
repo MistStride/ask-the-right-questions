@@ -54,6 +54,7 @@ export default function LevelPage() {
         options: ev.optionRefs.map((ref) => ({ key: ref, text: texts.options[ref] ?? ref })),
         correctKey: ev.correctOptionRef,
         nearMissKeys: ev.nearMissOptionRefs ?? [],
+        nearMissFeedback: texts.nearMissFeedback ?? {},
         calm: texts.eventMeta[ev.eventId]?.calm ?? '',
       }))
       const result: TamerRuntimeLevel = {
@@ -85,6 +86,7 @@ export default function LevelPage() {
         sharpness: q.sharpness,
         targetIssue: q.targetIssue,
         isRelevant: q.isRelevant,
+        nearMissFeedback: texts.nearMissFeedback?.[q.questionId],
       }))
       const result: CourtroomRuntimeLevel = {
         meta: def.meta,

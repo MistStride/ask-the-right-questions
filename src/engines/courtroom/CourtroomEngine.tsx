@@ -161,7 +161,12 @@ export default function CourtroomEngine({
         m.set(spot.spotId, { ...e, nearMiss: e.nearMiss + 1 })
         return m
       })
-      showToast(t.nearMissToast, 'info')
+      showToast(
+        q.nearMissFeedback
+          ? `${t.nearMissToast}${locale === 'zh' ? '：' : ': '}${q.nearMissFeedback}`
+          : t.nearMissToast,
+        'info',
+      )
     } else if (outcome === 'miss') {
       setSpotStats((prev) => {
         const m = new Map(prev)

@@ -1,4 +1,5 @@
 // 首页：淘金路线图。13 章节点用矿脉串成一条横向路线，未解锁章节置灰。
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 import { CHAPTERS, ENGINE_BADGES } from '../content/chapters'
@@ -6,6 +7,7 @@ import { LEVELS } from '../content/levelIndex'
 import { useSettingsStore } from '../store/settingsStore'
 import { useProgressStore } from '../store/progressStore'
 import { RADAR_DIMENSIONS } from '../components/radarDimensions'
+import FirstRunOnboarding, { ONBOARDING_STORAGE_KEY } from '../components/FirstRunOnboarding'
 import type { EngineType } from '../schema/levelTypes'
 
 const DIMENSION_LABEL = {
@@ -19,6 +21,9 @@ export default function HomePage() {
   const completed = useProgressStore((s) => s.completed)
   const radar = useProgressStore((s) => s.radar)
   const navigate = useNavigate()
+  const [showOnboarding, setShowOnboarding] = useState(
+    () => typeof window !== 'undefined' && window.localStorage.getItem(ONBOARDING_STORAGE_KEY) === null,
+  )
 
   const playableChapterIds = new Set(LEVELS.map((l) => l.meta.chapter))
   const totalLevels = LEVELS.length
@@ -27,6 +32,22 @@ export default function HomePage() {
 
   // 下一个未通关关卡（按 LEVELS 顺序）
   const nextLevel = LEVELS.find((l) => !completed[l.meta.levelId])
+  const shouldShowOnboarding = showOnboarding && doneLevels === 0
+
+  const finishOnboarding = (destination: 'level' | 'roadmap') => {
+    window.localStorage.setItem(ONBOARDING_STORAGE_KEY, 'complete')
+    setShowOnboarding(false)
+    if (destination === 'level') {
+      navigate('/level/ch01-level01')
+      return
+    }
+    window.setTimeout(() => document.getElementById('roadmap')?.scrollIntoView({ behavior: 'smooth' }), 0)
+  }
+
+  const skipOnboarding = () => {
+    window.localStorage.setItem(ONBOARDING_STORAGE_KEY, 'skipped')
+    setShowOnboarding(false)
+  }
 
   // 平均分（基于已通关）
   const scores = LEVELS
@@ -92,6 +113,14 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-abyss">
+      {shouldShowOnboarding && (
+        <FirstRunOnboarding
+          locale={locale}
+          onToggleLocale={() => setLocale(locale === 'zh' ? 'en' : 'zh')}
+          onFinish={finishOnboarding}
+          onSkip={skipOnboarding}
+        />
+      )}
       {/* 顶部导航 */}
       <nav className="sticky top-0 z-30 border-b border-line/60 bg-abyss/80 backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
@@ -218,7 +247,7 @@ export default function HomePage() {
       </section>
 
       {/* 淘金路线图 */}
-      <section className="mx-auto max-w-6xl px-4 pb-10">
+      <section id="roadmap" className="mx-auto max-w-6xl scroll-mt-20 px-4 pb-10">
         <h2 className="text-center text-lg font-bold text-slate-800">🗺️ {t.roadmap}</h2>
         <p className="mt-1 text-center text-xs text-slate-500">{t.roadmapSub}</p>
 

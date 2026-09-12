@@ -1,7 +1,7 @@
 # 项目交接文档 · HANDOFF
 
 > 用途：压缩上下文重开对话时，把这份文档 + ROADMAP 丢给新会话即可无缝接手。
-> 最后更新：2026-09-09（OG 分享预览：Pillow 程序绘制 1200×630 → 2x 2400×1260 PNG，纸面+金放大镜+5 引擎胶囊+标语深色卡，og:image 接绝对 GitHub Pages URL，twitter:card=summary_large_image；脚本 `scripts/gen-og-image.py`，产物 `public/og-image.png` / `docs/og-image.png`）
+> 最后更新：2026-09-12（灰度题目质量门禁 + 60 秒新用户引导 + README 产品叙事更新）
 
 ---
 
@@ -50,6 +50,7 @@ git 历史：约 20 个 commit，远程 main 最新。
 ## 4. 可改进清单（精修方向，按优先级）
 
 **A. 内容/玩法（用户视角最敏感）**
+- [x] **灰度题目质量门禁（2026-09-12）**：新增 `design/CONTENT-QUALITY-RUBRIC.md` 与 6 项跨引擎内容审计；D2/D3 法庭 16 个近失误补齐双语专属解析，说明“为什么诱人、还缺哪一步”；ch01 教程每个冲动增加近失误，ch10 D2/D3 各增加第二个可信干扰点。`npm run audit:content` 可独立执行，`npm run build` 强制运行。
 - [x] **分级判定与半迷惑题精修（2026-09-08）**：逻辑法庭不再把所有失败统称为无关，按「命中 / 相关但不足 / 偏题」三级反馈和不同扣分；ch06-09 的 17 个 D2/D3 干扰问题改为能改善证据、但不能单独击穿论证的近失误。ch13 驯兽场 8 个事件新增 `nearMissOptionRefs`，近失误只增加一半躁动、扣 4 分（完整错误扣 10 分），中英 UI 用琥珀色明确反馈。内容契约测试保证中高难法庭保留近失误、BOSS 每个事件都有近失误。
 - [x] **难度梯度 2.0 · 全量铺开（2026-09-07 晚，35 关）**：难度分布 D1×12 / D2×11 / D3×12。逐引擎：xray scan ch02 试点（8a46bcd）→ scale ch04/12（题干拉长、区间收窄）→ defusal ch10（D3 手册只给方向不给位置）→ tamer ch01/ch13（BOSS 8 事件、正确项混合追问/判断 + 伪问题陷阱）→ xray ch03/05/11（正文 127→357 字级阶梯，L3 含「结论伪装」干扰、dig 挖双重隐藏假设、gap 埋多重遗漏线索）→ courtroom ch06-09 全部 12 关（干扰提问从卡通级升级为"看似关心案情实则跑题"的半迷惑问题，各章 L1/L2/L3 难度修正为 1/2/3 阶梯）。校验：`scripts/check-anchors.mjs` 全过、构建零错误、已推送线上。
 - [x] **难度接入机制（2026-09-08）**：difficulty 从"展示标签"变为真实影响结算——新建 `src/utils/hintPolicy.ts`（D1 提示免费 / D2 每条 −10 / D3 每条 −15，最高可用条数 D3 限 2 条，结算 `base − 条数×代价` 保底 1 分）；`HintPanel` 按钮标注扣分并上报使用数；5 引擎通关算分统一走 `applyHintPenalty`；`LevelCompleteModal` 新增"得分构成"（基础准确度 − 提示扣分 = 总分）补齐"只给总分无分步反馈"缺口的一步；重玩清零并重挂 HintPanel。
@@ -57,6 +58,7 @@ git 历史：约 20 个 commit，远程 main 最新。
 - [ ] 游戏音效/震动反馈（目前纯视觉）
 
 **B. 传播与留存（阶段 7 已落地基础版）**
+- [x] **60 秒首访引导（2026-09-12）**：首次进入先完成一题“四天工作制”灰度判断；三个选项分别对应命中/相关但不足/看似背书，按选择给专属复盘，再进入第一章或查看 13 章路线。状态保存在 `atrq-onboarding-v1`，老用户与已有进度用户不被打扰；中英双语、桌面/390px 移动端已验收。
 - [x] **首页信息减负（2026-09-12）**：首屏压缩为价值主张、训练收益与单一主行动；主按钮按进度进入第一关/下一关/报告；路线图区分学习路径，五引擎卡从重复“已上线”改为具体思考动作，中英同步。
 - [x] 雷达图 → "思维诊断报告"卡片（头衔、六维、高光时刻、可下载分享图）✅
 - [x] **OG meta / 分享预览（2026-09-09）**：`scripts/gen-og-image.py`（Pillow 直接绘制，simhei.ttf 字体，2x → 2400×1260 PNG，约 156KB）→ `public/og-image.png`；`index.html` 的 `og:image` 指向绝对 GitHub Pages URL，`twitter:card=summary_large_image`（替换原指向 favicon.svg 的小图）。重生成只需 `python scripts/gen-og-image.py`（依赖本机 simhei.ttf）。
@@ -66,7 +68,7 @@ git 历史：约 20 个 commit，远程 main 最新。
 - [x] `scripts/new-level.mjs` 关卡脚手架 CLI（`npm run new-level`）✅
 - [x] CONTRIBUTING.md + Issue 模板（关卡/翻译/难度校准/bug）✅
 - [ ] 移动端适配检查（目前以桌面布局为主）
-- [x] 自动化质量门禁（2026-09-08）：独立关卡校验 + 13 项 Vitest + 5 引擎 Playwright 生产烟测；CI 对 push/PR 执行 lint/test/build/Pages 路径 preview
+- [x] 自动化质量门禁（2026-09-12 更新）：独立锚点校验 + 19 项 Vitest（含 6 项灰度质量契约）+ 首访引导与 5 引擎共 7 项 Playwright 生产烟测；CI 对 push/PR 执行 lint/test/build/Pages 路径 preview
 - [ ] 社区示例关卡（用 CLI 产出一个"Good First Issue"标签的示例 PR 模板）
 
 **D. 已知技术债（本次已清理一部分）**
@@ -87,7 +89,7 @@ git 历史：约 20 个 commit，远程 main 最新。
    workflow `.github/workflows/deploy.yml` 只是 CI 构建检查（不要改回部署型，gh-pages 同步步骤有坑会红叉）。
    **每次改完代码必须**：`npm run build`（产物进 docs/）→ `git add -A && git commit && git push` → Pages 1-2 分钟自动更新。
 8. **推送命令**（沙箱环境）：`git -c credential.helper= -c credential.https://github.com.helper=wincred -c credential.helper=wincred -c http.proxy=http://127.0.0.1:7897 -c https.proxy=http://127.0.0.1:7897 push origin main`
-9. **验证命令**：`npm test` 跑单测与内容契约；`npm run test:e2e` 构建后启动与 Pages 同路径的 `docs/` 预览，并烟测 5 个引擎。
+9. **验证命令**：`npm run audit:content` 单独审计灰度题目；`npm test` 跑单测与全部内容契约；`npm run test:e2e` 构建后启动与 Pages 同路径的 `docs/` 预览，并烟测首访引导和 5 个引擎。
 10. **路由是 HashRouter**：URL 形如 `/#/level/ch07-level01`；验证脚本改 locale 用 localStorage（key `atrq-settings-v1`）后必须 `page.reload()` 才生效（纯 hash 导航不重载页面）。
 
 ## 6. 重开对话推荐提示词（直接复制使用）

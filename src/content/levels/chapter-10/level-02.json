@@ -15,7 +15,8 @@
   "suspectSpots": [
     { "spotId": "spot_axis2", "barIndex": 2, "isTrap": true, "debunkRef": "debunk_axis2" },
     { "spotId": "spot_quarter", "barIndex": 3, "isTrap": true, "debunkRef": "debunk_quarter" },
-    { "spotId": "spot_dummy2", "barIndex": 0, "isTrap": false }
+    { "spotId": "spot_dummy2", "barIndex": 0, "isTrap": false },
+    { "spotId": "spot_dummy_mid", "barIndex": 1, "isTrap": false }
   ],
   "manualRefs": ["m_axis2", "m_quarter"]
 }

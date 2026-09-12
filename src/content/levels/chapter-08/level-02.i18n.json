@@ -16,6 +16,10 @@
       "q_d1": "年轻白领样本里的男女比例是否均衡？",
       "q_d2": "志愿者每天喝的咖啡剂量是否保持一致？"
     },
+    "nearMissFeedback": {
+      "q_d1": "性别均衡能改善样本内部构成，但年轻科技员工仍代表不了老人、病人和其他职业。",
+      "q_d2": "统一剂量能减少测量噪声，却不能替代不喝咖啡的对照组，也不能排除生活习惯差异。"
+    },
     "hints": [
       "样本是谁？能代表结论覆盖的全体吗？",
       "「更健康」和「喝咖啡」谁先谁后？",
@@ -39,6 +43,10 @@
       "q_control": "Why was the control group excluded? What do the non-drinkers' numbers show?",
       "q_d1": "Was the gender balance even within the young office-worker sample?",
       "q_d2": "Did volunteers consume the same dose of coffee each day?"
+    },
+    "nearMissFeedback": {
+      "q_d1": "Gender balance improves the sample’s internal mix, but young tech workers still cannot represent older, ill, or differently employed people.",
+      "q_d2": "A consistent dose reduces measurement noise, but cannot replace a non-coffee control or rule out lifestyle differences."
     },
     "hints": [
       "Who is in the sample? Can it represent the population of the conclusion?",

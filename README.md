@@ -4,7 +4,7 @@
 
 > **🌏 Language:** [English](README.md) · [中文](README.zh-CN.md)
 
-An interactive critical-thinking training game based on the book *Asking the Right Questions* (12th edition). The 13 chapters are distilled into **5 reusable thinking engines** that train your "panning-for-gold" mindset through gameplay — scanning arguments, cross-examining evidence, calibrating gray areas, defusing data traps, and taming thinking impulses.
+An interactive critical-thinking training game based on the book *Asking the Right Questions* (12th edition). It turns 13 chapters into **5 reusable thinking engines** — not to memorize fallacy names, but to practice deciding how much a piece of evidence actually deserves your trust.
 
 - **Data-driven**: every level is a plain JSON file + a bilingual text pack. Anyone can contribute a new level **without touching any code**.
 - **Bilingual**: full EN / ZH support via semantic-anchor matching (translations never break).
@@ -14,10 +14,18 @@ An interactive critical-thinking training game based on the book *Asking the Rig
 
 ## ✨ Features
 
+- **A 60-second first insight**: first-time visitors judge a realistic workplace study before seeing the full curriculum, then discover why “relevant” evidence may still be insufficient.
 - **Not quizzing — performing thinking moves**: 5 game engines cover all 13 chapters, each mapping to a set of thinking actions from the book (scan / cross-examine / calibrate / defuse / tame).
+- **Graded judgment, not binary trivia**: answers can be a direct hit, a plausible near-miss, or a true miss. Near-misses receive specific feedback explaining both why they are tempting and what they still fail to test.
 - **Content fully decoupled from engines**: a level = one logic JSON (structure & rules) + one i18n text pack (EN/ZH). Contributors never touch engine code.
 - **Local progress + six-dimension radar**: clearing levels lights up your profile radar — Structure / Evidence / Assumption / Fallacy / Data / Emotion.
-- **Graded hints + deep-dive explanations**: every level offers progressive hints and a post-clear breakdown of the underlying reasoning.
+- **Quality rules enforced as code**: Zod, semantic-anchor checks, and a cross-engine gray-area content audit run before every production build.
+
+## Why this project exists
+
+Fluent answers are cheap; sound judgment is not. News, dashboards, sales claims, workplace proposals, and AI output can all contain real facts while reaching a conclusion that is too strong. The book's method provides a repeatable set of questions: identify the conclusion, test its reasons, inspect the source, look for rival causes, and ask what information is missing.
+
+The hard part is transferring that checklist into the moment of judgment. This project turns each method into an interaction, makes the learner commit to a choice, and then explains the gap between a useful question and a decisive one.
 
 ## 🧩 The Five Thinking Engines
 
@@ -40,8 +48,9 @@ npm install
 npm run dev        # http://localhost:5173
 npm run lint       # static checks
 npm test           # Vitest unit + content-contract tests
+npm run audit:content # gray-area question quality gate only
 npm run build      # validated production build → docs/
-npm run test:e2e   # build + five-engine Playwright smoke test
+npm run test:e2e   # build + onboarding and five-engine Playwright smoke tests
 npm run preview    # GitHub Pages-path production preview
 ```
 
@@ -117,7 +126,7 @@ for the engine you picked — you just fill in the text (both EN and ZH) and it 
 
 Full guide, issue templates, and engineering rules: see **[CONTRIBUTING.md](CONTRIBUTING.md)**.
 
-Design docs for each engine live in `design/` (e.g. `design/ENGINE-B-DESIGN.md`).
+The editorial standard for non-obvious questions lives in **[design/CONTENT-QUALITY-RUBRIC.md](design/CONTENT-QUALITY-RUBRIC.md)**. Engine design docs also live in `design/` (e.g. `design/ENGINE-B-DESIGN.md`).
 
 ## 📄 License
 

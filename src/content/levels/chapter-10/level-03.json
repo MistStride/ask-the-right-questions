@@ -15,7 +15,8 @@
   "suspectSpots": [
     { "spotId": "spot_survival", "barIndex": 1, "isTrap": true, "debunkRef": "debunk_survival" },
     { "spotId": "spot_overdiag", "barIndex": 3, "isTrap": true, "debunkRef": "debunk_overdiag" },
-    { "spotId": "spot_dummy3", "barIndex": 0, "isTrap": false }
+    { "spotId": "spot_dummy3", "barIndex": 0, "isTrap": false },
+    { "spotId": "spot_dummy_found", "barIndex": 2, "isTrap": false }
   ],
   "manualRefs": ["m_survival", "m_overdiag"]
 }

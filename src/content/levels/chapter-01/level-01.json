@@ -14,19 +14,22 @@
       "eventId": "ev_conclusion",
       "biasType": "jumping_to_conclusion",
       "optionRefs": ["opt_agree", "opt_ask1", "opt_forward"],
-      "correctOptionRef": "opt_ask1"
+      "correctOptionRef": "opt_ask1",
+      "nearMissOptionRefs": ["opt_forward"]
     },
     {
       "eventId": "ev_ego",
       "biasType": "egocentrism",
       "optionRefs": ["opt_rhet1", "opt_ask2", "opt_blood"],
-      "correctOptionRef": "opt_ask2"
+      "correctOptionRef": "opt_ask2",
+      "nearMissOptionRefs": ["opt_rhet1"]
     },
     {
       "eventId": "ev_person",
       "biasType": "jumping_to_conclusion",
       "optionRefs": ["opt_college", "opt_logic", "opt_giveup"],
-      "correctOptionRef": "opt_logic"
+      "correctOptionRef": "opt_logic",
+      "nearMissOptionRefs": ["opt_college"]
     }
   ]
 }

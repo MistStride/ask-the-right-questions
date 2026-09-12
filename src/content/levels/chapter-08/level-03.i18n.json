@@ -16,6 +16,10 @@
       "q_d1": "这份问卷覆盖的是一个月，还是一整个学期？",
       "q_d2": "问卷是否匿名，以减少学生故意少报使用时长？"
     },
+    "nearMissFeedback": {
+      "q_d1": "更长的调查窗口可能让相关性更稳定，却仍是同一时点的回顾，回答不了谁先谁后。",
+      "q_d2": "匿名能减少故意少报，是合理改进；但记忆误差仍在，也没有提供客观屏幕记录。"
+    },
     "hints": [
       "同一时间的调查，说不清谁因谁果",
       "自己报的数据，可靠吗？",
@@ -39,6 +43,10 @@
       "q_nocontrol2": "Were outdoor activity, genetics, and eye-use habits considered?",
       "q_d1": "Did the questionnaire cover one month or an entire semester?",
       "q_d2": "Was the survey anonymous to reduce deliberate under-reporting of screen time?"
+    },
+    "nearMissFeedback": {
+      "q_d1": "A longer survey window may stabilize the correlation, but a retrospective snapshot still cannot establish which came first.",
+      "q_d2": "Anonymity can reduce deliberate under-reporting, a real improvement, but recall error remains and no objective screen record is added."
     },
     "hints": [
       "A snapshot in time cannot say which caused which",

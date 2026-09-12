@@ -132,7 +132,11 @@ export default function TamerEngine({
       const ev = level.events[calmedCount]
       showToast(`${t.calmToast}${ev?.calm ?? ''}`, 'success')
     } else if (outcome === 'near_miss') {
-      showToast(t.nearMissToast, 'info')
+      const feedback = current?.nearMissFeedback[key]
+      showToast(
+        feedback ? `${t.nearMissToast}${locale === 'zh' ? '：' : ': '}${feedback}` : t.nearMissToast,
+        'info',
+      )
     } else if (outcome === 'miss') {
       showToast(t.missToast, 'error')
     }

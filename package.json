@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "validate": "vitest run --configLoader runner tests/unit/content.validation.test.ts && node scripts/check-anchors.mjs",
+    "validate": "vitest run --configLoader runner tests/unit/content.validation.test.ts tests/unit/content.quality.test.ts && node scripts/check-anchors.mjs",
     "build": "npm run validate && tsc -b && vite build",
     "lint": "oxlint src scripts tests playwright.config.ts vitest.config.ts vite.config.ts",
     "test": "vitest run --configLoader runner",
+    "audit:content": "vitest run --configLoader runner tests/unit/content.quality.test.ts",
     "test:e2e": "npm run build && node scripts/run-e2e.mjs",
     "preview": "node scripts/preview-docs.mjs",
     "new-level": "node scripts/new-level.mjs"
