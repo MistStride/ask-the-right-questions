@@ -8,6 +8,14 @@ const engineLevels = [
   ['tamer', 'ch01-level01'],
 ] as const
 
+test('home primary action starts the first unfinished level', async ({ page }) => {
+  await page.goto('./')
+  await page.getByRole('button', { name: /从第一关开始|Start at Level One/ }).click()
+
+  await expect(page).toHaveURL(/#\/level\/ch01-level01$/)
+  await expect(page.locator('[data-engine="tamer"]')).toBeVisible()
+})
+
 for (const [engine, levelId] of engineLevels) {
   test(`${engine} engine renders from the production build`, async ({ page }) => {
     const runtimeErrors: string[] = []

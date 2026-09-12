@@ -3,7 +3,7 @@
 //  scan — 从噪音里透视出结论/理由，点对点亮骨骼
 //  dig  — 明处扫结构，暗处挖隐藏假设（考古挖掘区）
 //  gap  — 扫结构 + 补全被撕掉的关键信息空洞
-import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { motion } from 'framer-motion'
 import { segmentByAnchors } from '../../utils/matchAnchors'
 import { useXrayLogic } from './useXrayLogic'
@@ -128,14 +128,14 @@ export default function XrayEngine({
     return m
   }, [targets])
 
-  const stepLabelOf = (step: (typeof steps)[number]) => {
+  const stepLabelOf = useCallback((step: (typeof steps)[number]) => {
     const types = new Set<string>()
     for (const id of step.targets) {
       const tp = typeById.get(id)
       if (tp) types.add(NODE_TYPE_LABELS[tp][locale])
     }
     return [...types].join(' + ')
-  }
+  }, [locale, typeById])
   const currentLabel = stepLabelOf(currentStep)
 
   // 当前步骤全部找到 → 自动推进到下一步
@@ -209,7 +209,7 @@ export default function XrayEngine({
       return () => window.clearTimeout(timer)
     }
     return undefined
-  }, [isComplete, mistakes, hintsUsed, level, markLevelComplete, foundIds, foundCount, total, steps, targets, wrongClicked, locale])
+  }, [isComplete, mistakes, hintsUsed, level, markLevelComplete, foundIds, foundCount, total, steps, targets, wrongClicked, locale, stepLabelOf])
 
   const handleNodeClick = (anchor: XrayAnchor) => {
     if (!anchor.isCorrect) {

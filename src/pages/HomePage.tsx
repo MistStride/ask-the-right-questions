@@ -41,54 +41,52 @@ export default function HomePage() {
 
   const t = {
     zh: {
-      tag: '批判性思维 · 互动训练游戏',
+      tag: `${totalLevels} 关 · 中英双语 · 进度留在本地`,
       hero1: '别急着相信，',
-      hero2: '先学会提问',
-      desc: '把《学会提问》全书 13 章，变成一场淘金之旅。扫描论证、质询证据、校准灰度、拆除数据陷阱——用游戏的手感，练出淘金式思维。',
-      cta: '开始淘金',
-      nextTitle: '🎯 下一关',
-      nextHint: allDone
-        ? '看看你的思维雷达，给淘金之旅画个句号'
-        : '继续你的淘金之旅',
-      nextCta: allDone ? '去思维雷达' : '开始这一关',
-      reportTitle: '📊 你的思维报告',
-      reportSub: `已打通 ${doneLevels}/${totalLevels} 关 · 平均还原度 ${avgScore}`,
+      hero2: '先问对问题',
+      desc: '用 5 种互动训练拆开论证、证据、数据与直觉。每一关，都在练一个能带进工作与生活的思考动作。',
+      cta: allDone ? '查看思维报告' : doneLevels > 0 ? '继续训练' : '从第一关开始',
+      completeLabel: '🎉 全部完成',
+      nextTitle: allDone ? '✓ 训练完成' : doneLevels > 0 ? '🎯 继续训练' : '🎯 从这里开始',
+      nextCta: allDone ? '查看报告' : '进入关卡',
+      reportTitle: '📊 能力画像',
+      reportSub: `完成 ${doneLevels}/${totalLevels} 关 · 平均 ${avgScore} 分`,
       strengthLabel: '🏔 强势',
       weaknessLabel: '🎯 待补',
-      reportCta: '查看完整雷达 →',
-      emptyReport: '完成第一关后，你的思维报告会在这里生长',
-      emptyReportCta: '去思维雷达 →',
-      roadmap: '淘金路线图',
-      roadmapSub: '13 个章节节点 · 5 套思维引擎',
-      playable: '可玩',
-      engineTitle: '思维引擎',
-      engineDesc: '不是刷题，而是执行五组可复用的「思维动作」',
-      progress: `已打通 ${doneLevels}/${totalLevels} 关`,
+      reportCta: '查看完整雷达',
+      emptyReport: '完成关卡后，生成你的六维思维画像',
+      emptyReportCta: '了解能力维度',
+      roadmap: '13 章训练路径',
+      roadmapSub: '从识别结论，到管理自己的思维冲动',
+      playable: '进入',
+      engineTitle: '5 个思考动作',
+      engineDesc: '遇到真实问题时，可以反复调用的判断工具',
+      progress: doneLevels > 0 ? `已完成 ${doneLevels}/${totalLevels}` : '无需注册 · 立即开始',
+      footer: '根据《学会提问》改编 · 内容驱动 · 欢迎贡献关卡',
     },
     en: {
-      tag: 'Critical thinking · interactive training games',
+      tag: `${totalLevels} levels · bilingual · local progress`,
       hero1: "Don't just believe —",
       hero2: 'ask the right questions',
-      desc: 'The 13 chapters of Asking the Right Questions, turned into a gold-panning journey. Scan arguments, cross-examine evidence, calibrate gray areas, defuse data traps — train critical thinking through gameplay.',
-      cta: 'Start Panning',
-      nextTitle: '🎯 Next level',
-      nextHint: allDone
-        ? 'See your thinking radar and close this journey'
-        : 'Continue your gold-panning journey',
-      nextCta: allDone ? 'Open My Radar' : 'Play this level',
-      reportTitle: '📊 Your thinking report',
-      reportSub: `${doneLevels}/${totalLevels} cleared · avg accuracy ${avgScore}`,
+      desc: 'Five interactive drills help you separate arguments, evidence, data, and impulse. Every level practices a thinking move you can reuse in work and life.',
+      cta: allDone ? 'View My Report' : doneLevels > 0 ? 'Continue Training' : 'Start at Level One',
+      completeLabel: '🎉 All complete',
+      nextTitle: allDone ? '✓ Training complete' : doneLevels > 0 ? '🎯 Continue' : '🎯 Start here',
+      nextCta: allDone ? 'View report' : 'Enter level',
+      reportTitle: '📊 Skill profile',
+      reportSub: `${doneLevels}/${totalLevels} complete · ${avgScore} avg`,
       strengthLabel: '🏔 Strength',
       weaknessLabel: '🎯 To grow',
-      reportCta: 'Open full radar →',
-      emptyReport: 'Your thinking report grows after your first clear',
-      emptyReportCta: 'Open My Radar →',
-      roadmap: 'The Gold Road',
-      roadmapSub: '13 chapter nodes · 5 thinking engines',
-      playable: 'Playable',
-      engineTitle: 'Thinking Engines',
-      engineDesc: 'Not quizzes — five reusable thinking moves',
-      progress: `${doneLevels}/${totalLevels} levels cleared`,
+      reportCta: 'View full radar',
+      emptyReport: 'Complete a level to build your six-dimension profile',
+      emptyReportCta: 'Explore the dimensions',
+      roadmap: 'A 13-chapter path',
+      roadmapSub: 'From finding conclusions to managing your own impulses',
+      playable: 'Open',
+      engineTitle: '5 thinking moves',
+      engineDesc: 'Reusable tools for judgments beyond the game',
+      progress: doneLevels > 0 ? `${doneLevels}/${totalLevels} complete` : 'No signup · start now',
+      footer: 'Inspired by Asking the Right Questions · open to level contributions',
     },
   }[locale]
 
@@ -144,7 +142,10 @@ export default function HomePage() {
               type="button"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
-              onClick={() => navigate('/chapter/2')}
+              onClick={() => {
+                if (nextLevel) navigate(`/level/${nextLevel.meta.levelId}`)
+                else navigate('/profile')
+              }}
               className="rounded-xl bg-gold px-7 py-3 text-sm font-bold text-white shadow-[0_8px_24px_rgba(217,154,30,0.3)] transition hover:brightness-110"
             >
               {t.cta} →
@@ -165,7 +166,7 @@ export default function HomePage() {
             >
               <p className="text-xs font-bold uppercase tracking-widest text-amber-700">{t.nextTitle}</p>
               {allDone ? (
-                <p className="mt-2 text-sm font-bold text-slate-800">🎉 全部通关</p>
+                <p className="mt-2 text-sm font-bold text-slate-800">{t.completeLabel}</p>
               ) : nextLevel ? (
                 (() => {
                   const ch = CHAPTERS.find((c) => c.id === nextLevel.meta.chapter)
@@ -179,7 +180,6 @@ export default function HomePage() {
                   )
                 })()
               ) : null}
-              <p className="mt-1.5 text-[11px] text-slate-500">{t.nextHint}</p>
               <p className="mt-2 text-xs font-semibold text-amber-700 transition group-hover:translate-x-1">
                 {t.nextCta} →
               </p>
@@ -277,11 +277,6 @@ export default function HomePage() {
             )
           })}
         </div>
-        <p className="mt-2 text-center text-[11px] text-slate-600">
-          {locale === 'zh'
-            ? `${CHAPTERS.length} 章 · ${totalLevels} 关 · 5 套思维引擎，全部开放，按章节顺序通关`
-            : `${CHAPTERS.length} chapters · ${totalLevels} levels · 5 thinking engines — all open, play in order`}
-        </p>
       </section>
 
       {/* 五引擎 */}
@@ -299,7 +294,22 @@ export default function HomePage() {
             ] as [EngineType, string, string][]
           ).map(([engine, icon]) => {
             const b = ENGINE_BADGES[engine]
-            const actives = LEVELS.filter((l) => l.meta.engine === engine)
+            const action = {
+              zh: {
+                xray: '拆出结论与理由',
+                courtroom: '质询证据与谬误',
+                scale: '校准词义与结论',
+                defusal: '识破统计陷阱',
+                tamer: '拦住直觉性判断',
+              },
+              en: {
+                xray: 'Map claims and reasons',
+                courtroom: 'Challenge evidence and fallacies',
+                scale: 'Calibrate meaning and conclusions',
+                defusal: 'Expose statistical traps',
+                tamer: 'Interrupt snap judgments',
+              },
+            }[locale][engine]
             return (
               <div
                 key={engine}
@@ -307,11 +317,7 @@ export default function HomePage() {
               >
                 <span className="text-2xl">{icon}</span>
                 <p className="mt-2 text-sm font-bold text-slate-800">{b[locale]}</p>
-                <p className="mt-1 text-[11px] text-slate-500">
-                  {locale === 'zh'
-                    ? `${actives.length} 个关卡已上线`
-                    : `${actives.length} level(s) live`}
-                </p>
+                <p className="mt-1 text-[11px] text-slate-500">{action}</p>
               </div>
             )
           })}
@@ -319,8 +325,7 @@ export default function HomePage() {
       </section>
 
       <footer className="border-t border-line/60 py-6 text-center text-xs text-slate-500">
-        ⛏ Asking the Right Questions · based on Neil Browne &amp; Stuart Keeley's book ·{' '}
-        {locale === 'zh' ? '内容驱动 · 欢迎贡献关卡' : 'data-driven · level contributions welcome'}
+        ⛏ {t.footer}
       </footer>
     </div>
   )
