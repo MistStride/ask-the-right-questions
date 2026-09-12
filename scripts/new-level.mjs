@@ -259,7 +259,7 @@ async function main() {
   let engine = args[0]
   let chapter = args[1] ? Number(args[1]) : NaN
   let difficulty = args[2] ? Number(args[2]) : 1
-  let contributor = args[3] || 'atrq-team'
+  let contributor = args[3] || 'MistStride'
 
   if (!engine) {
     const rl = readline.createInterface({ input, output })

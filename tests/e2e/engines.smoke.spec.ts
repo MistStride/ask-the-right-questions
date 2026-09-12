@@ -70,6 +70,7 @@ test('completion summary stays operable and scrolls inside a short viewport', as
   const closeButton = page.getByRole('button', { name: /关闭总结|Close summary/ })
 
   await expect(dialog).toBeVisible()
+  await expect(dialog).toContainText('MistStride')
   await expect(closeButton).toBeVisible()
   await expect(actions).toBeVisible()
 

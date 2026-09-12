@@ -3,7 +3,7 @@
   "chapter": 10,
   "engine": "defusal",
   "difficulty": 1,
-  "contributor": "atrq-team",
+  "contributor": "MistStride",
   "rewardTags": ["data"],
   "chartData": [
     { "labelRef": "bar_self_before", "value": 10 },
