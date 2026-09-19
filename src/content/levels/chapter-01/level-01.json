@@ -13,14 +13,14 @@
     {
       "eventId": "ev_conclusion",
       "biasType": "jumping_to_conclusion",
-      "optionRefs": ["opt_agree", "opt_ask1", "opt_forward"],
+      "optionRefs": ["opt_ask1", "opt_agree", "opt_forward"],
       "correctOptionRef": "opt_ask1",
       "nearMissOptionRefs": ["opt_forward"]
     },
     {
       "eventId": "ev_ego",
       "biasType": "egocentrism",
-      "optionRefs": ["opt_rhet1", "opt_ask2", "opt_blood"],
+      "optionRefs": ["opt_rhet1", "opt_blood", "opt_ask2"],
       "correctOptionRef": "opt_ask2",
       "nearMissOptionRefs": ["opt_rhet1"]
     },

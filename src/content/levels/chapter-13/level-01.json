@@ -13,14 +13,14 @@
     {
       "eventId": "ev_conformity",
       "biasType": "conformity",
-      "optionRefs": ["opt_snow", "opt_ask_c1", "opt_rhet"],
+      "optionRefs": ["opt_ask_c1", "opt_snow", "opt_rhet"],
       "correctOptionRef": "opt_ask_c1",
       "nearMissOptionRefs": ["opt_snow"]
     },
     {
       "eventId": "ev_report",
       "biasType": "jumping_to_conclusion",
-      "optionRefs": ["opt_seal", "opt_ask_c5", "opt_trust_report"],
+      "optionRefs": ["opt_seal", "opt_trust_report", "opt_ask_c5"],
       "correctOptionRef": "opt_ask_c5",
       "nearMissOptionRefs": ["opt_seal"]
     },
@@ -34,14 +34,14 @@
     {
       "eventId": "ev_ego2",
       "biasType": "egocentrism",
-      "optionRefs": ["opt_friends", "opt_ask_c4", "opt_band"],
+      "optionRefs": ["opt_band", "opt_friends", "opt_ask_c4"],
       "correctOptionRef": "opt_ask_c4",
       "nearMissOptionRefs": ["opt_friends"]
     },
     {
       "eventId": "ev_data",
       "biasType": "jumping_to_conclusion",
-      "optionRefs": ["opt_stubborn", "opt_ask_c6", "opt_trust"],
+      "optionRefs": ["opt_ask_c6", "opt_stubborn", "opt_trust"],
       "correctOptionRef": "opt_ask_c6",
       "nearMissOptionRefs": ["opt_stubborn"]
     },
@@ -55,14 +55,14 @@
     {
       "eventId": "ev_scarcity",
       "biasType": "scarcity",
-      "optionRefs": ["opt_panic", "opt_judge_sc", "opt_wait"],
+      "optionRefs": ["opt_wait", "opt_panic", "opt_judge_sc"],
       "correctOptionRef": "opt_judge_sc",
       "nearMissOptionRefs": ["opt_wait"]
     },
     {
       "eventId": "ev_sunk",
       "biasType": "sunk_cost",
-      "optionRefs": ["opt_sunk", "opt_judge_sunk", "opt_refund"],
+      "optionRefs": ["opt_judge_sunk", "opt_sunk", "opt_refund"],
       "correctOptionRef": "opt_judge_sunk",
       "nearMissOptionRefs": ["opt_refund"]
     }

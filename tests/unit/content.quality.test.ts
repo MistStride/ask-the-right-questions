@@ -188,4 +188,15 @@ describe('gray-area content quality gate', () => {
       }
     }
   })
+
+  it('scatters tamer answers across the three card positions', () => {
+    for (const level of LEVELS.filter((item) => item.meta.engine === 'tamer')) {
+      const data = level.data as TamerLevelData
+      const positions = data.impulseEvents.map((event) => event.optionRefs.indexOf(event.correctOptionRef) + 1)
+
+      expect(new Set(positions).size, `${level.meta.levelId} should use more than one answer position`).toBeGreaterThanOrEqual(2)
+      expect(positions, `${level.meta.levelId} should include a first-position answer`).toContain(1)
+      expect(positions, `${level.meta.levelId} should include a last-position answer`).toContain(3)
+    }
+  })
 })
