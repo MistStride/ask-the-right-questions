@@ -1,6 +1,6 @@
 {
   "zh": {
-    "sourceText": "市教育局宣布，从下学期起在市直属初中试点『每周无屏日』——每周三全天不使用任何电子屏幕上课。市教育局在新闻稿中解释，首批试点学校中，学生在无屏日次日的课堂专注力测评平均提升了近一成，说明减少屏幕依赖能改善听课质量；同时，国家睡眠研究所去年发布的一项研究也发现，睡前两小时使用电子屏与入睡时间延迟存在显著相关，这为限制屏幕时间提供了健康依据。政策公布后，教育科技公司纷纷跟进，某品牌打出广告：『无屏教育，就是回归教育的本真！』并顺势推出配套的纸质教辅礼包。而不少一线教师表达了担忧：压缩屏幕教学会让课程进度变慢，也会让买不起平板的家庭和买得起的家庭差距更大。一位家长则在群里断言：电子屏正在毁掉这一代孩子的大脑，学校早就该全面禁屏了！对此，市教育局回应，试点规模暂限定在每周一天，将根据评估结果再决定是否推广。",
+    "sourceText": "围绕课堂是否应该减少电子屏，某教育科技品牌先打出广告：『无屏教育，就是回归教育的本真！』并推出纸质教辅礼包。首批试点学校报告，学生在无屏日次日的课堂专注力测评平均提升了近一成。不少一线教师却担忧，压缩屏幕教学会让课程进度变慢，也会让买不起平板的家庭和买得起的家庭差距更大。国家睡眠研究所去年的研究还发现，睡前两小时使用电子屏与入睡时间延迟存在显著相关。在证据与反对意见并存的情况下，市教育局宣布，从下学期起在市直属初中试点『每周无屏日』——每周三全天不用电子屏幕上课。一位家长随即在群里断言：电子屏正在毁掉这一代孩子的大脑，学校早就该全面禁屏了！市教育局回应，试点暂限定在每周一天，将根据评估结果再决定是否推广。",
     "textRefs": {
       "conclusion_1": "在市直属初中试点『每周无屏日』",
       "reason_1": "学生在无屏日次日的课堂专注力测评平均提升了近一成",
@@ -10,14 +10,14 @@
       "distractor_3": "压缩屏幕教学会让课程进度变慢，也会让买不起平板的家庭和买得起的家庭差距更大"
     },
     "hints": [
-      "结论在前两句：市里试点做什么？范围是什么？",
-      "两个理由分别来自课堂测评和睡眠研究",
+      "先找理由：课堂测评和睡眠研究各自提供了什么支持？它们并不相邻",
+      "再找有明确范围的行动主张；它出现在证据和反对意见之后",
       "三个干扰各有心思：教育公司在卖货、教师在担忧、家长把『试点一天』夸大成『全面禁屏』"
     ],
-    "explanation": "结论是「市直属初中试点每周无屏日」——注意范围：仅试点、每周一天。理由一：试点校专注力测评提升近一成；理由二：睡眠研究发现睡前用屏与入睡延迟显著相关（注意是『相关』而非『导致』）。「回归教育本真」是教育科技公司的广告；「进度变慢、差距拉大」是教师对政策的担忧，属于反对意见；「毁掉一代人大脑、全面禁屏」听起来最像『结论』，实则是家长把政策极端化后的断言，方向已偏离原文。看结论要连它的限定条件一起看，别被更响亮的说法带跑。"
+    "explanation": "两条理由是试点校专注力测评提升近一成，以及睡眠研究发现睡前用屏与入睡延迟显著相关（注意是『相关』而非『导致』）；它们支撑「市直属初中试点每周无屏日」这一有限结论。「回归教育本真」是广告；「进度变慢、差距拉大」是反对意见；「毁掉一代人大脑、全面禁屏」则把试点夸成全面禁令。正确节点被干扰项隔开，结论也在段落后部，必须同时判断支撑方向和限定条件。"
   },
   "en": {
-    "sourceText": "The city education bureau announced that, starting next semester, it will pilot a 'weekly screen-free day' at directly affiliated junior high schools — every Wednesday, classes will run entirely without electronic screens. The bureau explained in its press release that in the first pilot schools, students' classroom-focus assessments improved by nearly ten percent on the day after a screen-free day, showing that reducing screen dependence can improve the quality of listening in class. Meanwhile, a study released last year by the National Sleep Research Institute also found that using electronic screens within two hours of bedtime is significantly associated with delayed sleep onset, which provides a health basis for limiting screen time. After the policy was announced, education-technology companies piled in: one brand ran the ad 'Screen-free education means returning to the true essence of learning!' and launched a matching paper-based teaching-aid gift box. Quite a few frontline teachers, however, voiced concern: cutting screen-based teaching will slow down the curriculum and widen the gap between families that can afford tablets and those that cannot. One parent asserted in a group chat: electronic screens are destroying this generation's brains, and schools should have banned them completely long ago! In response, the bureau said the pilot is limited to one day per week for now, and whether to expand it will depend on evaluation results.",
+    "sourceText": "As the city debated reducing screens in class, an education-technology brand ran the ad 'Screen-free education means returning to the true essence of learning!' and launched paper teaching aids. Early pilot schools reported that students' classroom-focus assessments improved by nearly ten percent on the day after a screen-free day. Frontline teachers objected that cutting screen-based teaching will slow down the curriculum and widen the gap between families that can afford tablets and those that cannot. A National Sleep Research Institute study also found that using electronic screens within two hours of bedtime is significantly associated with delayed sleep onset. With evidence and objections both on record, the city bureau announced that, starting next semester, it will pilot a 'weekly screen-free day' at directly affiliated junior high schools — one screen-free Wednesday per week. A parent then asserted that electronic screens are destroying this generation's brains, and schools should have banned them completely long ago! The bureau replied that expansion would depend on the pilot evaluation.",
     "textRefs": {
       "conclusion_1": "pilot a 'weekly screen-free day' at directly affiliated junior high schools",
       "reason_1": "students' classroom-focus assessments improved by nearly ten percent on the day after a screen-free day",
@@ -27,10 +27,10 @@
       "distractor_3": "cutting screen-based teaching will slow down the curriculum and widen the gap between families that can afford tablets and those that cannot"
     },
     "hints": [
-      "The conclusion is in the first two sentences: what is the pilot, and what is its scope?",
-      "The two reasons come from classroom assessments and sleep research",
+      "Find the reasons first: what support comes from classroom assessments and sleep research, and why are they separated?",
+      "Then find the action claim with a limited scope; it appears after evidence and objections",
       "Each of the three distractors has its own agenda: an ed-tech firm selling, teachers worrying, and a parent inflating 'a one-day pilot' into a 'total ban'"
     ],
-    "explanation": "The conclusion is 'pilot a weekly screen-free day at city junior highs' — note the scope: a pilot, one day per week. Reason one: focus assessments improved by nearly ten percent in pilot schools. Reason two: sleep research found screen use before bed is significantly associated with delayed sleep onset (note: 'associated', not 'causes'). 'Returning to the true essence of learning' is an ed-tech ad; 'slower curriculum and a wider gap' is teachers' worry — an objection to the policy; 'destroying brains and banning screens completely' sounds the most like a 'conclusion' but is actually a parent's exaggerated assertion that drifts from the original claim. When reading a conclusion, keep its qualifiers in view — don't be swept away by a louder statement."
+    "explanation": "The reasons are a near-ten-percent improvement in focus assessments and a significant association between bedtime screen use and delayed sleep onset (association, not proof of cause); they support the limited conclusion 'pilot a weekly screen-free day at city junior highs'. 'The true essence of learning' is an ad, 'slower curriculum and a wider gap' is an objection, and 'destroying brains—ban them all' inflates a pilot into a total ban. Correct nodes are separated by decoys and the conclusion sits late in the passage, so both support direction and qualifiers matter."
   }
 }

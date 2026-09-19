@@ -1,6 +1,6 @@
 {
   "zh": {
-    "sourceText": "某外卖平台宣布，将对平台上高油、高盐、高糖的商家实行流量限制，新规则从下季度起逐步推行。平台在公告中解释，这类餐品的复购主要依赖重口味刺激，持续推送会助长用户不健康的饮食习惯；同时，平台数据显示，长期点这类餐品的用户体检异常率明显更高，平台认为推荐算法不该加剧这一风险；此外，国家营养学会在公开科普中也多次呼吁，外卖平台应当承担引导健康饮食的社会责任。公告发出后，小吃餐饮协会提出质疑：限流会让依赖高毛利小吃的夫妻店率先倒闭，这碗饭不该由平台来砸。而另一家外卖平台趁机打出广告：『你的胃，由你自己做主。』",
+    "sourceText": "平台内部评估认为，这类餐品的复购主要依赖重口味刺激，持续推送会助长用户不健康的饮食习惯。小吃餐饮协会随即质疑，限流会让依赖高毛利小吃的夫妻店率先倒闭，这碗饭不该由平台来砸。平台数据显示，长期点这类餐品的用户体检异常率明显更高，推荐算法不该加剧这一风险。基于上述判断，某外卖平台宣布，将对平台上高油、高盐、高糖的商家实行流量限制，新规则从下季度起逐步推行。国家营养学会在公开科普中也多次呼吁，外卖平台应当承担引导健康饮食的社会责任。另一家外卖平台则趁机打出广告：『你的胃，由你自己做主。』",
     "textRefs": {
       "conclusion_1": "将对平台上高油、高盐、高糖的商家实行流量限制",
       "reason_1": "这类餐品的复购主要依赖重口味刺激，持续推送会助长用户不健康的饮食习惯",
@@ -10,14 +10,14 @@
       "distractor_2": "你的胃，由你自己做主"
     },
     "hints": [
-      "结论在开头一句：平台要对哪类商家做什么？",
-      "三个理由分别从用户习惯、体检数据、营养学会三个角度出发",
+      "先找三条支持理由：它们散落在反对意见和政策主张的两侧",
+      "用户习惯、体检数据、营养学会分别提供了哪一种支持？",
       "『夫妻店倒闭』听着像因果，但方向与结论相反；『由你自己做主』是竞品在打广告"
     ],
-    "explanation": "结论是「对高油高盐高糖商家实行流量限制」。理由一：重口味养成不健康饮食习惯；理由二：常点用户体检异常率更高；理由三：营养学会呼吁平台担起责任。注意「限流会让夫妻店率先倒闭」看似有因果链条，实则是小吃协会的反对意见，方向与结论相反；「你的胃由你自己做主」是竞品平台借机营销。判断理由要看方向：它是在支撑结论，还是在反驳结论、顺带带货？"
+    "explanation": "三条理由分别是：重口味推送会助长不健康习惯、常点用户体检异常率更高、营养学会呼吁平台承担责任；它们共同支撑「对高油高盐高糖商家实行流量限制」。注意「夫妻店率先倒闭」同样是一条有因果结构的理由，但它支撑的是反对限流；「你的胃由你自己做主」则是竞品营销。理由分布在结论前后，判断关键是它支持哪一边。"
   },
   "en": {
-    "sourceText": "A food-delivery platform announced it will limit traffic to merchants whose food is high in oil, salt, and sugar, rolling out the new rules gradually from next quarter. The platform explained in its statement that repeat purchases of such meals rely mainly on heavy-flavor stimulation, and continuously recommending them encourages users' unhealthy eating habits. Meanwhile, platform data shows that users who frequently order such meals have noticeably higher rates of abnormal health checkups, and the platform believes its recommendation algorithm should not amplify this risk. In addition, the National Nutrition Society has repeatedly urged in public science outreach that delivery platforms should shoulder the social responsibility of guiding healthy eating. After the announcement, the snack-and-restaurant association raised doubts: the traffic limit will let mom-and-pop shops that depend on high-margin snacks go out of business first, and this is not a bowl of rice the platform should smash. Another delivery platform then ran an ad: 'Your stomach, your own choice.'",
+    "sourceText": "An internal platform review argued that repeat purchases of such meals rely mainly on heavy-flavor stimulation, and continuously recommending them encourages users' unhealthy eating habits. The snack-and-restaurant association objected that the traffic limit will let mom-and-pop shops that depend on high-margin snacks go out of business first. Platform data also shows that users who frequently order such meals have noticeably higher rates of abnormal health checkups, and its algorithm should not amplify that risk. Based on those judgments, a food-delivery platform announced it will limit traffic to merchants whose food is high in oil, salt, and sugar, rolling out the rules from next quarter. The platform also noted that the National Nutrition Society has repeatedly urged in public science outreach that delivery platforms should shoulder the social responsibility of guiding healthy eating. Another delivery platform then ran the ad: 'Your stomach, your own choice.'",
     "textRefs": {
       "conclusion_1": "limit traffic to merchants whose food is high in oil, salt, and sugar",
       "reason_1": "repeat purchases of such meals rely mainly on heavy-flavor stimulation, and continuously recommending them encourages users' unhealthy eating habits",
@@ -27,10 +27,10 @@
       "distractor_2": "Your stomach, your own choice"
     },
     "hints": [
-      "The conclusion is in the first sentence: what will the platform do to which merchants?",
-      "The three reasons come from user habits, health-checkup data, and the nutrition society",
+      "Find the three supporting reasons first: they sit on both sides of an objection and the policy claim",
+      "What distinct support comes from user habits, health-checkup data, and the nutrition society?",
       "'Mom-and-pop shops go out of business' sounds causal but runs against the conclusion; 'your stomach, your own choice' is a rival's ad"
     ],
-    "explanation": "The conclusion is 'limit traffic to high-oil, high-salt, high-sugar merchants'. Reason one: heavy flavors breed unhealthy habits. Reason two: frequent customers have higher abnormal-checkup rates. Reason three: the nutrition society urges platforms to take responsibility. 'Mom-and-pop shops go bankrupt first' looks like a causal chain but is the restaurant association's objection — its direction opposes the conclusion. 'Your stomach, your own choice' is a rival platform cashing in. To judge a reason, check its direction: does it support the conclusion, rebut it, or sell something on the side?"
+    "explanation": "The three reasons are that heavy-flavor recommendations encourage unhealthy habits, frequent customers have more abnormal checkups, and the nutrition society urges platform responsibility; together they support limiting traffic to high-oil, high-salt, high-sugar merchants. 'Mom-and-pop shops go out of business' is also a causal reason, but it supports opposition to the limit; 'your stomach, your own choice' is rival marketing. Reasons now sit before and after the conclusion, so the key question is which side each sentence supports."
   }
 }

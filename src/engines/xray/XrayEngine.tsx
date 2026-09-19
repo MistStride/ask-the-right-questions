@@ -292,7 +292,6 @@ export default function XrayEngine({
             nodeId={seg.anchor.nodeId}
             text={seg.text}
             type={seg.anchor.type}
-            isCorrect={seg.anchor.isCorrect}
             found={foundIds.has(seg.anchor.nodeId)}
             wrongFlash={wrongFlashId === seg.anchor.nodeId}
             onClick={() => handleNodeClick(seg.anchor!)}

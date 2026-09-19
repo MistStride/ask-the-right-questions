@@ -1,6 +1,6 @@
 {
   "zh": {
-    "sourceText": "某市教育部门提议：中小学生每天在校运动时间不应少于 1 小时。支持者认为，运动能显著提升孩子的注意力和学习效率，让他们在课堂上更专注。调查还显示，每天运动超过 1 小时的学生，近视率明显更低。不过也有家长担心，运动挤占了本就不多的课业时间。某运动饮料品牌趁机宣传：孩子运动后喝一口，能量翻倍！",
+    "sourceText": "某市就中小学生在校运动时长征求意见。支持者指出，运动能显著提升孩子的注意力和学习效率，让他们在课堂上更专注；调查还显示，每天运动超过 1 小时的学生，近视率明显更低。不过也有家长担心，运动挤占了本就不多的课业时间。教育部门综合意见后提议，中小学生每天在校运动时间不应少于 1 小时。某运动饮料品牌趁机宣传：孩子运动后喝一口，能量翻倍！",
     "textRefs": {
       "conclusion_1": "中小学生每天在校运动时间不应少于 1 小时",
       "reason_1": "运动能显著提升孩子的注意力和学习效率",
@@ -9,14 +9,14 @@
       "distractor_2": "运动挤占了本就不多的课业时间"
     },
     "hints": [
-      "先找结论：支持者希望你接受什么主张？",
-      "再找理由：文中有几条证据在支撑这个结论？",
+      "别按出现顺序猜：哪一句是在提出最终要采取的行动？",
+      "两条支持理由都出现在政策主张之前，它们分别说了什么好处？",
       "小心：广告语和家长的担忧都不是支持理由"
     ],
-    "explanation": "「每天在校运动不少于 1 小时」是论证的结论——它是支持者希望你采纳的立场；「提升注意力与学习效率」「降低近视率」是两个独立的支撑理由。广告语「能量翻倍」是推销话术，不是论证理由；「挤占课业时间」是反对者的担忧，恰恰是要被这个论证反驳的对象。先分清「论题 / 结论 / 理由」，是淘金式思维的第一步。"
+    "explanation": "「每天在校运动不少于 1 小时」是论证的结论——它是支持者希望你采纳的立场；「提升注意力与学习效率」「降低近视率」是两个独立的支撑理由。广告语「能量翻倍」是推销话术，不是论证理由；「挤占课业时间」是反对者的担忧，恰恰是要被这个论证反驳的对象。这关故意把理由放在前、结论放在后：位置不定义角色，支撑方向才定义。"
   },
   "en": {
-    "sourceText": "An education department proposed that primary and middle school students should get at least 1 hour of exercise at school every day. Supporters believe that exercise significantly improves children's attention and learning efficiency, helping them focus better in class. Surveys also show that students who exercise more than 1 hour a day have noticeably lower myopia rates. Some parents, however, worry that exercise takes away time from already-packed academics. A sports drink brand is cashing in: take a sip after exercise and double your energy!",
+    "sourceText": "A city asked for public input on exercise time at school. Supporters argued that exercise significantly improves children's attention and learning efficiency, helping them focus better in class; surveys also show that students who exercise more than 1 hour a day have noticeably lower myopia rates. Some parents, however, worry that exercise takes away time from already-packed academics. After weighing the views, the education department proposed that primary and middle school students should get at least 1 hour of exercise at school every day. A sports drink brand is cashing in: take a sip after exercise and double your energy!",
     "textRefs": {
       "conclusion_1": "primary and middle school students should get at least 1 hour of exercise at school every day",
       "reason_1": "exercise significantly improves children's attention and learning efficiency",
@@ -25,10 +25,10 @@
       "distractor_2": "exercise takes away time from already-packed academics"
     },
     "hints": [
-      "Find the conclusion first: what is the supporter asking you to accept?",
-      "Then find the reasons: how many pieces of evidence support it?",
+      "Do not guess from position: which sentence proposes the final action?",
+      "Both supporting reasons appear before the policy claim — what benefits do they describe?",
       "Watch out: the ad slogan and the parents' worry are not supporting reasons"
     ],
-    "explanation": "The conclusion is 'at least 1 hour of exercise at school every day' — the position supporters want you to accept. 'Improves attention and learning efficiency' and 'lowers myopia rates' are two independent reasons. The ad slogan 'double your energy' is marketing, not an argument; 'takes away time from academics' is the opponents' worry that this argument is trying to answer. Separating issue / conclusion / reasons is step one of panning-for-gold thinking."
+    "explanation": "The conclusion is 'at least 1 hour of exercise at school every day' — the position supporters want you to accept. 'Improves attention and learning efficiency' and 'lowers myopia rates' are two independent reasons. The ad slogan 'double your energy' is marketing, not an argument; 'takes away time from academics' is the opponents' worry that this argument is trying to answer. This level deliberately puts reasons first and the conclusion later: position does not define a role; direction of support does."
   }
 }

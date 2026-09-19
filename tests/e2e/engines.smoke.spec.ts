@@ -54,6 +54,28 @@ test('thinking move cards open lessons and lead into practice', async ({ page })
   await expect(page).toHaveURL(/#\/chapter\/10$/)
 })
 
+test('xray scan varies its sequence without leaking answers through idle styling', async ({ page }) => {
+  await page.goto('./#/level/ch02-level02')
+
+  await expect(page.getByText('按本关目标顺序还原论证骨架：结论 → 理由')).toBeVisible()
+  const chapterTwoAnchors = page.locator('[data-engine="xray"] .anchor-hover[role="button"]')
+  await expect(chapterTwoAnchors).toHaveCount(6)
+  await expect(chapterTwoAnchors.nth(2)).toContainText('下学期起在 30 所中学试点 AI 助教')
+  const idleStyles = await chapterTwoAnchors.evaluateAll((anchors) =>
+    anchors.map((anchor) => {
+      const style = window.getComputedStyle(anchor)
+      return `${style.borderBottomColor}/${style.color}`
+    }),
+  )
+  expect(new Set(idleStyles).size).toBe(1)
+
+  await page.goto('./#/level/ch03-level01')
+  await expect(page.getByText('按本关目标顺序还原论证骨架：理由 → 结论')).toBeVisible()
+  const chapterThreeAnchors = page.locator('[data-engine="xray"] .anchor-hover[role="button"]')
+  await expect(chapterThreeAnchors).toHaveCount(5)
+  await expect(chapterThreeAnchors.last()).toContainText('禁止学生携带智能手机进入校园')
+})
+
 test('first visit delivers a nuanced judgment before the full learning path', async ({ page }) => {
   await page.goto('./')
 

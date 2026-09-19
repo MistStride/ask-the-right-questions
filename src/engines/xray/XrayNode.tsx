@@ -7,14 +7,13 @@ interface Props {
   nodeId: string
   text: string
   type: NodeType
-  isCorrect: boolean
   found: boolean
   wrongFlash: boolean
   onClick: () => void
   locale: Locale
 }
 
-export default function XrayNode({ nodeId, text, type, isCorrect, found, wrongFlash, onClick, locale }: Props) {
+export default function XrayNode({ nodeId, text, type, found, wrongFlash, onClick, locale }: Props) {
   const v = NODE_VISUALS[type]
 
   if (found) {
@@ -53,9 +52,7 @@ export default function XrayNode({ nodeId, text, type, isCorrect, found, wrongFl
           onClick()
         }
       }}
-      className={`anchor-hover inline border-b border-dashed text-slate-600 ${v.hover} ${
-        isCorrect ? 'border-cyan-600/50' : 'border-slate-400/50'
-      }`}
+      className="anchor-hover inline border-b border-dashed border-cyan-700/45 text-slate-600 hover:bg-cyan-50 hover:text-cyan-700 hover:shadow-[0_0_0_1px_rgba(14,116,144,0.25)]"
     >
       {text}
     </motion.span>

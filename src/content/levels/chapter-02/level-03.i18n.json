@@ -1,6 +1,6 @@
 {
   "zh": {
-    "sourceText": "某头部社交平台发布青少年防沉迷新规：14 岁以下用户每日使用时长被强制限制在 40 分钟以内，且晚 10 点后无法登录，超时后将自动锁定摄像头与麦克风权限。平台在声明中强调，这一改动源于我们对未成年人保护的社会责任。第三方机构绿网观察发布的测评称，试点城市青少年深夜活跃度下降了 37%，证明限制确实有效；但该机构同时承认，样本仅来自 3 座一线城市且未公开问卷设计，结论能否推广存疑。神经科学研究者指出，单纯缩短时长未必改善睡眠质量，关键在于内容而非时长，而睡前无节制刷短视频本身对睡眠的干扰可能远大于时长。部分教育博主进一步担忧，若所有平台都照搬 40 分钟上限，青少年会被迫把社交转移到更隐蔽、更难监管的私聊空间。一位家长在论坛写道，我家孩子现在更珍惜那 40 分钟，反而聊得更走心了。竞品平台趁机打出口号：不限时，才自由！某自媒体则断言：40 分钟足够毁掉一代人的社交能力。平台发言人补充：我们的目标，是让每一分钟都更有质量。",
+    "sourceText": "围绕青少年防沉迷，竞品平台先打出口号：不限时，才自由！某头部社交平台则强调，这一改动源于我们对未成年人保护的社会责任。第三方机构绿网观察发布的测评称，试点城市青少年深夜活跃度下降了 37%，证明限制确实有效；但该机构同时承认，样本仅来自 3 座一线城市且未公开问卷设计，结论能否推广存疑。神经科学研究者指出，单纯缩短时长未必改善睡眠质量，关键在于内容而非时长；部分教育博主也担忧，统一上限会把社交转移到更隐蔽的空间。某自媒体据此断言：40 分钟足够毁掉一代人的社交能力。在这些争议中，平台发布新规：14 岁以下用户每日使用时长被强制限制在 40 分钟以内，且晚 10 点后无法登录，超时后将自动锁定摄像头与麦克风权限。一位家长在论坛写道，孩子现在反而更珍惜那 40 分钟。平台发言人补充：我们的目标，是让每一分钟都更有质量。",
     "textRefs": {
       "conclusion_1": "14 岁以下用户每日使用时长被强制限制在 40 分钟以内，且晚 10 点后无法登录",
       "reason_1": "这一改动源于我们对未成年人保护的社会责任",
@@ -10,14 +10,14 @@
       "distractor_3": "不限时，才自由"
     },
     "hints": [
-      "文中不止一个『结论』：只有平台的管制政策，才是作者真正要你接受的主张",
-      "平台的『社会责任』和绿网观察的『37% 下降』，才是支撑这条政策的理由",
+      "先分清说话者：竞品、自媒体和平台各自在推什么主张？当前论证要落到哪项行动？",
+      "两条支持理由出现在政策公布之前；反对结论也混在它们与政策之间",
       "小心：自媒体的『毁掉一代人』和竞品的『不限时才自由』也是结论，但它们是反对/竞争立场，不是本论证的理由"
     ],
-    "explanation": "真正的结论是平台的管制政策「14 岁以下限 40 分钟、晚 10 点后禁登录」——这是作者（平台声明）希望你接受的主张。两条理由：①价值——『源于保护未成年人的社会责任』；②数据——『深夜活跃度下降 37%』（尽管样本存疑）。高级陷阱在于：文中还出现了另外两个『结论』——自媒体「40 分钟足够毁掉一代人的社交能力」是反对立场的极端断言，竞品「不限时才自由」是竞争口号，平台发言人「让每一分钟更有质量」是空泛的价值标语，三者都不是支撑本政策的理由。挑战难度要求你区分：谁在提主张、这个主张是不是被当前论证所服务。"
+    "explanation": "真正的结论是平台的管制政策「14 岁以下限 40 分钟、晚 10 点后禁登录」——这是平台希望你接受的行动主张。两条理由：①价值——『源于保护未成年人的社会责任』；②数据——『深夜活跃度下降 37%』（尽管样本存疑）。高级陷阱在于：竞品「不限时才自由」和自媒体「40 分钟足够毁掉一代人的社交能力」也是完整结论，却服务于相反立场；「让每一分钟更有质量」则是空泛标语。结论被放在争议之后，玩家必须辨认说话者和支撑关系，而不是扫第一个高亮。"
   },
   "en": {
-    "sourceText": "A leading social platform released new teenage anti-addiction rules: users under 14 are forced to limit daily use to within 40 minutes, and cannot log in after 10 p.m., with camera and microphone access auto-locked once the limit is exceeded. The platform stressed in its statement that this change stems from our social responsibility to protect minors. The third-party group Green Web Watch reported that in pilot cities teenage late-night activity fell by 37%, proving the limit works; but it also admitted the sample came from only 3 first-tier cities and its questionnaire was not published, so whether the conclusion generalizes is doubtful. Neuroscience researchers point out that simply cutting duration may not improve sleep quality, and what matters is content rather than time, while unrestricted late-night short-video scrolling itself may hurt sleep far more than duration does. Some education bloggers worry further that if every platform copies the 40-minute cap, teenagers will be pushed to move their social life into more hidden, harder-to-supervise private chats. A parent wrote on a forum that my child now treasures those 40 minutes more and talks more heart-to-heart. A rival platform seized the moment with the slogan: no time limits means real freedom! A self-media account claimed: 40 minutes is enough to ruin a generation's social skills. A platform spokesperson added: our goal is to make every minute more meaningful.",
+    "sourceText": "In the debate over teenage screen limits, a rival platform opened with the slogan: no time limits means real freedom! A leading social platform argued that this change stems from our social responsibility to protect minors. The third-party group Green Web Watch reported that in pilot cities teenage late-night activity fell by 37%, claiming the limit works; but it admitted the sample came from only 3 first-tier cities and its questionnaire was not published. Neuroscience researchers warned that duration alone may not improve sleep, while education bloggers worried that a universal cap could push social activity into hidden private chats. A self-media account then claimed: 40 minutes is enough to ruin a generation's social skills. Amid the dispute, the platform released its rule: users under 14 are forced to limit daily use to within 40 minutes, and cannot log in after 10 p.m., with camera and microphone access auto-locked after the limit. A parent wrote that the limit made conversations more deliberate. A spokesperson added: our goal is to make every minute more meaningful.",
     "textRefs": {
       "conclusion_1": "users under 14 are forced to limit daily use to within 40 minutes, and cannot log in after 10 p.m.",
       "reason_1": "this change stems from our social responsibility to protect minors",
@@ -27,10 +27,10 @@
       "distractor_3": "no time limits means real freedom"
     },
     "hints": [
-      "There is more than one 'conclusion' here: only the platform's rule is the claim the author wants you to accept",
-      "The platform's 'social responsibility' and Green Web Watch's '37% drop' are the reasons supporting that rule",
+      "Separate the speakers: the rival, self-media account, and platform each push a claim — which one is the action at issue?",
+      "The two supporting reasons appear before the rule, with an opposing conclusion mixed in",
       "Watch: the self-media 'ruin a generation' and the rival 'no limits means freedom' are also conclusions — but opposing or competing, not reasons for this argument"
     ],
-    "explanation": "The real conclusion is the platform's rule — 'under 14 limited to 40 minutes, no login after 10 p.m.' — the claim the author (the platform statement) wants you to accept. Two reasons: ① value — 'stems from our responsibility to protect minors'; ② data — 'late-night activity fell by 37%' (though the sample is questionable). The advanced trap: two other 'conclusions' appear — the self-media '40 minutes is enough to ruin a generation's social skills' is an extreme opposing claim, the rival 'no limits means real freedom' is a competing slogan, and the spokesperson's 'make every minute more meaningful' is a vague value line. None supports this rule. The challenge is to tell whose claim it is and whether it serves the current argument."
+    "explanation": "The real conclusion is the platform's rule — 'under 14 limited to 40 minutes, no login after 10 p.m.' — the action the platform wants accepted. Two reasons: ① value — 'responsibility to protect minors'; ② data — 'late-night activity fell by 37%' (though the sample is questionable). The rival's 'no limits means freedom' and self-media's 'ruin a generation' are also complete conclusions, but serve opposing positions; 'make every minute meaningful' is a vague slogan. By placing the policy after the dispute, the level requires tracking speakers and support rather than clicking the first highlight."
   }
 }

@@ -8,6 +8,7 @@ import type {
   TamerLevelData,
   TamerTexts,
   XrayLevelData,
+  XrayTexts,
 } from '../../src/schema/levelTypes'
 
 const locales = ['zh', 'en'] as const
@@ -30,6 +31,58 @@ describe('gray-area content quality gate', () => {
       const data = level.data as XrayLevelData
       expect(data.distractors.length, level.meta.levelId).toBeGreaterThanOrEqual(2)
     }
+  })
+
+  it('prevents scan levels from leaking one fixed position and step-order recipe', () => {
+    const scanLevels = LEVELS.filter(
+      (item) => item.meta.engine === 'xray' && (item.data as XrayLevelData).mode === 'scan',
+    )
+    const conclusionOrdinals = new Set<number>()
+    const firstStepTargetTypes = new Set<string>()
+
+    for (const level of scanLevels) {
+      const data = level.data as XrayLevelData
+      const nodeById = new Map(
+        [...data.nodes, ...data.distractors].map((node) => [node.nodeId, node]),
+      )
+      const firstTarget = data.steps?.[0]?.targets[0]
+      if (firstTarget) firstStepTargetTypes.add(nodeById.get(firstTarget)?.type ?? 'unknown')
+
+      for (const locale of locales) {
+        const texts = level.texts[locale] as XrayTexts
+        const ordered = [...data.nodes, ...data.distractors]
+          .filter((node) => !node.hidden)
+          .map((node) => ({
+            node,
+            position: texts.sourceText.indexOf(texts.textRefs[node.textRef]),
+          }))
+          .sort((a, b) => a.position - b.position)
+
+        const conclusionIndex = ordered.findIndex(
+          ({ node }) => node.type === 'conclusion' && data.nodes.includes(node),
+        )
+        expect(conclusionIndex, `${level.meta.levelId}/${locale} conclusion position`).toBeGreaterThanOrEqual(0)
+        conclusionOrdinals.add(conclusionIndex)
+
+        if (level.meta.difficulty >= 2) {
+          const correctIds = new Set(data.nodes.map((node) => node.nodeId))
+          const correctPositions = ordered
+            .filter(({ node }) => correctIds.has(node.nodeId))
+            .map(({ position }) => position)
+          const distractorPositions = ordered
+            .filter(({ node }) => !correctIds.has(node.nodeId))
+            .map(({ position }) => position)
+          expect(
+            Math.min(...distractorPositions),
+            `${level.meta.levelId}/${locale} must interleave a decoy before all answers are exhausted`,
+          ).toBeLessThan(Math.max(...correctPositions))
+        }
+      }
+    }
+
+    expect(conclusionOrdinals.size, 'scan conclusion positions').toBeGreaterThanOrEqual(3)
+    expect(firstStepTargetTypes).toContain('conclusion')
+    expect(firstStepTargetTypes).toContain('reason')
   })
 
   it('explains why every courtroom near-miss is tempting but insufficient in both languages', () => {

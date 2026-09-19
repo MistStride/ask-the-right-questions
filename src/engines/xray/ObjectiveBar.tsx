@@ -7,8 +7,8 @@ import type { Locale, NodeType, XrayAnchor, XrayMode, XrayStepRef } from '../../
 
 const OBJECTIVE: Record<XrayMode, { zh: string; en: string }> = {
   scan: {
-    zh: '一步步找出论证的骨架：先结论，再理由',
-    en: 'Map the argument step by step: conclusion first, then reasons',
+    zh: '按本关目标顺序还原论证骨架',
+    en: 'Restore the argument in this level\'s target order',
   },
   dig: {
     zh: '先扫出结论与理由，最后挖出隐藏假设',
@@ -57,6 +57,10 @@ export default function ObjectiveBar({
 
   // 当前步骤内已找到数
   const currentFound = current.targets.filter((id) => foundIds.has(id)).length
+  const objectiveText =
+    mode === 'scan'
+      ? `${OBJECTIVE.scan[locale]}：${stepLabels.join(' → ')}`
+      : OBJECTIVE[mode][locale]
 
   return (
     <div className="mb-4 rounded-2xl border border-amber-500/40 bg-white p-4 shadow-[0_4px_16px_rgba(120,95,45,0.1)]">
@@ -64,7 +68,7 @@ export default function ObjectiveBar({
         <span className="text-base">🎯</span>
         <p className="text-sm font-bold text-slate-800">{heading}</p>
         <span className="mx-1 h-4 w-px bg-line" />
-        <p className="text-xs leading-relaxed text-slate-500">{OBJECTIVE[mode][locale]}</p>
+        <p className="text-xs leading-relaxed text-slate-500">{objectiveText}</p>
         {/* 步骤条 */}
         <div className="ml-auto flex items-center gap-1.5">
           <span className="mr-1 font-mono text-xs text-slate-500">
