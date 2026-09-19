@@ -140,7 +140,7 @@ const TEMPLATES = {
   },
 
   defusal: {
-    hint: '数据拆弹：图表中藏陷阱。注意 yAxis 须 min < start < max；manualRefs 条数必须等于真陷阱数',
+    hint: '数据拆弹：热点必须放在问题真实位置。target 支持 axis、bar、comparison；纵轴诚实时 start=min',
     json({ chapter, difficulty, contributor, levelId }) {
       return {
         levelId, chapter, engine: 'defusal', difficulty, contributor,
@@ -151,8 +151,8 @@ const TEMPLATES = {
         ],
         yAxis: { min: 0, max: 100, start: 90 },
         suspectSpots: [
-          { spotId: 'spot_trap', barIndex: 1, isTrap: true, debunkRef: 'debunk_trap' },
-          { spotId: 'spot_dummy', barIndex: 0, isTrap: false },
+          { spotId: 'spot_trap', target: { type: 'axis' }, isTrap: true, debunkRef: 'debunk_trap' },
+          { spotId: 'spot_dummy', target: { type: 'bar', barIndex: 0 }, isTrap: false },
         ],
         manualRefs: ['m_trap'],
       }

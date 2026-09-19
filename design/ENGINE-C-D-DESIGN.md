@@ -139,8 +139,11 @@ export interface DefusalLevelData {
 
 export interface DefusalSpotRef {
   spotId: string
-  /** 指向 chartData 的索引，标明可疑点挂在哪个柱上 */
-  barIndex: number
+  /** 热点必须落在错误实际发生的位置 */
+  target:
+    | { type: 'axis' }
+    | { type: 'bar'; barIndex: number }
+    | { type: 'comparison'; barIndices: [number, number] }
   isTrap: boolean               // true=真陷阱；false=干扰项
   debunkRef?: string            // i18n 键：拆弹成功解析（陷阱才有）
 }
@@ -157,19 +160,19 @@ export interface DefusalRuntimeLevel {
   chartTitle: string
   chartData: { label: string; value: number }[]
   yAxis: { min: number; max: number; start: number }
-  spots: { spotId: string; barIndex: number; isTrap: boolean; debunkText?: string }[]
+  spots: { spotId: string; target: DefusalSpotRef['target']; isTrap: boolean; debunkText?: string }[]
   manual: string[]
   hints: string[]
   explanation: string
 }
 ```
 
-> 与总纲的差异说明：总纲用 `chartConfig.yAxisTruncated + trueYAxisMin` 表达截断陷阱，且陷阱类型枚举复杂。本方案改为**显式 `yAxis.start`（显示起点）**——陷阱本质就是"起点被抬高了"，拆弹后真实起点回落到 `yAxis.min`。柱状图只表达"截断 Y 轴 / 零点缺失"一类陷阱（第 10 章最经典），其余类型（相关当因果等）留给未来折线图扩展。
+> `yAxis.start` 显式表达显示起点；当它高于 `min`，玩家必须直接点击纵轴热点，拆弹后整图回落到真实基线。单柱遗漏点击柱子，两组数值的相对/绝对误导点击 comparison 热点，交互位置必须与问题来源一致。
 
 ## D-4. Zod 校验（`levelSchema.ts` 新增 `defusalLevelSchema`）
 
-- `chartData` 非空，`value` 为有限数；`yAxis.min < yAxis.start`（start 在 min 与 max 之间），`yAxis.max > yAxis.start`
-- `suspectSpots` 非空，`barIndex` 在 `chartData` 索引范围内，**至少 1 个 `isTrap: true`**（保证可通关）
+- `chartData` 非空，`value` 为有限数；`yAxis.min <= yAxis.start < yAxis.max`（start=min 表示诚实基线）
+- `suspectSpots` 非空，bar/comparison 索引在 `chartData` 范围内，**至少 1 个 `isTrap: true`**；纵轴被截断时必须存在 axis 真陷阱
 - 陷阱 spot 必须有 `debunkRef` 且存在于 i18n `debunkRefs`；干扰 spot 不需要
 - `manualRefs` 非空且都存在于 i18n `manual`
 - 索引校验：每个 trap 的 debunkRef 在 i18n 中存在；`manualRefs` 长度 == trap 数量（手册逐条对应）

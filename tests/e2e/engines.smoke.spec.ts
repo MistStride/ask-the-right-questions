@@ -96,6 +96,22 @@ test('courtroom requires complementary cards and applies sharpness as real damag
   await expect(supportQuestion).toBeDisabled()
 })
 
+test('data defusal places axis and comparison traps on their real visual targets', async ({ page }) => {
+  await page.goto('./#/level/ch10-level01')
+
+  const axisTrap = page.locator('[data-spot-id="spot_axis"]')
+  await expect(axisTrap).toHaveAttribute('data-target-type', 'axis')
+  await expect(axisTrap).toContainText(/纵轴|Y axis/)
+  await expect(page.locator('svg')).toContainText('25')
+  await axisTrap.click()
+  await expect(page.locator('svg')).toContainText('0')
+
+  await page.goto('./#/level/ch10-level03')
+  await expect(page.locator('[data-target-type="axis"]')).toHaveCount(0)
+  await expect(page.locator('[data-target-type="comparison"]')).toHaveCount(2)
+  await expect(page.locator('[data-target-type="bar"]')).toHaveCount(2)
+})
+
 test('first visit delivers a nuanced judgment before the full learning path', async ({ page }) => {
   await page.goto('./')
 

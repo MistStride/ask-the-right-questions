@@ -11,12 +11,12 @@
     { "labelRef": "bar_noscreen_found", "value": 50 },
     { "labelRef": "bar_screen_found", "value": 80 }
   ],
-  "yAxis": { "min": 0, "max": 100, "start": 1 },
+  "yAxis": { "min": 0, "max": 100, "start": 0 },
   "suspectSpots": [
-    { "spotId": "spot_survival", "barIndex": 1, "isTrap": true, "debunkRef": "debunk_survival" },
-    { "spotId": "spot_overdiag", "barIndex": 3, "isTrap": true, "debunkRef": "debunk_overdiag" },
-    { "spotId": "spot_dummy3", "barIndex": 0, "isTrap": false },
-    { "spotId": "spot_dummy_found", "barIndex": 2, "isTrap": false }
+    { "spotId": "spot_survival", "target": { "type": "comparison", "barIndices": [0, 1] }, "isTrap": true, "debunkRef": "debunk_survival" },
+    { "spotId": "spot_overdiag", "target": { "type": "comparison", "barIndices": [2, 3] }, "isTrap": true, "debunkRef": "debunk_overdiag" },
+    { "spotId": "spot_dummy3", "target": { "type": "bar", "barIndex": 0 }, "isTrap": false },
+    { "spotId": "spot_dummy_found", "target": { "type": "bar", "barIndex": 2 }, "isTrap": false }
   ],
   "manualRefs": ["m_survival", "m_overdiag"]
 }

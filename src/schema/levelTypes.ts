@@ -287,8 +287,11 @@ export interface DefusalLevelData {
 
 export interface DefusalSpotRef {
   spotId: string
-  /** 挂在哪根柱上（chartData 索引） */
-  barIndex: number
+  /** 点击区域必须对应问题真正所在的位置，不能把纵轴陷阱挂到柱子上。 */
+  target:
+    | { type: 'axis' }
+    | { type: 'bar'; barIndex: number }
+    | { type: 'comparison'; barIndices: [number, number] }
   isTrap: boolean
   /** 拆弹成功解析（i18n 键，仅陷阱需要） */
   debunkRef?: string
@@ -311,7 +314,15 @@ export interface DefusalRuntimeLevel {
   chartTitle: string
   chartData: { label: string; value: number }[]
   yAxis: { min: number; max: number; start: number }
-  spots: { spotId: string; barIndex: number; isTrap: boolean; debunkText?: string }[]
+  spots: {
+    spotId: string
+    target:
+      | { type: 'axis' }
+      | { type: 'bar'; barIndex: number }
+      | { type: 'comparison'; barIndices: [number, number] }
+    isTrap: boolean
+    debunkText?: string
+  }[]
   manual: string[]
   hints: string[]
   explanation: string

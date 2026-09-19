@@ -13,8 +13,8 @@
   ],
   "yAxis": { "min": 0, "max": 35, "start": 25 },
   "suspectSpots": [
-    { "spotId": "spot_axis", "barIndex": 1, "isTrap": true, "debunkRef": "debunk_axis" },
-    { "spotId": "spot_dummy", "barIndex": 0, "isTrap": false }
+    { "spotId": "spot_axis", "target": { "type": "axis" }, "isTrap": true, "debunkRef": "debunk_axis" },
+    { "spotId": "spot_dummy", "target": { "type": "bar", "barIndex": 0 }, "isTrap": false }
   ],
   "manualRefs": ["m_axis"]
 }

@@ -68,12 +68,19 @@ export default function DefusalEngine({
       const traps = level.spots.filter((s) => s.isTrap)
       setStepsReview({
         kind: 'defusal',
-        traps: traps.map((s) => ({
-          spotId: s.spotId,
-          label: level.chartData[s.barIndex]?.label ?? '',
-          status: (defused.has(s.spotId) ? 'hit' : 'miss') as 'hit' | 'miss',
-          debunkText: defused.has(s.spotId) ? s.debunkText : undefined,
-        })),
+        traps: traps.map((s) => {
+          const label = s.target.type === 'axis'
+            ? locale === 'zh' ? '纵轴刻度' : 'Y-axis scale'
+            : s.target.type === 'comparison'
+              ? s.target.barIndices.map((index) => level.chartData[index]?.label ?? '').join(' ↔ ')
+              : level.chartData[s.target.barIndex]?.label ?? ''
+          return {
+            spotId: s.spotId,
+            label,
+            status: (defused.has(s.spotId) ? 'hit' : 'miss') as 'hit' | 'miss',
+            debunkText: defused.has(s.spotId) ? s.debunkText : undefined,
+          }
+        }),
         wrongDecoys: wrongCount,
         summary: { defusedCount: defusedCount, total: totalTraps },
       })
@@ -82,7 +89,7 @@ export default function DefusalEngine({
       return () => window.clearTimeout(timer)
     }
     return undefined
-  }, [isComplete, wrongCount, hintsUsed, level, markLevelComplete, defused, defusedCount, totalTraps])
+  }, [isComplete, wrongCount, hintsUsed, level, locale, markLevelComplete, defused, defusedCount, totalTraps])
 
   const handleTapSpot = (spotId: string) => {
     const outcome = tapSpot(spotId)
@@ -169,7 +176,7 @@ export default function DefusalEngine({
           locale={locale}
         />
         <p className="mt-2 text-xs text-slate-400">
-          {locale === 'zh' ? '图表上的 ⚡ 标记是可疑点——点它拆弹，但不是每个都是陷阱' : 'The ⚡ marks are suspicious spots — tap to defuse, but not all of them are traps'}
+          {locale === 'zh' ? '直接点击问题真正所在的位置：纵轴、单根柱子或两组数据间的“比较”标记；并非每个 ⚡ 都是陷阱' : 'Tap where the problem actually lives: the Y axis, a bar, or a comparison marker; not every ⚡ is a trap'}
         </p>
       </div>
 

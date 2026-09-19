@@ -168,9 +168,18 @@ export type ScaleTextsParsed = z.infer<typeof scaleLevelTextsSchema>
 
 /* ---------------- 引擎D 数据拆弹 ---------------- */
 
+export const defusalTargetSchema = z.discriminatedUnion('type', [
+  z.object({ type: z.literal('axis') }),
+  z.object({ type: z.literal('bar'), barIndex: z.number().int().min(0) }),
+  z.object({
+    type: z.literal('comparison'),
+    barIndices: z.tuple([z.number().int().min(0), z.number().int().min(0)]),
+  }),
+])
+
 export const defusalSpotSchema = z.object({
   spotId: z.string().min(1, 'spotId 不能为空'),
-  barIndex: z.number().int().min(0),
+  target: defusalTargetSchema,
   isTrap: z.boolean(),
   debunkRef: z.string().optional(),
 })
@@ -187,15 +196,23 @@ export const defusalLevelSchema = z.object({
     min: z.number().finite(),
     max: z.number().finite(),
     start: z.number().finite(),
-  }).refine((y) => y.min < y.start && y.start < y.max, {
-    message: 'yAxis 需满足 min < start < max（start 是动手脚的显示起点）',
+  }).refine((y) => y.min <= y.start && y.start < y.max, {
+    message: 'yAxis 需满足 min <= start < max（start=min 表示纵轴诚实）',
   }),
   suspectSpots: z.array(defusalSpotSchema).min(1, '至少需要一个可疑点'),
   manualRefs: z.array(z.string().min(1)).min(1, '至少需要一条拆弹手册'),
 }).superRefine((data, ctx) => {
   for (const s of data.suspectSpots) {
-    if (s.barIndex >= data.chartData.length) {
-      ctx.addIssue({ code: 'custom', path: ['suspectSpots'], message: `可疑点 ${s.spotId} 的 barIndex ${s.barIndex} 超出柱数` })
+    const indices = s.target.type === 'bar'
+      ? [s.target.barIndex]
+      : s.target.type === 'comparison'
+        ? s.target.barIndices
+        : []
+    if (indices.some((index) => index >= data.chartData.length)) {
+      ctx.addIssue({ code: 'custom', path: ['suspectSpots'], message: `可疑点 ${s.spotId} 引用了超出柱数的索引` })
+    }
+    if (s.target.type === 'comparison' && s.target.barIndices[0] === s.target.barIndices[1]) {
+      ctx.addIssue({ code: 'custom', path: ['suspectSpots'], message: `比较热点 ${s.spotId} 必须连接两根不同的柱子` })
     }
     if (s.isTrap && !s.debunkRef) {
       ctx.addIssue({ code: 'custom', path: ['suspectSpots'], message: `陷阱 ${s.spotId} 必须提供 debunkRef` })
@@ -203,6 +220,10 @@ export const defusalLevelSchema = z.object({
   }
   if (!data.suspectSpots.some((s) => s.isTrap)) {
     ctx.addIssue({ code: 'custom', path: ['suspectSpots'], message: '至少需要一个真陷阱（isTrap: true）' })
+  }
+  const hasAxisTrap = data.suspectSpots.some((s) => s.isTrap && s.target.type === 'axis')
+  if (data.yAxis.start > data.yAxis.min && !hasAxisTrap) {
+    ctx.addIssue({ code: 'custom', path: ['suspectSpots'], message: '纵轴被截断时，必须提供 target.type=axis 的真陷阱' })
   }
   if (data.manualRefs.length !== data.suspectSpots.filter((s) => s.isTrap).length) {
     ctx.addIssue({ code: 'custom', path: ['manualRefs'], message: '拆弹手册条目数必须等于陷阱数（逐条对应）' })

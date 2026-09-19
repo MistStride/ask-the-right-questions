@@ -130,7 +130,7 @@ export default function LevelPage() {
       }))
       const spots = data.suspectSpots.map((s) => ({
         spotId: s.spotId,
-        barIndex: s.barIndex,
+        target: s.target,
         isTrap: s.isTrap,
         debunkText: s.debunkRef ? texts.textRefs[s.debunkRef] : undefined,
       }))

@@ -155,6 +155,22 @@ describe('gray-area content quality gate', () => {
     }
   })
 
+  it('puts data-defusal hotspots on the chart element that actually contains the problem', () => {
+    const targetTypes = new Set<string>()
+    for (const level of LEVELS.filter((item) => item.meta.engine === 'defusal')) {
+      const data = level.data as DefusalLevelData
+      for (const spot of data.suspectSpots) targetTypes.add(spot.target.type)
+
+      if (data.yAxis.start > data.yAxis.min) {
+        expect(
+          data.suspectSpots.some((spot) => spot.isTrap && spot.target.type === 'axis'),
+          `${level.meta.levelId} truncated axis needs an axis hotspot`,
+        ).toBe(true)
+      }
+    }
+    expect(targetTypes).toEqual(new Set(['axis', 'bar', 'comparison']))
+  })
+
   it('gives every impulse one graded near-miss with bilingual, specific feedback', () => {
     for (const level of LEVELS.filter((item) => item.meta.engine === 'tamer')) {
       const data = level.data as TamerLevelData
