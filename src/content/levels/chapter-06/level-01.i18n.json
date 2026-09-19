@@ -13,8 +13,9 @@
       "q_ad_hominem": "领导有没有大学文凭，与他评价的对错有关系吗？",
       "q_slippery": "从批评方案到公司倒闭，中间每一环都必然成立吗？",
       "q_hasty": "三个人的离职能代表整个公司的状况吗？",
-      "q_d1": "领导是不是平时就爱挑学历比他高的人的毛病？",
-      "q_d2": "公司最近是不是真有大规模的裁员计划？"
+      "q_d1": "先不看领导的学历，他对方案提出了哪些可以逐条检验的具体理由？",
+      "q_d2": "三人离职与公司平时的流动率相比，真的足以代表整体趋势吗？",
+      "q_d3": "从一次方案被批评走到辞职、再到公司倒闭，中间缺少哪些可验证的环节？"
     },
     "hints": [
       "注意：他是在评价领导的「人」，还是在评价领导的「观点」？",
@@ -37,8 +38,9 @@
       "q_ad_hominem": "Does whether the manager went to college change whether his critique is right?",
       "q_slippery": "Is every step from a criticism to a collapsed company truly inevitable?",
       "q_hasty": "Can three resignations represent the whole company?",
-      "q_d1": "Does the manager usually pick on people who are more educated than him?",
-      "q_d2": "Is the company actually planning a large round of layoffs?"
+      "q_d1": "Set the manager's education aside: what specific, testable reasons did he give against the proposal?",
+      "q_d2": "Compared with the company's normal turnover, do three resignations really represent an overall trend?",
+      "q_d3": "Between one criticized proposal, quitting, and company collapse, which verifiable links are still missing?"
     },
     "hints": [
       "Is he attacking the manager's person, or the manager's argument?",

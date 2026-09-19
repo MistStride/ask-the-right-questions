@@ -106,7 +106,7 @@ function validateSteps(path: string, levelId: string, data: XrayLevelData) {
   }
 }
 
-/** 引擎B 法庭关卡校验：破绽句可匹配 + 问题可命中 + 血条能扣完 */
+/** 引擎B 法庭关卡校验：破绽句可匹配 + 每处必须由多卡累计击穿 + 锐度总量足够 */
 function validateCourtroom(
   path: string,
   levelId: string,
@@ -145,6 +145,17 @@ function validateCourtroom(
   for (const spot of data.weakSpots) {
     if (!coveredIssues.has(spot.issueType)) {
       fail(path, `关卡 ${levelId} 破绽 ${spot.spotId} 的 issueType「${spot.issueType}」没有任何相关问题可命中`)
+    }
+    const matching = data.questionBank.filter((q) => q.targetIssue === spot.issueType)
+    const totalDamage = matching.reduce((sum, q) => sum + q.sharpness, 0)
+    if (matching.length < 2) {
+      fail(path, `关卡 ${levelId} 破绽 ${spot.spotId} 只有 ${matching.length} 张相关卡，必须用至少 2 张互补问题`)
+    }
+    if (Math.max(...matching.map((q) => q.sharpness)) >= spot.sharpness) {
+      fail(path, `关卡 ${levelId} 破绽 ${spot.spotId} 可被单张卡击碎，锐度机制失效`)
+    }
+    if (totalDamage < spot.sharpness) {
+      fail(path, `关卡 ${levelId} 破绽 ${spot.spotId} 的相关卡总锐度 ${totalDamage} < 抗辩值 ${spot.sharpness}`)
     }
   }
   const sum = data.weakSpots.reduce((a, s) => a + s.sharpness, 0)

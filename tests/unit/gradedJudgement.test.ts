@@ -20,7 +20,7 @@ describe('graded judgement', () => {
     }
 
     expect(classifyCourtroomStrike(question, spot)).toBe('hit')
-    expect(classifyCourtroomStrike({ ...question, isRelevant: false }, spot)).toBe('near_miss')
+    expect(classifyCourtroomStrike({ ...question, isRelevant: false }, spot)).toBe('support')
     expect(classifyCourtroomStrike({ ...question, targetIssue: 'causation' }, spot)).toBe('miss')
   })
 

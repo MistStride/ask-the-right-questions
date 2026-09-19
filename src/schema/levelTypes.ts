@@ -109,18 +109,18 @@ export interface CourtroomWeakSpotRef {
   issueType: string
   /** 命中后展示的"戳穿解析"（i18n textRefs 键） */
   debunkRef: string
-  /** 命中扣血量 1-100；全关合计应 ≥ credibility */
+  /** 该破绽的抗辩值 1-100；需要多张问题卡累计削减 */
   sharpness: number
 }
 
 export interface CourtroomQuestionRef {
   questionId: string
   textRef: string
-  /** 展示用锐度；实际扣血以 weakSpot.sharpness 为准 */
+  /** 实际伤害值；同一张卡每局只能有效使用一次 */
   sharpness: number
   /** 针对的 issueType（命中判据） */
   targetIssue: string
-  /** true=真问题可命中；false=干扰问题（法官警告，不扣血） */
+  /** true=核心追问；false=补强追问。两者命中正确破绽都会贡献锐度 */
   isRelevant: boolean
 }
 

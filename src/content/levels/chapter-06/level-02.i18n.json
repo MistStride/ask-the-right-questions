@@ -14,11 +14,13 @@
       "q_strawman": "反对者的真实观点是什么？有人反对过「理财」本身，还是只反对这家机构？",
       "q_redherring": "房价和孩子上学，和「这家机构是否值得信任」有什么关系？",
       "q_d1": "除了巴菲特，还有哪些知名投资人赞成这种开户方式？",
-      "q_d2": "反对这家机构的人里，有多少人自己从来不做理财？"
+      "q_d2": "反对这家机构的人里，有多少人自己从来不做理财？",
+      "q_d3": "先拿掉房价和学费焦虑，这家机构的资质、费用和风险披露经得起核查吗？"
     },
     "nearMissFeedback": {
       "q_d1": "更多名人只能增加权威的数量，仍没有验证这家机构的资质、费用和风险。",
-      "q_d2": "批评者是否理财描述的是人，不是他们对机构的质疑是否成立。"
+      "q_d2": "批评者是否理财描述的是人，不是他们对机构的质疑是否成立。",
+      "q_d3": "把焦虑拿掉能把讨论拉回机构本身，但还需要逐项核查资质、费用和风险才能完成判断。"
     },
     "hints": [
       "借名人的话压人，是权威，不是证据",
@@ -42,11 +44,13 @@
       "q_strawman": "What do the opponents actually believe? Did anyone oppose investing itself, or just this firm?",
       "q_redherring": "What do housing prices and kids' tuition have to do with whether this firm is trustworthy?",
       "q_d1": "Besides Buffett, which famous investors endorse this way of opening accounts?",
-      "q_d2": "How many critics of this firm never invest their own money at all?"
+      "q_d2": "How many critics of this firm never invest their own money at all?",
+      "q_d3": "Set housing and tuition anxiety aside: do this firm's credentials, fees, and risk disclosures withstand scrutiny?"
     },
     "nearMissFeedback": {
       "q_d1": "More famous endorsers only add authorities; they still do not verify this firm’s credentials, fees, or risks.",
-      "q_d2": "Whether critics invest describes the people, not whether their objections to the firm are sound."
+      "q_d2": "Whether critics invest describes the people, not whether their objections to the firm are sound.",
+      "q_d3": "Removing the anxiety returns attention to the firm, but credentials, fees, and risks still need separate verification."
     },
     "hints": [
       "Leaning on a celebrity's words is authority, not evidence",

@@ -13,10 +13,11 @@
     { "spotId": "spot_hasty", "anchorTextRef": "spot_hasty", "issueType": "hasty_generalization", "debunkRef": "debunk_hasty", "sharpness": 25 }
   ],
   "questionBank": [
-    { "questionId": "q_ad_hominem", "textRef": "q_ad_hominem", "sharpness": 40, "targetIssue": "ad_hominem", "isRelevant": true },
-    { "questionId": "q_slippery", "textRef": "q_slippery", "sharpness": 35, "targetIssue": "slippery_slope", "isRelevant": true },
-    { "questionId": "q_hasty", "textRef": "q_hasty", "sharpness": 25, "targetIssue": "hasty_generalization", "isRelevant": true },
+    { "questionId": "q_ad_hominem", "textRef": "q_ad_hominem", "sharpness": 30, "targetIssue": "ad_hominem", "isRelevant": true },
+    { "questionId": "q_slippery", "textRef": "q_slippery", "sharpness": 25, "targetIssue": "slippery_slope", "isRelevant": true },
+    { "questionId": "q_hasty", "textRef": "q_hasty", "sharpness": 15, "targetIssue": "hasty_generalization", "isRelevant": true },
     { "questionId": "q_d1", "textRef": "q_d1", "sharpness": 10, "targetIssue": "ad_hominem", "isRelevant": false },
-    { "questionId": "q_d2", "textRef": "q_d2", "sharpness": 10, "targetIssue": "hasty_generalization", "isRelevant": false }
+    { "questionId": "q_d2", "textRef": "q_d2", "sharpness": 10, "targetIssue": "hasty_generalization", "isRelevant": false },
+    { "questionId": "q_d3", "textRef": "q_d3", "sharpness": 10, "targetIssue": "slippery_slope", "isRelevant": false }
   ]
 }

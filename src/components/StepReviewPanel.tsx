@@ -176,7 +176,7 @@ function CourtroomSection({
     <div className="space-y-3">
       <SummaryLine
         primary={`${badge('击碎', 'Shattered', locale)} ${review.summary.hitCount}/${review.summary.total}`}
-        secondary={`${review.summary.wrongTries} ${t.wrongs} · ${review.summary.nearMissTries} ${t.nearMiss}`}
+        secondary={`${review.summary.wrongTries} ${t.wrongs} · ${review.summary.nearMissTries} ${badge('次补强质询', 'supporting challenges', locale)}`}
         locale={locale}
       />
       <ol className="space-y-2">
@@ -188,11 +188,11 @@ function CourtroomSection({
                 <p className="text-sm text-slate-800">"{it.anchorText}"</p>
                 <p className="mt-0.5 text-[11px] text-slate-500">
                   {badge('破绽', 'issue', locale)}: {it.issueType}
-                  {it.status === 'hit' && it.hitByText && (
-                    <> · {badge('命中', 'hit by', locale)}: <span className="text-amber-700">「{it.hitByText}」</span></>
+                  {it.status === 'hit' && it.hitByTexts.length > 0 && (
+                    <> · {badge('组合质询', 'combined', locale)}: <span className="text-amber-700">{it.hitByTexts.length} {locale === 'zh' ? '张卡' : 'cards'}</span></>
                   )}
                   {it.wrongTries + it.nearMissTries > 0 && (
-                    <> · {it.wrongTries} {t.wrongs} / {it.nearMissTries} {t.nearMiss}</>
+                    <> · {it.wrongTries} {t.wrongs} / {it.nearMissTries} {badge('次补强', 'supporting', locale)}</>
                   )}
                 </p>
                 <p className="mt-1 rounded border border-amber-300/50 bg-amber-50/60 px-2 py-1 text-xs text-amber-900">

@@ -8,6 +8,7 @@ interface Props {
   mode: CourtroomMode
   questions: CourtroomQuestion[]
   usedIds: Set<string>
+  spentIds: Set<string>
   nearMissIds: Set<string>
   flashQuestionId: string | null
   selectedId: string | null
@@ -20,6 +21,7 @@ export default function QuestionBank({
   mode,
   questions,
   usedIds,
+  spentIds,
   nearMissIds,
   flashQuestionId,
   selectedId,
@@ -43,14 +45,18 @@ export default function QuestionBank({
       <div className="mt-3 flex gap-2 overflow-x-auto pb-2 scroll-thin">
         {questions.map((q) => {
           const used = usedIds.has(q.questionId)
+          const spent = spentIds.has(q.questionId)
           const nearMiss = nearMissIds.has(q.questionId)
           const flash = flashQuestionId === q.questionId
           const selected = selectedId === q.questionId
           return (
             <button
               key={q.questionId}
+              data-question-id={q.questionId}
+              data-target-issue={q.targetIssue}
               type="button"
-              draggable
+              draggable={!spent}
+              disabled={spent}
               onDragStart={(e) => {
                 e.dataTransfer.setData('text/plain', q.questionId)
                 e.dataTransfer.effectAllowed = 'move'
@@ -59,9 +65,13 @@ export default function QuestionBank({
               onClick={() => onSelect(selected ? null : q.questionId)}
               className={`relative w-44 shrink-0 cursor-grab rounded-xl border-2 bg-panel-2 px-3 py-3 text-left transition active:cursor-grabbing ${
                 flash ? 'court-shake border-court' : selected ? 'border-court bg-court/5' : 'border-line hover:border-court/50'
-              } ${used && !selected ? 'opacity-50' : ''}`}
+              } ${used && !selected ? 'opacity-50' : ''} ${spent ? 'cursor-not-allowed opacity-45' : ''}`}
             >
-              {used ? (
+              {spent ? (
+                <span className="absolute -top-2 right-2 rounded-full bg-emerald-600 px-1.5 py-0.5 text-[10px] font-bold text-white">
+                  ✓ {locale === 'zh' ? '已生效' : 'Applied'}
+                </span>
+              ) : used ? (
                 <span
                   className={`absolute -top-2 right-2 rounded-full px-1.5 py-0.5 text-[10px] font-bold text-white ${
                     nearMiss ? 'bg-amber-500' : 'bg-court/80'
@@ -74,7 +84,7 @@ export default function QuestionBank({
                   ✓ {locale === 'zh' ? '已选' : 'Picked'}
                 </span>
               ) : null}
-              <span className={`block text-sm font-medium leading-snug ${used && !selected ? 'text-slate-400 line-through' : 'text-slate-700'}`}>
+              <span className={`block text-sm font-medium leading-snug ${spent ? 'text-slate-400 line-through' : used && !selected ? 'text-slate-500' : 'text-slate-700'}`}>
                 {q.text}
               </span>
               <span className="mt-2 block font-mono text-[11px] text-court/80">

@@ -29,7 +29,7 @@ export interface CourtroomStepReview {
     anchorText: string
     issueType: string
     status: ReviewStatus
-    hitByText?: string
+    hitByTexts: string[]
     wrongTries: number
     nearMissTries: number
     debunkText: string

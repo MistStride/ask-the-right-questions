@@ -18,6 +18,7 @@ import { useProgressStore } from '../../store/progressStore'
 import { useSettingsStore } from '../../store/settingsStore'
 import type { CourtroomRuntimeLevel } from '../../schema/levelTypes'
 import type { CourtroomStepReview } from '../../schema/stepReview'
+import { orderCourtroomQuestions } from './questionOrder'
 
 interface Props {
   level: CourtroomRuntimeLevel
@@ -57,6 +58,8 @@ export default function CourtroomEngine({
   const logic = useCourtroomLogic(level)
   const {
     hitSpots,
+    spotDamage,
+    spentQuestions,
     hitCount,
     total,
     wrongTries,
@@ -80,12 +83,16 @@ export default function CourtroomEngine({
   const [hintsUsed, setHintsUsed] = useState(0)
   const [scoreDetail, setScoreDetail] = useState<ScoreBreakdown | null>(null)
   const [attempt, setAttempt] = useState(0)
-  const [spotStats, setSpotStats] = useState<Map<string, { wrong: number; nearMiss: number; hitByQuestionId?: string; hitByText?: string }>>(new Map())
+  const [spotStats, setSpotStats] = useState<Map<string, { wrong: number; nearMiss: number; appliedTexts: string[] }>>(new Map())
   const [stepsReview, setStepsReview] = useState<CourtroomStepReview | null>(null)
   const settledRef = useRef(false)
   const dragQuestionRef = useRef<CourtroomQuestion | null>(null)
 
   const questionsById = useMemo(() => new Map(level.questions.map((q) => [q.questionId, q])), [level.questions])
+  const orderedQuestions = useMemo(
+    () => orderCourtroomQuestions(level.questions, level.meta.levelId),
+    [level.questions, level.meta.levelId],
+  )
 
   // 命中/试错红闪清理
   useEffect(() => {
@@ -106,7 +113,7 @@ export default function CourtroomEngine({
     if (isComplete && !settledRef.current) {
       settledRef.current = true
       const raw = Math.round(
-        50 + remainingCredibility * 0.4 + Math.max(0, 20 - wrongTries * 5 - nearMissTries * 2),
+        50 + remainingCredibility * 0.4 + Math.max(0, 20 - wrongTries * 5),
       )
       const finalScore = applyHintPenalty(raw, hintsUsed, level.meta.difficulty)
       setScore(finalScore)
@@ -116,14 +123,14 @@ export default function CourtroomEngine({
         cost: hintCostFor(level.meta.difficulty),
       })
       const items = level.weakSpots.map((ws) => {
-        const s = spotStats.get(ws.spotId) ?? { wrong: 0, nearMiss: 0 }
+        const s = spotStats.get(ws.spotId) ?? { wrong: 0, nearMiss: 0, appliedTexts: [] }
         const hit = hitSpots.has(ws.spotId)
         return {
           spotId: ws.spotId,
           anchorText: ws.anchorText,
           issueType: ws.issueType,
           status: (hit ? 'hit' : 'miss') as 'hit' | 'miss',
-          hitByText: s.hitByText,
+          hitByTexts: s.appliedTexts,
           wrongTries: s.wrong,
           nearMissTries: s.nearMiss,
           debunkText: ws.debunkText,
@@ -144,37 +151,39 @@ export default function CourtroomEngine({
   const handleStrike = (questionId: string, spot: CourtroomSpot) => {
     const q = questionsById.get(questionId)
     if (!q) return
-    const outcome = strike(q, spot)
-    if (outcome === 'hit') {
+    const result = strike(q, spot)
+    if (result.outcome === 'hit' || result.outcome === 'support') {
       setSpotStats((prev) => {
         const m = new Map(prev)
-        const e = m.get(spot.spotId) ?? { wrong: 0, nearMiss: 0 }
-        m.set(spot.spotId, { ...e, hitByQuestionId: q.questionId, hitByText: q.text })
+        const e = m.get(spot.spotId) ?? { wrong: 0, nearMiss: 0, appliedTexts: [] }
+        m.set(spot.spotId, {
+          ...e,
+          nearMiss: e.nearMiss + (result.outcome === 'support' ? 1 : 0),
+          appliedTexts: [...e.appliedTexts, q.text],
+        })
         return m
       })
-      showToast(`${t.hitToast} ${spot.debunkText}`, 'success')
-      setSelectedId(null)
-    } else if (outcome === 'near_miss') {
-      setSpotStats((prev) => {
-        const m = new Map(prev)
-        const e = m.get(spot.spotId) ?? { wrong: 0, nearMiss: 0 }
-        m.set(spot.spotId, { ...e, nearMiss: e.nearMiss + 1 })
-        return m
-      })
+      const prefix = result.outcome === 'support' ? t.nearMissToast : t.hitToast
+      const supportNote = result.outcome === 'support' && q.nearMissFeedback
+        ? `${locale === 'zh' ? '；' : '; '}${q.nearMissFeedback}`
+        : ''
       showToast(
-        q.nearMissFeedback
-          ? `${t.nearMissToast}${locale === 'zh' ? '：' : ': '}${q.nearMissFeedback}`
-          : t.nearMissToast,
-        'info',
+        result.shattered
+          ? `${prefix}${supportNote} ${spot.debunkText}`
+          : `${prefix}${supportNote} ${t.progressToast(result.damage, result.remaining)}`,
+        result.outcome === 'support' ? 'info' : 'success',
       )
-    } else if (outcome === 'miss') {
+      setSelectedId(null)
+    } else if (result.outcome === 'miss') {
       setSpotStats((prev) => {
         const m = new Map(prev)
-        const e = m.get(spot.spotId) ?? { wrong: 0, nearMiss: 0 }
+        const e = m.get(spot.spotId) ?? { wrong: 0, nearMiss: 0, appliedTexts: [] }
         m.set(spot.spotId, { ...e, wrong: e.wrong + 1 })
         return m
       })
       showToast(t.missToast, 'error')
+    } else if (result.outcome === 'spent') {
+      showToast(t.spentToast, 'info')
     } else {
       showToast(t.alreadyToast, 'info')
     }
@@ -242,7 +251,7 @@ export default function CourtroomEngine({
       >
         <p className="text-sm font-bold text-gold-deep">{t.objective(total)}</p>
         <p className="mt-0.5 text-xs text-slate-500">
-          {locale === 'zh' ? `「⚡ 可疑」标记处就是破绽所在；打中要害证词信誉崩落，全部击碎即获胜` : 'Lines marked "⚡ Suspicious" hide the flaws; shatter them all to win'}
+          {locale === 'zh' ? `观察每处「抗辩值」；卡片锐度会真实扣减它，单张卡不足以直接击碎` : 'Watch each guard value; card damage reduces it, and no single card can shatter a flaw'}
         </p>
       </motion.div>
 
@@ -270,6 +279,7 @@ export default function CourtroomEngine({
         testimony={level.testimony}
         spots={level.weakSpots}
         hitSpots={hitSpots}
+        spotDamage={spotDamage}
         flashSpotId={flashSpotId}
         onDropSpot={handleDropSpot}
         onTapSpot={handleTapSpot}
@@ -280,8 +290,9 @@ export default function CourtroomEngine({
       <div className="mt-4">
         <QuestionBank
           mode={mode}
-          questions={level.questions}
+          questions={orderedQuestions}
           usedIds={usedQuestions}
+          spentIds={spentQuestions}
           nearMissIds={nearMissQuestions}
           flashQuestionId={flashQuestionId}
           selectedId={selectedId}

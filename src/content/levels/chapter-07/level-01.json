@@ -13,10 +13,11 @@
     { "spotId": "spot_conflict", "anchorTextRef": "spot_conflict", "issueType": "conflict_of_interest", "debunkRef": "debunk_conflict", "sharpness": 25 }
   ],
   "questionBank": [
-    { "questionId": "q_qualification", "textRef": "q_qualification", "sharpness": 40, "targetIssue": "expert_qualification", "isRelevant": true },
-    { "questionId": "q_personal", "textRef": "q_personal", "sharpness": 35, "targetIssue": "personal_testimonial", "isRelevant": true },
-    { "questionId": "q_conflict", "textRef": "q_conflict", "sharpness": 25, "targetIssue": "conflict_of_interest", "isRelevant": true },
+    { "questionId": "q_qualification", "textRef": "q_qualification", "sharpness": 30, "targetIssue": "expert_qualification", "isRelevant": true },
+    { "questionId": "q_personal", "textRef": "q_personal", "sharpness": 25, "targetIssue": "personal_testimonial", "isRelevant": true },
+    { "questionId": "q_conflict", "textRef": "q_conflict", "sharpness": 15, "targetIssue": "conflict_of_interest", "isRelevant": true },
     { "questionId": "q_d1", "textRef": "q_d1", "sharpness": 10, "targetIssue": "expert_qualification", "isRelevant": false },
-    { "questionId": "q_d2", "textRef": "q_d2", "sharpness": 10, "targetIssue": "personal_testimonial", "isRelevant": false }
+    { "questionId": "q_d2", "textRef": "q_d2", "sharpness": 10, "targetIssue": "personal_testimonial", "isRelevant": false },
+    { "questionId": "q_d3", "textRef": "q_d3", "sharpness": 10, "targetIssue": "conflict_of_interest", "isRelevant": false }
   ]
 }

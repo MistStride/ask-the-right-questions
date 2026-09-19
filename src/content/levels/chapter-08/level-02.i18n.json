@@ -14,11 +14,13 @@
       "q_corr": "喝咖啡和体检更健康，谁是因谁是果？有没有第三因素？",
       "q_control": "为什么把对照组排除？不喝咖啡的人数据如何？",
       "q_d1": "年轻白领样本里的男女比例是否均衡？",
-      "q_d2": "志愿者每天喝的咖啡剂量是否保持一致？"
+      "q_d2": "志愿者每天喝的咖啡剂量是否保持一致？",
+      "q_d3": "喝咖啡者和不喝者在运动、饮食、收入与原有健康状况上是否相近？"
     },
     "nearMissFeedback": {
       "q_d1": "性别均衡能改善样本内部构成，但年轻科技员工仍代表不了老人、病人和其他职业。",
-      "q_d2": "统一剂量能减少测量噪声，却不能替代不喝咖啡的对照组，也不能排除生活习惯差异。"
+      "q_d2": "统一剂量能减少测量噪声，却不能替代不喝咖啡的对照组，也不能排除生活习惯差异。",
+      "q_d3": "比较生活方式能排查部分第三变量，但观察性比较仍不能单独证明咖啡带来了健康差异。"
     },
     "hints": [
       "样本是谁？能代表结论覆盖的全体吗？",
@@ -42,11 +44,13 @@
       "q_corr": "Between coffee and better checkups, which is the cause? Could a third factor drive both?",
       "q_control": "Why was the control group excluded? What do the non-drinkers' numbers show?",
       "q_d1": "Was the gender balance even within the young office-worker sample?",
-      "q_d2": "Did volunteers consume the same dose of coffee each day?"
+      "q_d2": "Did volunteers consume the same dose of coffee each day?",
+      "q_d3": "Were coffee drinkers and non-drinkers similar in exercise, diet, income, and baseline health?"
     },
     "nearMissFeedback": {
       "q_d1": "Gender balance improves the sample’s internal mix, but young tech workers still cannot represent older, ill, or differently employed people.",
-      "q_d2": "A consistent dose reduces measurement noise, but cannot replace a non-coffee control or rule out lifestyle differences."
+      "q_d2": "A consistent dose reduces measurement noise, but cannot replace a non-coffee control or rule out lifestyle differences.",
+      "q_d3": "Comparing lifestyles checks some third variables, but an observational comparison still cannot prove coffee caused the health difference."
     },
     "hints": [
       "Who is in the sample? Can it represent the population of the conclusion?",

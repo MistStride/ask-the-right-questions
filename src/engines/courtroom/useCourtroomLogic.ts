@@ -1,7 +1,8 @@
 // 引擎B 逻辑法庭 判定 hook：命中/试错/血条/通关状态。
 // 规则（见 docs/ENGINE-B-DESIGN.md 第 5 节）：
-//  - 问题 targetIssue === 破绽 issueType 且 isRelevant → 命中（扣血 + 击碎）
-//  - 否则 → 法官警告（不扣血，只计试错次数，鼓励试错）
+//  - 问题 targetIssue === 破绽 issueType → 按卡片 sharpness 削减该破绽抗辩值
+//  - 同一张卡只能有效使用一次；破绽需要多张互补卡累计击穿
+//  - targetIssue 不匹配 → 法官警告（不消耗卡片，可继续判断）
 //  - 通关 = 全部破绽击碎（与血条解耦，防止内容配置错误卡关）
 import { useCallback, useMemo, useState } from 'react'
 import type { CourtroomRuntimeLevel } from '../../schema/levelTypes'
@@ -23,18 +24,27 @@ export interface CourtroomQuestion {
   nearMissFeedback?: string
 }
 
-export type StrikeOutcome = 'hit' | 'near_miss' | 'miss' | 'already'
+export type StrikeOutcome = 'hit' | 'support' | 'miss' | 'already' | 'spent'
+
+export interface StrikeResult {
+  outcome: StrikeOutcome
+  damage: number
+  remaining: number
+  shattered: boolean
+}
 
 export function classifyCourtroomStrike(
   question: CourtroomQuestion,
   spot: CourtroomSpot,
-): Exclude<StrikeOutcome, 'already'> {
+): 'hit' | 'support' | 'miss' {
   if (question.targetIssue !== spot.issueType) return 'miss'
-  return question.isRelevant ? 'hit' : 'near_miss'
+  return question.isRelevant ? 'hit' : 'support'
 }
 
 export function useCourtroomLogic(level: CourtroomRuntimeLevel) {
   const [hitSpots, setHitSpots] = useState<Set<string>>(new Set())
+  const [spotDamage, setSpotDamage] = useState<Map<string, number>>(new Map())
+  const [spentQuestions, setSpentQuestions] = useState<Set<string>>(new Set())
   const [wrongTries, setWrongTries] = useState(0)
   const [nearMissTries, setNearMissTries] = useState(0)
   const [usedQuestions, setUsedQuestions] = useState<Set<string>>(new Set())
@@ -47,40 +57,60 @@ export function useCourtroomLogic(level: CourtroomRuntimeLevel) {
   const hitCount = hitSpots.size
   const isComplete = total > 0 && hitCount >= total
 
-  /** 剩余信誉 = credibility - 已击碎破绽的 sharpness 合计 */
+  /** 剩余信誉随每张正确卡的实际伤害下降，锐度不再只是展示数字。 */
   const remainingCredibility = useMemo(() => {
-    let deducted = 0
-    for (const id of hitSpots) {
-      const spot = level.weakSpots.find((s) => s.spotId === id)
-      if (spot) deducted += spot.sharpness
-    }
+    const deducted = [...spotDamage.values()].reduce((sum, damage) => sum + damage, 0)
     return Math.max(0, level.credibility - deducted)
-  }, [hitSpots, level])
+  }, [spotDamage, level.credibility])
 
   const strike = useCallback(
-    (question: CourtroomQuestion, spot: CourtroomSpot): StrikeOutcome => {
-      if (hitSpots.has(spot.spotId)) return 'already'
+    (question: CourtroomQuestion, spot: CourtroomSpot): StrikeResult => {
+      const currentDamage = spotDamage.get(spot.spotId) ?? 0
+      if (hitSpots.has(spot.spotId)) {
+        return { outcome: 'already', damage: 0, remaining: 0, shattered: true }
+      }
+      if (spentQuestions.has(question.questionId)) {
+        return {
+          outcome: 'spent',
+          damage: 0,
+          remaining: Math.max(0, spot.sharpness - currentDamage),
+          shattered: false,
+        }
+      }
       const outcome = classifyCourtroomStrike(question, spot)
-      if (outcome === 'hit') {
-        setHitSpots((prev) => new Set(prev).add(spot.spotId))
+      if (outcome !== 'miss') {
+        const damage = Math.min(question.sharpness, spot.sharpness - currentDamage)
+        const nextDamage = currentDamage + damage
+        const shattered = nextDamage >= spot.sharpness
+        setSpotDamage((prev) => new Map(prev).set(spot.spotId, nextDamage))
+        setSpentQuestions((prev) => new Set(prev).add(question.questionId))
+        if (shattered) setHitSpots((prev) => new Set(prev).add(spot.spotId))
         setFlashSpotId(spot.spotId)
         setFlashQuestionId(null)
-        // 最后一个破绽 → 触发「证词击碎！」爆裂
-        if (hitSpots.size + 1 >= total) setBurstOpen(true)
-        return 'hit'
+        if (outcome === 'support') {
+          setNearMissTries((n) => n + 1)
+          setNearMissQuestions((prev) => new Set(prev).add(question.questionId))
+        }
+        if (shattered && hitSpots.size + 1 >= total) setBurstOpen(true)
+        return {
+          outcome,
+          damage,
+          remaining: Math.max(0, spot.sharpness - nextDamage),
+          shattered,
+        }
       }
-      if (outcome === 'near_miss') {
-        setNearMissTries((n) => n + 1)
-        setNearMissQuestions((prev) => new Set(prev).add(question.questionId))
-      } else {
-        setWrongTries((w) => w + 1)
-      }
+      setWrongTries((w) => w + 1)
       setUsedQuestions((prev) => new Set(prev).add(question.questionId))
       setFlashQuestionId(question.questionId)
       setFlashSpotId(null)
-      return outcome
+      return {
+        outcome,
+        damage: 0,
+        remaining: Math.max(0, spot.sharpness - currentDamage),
+        shattered: false,
+      }
     },
-    [hitSpots, total],
+    [hitSpots, spotDamage, spentQuestions, total],
   )
 
   const clearFlash = useCallback(() => {
@@ -95,6 +125,8 @@ export function useCourtroomLogic(level: CourtroomRuntimeLevel) {
 
   const reset = useCallback(() => {
     setHitSpots(new Set())
+    setSpotDamage(new Map())
+    setSpentQuestions(new Set())
     setWrongTries(0)
     setNearMissTries(0)
     setUsedQuestions(new Set())
@@ -106,6 +138,8 @@ export function useCourtroomLogic(level: CourtroomRuntimeLevel) {
 
   return {
     hitSpots,
+    spotDamage,
+    spentQuestions,
     hitCount,
     total,
     wrongTries,

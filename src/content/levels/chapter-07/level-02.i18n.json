@@ -14,11 +14,13 @@
       "q_noqual": "「最专业的营养师团队」具体是谁？能提供资质和履历吗？",
       "q_sponsor": "销量下滑有没有更简单的解释，比如产品本身的问题？",
       "q_d1": "明星代言上线后，这款蛋白粉的销量提高了多少？",
-      "q_d2": "营养师团队参与这支广告的时间有多长？"
+      "q_d2": "营养师团队参与这支广告的时间有多长？",
+      "q_d3": "营养师是否愿意公开署名，并独立说明自己在配方研发中的具体职责？"
     },
     "nearMissFeedback": {
       "q_d1": "销量上涨能说明代言有说服力，却不能区分产品效果、粉丝效应和广告投放。",
-      "q_d2": "参与时间能说明投入程度，却不能证明营养师有资质、参与研发或保持独立。"
+      "q_d2": "参与时间能说明投入程度，却不能证明营养师有资质、参与研发或保持独立。",
+      "q_d3": "公开署名和职责能增加可核查性，但仍需核验其执业资质以及评价是否独立。"
     },
     "hints": [
       "名人代言 ≠ 产品有效——明星也是被雇来念稿的",
@@ -42,11 +44,13 @@
       "q_noqual": "Who exactly is \"the most professional team of nutritionists\"? Can you show credentials and track records?",
       "q_sponsor": "Is there a simpler explanation for the sales decline, like a problem with the product itself?",
       "q_d1": "How much did sales rise after the celebrity campaign launched?",
-      "q_d2": "How long did the nutritionist team work on this advertisement?"
+      "q_d2": "How long did the nutritionist team work on this advertisement?",
+      "q_d3": "Will the nutritionists be named publicly and independently describe their exact role in developing the formula?"
     },
     "nearMissFeedback": {
       "q_d1": "A sales lift shows persuasion, but cannot separate product efficacy from fandom or ad spending.",
-      "q_d2": "Time spent shows involvement, not that the nutritionists were qualified, worked on the formula, or remained independent."
+      "q_d2": "Time spent shows involvement, not that the nutritionists were qualified, worked on the formula, or remained independent.",
+      "q_d3": "Names and roles make the claim more checkable, but their credentials and independence still require verification."
     },
     "hints": [
       "Celebrity endorsement ≠ effective product — stars are hired to read a script",

@@ -10,6 +10,7 @@ import type {
   XrayLevelData,
   XrayTexts,
 } from '../../src/schema/levelTypes'
+import { orderCourtroomQuestions } from '../../src/engines/courtroom/questionOrder'
 
 const locales = ['zh', 'en'] as const
 
@@ -101,6 +102,32 @@ describe('gray-area content quality gate', () => {
             `${level.meta.levelId}/${locale}/${question.questionId}`,
           ).toBeGreaterThanOrEqual(20)
         }
+      }
+    }
+  })
+
+  it('makes courtroom sharpness functional by requiring multi-card combinations for every flaw', () => {
+    for (const level of LEVELS.filter((item) => item.meta.engine === 'courtroom')) {
+      const data = level.data as CourtroomLevelData
+      const ordered = orderCourtroomQuestions(
+        data.questionBank.map((question) => ({ ...question, text: question.questionId })),
+        level.meta.levelId,
+      )
+      expect(
+        ordered.map((question) => question.questionId),
+        `${level.meta.levelId} question order`,
+      ).not.toEqual(data.questionBank.map((question) => question.questionId))
+      for (const spot of data.weakSpots) {
+        const matching = data.questionBank.filter((question) => question.targetIssue === spot.issueType)
+        expect(matching.length, `${level.meta.levelId}/${spot.spotId} card count`).toBeGreaterThanOrEqual(2)
+        expect(
+          Math.max(...matching.map((question) => question.sharpness)),
+          `${level.meta.levelId}/${spot.spotId} single-card shortcut`,
+        ).toBeLessThan(spot.sharpness)
+        expect(
+          matching.reduce((sum, question) => sum + question.sharpness, 0),
+          `${level.meta.levelId}/${spot.spotId} total damage`,
+        ).toBeGreaterThanOrEqual(spot.sharpness)
       }
     }
   })

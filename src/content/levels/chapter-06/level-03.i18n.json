@@ -14,11 +14,13 @@
       "q_strawman2": "反对者的真实主张是「禁止一切屏幕」，还是只是「控制使用时间」？",
       "q_tradition": "电视和以前的我们没事，能证明平板对孩子也一定没事吗？",
       "q_d1": "说「沉迷游戏」的那位，他自己平时玩不玩游戏？",
-      "q_d2": "过去没有平板时，学生的平均视力是不是更好？"
+      "q_d2": "过去没有平板时，学生的平均视力是不是更好？",
+      "q_d3": "有人真的主张禁用所有屏幕吗？请先复述对方的原话。"
     },
     "nearMissFeedback": {
       "q_d1": "它可能发现对方是否双重标准，却仍在审判说话的人，没有回答平板是否导致沉迷。",
-      "q_d2": "历史视力是有用线索，但年代、设备、户外时间等因素同时变化，不能单独替传统方案作证。"
+      "q_d2": "历史视力是有用线索，但年代、设备、户外时间等因素同时变化，不能单独替传统方案作证。",
+      "q_d3": "要求复述原话能发现立场被夸大，但还要进一步区分“完全禁止”和“限制时长”两种主张。"
     },
     "hints": [
       "攻击人，不攻击观点——这是人身攻击",
@@ -42,11 +44,13 @@
       "q_strawman2": "Do opponents actually demand banning all screens, or just limiting usage time?",
       "q_tradition": "Does TV being fine for us back then prove tablets are fine for kids now?",
       "q_d1": "Does the person who mentioned game addiction play games himself?",
-      "q_d2": "Was students' average eyesight better in the years before tablets?"
+      "q_d2": "Was students' average eyesight better in the years before tablets?",
+      "q_d3": "Did anyone actually demand banning every screen? Restate the opponent's exact words first."
     },
     "nearMissFeedback": {
       "q_d1": "It may expose a double standard, but it still judges the speaker instead of whether tablets cause addiction.",
-      "q_d2": "Historical eyesight is a useful clue, but era, devices, and outdoor time changed together, so it cannot prove the older approach was safer."
+      "q_d2": "Historical eyesight is a useful clue, but era, devices, and outdoor time changed together, so it cannot prove the older approach was safer.",
+      "q_d3": "Restating the original claim exposes exaggeration, but the argument must still distinguish a total ban from reasonable time limits."
     },
     "hints": [
       "Attacking the person instead of the point — that is ad hominem",

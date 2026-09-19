@@ -14,11 +14,13 @@
       "q_singlecase": "老王的「治好」有没有医院诊断记录？单一案例能代表所有人吗？",
       "q_emotion": "用「孩子的未来」煽动情绪，能替代科学证据吗？",
       "q_d1": "老王服用前后的体重和血压分别变化了多少？",
-      "q_d2": "听完这番话后，有多少家长当场决定购买？"
+      "q_d2": "听完这番话后，有多少家长当场决定购买？",
+      "q_d3": "所谓二十年经验具体包含哪些工作？有没有执业记录或受监管机构可供核查？"
     },
     "nearMissFeedback": {
       "q_d1": "更精确地记录老王的变化能确认故事，却仍是一个没有对照、无法排除其他治疗的个案。",
-      "q_d2": "购买人数可以衡量这段话多有感染力，不能衡量草药是否有效。"
+      "q_d2": "购买人数可以衡量这段话多有感染力，不能衡量草药是否有效。",
+      "q_d3": "工作经历和执业记录能检验头衔是否空泛，但还不能代替产品本身的临床证据。"
     },
     "hints": [
       "自称头衔不等于资质——问可查证的凭证",
@@ -42,11 +44,13 @@
       "q_singlecase": "Does Wang's \"recovery\" have hospital records? Can one case represent everyone?",
       "q_emotion": "Can stirring emotions with \"your children's future\" replace scientific evidence?",
       "q_d1": "How much did Lao Wang's weight and blood pressure change after taking it?",
-      "q_d2": "How many parents decided to buy immediately after hearing this appeal?"
+      "q_d2": "How many parents decided to buy immediately after hearing this appeal?",
+      "q_d3": "What exactly makes up those twenty years of experience? Are there practice records or a regulator to verify them?"
     },
     "nearMissFeedback": {
       "q_d1": "More precise measurements can verify Wang’s story, but it remains one uncontrolled case that cannot rule out other treatment.",
-      "q_d2": "Purchase decisions measure how persuasive the appeal was, not whether the remedy works."
+      "q_d2": "Purchase decisions measure how persuasive the appeal was, not whether the remedy works.",
+      "q_d3": "Work and licensing records can test whether the title is empty, but they still cannot replace clinical evidence for the remedy."
     },
     "hints": [
       "A self-proclaimed title is not qualification — ask for verifiable credentials",

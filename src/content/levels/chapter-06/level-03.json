@@ -13,10 +13,11 @@
     { "spotId": "spot_tradition", "anchorTextRef": "spot_tradition", "issueType": "appeal_to_tradition", "debunkRef": "debunk_tradition", "sharpness": 25 }
   ],
   "questionBank": [
-    { "questionId": "q_hominem", "textRef": "q_hominem", "sharpness": 40, "targetIssue": "ad_hominem", "isRelevant": true },
-    { "questionId": "q_strawman2", "textRef": "q_strawman2", "sharpness": 35, "targetIssue": "straw_man", "isRelevant": true },
-    { "questionId": "q_tradition", "textRef": "q_tradition", "sharpness": 25, "targetIssue": "appeal_to_tradition", "isRelevant": true },
+    { "questionId": "q_hominem", "textRef": "q_hominem", "sharpness": 30, "targetIssue": "ad_hominem", "isRelevant": true },
+    { "questionId": "q_strawman2", "textRef": "q_strawman2", "sharpness": 25, "targetIssue": "straw_man", "isRelevant": true },
+    { "questionId": "q_tradition", "textRef": "q_tradition", "sharpness": 15, "targetIssue": "appeal_to_tradition", "isRelevant": true },
     { "questionId": "q_d1", "textRef": "q_d1", "sharpness": 10, "targetIssue": "ad_hominem", "isRelevant": false },
-    { "questionId": "q_d2", "textRef": "q_d2", "sharpness": 10, "targetIssue": "appeal_to_tradition", "isRelevant": false }
+    { "questionId": "q_d2", "textRef": "q_d2", "sharpness": 10, "targetIssue": "appeal_to_tradition", "isRelevant": false },
+    { "questionId": "q_d3", "textRef": "q_d3", "sharpness": 10, "targetIssue": "straw_man", "isRelevant": false }
   ]
 }

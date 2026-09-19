@@ -12,6 +12,7 @@ interface Props {
   testimony: string
   spots: CourtroomSpot[]
   hitSpots: Set<string>
+  spotDamage: Map<string, number>
   flashSpotId: string | null
   onDropSpot: (spot: CourtroomSpot) => void
   onTapSpot: (spot: CourtroomSpot) => void
@@ -23,6 +24,7 @@ export default function CourtroomTestimony({
   testimony,
   spots,
   hitSpots,
+  spotDamage,
   flashSpotId,
   onDropSpot,
   onTapSpot,
@@ -35,11 +37,15 @@ export default function CourtroomTestimony({
   /** 单个破绽段的按钮（可拖放 + 可点击） */
   const renderSpot = (spot: CourtroomSpot, key: string) => {
     const hit = hitSpots.has(spot.spotId)
+    const damage = spotDamage.get(spot.spotId) ?? 0
+    const remaining = Math.max(0, spot.sharpness - damage)
     const flash = flashSpotId === spot.spotId
     if (hit) {
       return (
         <motion.span
           key={key}
+          data-spot-id={spot.spotId}
+          data-remaining="0"
           initial={{ scale: 0.94 }}
           animate={{ scale: 1 }}
           className="mx-0.5 inline-flex items-center gap-1 rounded-md border border-court/50 bg-court/10 px-1 py-0.5 align-middle text-sm font-semibold text-court-deep line-through decoration-2"
@@ -52,6 +58,8 @@ export default function CourtroomTestimony({
     return (
       <motion.button
         key={key}
+        data-spot-id={spot.spotId}
+        data-remaining={remaining}
         type="button"
         draggable={false}
         onDragOver={(e) => {
@@ -76,6 +84,9 @@ export default function CourtroomTestimony({
       >
         <span className="animate-pulse text-xs">⚡</span>
         {spot.anchorText}
+        <span className="ml-1 whitespace-nowrap rounded bg-slate-900/5 px-1 font-mono text-[10px] text-slate-500">
+          {locale === 'zh' ? '抗辩' : 'guard'} {remaining}/{spot.sharpness}
+        </span>
       </motion.button>
     )
   }

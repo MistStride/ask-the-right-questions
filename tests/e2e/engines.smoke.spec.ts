@@ -76,6 +76,26 @@ test('xray scan varies its sequence without leaking answers through idle styling
   await expect(chapterThreeAnchors.last()).toContainText('禁止学生携带智能手机进入校园')
 })
 
+test('courtroom requires complementary cards and applies sharpness as real damage', async ({ page }) => {
+  await page.goto('./#/level/ch07-level01')
+
+  const expertSpot = page.locator('[data-spot-id="spot_expert_qual"]')
+  const coreQuestion = page.locator('[data-question-id="q_qualification"]')
+  const supportQuestion = page.locator('[data-question-id="q_d1"]')
+
+  await expect(expertSpot).toHaveAttribute('data-remaining', '40')
+  await coreQuestion.click()
+  await expertSpot.click()
+  await expect(expertSpot).toHaveAttribute('data-remaining', '10')
+  await expect(coreQuestion).toBeDisabled()
+  await expect(expertSpot).not.toContainText(/已击碎|Shattered/)
+
+  await supportQuestion.click()
+  await expertSpot.click()
+  await expect(expertSpot).toContainText(/已击碎|Shattered/)
+  await expect(supportQuestion).toBeDisabled()
+})
+
 test('first visit delivers a nuanced judgment before the full learning path', async ({ page }) => {
   await page.goto('./')
 

@@ -12,8 +12,8 @@
     { "spotId": "spot_generalize", "anchorTextRef": "spot_generalize", "issueType": "hasty_generalization", "debunkRef": "debunk_generalize", "sharpness": 40 }
   ],
   "questionBank": [
-    { "questionId": "q_after", "textRef": "q_after", "sharpness": 60, "targetIssue": "post_hoc", "isRelevant": true },
-    { "questionId": "q_generalize", "textRef": "q_generalize", "sharpness": 40, "targetIssue": "hasty_generalization", "isRelevant": true },
+    { "questionId": "q_after", "textRef": "q_after", "sharpness": 40, "targetIssue": "post_hoc", "isRelevant": true },
+    { "questionId": "q_generalize", "textRef": "q_generalize", "sharpness": 30, "targetIssue": "hasty_generalization", "isRelevant": true },
     { "questionId": "q_d1", "textRef": "q_d1", "sharpness": 10, "targetIssue": "post_hoc", "isRelevant": false },
     { "questionId": "q_d2", "textRef": "q_d2", "sharpness": 10, "targetIssue": "hasty_generalization", "isRelevant": false },
     { "questionId": "q_d3", "textRef": "q_d3", "sharpness": 10, "targetIssue": "post_hoc", "isRelevant": false }

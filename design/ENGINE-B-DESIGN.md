@@ -15,7 +15,8 @@
 2. 中央是**证词面板**：证人头像 + 陈述气泡。薄弱句带「⚡ 可疑」角标（虚线红框轻微脉冲，**提示"这里有破绽"但不剧透破绽类型**）
 3. 底部是**问题弹药库**：横向滚动的问题卡片，每张显示问题文案 + 锐度值。**不标注哪个是干扰问题**（考验判断）
 4. 拖一张问题卡到某个证词段上（或点卡选中 → 点证词段）：
-   - **命中要害** → 问题卡飞向该段、证词段"裂纹爆开"、血条掉血动画、toast「⚡ 击中要害：<戳穿解析>」、该段变"已击碎"（红色划线置灰 + 显示破绽标签）
+   - **命中要害** → 按卡片锐度削减该段抗辩值；卡片耗尽，信誉同步下降；累计到阈值才裂纹爆开并显示破绽标签
+   - **补强命中** → 方向相关、伤害较低，但会成为完整质询组合的一部分；单张核心卡也不能直接击碎破绽
    - **打偏 / 无关问题** → 法官锤桌反馈 toast「🚫 法官：这个问题无关紧要，不是这里的破绽」，问题卡标记"已试错"（红边），**不扣血**（鼓励试错）
 5. 所有破绽击碎 → 全屏「💥 证词击碎！」爆裂特效 → 结算弹窗（复用 LevelCompleteModal：得分 + 深度解析 + 下一关）
 6. 右上角语言切换、中英双语全程可用
@@ -39,7 +40,7 @@ export interface CourtroomWeakSpotRef {
 export interface CourtroomQuestionRef {
   questionId: string
   textRef: string       // i18n textRefs 键 → 问题文案
-  sharpness: number     // 命中扣血（展示用，实际扣血以 weakSpot.sharpness 为准）
+  sharpness: number     // 实际质询伤害；同一张卡每局只能有效使用一次
   targetIssue: string   // 该问题针对的 issueType（命中判据）
   isRelevant: boolean   // true=真问题可命中；false=干扰问题（法官警告）
 }
@@ -105,8 +106,9 @@ export interface CourtroomRuntimeLevel {
 ```
 handleStrike(question, spot)：
   若 spot 已击碎 → 忽略（toast「这处破绽已经被击碎了」）
-  若 question.targetIssue === spot.issueType 且 question.isRelevant → 命中：
-    hitSpots += spot；remainingCredibility -= spot.sharpness（下限 0）
+  若 question.targetIssue === spot.issueType → 命中：
+    spotDamage += question.sharpness；remainingCredibility 同步下降；卡片耗尽
+    spotDamage >= spot.sharpness 时才 hitSpots += spot
     toast「⚡ 击中要害！」；展示 spot.debunkText
     若 hitSpots.size === weakSpots.length → 通关（触发爆裂特效 + onComplete(score)）
   否则 → 法官警告：
@@ -160,7 +162,7 @@ courtroom/
 | ch08-level01 | trial | 「研究显示」引用审计 | 样本过小 `small_sample` / 无对照组 `no_control` / 相关性当因果 `correlation_causation` | `evidence` |
 | ch09-level01 | lineup | 「嫌疑人对质墙」：一个现象多个解释 | 替代原因 `rival_cause` 类 × 3（如"时间先后≠因果""共同原因""巧合"） | `fallacy` |
 
-每关：3 个破绽 + 5 个问题（3 真 2 干扰），`credibility: 100`，三个破绽 sharpness 合计 100（如 40/35/25）。
+每关通常 3 个破绽 + 6 个问题；40/35/25 抗辩值分别由 30+10、25+10、15+10 的互补问题击穿。lineup 的 60/40 则使用 40+10+10、30+10。问题库展示顺序按关卡稳定打散。
 
 内容文件：`src/content/levels/chapter-06|07|08|09/level-01.json`（逻辑）+ `level-01.i18n.json`（zh/en），完全照引擎 A 的"逻辑/文案分离"模式。
 
