@@ -112,6 +112,23 @@ test('data defusal places axis and comparison traps on their real visual targets
   await expect(page.locator('[data-target-type="bar"]')).toHaveCount(2)
 })
 
+test('scale calibration keeps its reasoning target hidden until submission', async ({ page }) => {
+  await page.goto('./#/level/ch04-level01')
+
+  const scale = page.locator('[data-engine="scale"]')
+  const slider = scale.locator('input[type="range"]')
+  const feedback = scale.locator('[data-scale-feedback]')
+
+  await expect(slider).toBeVisible()
+  await expect(scale.locator('.font-mono').filter({ hasText: /^\d+$/ })).toHaveCount(0)
+  await expect(scale).not.toContainText(/接近度|Closeness|精度|Accuracy|最佳成绩|Best score/)
+  await expect(feedback).toContainText(/读懂陈述|Read the claim/)
+
+  await slider.press('ArrowRight')
+  await expect(feedback).toContainText(/已记录这次校准尝试|Calibration attempt recorded/)
+  await expect(feedback).not.toContainText(/\d+/)
+})
+
 test('first visit delivers a nuanced judgment before the full learning path', async ({ page }) => {
   await page.goto('./')
 

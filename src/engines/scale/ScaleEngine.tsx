@@ -1,5 +1,5 @@
 // 引擎C｜天平校准站 Scale
-// 玩法：把滑块放到"最合理的位置"——合理区间不显示，靠热度渐晕寻找；越近中心分越高。
+// 玩法：把滑块放到"最能被陈述支持的位置"——合理区间不显示，提交后才结算。
 // 模式：spectrum 词义光谱（第 4 章）/ conclusion 结论区间（第 12 章）
 import { useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
@@ -41,7 +41,7 @@ export default function ScaleEngine({
   const mode = level.mode
 
   const logic = useScaleLogic(level.idealRange, level.idealPoint)
-  const { position, setPosition, lastResult, bestScore, burstKey, heat, judge, reset } = logic
+  const { position, setPosition, lastResult, bestScore, judge, reset } = logic
 
   const [modalOpen, setModalOpen] = useState(false)
   const [score, setScore] = useState(0)
@@ -66,13 +66,13 @@ export default function ScaleEngine({
   }
 
   const handleSubmit = () => {
-    if (bestScore === null) {
+    if (triesLog.length === 0) {
       showToast(t.submitHint, 'info')
       return
     }
     if (settled) return
     setSettled(true)
-    const raw = bestScore
+    const raw = bestScore ?? 0
     const finalScore = applyHintPenalty(raw, hintsUsed, level.meta.difficulty)
     setScore(finalScore)
     setScoreDetail({
@@ -140,42 +140,24 @@ export default function ScaleEngine({
       <div className="mt-4 rounded-2xl border border-line bg-panel p-6">
         <CalibrationSlider
           value={position}
-          heat={heat}
-          burstKey={burstKey}
           labels={level.spectrumLabels}
           onChange={setPosition}
           onRelease={handleRelease}
-          locale={locale}
         />
 
         {/* 判定结果 */}
-        <div className="mt-4 min-h-[52px]">
-          {lastResult?.inRange ? (
+        <div data-scale-feedback className="mt-4 min-h-[52px]">
+          {lastResult ? (
             <motion.div
               initial={{ opacity: 0, y: 6 }}
               animate={{ opacity: 1, y: 0 }}
-              className="flex items-center justify-center gap-2 rounded-xl border border-green-600/40 bg-green-50 px-4 py-2.5"
+              className="flex items-center justify-center rounded-xl border border-scale/25 bg-scale/5 px-4 py-2.5"
             >
-              <span className="text-sm font-bold text-green-700">
-                {t.hit} <span className="font-mono text-lg">{lastResult.precision}</span>
-              </span>
-              <span className="text-xs text-green-600">
-                {locale === 'zh' ? `（最佳 ${bestScore}）` : `(best ${bestScore})`}
-              </span>
-            </motion.div>
-          ) : lastResult ? (
-            <motion.div
-              initial={{ opacity: 0, y: 6 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="flex items-center justify-center gap-2 rounded-xl border border-red-500/40 bg-red-50 px-4 py-2.5"
-            >
-              <span className="text-sm font-bold text-red-600">
-                {lastResult.dir === 'left' ? t.missLeft : t.missRight}
-              </span>
+              <span className="text-center text-sm font-semibold text-scale-deep">{t.recorded}</span>
             </motion.div>
           ) : (
             <p className="text-center text-xs text-slate-400">
-              {locale === 'zh' ? '拖动滑块，松手判定；可反复尝试，取最好成绩' : 'Drag the slider and release to judge; retry as often as you like, best score counts'}
+              {locale === 'zh' ? '先读懂陈述，再把滑块放到你的判断位置；可反复校准' : 'Read the claim first, then place the slider where your judgment belongs; retry as needed'}
             </p>
           )}
         </div>
@@ -195,7 +177,7 @@ export default function ScaleEngine({
           type="button"
           onClick={handleSubmit}
           className={`rounded-xl px-5 py-2.5 text-sm font-semibold text-white shadow-[0_6px_20px_rgba(124,58,237,0.3)] transition ${
-            bestScore !== null && !settled ? 'bg-scale hover:brightness-110' : 'cursor-not-allowed bg-slate-300'
+            triesLog.length > 0 && !settled ? 'bg-scale hover:brightness-110' : 'cursor-not-allowed bg-slate-300'
           }`}
         >
           {t.submit}

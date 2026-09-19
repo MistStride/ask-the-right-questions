@@ -223,8 +223,8 @@ function ScaleSection({
         primary={`${t.final}: ${review.bestScore}`}
         secondary={
           review.finalInRange
-            ? `✓ ${t.inRange} · ${t.idealRange} [${review.idealRange[0]}, ${review.idealRange[1]}] · ${t.idealPoint} ${review.idealPoint}`
-            : `✗ ${t.outOfRange} · ${t.idealRange} [${review.idealRange[0]}, ${review.idealRange[1]}] · ${t.idealPoint} ${review.idealPoint}`
+            ? `✓ ${t.inRange}`
+            : `✗ ${t.outOfRange}`
         }
         locale={locale}
       />
@@ -238,9 +238,8 @@ function ScaleSection({
               <span className="text-slate-600">{t.position} <span className="font-mono">{tr.position}</span></span>
               <span className="text-slate-400">·</span>
               <span className={tr.inRange ? 'text-emerald-700' : 'text-red-600'}>
-                {tr.inRange ? t.inRange : `${t.outOfRange} (${tr.dir === 'left' ? t.left : t.right})`}
+                {tr.inRange ? t.inRange : t.outOfRange}
               </span>
-              <span className="ml-auto font-mono text-slate-500">{tr.precision}</span>
             </li>
           ))}
         </ol>
